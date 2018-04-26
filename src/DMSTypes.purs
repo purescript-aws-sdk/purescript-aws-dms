@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>AWS DMS was denied access to the endpoint.</p>
 newtype AccessDeniedFault = AccessDeniedFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeAccessDeniedFault :: Newtype AccessDeniedFault _
 derive instance repGenericAccessDeniedFault :: Generic AccessDeniedFault _
@@ -30,20 +29,20 @@ instance encodeAccessDeniedFault :: Encode AccessDeniedFault where encode = gene
 
 -- | Constructs AccessDeniedFault from required parameters
 newAccessDeniedFault :: AccessDeniedFault
-newAccessDeniedFault  = AccessDeniedFault { "message": (NullOrUndefined Nothing) }
+newAccessDeniedFault  = AccessDeniedFault { "message": Nothing }
 
 -- | Constructs AccessDeniedFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccessDeniedFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> AccessDeniedFault
-newAccessDeniedFault'  customize = (AccessDeniedFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newAccessDeniedFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> AccessDeniedFault
+newAccessDeniedFault'  customize = (AccessDeniedFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Describes a quota for an AWS account, for example, the number of replication instances allowed.</p>
 newtype AccountQuota = AccountQuota 
-  { "AccountQuotaName" :: NullOrUndefined (String)
-  , "Used" :: NullOrUndefined (Number)
-  , "Max" :: NullOrUndefined (Number)
+  { "AccountQuotaName" :: Maybe (String)
+  , "Used" :: Maybe (Number)
+  , "Max" :: Maybe (Number)
   }
 derive instance newtypeAccountQuota :: Newtype AccountQuota _
 derive instance repGenericAccountQuota :: Generic AccountQuota _
@@ -53,12 +52,12 @@ instance encodeAccountQuota :: Encode AccountQuota where encode = genericEncode 
 
 -- | Constructs AccountQuota from required parameters
 newAccountQuota :: AccountQuota
-newAccountQuota  = AccountQuota { "AccountQuotaName": (NullOrUndefined Nothing), "Max": (NullOrUndefined Nothing), "Used": (NullOrUndefined Nothing) }
+newAccountQuota  = AccountQuota { "AccountQuotaName": Nothing, "Max": Nothing, "Used": Nothing }
 
 -- | Constructs AccountQuota's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccountQuota' :: ( { "AccountQuotaName" :: NullOrUndefined (String) , "Used" :: NullOrUndefined (Number) , "Max" :: NullOrUndefined (Number) } -> {"AccountQuotaName" :: NullOrUndefined (String) , "Used" :: NullOrUndefined (Number) , "Max" :: NullOrUndefined (Number) } ) -> AccountQuota
-newAccountQuota'  customize = (AccountQuota <<< customize) { "AccountQuotaName": (NullOrUndefined Nothing), "Max": (NullOrUndefined Nothing), "Used": (NullOrUndefined Nothing) }
+newAccountQuota' :: ( { "AccountQuotaName" :: Maybe (String) , "Used" :: Maybe (Number) , "Max" :: Maybe (Number) } -> {"AccountQuotaName" :: Maybe (String) , "Used" :: Maybe (Number) , "Max" :: Maybe (Number) } ) -> AccountQuota
+newAccountQuota'  customize = (AccountQuota <<< customize) { "AccountQuotaName": Nothing, "Max": Nothing, "Used": Nothing }
 
 
 
@@ -123,7 +122,7 @@ instance encodeAuthTypeValue :: Encode AuthTypeValue where encode = genericEncod
 
 -- | <p/>
 newtype AvailabilityZone = AvailabilityZone 
-  { "Name" :: NullOrUndefined (String)
+  { "Name" :: Maybe (String)
   }
 derive instance newtypeAvailabilityZone :: Newtype AvailabilityZone _
 derive instance repGenericAvailabilityZone :: Generic AvailabilityZone _
@@ -133,12 +132,12 @@ instance encodeAvailabilityZone :: Encode AvailabilityZone where encode = generi
 
 -- | Constructs AvailabilityZone from required parameters
 newAvailabilityZone :: AvailabilityZone
-newAvailabilityZone  = AvailabilityZone { "Name": (NullOrUndefined Nothing) }
+newAvailabilityZone  = AvailabilityZone { "Name": Nothing }
 
 -- | Constructs AvailabilityZone's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailabilityZone' :: ( { "Name" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (String) } ) -> AvailabilityZone
-newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "Name": (NullOrUndefined Nothing) }
+newAvailabilityZone' :: ( { "Name" :: Maybe (String) } -> {"Name" :: Maybe (String) } ) -> AvailabilityZone
+newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "Name": Nothing }
 
 
 
@@ -153,16 +152,16 @@ instance encodeBooleanOptional :: Encode BooleanOptional where encode = genericE
 
 -- | <p>The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.</p>
 newtype Certificate = Certificate 
-  { "CertificateIdentifier" :: NullOrUndefined (String)
-  , "CertificateCreationDate" :: NullOrUndefined (TStamp)
-  , "CertificatePem" :: NullOrUndefined (String)
-  , "CertificateWallet" :: NullOrUndefined (CertificateWallet)
-  , "CertificateArn" :: NullOrUndefined (String)
-  , "CertificateOwner" :: NullOrUndefined (String)
-  , "ValidFromDate" :: NullOrUndefined (TStamp)
-  , "ValidToDate" :: NullOrUndefined (TStamp)
-  , "SigningAlgorithm" :: NullOrUndefined (String)
-  , "KeyLength" :: NullOrUndefined (IntegerOptional)
+  { "CertificateIdentifier" :: Maybe (String)
+  , "CertificateCreationDate" :: Maybe (TStamp)
+  , "CertificatePem" :: Maybe (String)
+  , "CertificateWallet" :: Maybe (CertificateWallet)
+  , "CertificateArn" :: Maybe (String)
+  , "CertificateOwner" :: Maybe (String)
+  , "ValidFromDate" :: Maybe (TStamp)
+  , "ValidToDate" :: Maybe (TStamp)
+  , "SigningAlgorithm" :: Maybe (String)
+  , "KeyLength" :: Maybe (IntegerOptional)
   }
 derive instance newtypeCertificate :: Newtype Certificate _
 derive instance repGenericCertificate :: Generic Certificate _
@@ -172,12 +171,12 @@ instance encodeCertificate :: Encode Certificate where encode = genericEncode op
 
 -- | Constructs Certificate from required parameters
 newCertificate :: Certificate
-newCertificate  = Certificate { "CertificateArn": (NullOrUndefined Nothing), "CertificateCreationDate": (NullOrUndefined Nothing), "CertificateIdentifier": (NullOrUndefined Nothing), "CertificateOwner": (NullOrUndefined Nothing), "CertificatePem": (NullOrUndefined Nothing), "CertificateWallet": (NullOrUndefined Nothing), "KeyLength": (NullOrUndefined Nothing), "SigningAlgorithm": (NullOrUndefined Nothing), "ValidFromDate": (NullOrUndefined Nothing), "ValidToDate": (NullOrUndefined Nothing) }
+newCertificate  = Certificate { "CertificateArn": Nothing, "CertificateCreationDate": Nothing, "CertificateIdentifier": Nothing, "CertificateOwner": Nothing, "CertificatePem": Nothing, "CertificateWallet": Nothing, "KeyLength": Nothing, "SigningAlgorithm": Nothing, "ValidFromDate": Nothing, "ValidToDate": Nothing }
 
 -- | Constructs Certificate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCertificate' :: ( { "CertificateIdentifier" :: NullOrUndefined (String) , "CertificateCreationDate" :: NullOrUndefined (TStamp) , "CertificatePem" :: NullOrUndefined (String) , "CertificateWallet" :: NullOrUndefined (CertificateWallet) , "CertificateArn" :: NullOrUndefined (String) , "CertificateOwner" :: NullOrUndefined (String) , "ValidFromDate" :: NullOrUndefined (TStamp) , "ValidToDate" :: NullOrUndefined (TStamp) , "SigningAlgorithm" :: NullOrUndefined (String) , "KeyLength" :: NullOrUndefined (IntegerOptional) } -> {"CertificateIdentifier" :: NullOrUndefined (String) , "CertificateCreationDate" :: NullOrUndefined (TStamp) , "CertificatePem" :: NullOrUndefined (String) , "CertificateWallet" :: NullOrUndefined (CertificateWallet) , "CertificateArn" :: NullOrUndefined (String) , "CertificateOwner" :: NullOrUndefined (String) , "ValidFromDate" :: NullOrUndefined (TStamp) , "ValidToDate" :: NullOrUndefined (TStamp) , "SigningAlgorithm" :: NullOrUndefined (String) , "KeyLength" :: NullOrUndefined (IntegerOptional) } ) -> Certificate
-newCertificate'  customize = (Certificate <<< customize) { "CertificateArn": (NullOrUndefined Nothing), "CertificateCreationDate": (NullOrUndefined Nothing), "CertificateIdentifier": (NullOrUndefined Nothing), "CertificateOwner": (NullOrUndefined Nothing), "CertificatePem": (NullOrUndefined Nothing), "CertificateWallet": (NullOrUndefined Nothing), "KeyLength": (NullOrUndefined Nothing), "SigningAlgorithm": (NullOrUndefined Nothing), "ValidFromDate": (NullOrUndefined Nothing), "ValidToDate": (NullOrUndefined Nothing) }
+newCertificate' :: ( { "CertificateIdentifier" :: Maybe (String) , "CertificateCreationDate" :: Maybe (TStamp) , "CertificatePem" :: Maybe (String) , "CertificateWallet" :: Maybe (CertificateWallet) , "CertificateArn" :: Maybe (String) , "CertificateOwner" :: Maybe (String) , "ValidFromDate" :: Maybe (TStamp) , "ValidToDate" :: Maybe (TStamp) , "SigningAlgorithm" :: Maybe (String) , "KeyLength" :: Maybe (IntegerOptional) } -> {"CertificateIdentifier" :: Maybe (String) , "CertificateCreationDate" :: Maybe (TStamp) , "CertificatePem" :: Maybe (String) , "CertificateWallet" :: Maybe (CertificateWallet) , "CertificateArn" :: Maybe (String) , "CertificateOwner" :: Maybe (String) , "ValidFromDate" :: Maybe (TStamp) , "ValidToDate" :: Maybe (TStamp) , "SigningAlgorithm" :: Maybe (String) , "KeyLength" :: Maybe (IntegerOptional) } ) -> Certificate
+newCertificate'  customize = (Certificate <<< customize) { "CertificateArn": Nothing, "CertificateCreationDate": Nothing, "CertificateIdentifier": Nothing, "CertificateOwner": Nothing, "CertificatePem": Nothing, "CertificateWallet": Nothing, "KeyLength": Nothing, "SigningAlgorithm": Nothing, "ValidFromDate": Nothing, "ValidToDate": Nothing }
 
 
 
@@ -210,12 +209,12 @@ instance encodeCompressionTypeValue :: Encode CompressionTypeValue where encode 
 
 -- | <p/>
 newtype Connection = Connection 
-  { "ReplicationInstanceArn" :: NullOrUndefined (String)
-  , "EndpointArn" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "LastFailureMessage" :: NullOrUndefined (String)
-  , "EndpointIdentifier" :: NullOrUndefined (String)
-  , "ReplicationInstanceIdentifier" :: NullOrUndefined (String)
+  { "ReplicationInstanceArn" :: Maybe (String)
+  , "EndpointArn" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "LastFailureMessage" :: Maybe (String)
+  , "EndpointIdentifier" :: Maybe (String)
+  , "ReplicationInstanceIdentifier" :: Maybe (String)
   }
 derive instance newtypeConnection :: Newtype Connection _
 derive instance repGenericConnection :: Generic Connection _
@@ -225,12 +224,12 @@ instance encodeConnection :: Encode Connection where encode = genericEncode opti
 
 -- | Constructs Connection from required parameters
 newConnection :: Connection
-newConnection  = Connection { "EndpointArn": (NullOrUndefined Nothing), "EndpointIdentifier": (NullOrUndefined Nothing), "LastFailureMessage": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationInstanceIdentifier": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newConnection  = Connection { "EndpointArn": Nothing, "EndpointIdentifier": Nothing, "LastFailureMessage": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationInstanceIdentifier": Nothing, "Status": Nothing }
 
 -- | Constructs Connection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnection' :: ( { "ReplicationInstanceArn" :: NullOrUndefined (String) , "EndpointArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "LastFailureMessage" :: NullOrUndefined (String) , "EndpointIdentifier" :: NullOrUndefined (String) , "ReplicationInstanceIdentifier" :: NullOrUndefined (String) } -> {"ReplicationInstanceArn" :: NullOrUndefined (String) , "EndpointArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "LastFailureMessage" :: NullOrUndefined (String) , "EndpointIdentifier" :: NullOrUndefined (String) , "ReplicationInstanceIdentifier" :: NullOrUndefined (String) } ) -> Connection
-newConnection'  customize = (Connection <<< customize) { "EndpointArn": (NullOrUndefined Nothing), "EndpointIdentifier": (NullOrUndefined Nothing), "LastFailureMessage": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationInstanceIdentifier": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newConnection' :: ( { "ReplicationInstanceArn" :: Maybe (String) , "EndpointArn" :: Maybe (String) , "Status" :: Maybe (String) , "LastFailureMessage" :: Maybe (String) , "EndpointIdentifier" :: Maybe (String) , "ReplicationInstanceIdentifier" :: Maybe (String) } -> {"ReplicationInstanceArn" :: Maybe (String) , "EndpointArn" :: Maybe (String) , "Status" :: Maybe (String) , "LastFailureMessage" :: Maybe (String) , "EndpointIdentifier" :: Maybe (String) , "ReplicationInstanceIdentifier" :: Maybe (String) } ) -> Connection
+newConnection'  customize = (Connection <<< customize) { "EndpointArn": Nothing, "EndpointIdentifier": Nothing, "LastFailureMessage": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationInstanceIdentifier": Nothing, "Status": Nothing }
 
 
 
@@ -248,19 +247,19 @@ newtype CreateEndpointMessage = CreateEndpointMessage
   { "EndpointIdentifier" :: (String)
   , "EndpointType" :: (ReplicationEndpointTypeValue)
   , "EngineName" :: (String)
-  , "Username" :: NullOrUndefined (String)
-  , "Password" :: NullOrUndefined (SecretString)
-  , "ServerName" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "DatabaseName" :: NullOrUndefined (String)
-  , "ExtraConnectionAttributes" :: NullOrUndefined (String)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "CertificateArn" :: NullOrUndefined (String)
-  , "SslMode" :: NullOrUndefined (DmsSslModeValue)
-  , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings)
-  , "S3Settings" :: NullOrUndefined (S3Settings)
-  , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings)
+  , "Username" :: Maybe (String)
+  , "Password" :: Maybe (SecretString)
+  , "ServerName" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "DatabaseName" :: Maybe (String)
+  , "ExtraConnectionAttributes" :: Maybe (String)
+  , "KmsKeyId" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
+  , "CertificateArn" :: Maybe (String)
+  , "SslMode" :: Maybe (DmsSslModeValue)
+  , "DynamoDbSettings" :: Maybe (DynamoDbSettings)
+  , "S3Settings" :: Maybe (S3Settings)
+  , "MongoDbSettings" :: Maybe (MongoDbSettings)
   }
 derive instance newtypeCreateEndpointMessage :: Newtype CreateEndpointMessage _
 derive instance repGenericCreateEndpointMessage :: Generic CreateEndpointMessage _
@@ -270,18 +269,18 @@ instance encodeCreateEndpointMessage :: Encode CreateEndpointMessage where encod
 
 -- | Constructs CreateEndpointMessage from required parameters
 newCreateEndpointMessage :: String -> ReplicationEndpointTypeValue -> String -> CreateEndpointMessage
-newCreateEndpointMessage _EndpointIdentifier _EndpointType _EngineName = CreateEndpointMessage { "EndpointIdentifier": _EndpointIdentifier, "EndpointType": _EndpointType, "EngineName": _EngineName, "CertificateArn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DynamoDbSettings": (NullOrUndefined Nothing), "ExtraConnectionAttributes": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MongoDbSettings": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "S3Settings": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "SslMode": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newCreateEndpointMessage _EndpointIdentifier _EndpointType _EngineName = CreateEndpointMessage { "EndpointIdentifier": _EndpointIdentifier, "EndpointType": _EndpointType, "EngineName": _EngineName, "CertificateArn": Nothing, "DatabaseName": Nothing, "DynamoDbSettings": Nothing, "ExtraConnectionAttributes": Nothing, "KmsKeyId": Nothing, "MongoDbSettings": Nothing, "Password": Nothing, "Port": Nothing, "S3Settings": Nothing, "ServerName": Nothing, "SslMode": Nothing, "Tags": Nothing, "Username": Nothing }
 
 -- | Constructs CreateEndpointMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEndpointMessage' :: String -> ReplicationEndpointTypeValue -> String -> ( { "EndpointIdentifier" :: (String) , "EndpointType" :: (ReplicationEndpointTypeValue) , "EngineName" :: (String) , "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (SecretString) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "ExtraConnectionAttributes" :: NullOrUndefined (String) , "KmsKeyId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "CertificateArn" :: NullOrUndefined (String) , "SslMode" :: NullOrUndefined (DmsSslModeValue) , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings) , "S3Settings" :: NullOrUndefined (S3Settings) , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } -> {"EndpointIdentifier" :: (String) , "EndpointType" :: (ReplicationEndpointTypeValue) , "EngineName" :: (String) , "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (SecretString) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "ExtraConnectionAttributes" :: NullOrUndefined (String) , "KmsKeyId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "CertificateArn" :: NullOrUndefined (String) , "SslMode" :: NullOrUndefined (DmsSslModeValue) , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings) , "S3Settings" :: NullOrUndefined (S3Settings) , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } ) -> CreateEndpointMessage
-newCreateEndpointMessage' _EndpointIdentifier _EndpointType _EngineName customize = (CreateEndpointMessage <<< customize) { "EndpointIdentifier": _EndpointIdentifier, "EndpointType": _EndpointType, "EngineName": _EngineName, "CertificateArn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DynamoDbSettings": (NullOrUndefined Nothing), "ExtraConnectionAttributes": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MongoDbSettings": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "S3Settings": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "SslMode": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newCreateEndpointMessage' :: String -> ReplicationEndpointTypeValue -> String -> ( { "EndpointIdentifier" :: (String) , "EndpointType" :: (ReplicationEndpointTypeValue) , "EngineName" :: (String) , "Username" :: Maybe (String) , "Password" :: Maybe (SecretString) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "ExtraConnectionAttributes" :: Maybe (String) , "KmsKeyId" :: Maybe (String) , "Tags" :: Maybe (TagList) , "CertificateArn" :: Maybe (String) , "SslMode" :: Maybe (DmsSslModeValue) , "DynamoDbSettings" :: Maybe (DynamoDbSettings) , "S3Settings" :: Maybe (S3Settings) , "MongoDbSettings" :: Maybe (MongoDbSettings) } -> {"EndpointIdentifier" :: (String) , "EndpointType" :: (ReplicationEndpointTypeValue) , "EngineName" :: (String) , "Username" :: Maybe (String) , "Password" :: Maybe (SecretString) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "ExtraConnectionAttributes" :: Maybe (String) , "KmsKeyId" :: Maybe (String) , "Tags" :: Maybe (TagList) , "CertificateArn" :: Maybe (String) , "SslMode" :: Maybe (DmsSslModeValue) , "DynamoDbSettings" :: Maybe (DynamoDbSettings) , "S3Settings" :: Maybe (S3Settings) , "MongoDbSettings" :: Maybe (MongoDbSettings) } ) -> CreateEndpointMessage
+newCreateEndpointMessage' _EndpointIdentifier _EndpointType _EngineName customize = (CreateEndpointMessage <<< customize) { "EndpointIdentifier": _EndpointIdentifier, "EndpointType": _EndpointType, "EngineName": _EngineName, "CertificateArn": Nothing, "DatabaseName": Nothing, "DynamoDbSettings": Nothing, "ExtraConnectionAttributes": Nothing, "KmsKeyId": Nothing, "MongoDbSettings": Nothing, "Password": Nothing, "Port": Nothing, "S3Settings": Nothing, "ServerName": Nothing, "SslMode": Nothing, "Tags": Nothing, "Username": Nothing }
 
 
 
 -- | <p/>
 newtype CreateEndpointResponse = CreateEndpointResponse 
-  { "Endpoint" :: NullOrUndefined (Endpoint)
+  { "Endpoint" :: Maybe (Endpoint)
   }
 derive instance newtypeCreateEndpointResponse :: Newtype CreateEndpointResponse _
 derive instance repGenericCreateEndpointResponse :: Generic CreateEndpointResponse _
@@ -291,12 +290,12 @@ instance encodeCreateEndpointResponse :: Encode CreateEndpointResponse where enc
 
 -- | Constructs CreateEndpointResponse from required parameters
 newCreateEndpointResponse :: CreateEndpointResponse
-newCreateEndpointResponse  = CreateEndpointResponse { "Endpoint": (NullOrUndefined Nothing) }
+newCreateEndpointResponse  = CreateEndpointResponse { "Endpoint": Nothing }
 
 -- | Constructs CreateEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEndpointResponse' :: ( { "Endpoint" :: NullOrUndefined (Endpoint) } -> {"Endpoint" :: NullOrUndefined (Endpoint) } ) -> CreateEndpointResponse
-newCreateEndpointResponse'  customize = (CreateEndpointResponse <<< customize) { "Endpoint": (NullOrUndefined Nothing) }
+newCreateEndpointResponse' :: ( { "Endpoint" :: Maybe (Endpoint) } -> {"Endpoint" :: Maybe (Endpoint) } ) -> CreateEndpointResponse
+newCreateEndpointResponse'  customize = (CreateEndpointResponse <<< customize) { "Endpoint": Nothing }
 
 
 
@@ -304,11 +303,11 @@ newCreateEndpointResponse'  customize = (CreateEndpointResponse <<< customize) {
 newtype CreateEventSubscriptionMessage = CreateEventSubscriptionMessage 
   { "SubscriptionName" :: (String)
   , "SnsTopicArn" :: (String)
-  , "SourceType" :: NullOrUndefined (String)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "SourceIds" :: NullOrUndefined (SourceIdsList)
-  , "Enabled" :: NullOrUndefined (BooleanOptional)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "SourceType" :: Maybe (String)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "SourceIds" :: Maybe (SourceIdsList)
+  , "Enabled" :: Maybe (BooleanOptional)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateEventSubscriptionMessage :: Newtype CreateEventSubscriptionMessage _
 derive instance repGenericCreateEventSubscriptionMessage :: Generic CreateEventSubscriptionMessage _
@@ -318,18 +317,18 @@ instance encodeCreateEventSubscriptionMessage :: Encode CreateEventSubscriptionM
 
 -- | Constructs CreateEventSubscriptionMessage from required parameters
 newCreateEventSubscriptionMessage :: String -> String -> CreateEventSubscriptionMessage
-newCreateEventSubscriptionMessage _SnsTopicArn _SubscriptionName = CreateEventSubscriptionMessage { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "SourceIds": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionMessage _SnsTopicArn _SubscriptionName = CreateEventSubscriptionMessage { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "SourceIds": Nothing, "SourceType": Nothing, "Tags": Nothing }
 
 -- | Constructs CreateEventSubscriptionMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEventSubscriptionMessage' :: String -> String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "SourceIds" :: NullOrUndefined (SourceIdsList) , "Enabled" :: NullOrUndefined (BooleanOptional) , "Tags" :: NullOrUndefined (TagList) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "SourceIds" :: NullOrUndefined (SourceIdsList) , "Enabled" :: NullOrUndefined (BooleanOptional) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateEventSubscriptionMessage
-newCreateEventSubscriptionMessage' _SnsTopicArn _SubscriptionName customize = (CreateEventSubscriptionMessage <<< customize) { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "SourceIds": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionMessage' :: String -> String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "SourceIds" :: Maybe (SourceIdsList) , "Enabled" :: Maybe (BooleanOptional) , "Tags" :: Maybe (TagList) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "SourceIds" :: Maybe (SourceIdsList) , "Enabled" :: Maybe (BooleanOptional) , "Tags" :: Maybe (TagList) } ) -> CreateEventSubscriptionMessage
+newCreateEventSubscriptionMessage' _SnsTopicArn _SubscriptionName customize = (CreateEventSubscriptionMessage <<< customize) { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "SourceIds": Nothing, "SourceType": Nothing, "Tags": Nothing }
 
 
 
 -- | <p/>
 newtype CreateEventSubscriptionResponse = CreateEventSubscriptionResponse 
-  { "EventSubscription" :: NullOrUndefined (EventSubscription)
+  { "EventSubscription" :: Maybe (EventSubscription)
   }
 derive instance newtypeCreateEventSubscriptionResponse :: Newtype CreateEventSubscriptionResponse _
 derive instance repGenericCreateEventSubscriptionResponse :: Generic CreateEventSubscriptionResponse _
@@ -339,30 +338,30 @@ instance encodeCreateEventSubscriptionResponse :: Encode CreateEventSubscription
 
 -- | Constructs CreateEventSubscriptionResponse from required parameters
 newCreateEventSubscriptionResponse :: CreateEventSubscriptionResponse
-newCreateEventSubscriptionResponse  = CreateEventSubscriptionResponse { "EventSubscription": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionResponse  = CreateEventSubscriptionResponse { "EventSubscription": Nothing }
 
 -- | Constructs CreateEventSubscriptionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEventSubscriptionResponse' :: ( { "EventSubscription" :: NullOrUndefined (EventSubscription) } -> {"EventSubscription" :: NullOrUndefined (EventSubscription) } ) -> CreateEventSubscriptionResponse
-newCreateEventSubscriptionResponse'  customize = (CreateEventSubscriptionResponse <<< customize) { "EventSubscription": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionResponse' :: ( { "EventSubscription" :: Maybe (EventSubscription) } -> {"EventSubscription" :: Maybe (EventSubscription) } ) -> CreateEventSubscriptionResponse
+newCreateEventSubscriptionResponse'  customize = (CreateEventSubscriptionResponse <<< customize) { "EventSubscription": Nothing }
 
 
 
 -- | <p/>
 newtype CreateReplicationInstanceMessage = CreateReplicationInstanceMessage 
   { "ReplicationInstanceIdentifier" :: (String)
-  , "AllocatedStorage" :: NullOrUndefined (IntegerOptional)
+  , "AllocatedStorage" :: Maybe (IntegerOptional)
   , "ReplicationInstanceClass" :: (String)
-  , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "MultiAZ" :: NullOrUndefined (BooleanOptional)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional)
+  , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList)
+  , "AvailabilityZone" :: Maybe (String)
+  , "ReplicationSubnetGroupIdentifier" :: Maybe (String)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "MultiAZ" :: Maybe (BooleanOptional)
+  , "EngineVersion" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional)
+  , "Tags" :: Maybe (TagList)
+  , "KmsKeyId" :: Maybe (String)
+  , "PubliclyAccessible" :: Maybe (BooleanOptional)
   }
 derive instance newtypeCreateReplicationInstanceMessage :: Newtype CreateReplicationInstanceMessage _
 derive instance repGenericCreateReplicationInstanceMessage :: Generic CreateReplicationInstanceMessage _
@@ -372,18 +371,18 @@ instance encodeCreateReplicationInstanceMessage :: Encode CreateReplicationInsta
 
 -- | Constructs CreateReplicationInstanceMessage from required parameters
 newCreateReplicationInstanceMessage :: String -> String -> CreateReplicationInstanceMessage
-newCreateReplicationInstanceMessage _ReplicationInstanceClass _ReplicationInstanceIdentifier = CreateReplicationInstanceMessage { "ReplicationInstanceClass": _ReplicationInstanceClass, "ReplicationInstanceIdentifier": _ReplicationInstanceIdentifier, "AllocatedStorage": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "ReplicationSubnetGroupIdentifier": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newCreateReplicationInstanceMessage _ReplicationInstanceClass _ReplicationInstanceIdentifier = CreateReplicationInstanceMessage { "ReplicationInstanceClass": _ReplicationInstanceClass, "ReplicationInstanceIdentifier": _ReplicationInstanceIdentifier, "AllocatedStorage": Nothing, "AutoMinorVersionUpgrade": Nothing, "AvailabilityZone": Nothing, "EngineVersion": Nothing, "KmsKeyId": Nothing, "MultiAZ": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "ReplicationSubnetGroupIdentifier": Nothing, "Tags": Nothing, "VpcSecurityGroupIds": Nothing }
 
 -- | Constructs CreateReplicationInstanceMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationInstanceMessage' :: String -> String -> ( { "ReplicationInstanceIdentifier" :: (String) , "AllocatedStorage" :: NullOrUndefined (IntegerOptional) , "ReplicationInstanceClass" :: (String) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "AvailabilityZone" :: NullOrUndefined (String) , "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "MultiAZ" :: NullOrUndefined (BooleanOptional) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "Tags" :: NullOrUndefined (TagList) , "KmsKeyId" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) } -> {"ReplicationInstanceIdentifier" :: (String) , "AllocatedStorage" :: NullOrUndefined (IntegerOptional) , "ReplicationInstanceClass" :: (String) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "AvailabilityZone" :: NullOrUndefined (String) , "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "MultiAZ" :: NullOrUndefined (BooleanOptional) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "Tags" :: NullOrUndefined (TagList) , "KmsKeyId" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) } ) -> CreateReplicationInstanceMessage
-newCreateReplicationInstanceMessage' _ReplicationInstanceClass _ReplicationInstanceIdentifier customize = (CreateReplicationInstanceMessage <<< customize) { "ReplicationInstanceClass": _ReplicationInstanceClass, "ReplicationInstanceIdentifier": _ReplicationInstanceIdentifier, "AllocatedStorage": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "ReplicationSubnetGroupIdentifier": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newCreateReplicationInstanceMessage' :: String -> String -> ( { "ReplicationInstanceIdentifier" :: (String) , "AllocatedStorage" :: Maybe (IntegerOptional) , "ReplicationInstanceClass" :: (String) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "AvailabilityZone" :: Maybe (String) , "ReplicationSubnetGroupIdentifier" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "MultiAZ" :: Maybe (BooleanOptional) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "Tags" :: Maybe (TagList) , "KmsKeyId" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) } -> {"ReplicationInstanceIdentifier" :: (String) , "AllocatedStorage" :: Maybe (IntegerOptional) , "ReplicationInstanceClass" :: (String) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "AvailabilityZone" :: Maybe (String) , "ReplicationSubnetGroupIdentifier" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "MultiAZ" :: Maybe (BooleanOptional) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "Tags" :: Maybe (TagList) , "KmsKeyId" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) } ) -> CreateReplicationInstanceMessage
+newCreateReplicationInstanceMessage' _ReplicationInstanceClass _ReplicationInstanceIdentifier customize = (CreateReplicationInstanceMessage <<< customize) { "ReplicationInstanceClass": _ReplicationInstanceClass, "ReplicationInstanceIdentifier": _ReplicationInstanceIdentifier, "AllocatedStorage": Nothing, "AutoMinorVersionUpgrade": Nothing, "AvailabilityZone": Nothing, "EngineVersion": Nothing, "KmsKeyId": Nothing, "MultiAZ": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "ReplicationSubnetGroupIdentifier": Nothing, "Tags": Nothing, "VpcSecurityGroupIds": Nothing }
 
 
 
 -- | <p/>
 newtype CreateReplicationInstanceResponse = CreateReplicationInstanceResponse 
-  { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance)
+  { "ReplicationInstance" :: Maybe (ReplicationInstance)
   }
 derive instance newtypeCreateReplicationInstanceResponse :: Newtype CreateReplicationInstanceResponse _
 derive instance repGenericCreateReplicationInstanceResponse :: Generic CreateReplicationInstanceResponse _
@@ -393,12 +392,12 @@ instance encodeCreateReplicationInstanceResponse :: Encode CreateReplicationInst
 
 -- | Constructs CreateReplicationInstanceResponse from required parameters
 newCreateReplicationInstanceResponse :: CreateReplicationInstanceResponse
-newCreateReplicationInstanceResponse  = CreateReplicationInstanceResponse { "ReplicationInstance": (NullOrUndefined Nothing) }
+newCreateReplicationInstanceResponse  = CreateReplicationInstanceResponse { "ReplicationInstance": Nothing }
 
 -- | Constructs CreateReplicationInstanceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationInstanceResponse' :: ( { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> {"ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } ) -> CreateReplicationInstanceResponse
-newCreateReplicationInstanceResponse'  customize = (CreateReplicationInstanceResponse <<< customize) { "ReplicationInstance": (NullOrUndefined Nothing) }
+newCreateReplicationInstanceResponse' :: ( { "ReplicationInstance" :: Maybe (ReplicationInstance) } -> {"ReplicationInstance" :: Maybe (ReplicationInstance) } ) -> CreateReplicationInstanceResponse
+newCreateReplicationInstanceResponse'  customize = (CreateReplicationInstanceResponse <<< customize) { "ReplicationInstance": Nothing }
 
 
 
@@ -407,7 +406,7 @@ newtype CreateReplicationSubnetGroupMessage = CreateReplicationSubnetGroupMessag
   { "ReplicationSubnetGroupIdentifier" :: (String)
   , "ReplicationSubnetGroupDescription" :: (String)
   , "SubnetIds" :: (SubnetIdentifierList)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateReplicationSubnetGroupMessage :: Newtype CreateReplicationSubnetGroupMessage _
 derive instance repGenericCreateReplicationSubnetGroupMessage :: Generic CreateReplicationSubnetGroupMessage _
@@ -417,18 +416,18 @@ instance encodeCreateReplicationSubnetGroupMessage :: Encode CreateReplicationSu
 
 -- | Constructs CreateReplicationSubnetGroupMessage from required parameters
 newCreateReplicationSubnetGroupMessage :: String -> String -> SubnetIdentifierList -> CreateReplicationSubnetGroupMessage
-newCreateReplicationSubnetGroupMessage _ReplicationSubnetGroupDescription _ReplicationSubnetGroupIdentifier _SubnetIds = CreateReplicationSubnetGroupMessage { "ReplicationSubnetGroupDescription": _ReplicationSubnetGroupDescription, "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "Tags": (NullOrUndefined Nothing) }
+newCreateReplicationSubnetGroupMessage _ReplicationSubnetGroupDescription _ReplicationSubnetGroupIdentifier _SubnetIds = CreateReplicationSubnetGroupMessage { "ReplicationSubnetGroupDescription": _ReplicationSubnetGroupDescription, "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "Tags": Nothing }
 
 -- | Constructs CreateReplicationSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ( { "ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: NullOrUndefined (TagList) } -> {"ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateReplicationSubnetGroupMessage
-newCreateReplicationSubnetGroupMessage' _ReplicationSubnetGroupDescription _ReplicationSubnetGroupIdentifier _SubnetIds customize = (CreateReplicationSubnetGroupMessage <<< customize) { "ReplicationSubnetGroupDescription": _ReplicationSubnetGroupDescription, "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "Tags": (NullOrUndefined Nothing) }
+newCreateReplicationSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ( { "ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: Maybe (TagList) } -> {"ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: Maybe (TagList) } ) -> CreateReplicationSubnetGroupMessage
+newCreateReplicationSubnetGroupMessage' _ReplicationSubnetGroupDescription _ReplicationSubnetGroupIdentifier _SubnetIds customize = (CreateReplicationSubnetGroupMessage <<< customize) { "ReplicationSubnetGroupDescription": _ReplicationSubnetGroupDescription, "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "Tags": Nothing }
 
 
 
 -- | <p/>
 newtype CreateReplicationSubnetGroupResponse = CreateReplicationSubnetGroupResponse 
-  { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup)
+  { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup)
   }
 derive instance newtypeCreateReplicationSubnetGroupResponse :: Newtype CreateReplicationSubnetGroupResponse _
 derive instance repGenericCreateReplicationSubnetGroupResponse :: Generic CreateReplicationSubnetGroupResponse _
@@ -438,12 +437,12 @@ instance encodeCreateReplicationSubnetGroupResponse :: Encode CreateReplicationS
 
 -- | Constructs CreateReplicationSubnetGroupResponse from required parameters
 newCreateReplicationSubnetGroupResponse :: CreateReplicationSubnetGroupResponse
-newCreateReplicationSubnetGroupResponse  = CreateReplicationSubnetGroupResponse { "ReplicationSubnetGroup": (NullOrUndefined Nothing) }
+newCreateReplicationSubnetGroupResponse  = CreateReplicationSubnetGroupResponse { "ReplicationSubnetGroup": Nothing }
 
 -- | Constructs CreateReplicationSubnetGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationSubnetGroupResponse' :: ( { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) } -> {"ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) } ) -> CreateReplicationSubnetGroupResponse
-newCreateReplicationSubnetGroupResponse'  customize = (CreateReplicationSubnetGroupResponse <<< customize) { "ReplicationSubnetGroup": (NullOrUndefined Nothing) }
+newCreateReplicationSubnetGroupResponse' :: ( { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) } -> {"ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) } ) -> CreateReplicationSubnetGroupResponse
+newCreateReplicationSubnetGroupResponse'  customize = (CreateReplicationSubnetGroupResponse <<< customize) { "ReplicationSubnetGroup": Nothing }
 
 
 
@@ -455,9 +454,9 @@ newtype CreateReplicationTaskMessage = CreateReplicationTaskMessage
   , "ReplicationInstanceArn" :: (String)
   , "MigrationType" :: (MigrationTypeValue)
   , "TableMappings" :: (String)
-  , "ReplicationTaskSettings" :: NullOrUndefined (String)
-  , "CdcStartTime" :: NullOrUndefined (TStamp)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "ReplicationTaskSettings" :: Maybe (String)
+  , "CdcStartTime" :: Maybe (TStamp)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateReplicationTaskMessage :: Newtype CreateReplicationTaskMessage _
 derive instance repGenericCreateReplicationTaskMessage :: Generic CreateReplicationTaskMessage _
@@ -467,18 +466,18 @@ instance encodeCreateReplicationTaskMessage :: Encode CreateReplicationTaskMessa
 
 -- | Constructs CreateReplicationTaskMessage from required parameters
 newCreateReplicationTaskMessage :: MigrationTypeValue -> String -> String -> String -> String -> String -> CreateReplicationTaskMessage
-newCreateReplicationTaskMessage _MigrationType _ReplicationInstanceArn _ReplicationTaskIdentifier _SourceEndpointArn _TableMappings _TargetEndpointArn = CreateReplicationTaskMessage { "MigrationType": _MigrationType, "ReplicationInstanceArn": _ReplicationInstanceArn, "ReplicationTaskIdentifier": _ReplicationTaskIdentifier, "SourceEndpointArn": _SourceEndpointArn, "TableMappings": _TableMappings, "TargetEndpointArn": _TargetEndpointArn, "CdcStartTime": (NullOrUndefined Nothing), "ReplicationTaskSettings": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateReplicationTaskMessage _MigrationType _ReplicationInstanceArn _ReplicationTaskIdentifier _SourceEndpointArn _TableMappings _TargetEndpointArn = CreateReplicationTaskMessage { "MigrationType": _MigrationType, "ReplicationInstanceArn": _ReplicationInstanceArn, "ReplicationTaskIdentifier": _ReplicationTaskIdentifier, "SourceEndpointArn": _SourceEndpointArn, "TableMappings": _TableMappings, "TargetEndpointArn": _TargetEndpointArn, "CdcStartTime": Nothing, "ReplicationTaskSettings": Nothing, "Tags": Nothing }
 
 -- | Constructs CreateReplicationTaskMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationTaskMessage' :: MigrationTypeValue -> String -> String -> String -> String -> String -> ( { "ReplicationTaskIdentifier" :: (String) , "SourceEndpointArn" :: (String) , "TargetEndpointArn" :: (String) , "ReplicationInstanceArn" :: (String) , "MigrationType" :: (MigrationTypeValue) , "TableMappings" :: (String) , "ReplicationTaskSettings" :: NullOrUndefined (String) , "CdcStartTime" :: NullOrUndefined (TStamp) , "Tags" :: NullOrUndefined (TagList) } -> {"ReplicationTaskIdentifier" :: (String) , "SourceEndpointArn" :: (String) , "TargetEndpointArn" :: (String) , "ReplicationInstanceArn" :: (String) , "MigrationType" :: (MigrationTypeValue) , "TableMappings" :: (String) , "ReplicationTaskSettings" :: NullOrUndefined (String) , "CdcStartTime" :: NullOrUndefined (TStamp) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateReplicationTaskMessage
-newCreateReplicationTaskMessage' _MigrationType _ReplicationInstanceArn _ReplicationTaskIdentifier _SourceEndpointArn _TableMappings _TargetEndpointArn customize = (CreateReplicationTaskMessage <<< customize) { "MigrationType": _MigrationType, "ReplicationInstanceArn": _ReplicationInstanceArn, "ReplicationTaskIdentifier": _ReplicationTaskIdentifier, "SourceEndpointArn": _SourceEndpointArn, "TableMappings": _TableMappings, "TargetEndpointArn": _TargetEndpointArn, "CdcStartTime": (NullOrUndefined Nothing), "ReplicationTaskSettings": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateReplicationTaskMessage' :: MigrationTypeValue -> String -> String -> String -> String -> String -> ( { "ReplicationTaskIdentifier" :: (String) , "SourceEndpointArn" :: (String) , "TargetEndpointArn" :: (String) , "ReplicationInstanceArn" :: (String) , "MigrationType" :: (MigrationTypeValue) , "TableMappings" :: (String) , "ReplicationTaskSettings" :: Maybe (String) , "CdcStartTime" :: Maybe (TStamp) , "Tags" :: Maybe (TagList) } -> {"ReplicationTaskIdentifier" :: (String) , "SourceEndpointArn" :: (String) , "TargetEndpointArn" :: (String) , "ReplicationInstanceArn" :: (String) , "MigrationType" :: (MigrationTypeValue) , "TableMappings" :: (String) , "ReplicationTaskSettings" :: Maybe (String) , "CdcStartTime" :: Maybe (TStamp) , "Tags" :: Maybe (TagList) } ) -> CreateReplicationTaskMessage
+newCreateReplicationTaskMessage' _MigrationType _ReplicationInstanceArn _ReplicationTaskIdentifier _SourceEndpointArn _TableMappings _TargetEndpointArn customize = (CreateReplicationTaskMessage <<< customize) { "MigrationType": _MigrationType, "ReplicationInstanceArn": _ReplicationInstanceArn, "ReplicationTaskIdentifier": _ReplicationTaskIdentifier, "SourceEndpointArn": _SourceEndpointArn, "TableMappings": _TableMappings, "TargetEndpointArn": _TargetEndpointArn, "CdcStartTime": Nothing, "ReplicationTaskSettings": Nothing, "Tags": Nothing }
 
 
 
 -- | <p/>
 newtype CreateReplicationTaskResponse = CreateReplicationTaskResponse 
-  { "ReplicationTask" :: NullOrUndefined (ReplicationTask)
+  { "ReplicationTask" :: Maybe (ReplicationTask)
   }
 derive instance newtypeCreateReplicationTaskResponse :: Newtype CreateReplicationTaskResponse _
 derive instance repGenericCreateReplicationTaskResponse :: Generic CreateReplicationTaskResponse _
@@ -488,12 +487,12 @@ instance encodeCreateReplicationTaskResponse :: Encode CreateReplicationTaskResp
 
 -- | Constructs CreateReplicationTaskResponse from required parameters
 newCreateReplicationTaskResponse :: CreateReplicationTaskResponse
-newCreateReplicationTaskResponse  = CreateReplicationTaskResponse { "ReplicationTask": (NullOrUndefined Nothing) }
+newCreateReplicationTaskResponse  = CreateReplicationTaskResponse { "ReplicationTask": Nothing }
 
 -- | Constructs CreateReplicationTaskResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateReplicationTaskResponse' :: ( { "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> {"ReplicationTask" :: NullOrUndefined (ReplicationTask) } ) -> CreateReplicationTaskResponse
-newCreateReplicationTaskResponse'  customize = (CreateReplicationTaskResponse <<< customize) { "ReplicationTask": (NullOrUndefined Nothing) }
+newCreateReplicationTaskResponse' :: ( { "ReplicationTask" :: Maybe (ReplicationTask) } -> {"ReplicationTask" :: Maybe (ReplicationTask) } ) -> CreateReplicationTaskResponse
+newCreateReplicationTaskResponse'  customize = (CreateReplicationTaskResponse <<< customize) { "ReplicationTask": Nothing }
 
 
 
@@ -518,7 +517,7 @@ newDeleteCertificateMessage' _CertificateArn customize = (DeleteCertificateMessa
 
 
 newtype DeleteCertificateResponse = DeleteCertificateResponse 
-  { "Certificate" :: NullOrUndefined (Certificate)
+  { "Certificate" :: Maybe (Certificate)
   }
 derive instance newtypeDeleteCertificateResponse :: Newtype DeleteCertificateResponse _
 derive instance repGenericDeleteCertificateResponse :: Generic DeleteCertificateResponse _
@@ -528,12 +527,12 @@ instance encodeDeleteCertificateResponse :: Encode DeleteCertificateResponse whe
 
 -- | Constructs DeleteCertificateResponse from required parameters
 newDeleteCertificateResponse :: DeleteCertificateResponse
-newDeleteCertificateResponse  = DeleteCertificateResponse { "Certificate": (NullOrUndefined Nothing) }
+newDeleteCertificateResponse  = DeleteCertificateResponse { "Certificate": Nothing }
 
 -- | Constructs DeleteCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteCertificateResponse' :: ( { "Certificate" :: NullOrUndefined (Certificate) } -> {"Certificate" :: NullOrUndefined (Certificate) } ) -> DeleteCertificateResponse
-newDeleteCertificateResponse'  customize = (DeleteCertificateResponse <<< customize) { "Certificate": (NullOrUndefined Nothing) }
+newDeleteCertificateResponse' :: ( { "Certificate" :: Maybe (Certificate) } -> {"Certificate" :: Maybe (Certificate) } ) -> DeleteCertificateResponse
+newDeleteCertificateResponse'  customize = (DeleteCertificateResponse <<< customize) { "Certificate": Nothing }
 
 
 
@@ -560,7 +559,7 @@ newDeleteEndpointMessage' _EndpointArn customize = (DeleteEndpointMessage <<< cu
 
 -- | <p/>
 newtype DeleteEndpointResponse = DeleteEndpointResponse 
-  { "Endpoint" :: NullOrUndefined (Endpoint)
+  { "Endpoint" :: Maybe (Endpoint)
   }
 derive instance newtypeDeleteEndpointResponse :: Newtype DeleteEndpointResponse _
 derive instance repGenericDeleteEndpointResponse :: Generic DeleteEndpointResponse _
@@ -570,12 +569,12 @@ instance encodeDeleteEndpointResponse :: Encode DeleteEndpointResponse where enc
 
 -- | Constructs DeleteEndpointResponse from required parameters
 newDeleteEndpointResponse :: DeleteEndpointResponse
-newDeleteEndpointResponse  = DeleteEndpointResponse { "Endpoint": (NullOrUndefined Nothing) }
+newDeleteEndpointResponse  = DeleteEndpointResponse { "Endpoint": Nothing }
 
 -- | Constructs DeleteEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteEndpointResponse' :: ( { "Endpoint" :: NullOrUndefined (Endpoint) } -> {"Endpoint" :: NullOrUndefined (Endpoint) } ) -> DeleteEndpointResponse
-newDeleteEndpointResponse'  customize = (DeleteEndpointResponse <<< customize) { "Endpoint": (NullOrUndefined Nothing) }
+newDeleteEndpointResponse' :: ( { "Endpoint" :: Maybe (Endpoint) } -> {"Endpoint" :: Maybe (Endpoint) } ) -> DeleteEndpointResponse
+newDeleteEndpointResponse'  customize = (DeleteEndpointResponse <<< customize) { "Endpoint": Nothing }
 
 
 
@@ -602,7 +601,7 @@ newDeleteEventSubscriptionMessage' _SubscriptionName customize = (DeleteEventSub
 
 -- | <p/>
 newtype DeleteEventSubscriptionResponse = DeleteEventSubscriptionResponse 
-  { "EventSubscription" :: NullOrUndefined (EventSubscription)
+  { "EventSubscription" :: Maybe (EventSubscription)
   }
 derive instance newtypeDeleteEventSubscriptionResponse :: Newtype DeleteEventSubscriptionResponse _
 derive instance repGenericDeleteEventSubscriptionResponse :: Generic DeleteEventSubscriptionResponse _
@@ -612,12 +611,12 @@ instance encodeDeleteEventSubscriptionResponse :: Encode DeleteEventSubscription
 
 -- | Constructs DeleteEventSubscriptionResponse from required parameters
 newDeleteEventSubscriptionResponse :: DeleteEventSubscriptionResponse
-newDeleteEventSubscriptionResponse  = DeleteEventSubscriptionResponse { "EventSubscription": (NullOrUndefined Nothing) }
+newDeleteEventSubscriptionResponse  = DeleteEventSubscriptionResponse { "EventSubscription": Nothing }
 
 -- | Constructs DeleteEventSubscriptionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteEventSubscriptionResponse' :: ( { "EventSubscription" :: NullOrUndefined (EventSubscription) } -> {"EventSubscription" :: NullOrUndefined (EventSubscription) } ) -> DeleteEventSubscriptionResponse
-newDeleteEventSubscriptionResponse'  customize = (DeleteEventSubscriptionResponse <<< customize) { "EventSubscription": (NullOrUndefined Nothing) }
+newDeleteEventSubscriptionResponse' :: ( { "EventSubscription" :: Maybe (EventSubscription) } -> {"EventSubscription" :: Maybe (EventSubscription) } ) -> DeleteEventSubscriptionResponse
+newDeleteEventSubscriptionResponse'  customize = (DeleteEventSubscriptionResponse <<< customize) { "EventSubscription": Nothing }
 
 
 
@@ -644,7 +643,7 @@ newDeleteReplicationInstanceMessage' _ReplicationInstanceArn customize = (Delete
 
 -- | <p/>
 newtype DeleteReplicationInstanceResponse = DeleteReplicationInstanceResponse 
-  { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance)
+  { "ReplicationInstance" :: Maybe (ReplicationInstance)
   }
 derive instance newtypeDeleteReplicationInstanceResponse :: Newtype DeleteReplicationInstanceResponse _
 derive instance repGenericDeleteReplicationInstanceResponse :: Generic DeleteReplicationInstanceResponse _
@@ -654,12 +653,12 @@ instance encodeDeleteReplicationInstanceResponse :: Encode DeleteReplicationInst
 
 -- | Constructs DeleteReplicationInstanceResponse from required parameters
 newDeleteReplicationInstanceResponse :: DeleteReplicationInstanceResponse
-newDeleteReplicationInstanceResponse  = DeleteReplicationInstanceResponse { "ReplicationInstance": (NullOrUndefined Nothing) }
+newDeleteReplicationInstanceResponse  = DeleteReplicationInstanceResponse { "ReplicationInstance": Nothing }
 
 -- | Constructs DeleteReplicationInstanceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteReplicationInstanceResponse' :: ( { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> {"ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } ) -> DeleteReplicationInstanceResponse
-newDeleteReplicationInstanceResponse'  customize = (DeleteReplicationInstanceResponse <<< customize) { "ReplicationInstance": (NullOrUndefined Nothing) }
+newDeleteReplicationInstanceResponse' :: ( { "ReplicationInstance" :: Maybe (ReplicationInstance) } -> {"ReplicationInstance" :: Maybe (ReplicationInstance) } ) -> DeleteReplicationInstanceResponse
+newDeleteReplicationInstanceResponse'  customize = (DeleteReplicationInstanceResponse <<< customize) { "ReplicationInstance": Nothing }
 
 
 
@@ -717,7 +716,7 @@ newDeleteReplicationTaskMessage' _ReplicationTaskArn customize = (DeleteReplicat
 
 -- | <p/>
 newtype DeleteReplicationTaskResponse = DeleteReplicationTaskResponse 
-  { "ReplicationTask" :: NullOrUndefined (ReplicationTask)
+  { "ReplicationTask" :: Maybe (ReplicationTask)
   }
 derive instance newtypeDeleteReplicationTaskResponse :: Newtype DeleteReplicationTaskResponse _
 derive instance repGenericDeleteReplicationTaskResponse :: Generic DeleteReplicationTaskResponse _
@@ -727,12 +726,12 @@ instance encodeDeleteReplicationTaskResponse :: Encode DeleteReplicationTaskResp
 
 -- | Constructs DeleteReplicationTaskResponse from required parameters
 newDeleteReplicationTaskResponse :: DeleteReplicationTaskResponse
-newDeleteReplicationTaskResponse  = DeleteReplicationTaskResponse { "ReplicationTask": (NullOrUndefined Nothing) }
+newDeleteReplicationTaskResponse  = DeleteReplicationTaskResponse { "ReplicationTask": Nothing }
 
 -- | Constructs DeleteReplicationTaskResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteReplicationTaskResponse' :: ( { "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> {"ReplicationTask" :: NullOrUndefined (ReplicationTask) } ) -> DeleteReplicationTaskResponse
-newDeleteReplicationTaskResponse'  customize = (DeleteReplicationTaskResponse <<< customize) { "ReplicationTask": (NullOrUndefined Nothing) }
+newDeleteReplicationTaskResponse' :: ( { "ReplicationTask" :: Maybe (ReplicationTask) } -> {"ReplicationTask" :: Maybe (ReplicationTask) } ) -> DeleteReplicationTaskResponse
+newDeleteReplicationTaskResponse'  customize = (DeleteReplicationTaskResponse <<< customize) { "ReplicationTask": Nothing }
 
 
 
@@ -748,7 +747,7 @@ instance encodeDescribeAccountAttributesMessage :: Encode DescribeAccountAttribu
 
 -- | <p/>
 newtype DescribeAccountAttributesResponse = DescribeAccountAttributesResponse 
-  { "AccountQuotas" :: NullOrUndefined (AccountQuotaList)
+  { "AccountQuotas" :: Maybe (AccountQuotaList)
   }
 derive instance newtypeDescribeAccountAttributesResponse :: Newtype DescribeAccountAttributesResponse _
 derive instance repGenericDescribeAccountAttributesResponse :: Generic DescribeAccountAttributesResponse _
@@ -758,19 +757,19 @@ instance encodeDescribeAccountAttributesResponse :: Encode DescribeAccountAttrib
 
 -- | Constructs DescribeAccountAttributesResponse from required parameters
 newDescribeAccountAttributesResponse :: DescribeAccountAttributesResponse
-newDescribeAccountAttributesResponse  = DescribeAccountAttributesResponse { "AccountQuotas": (NullOrUndefined Nothing) }
+newDescribeAccountAttributesResponse  = DescribeAccountAttributesResponse { "AccountQuotas": Nothing }
 
 -- | Constructs DescribeAccountAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAccountAttributesResponse' :: ( { "AccountQuotas" :: NullOrUndefined (AccountQuotaList) } -> {"AccountQuotas" :: NullOrUndefined (AccountQuotaList) } ) -> DescribeAccountAttributesResponse
-newDescribeAccountAttributesResponse'  customize = (DescribeAccountAttributesResponse <<< customize) { "AccountQuotas": (NullOrUndefined Nothing) }
+newDescribeAccountAttributesResponse' :: ( { "AccountQuotas" :: Maybe (AccountQuotaList) } -> {"AccountQuotas" :: Maybe (AccountQuotaList) } ) -> DescribeAccountAttributesResponse
+newDescribeAccountAttributesResponse'  customize = (DescribeAccountAttributesResponse <<< customize) { "AccountQuotas": Nothing }
 
 
 
 newtype DescribeCertificatesMessage = DescribeCertificatesMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeCertificatesMessage :: Newtype DescribeCertificatesMessage _
 derive instance repGenericDescribeCertificatesMessage :: Generic DescribeCertificatesMessage _
@@ -780,18 +779,18 @@ instance encodeDescribeCertificatesMessage :: Encode DescribeCertificatesMessage
 
 -- | Constructs DescribeCertificatesMessage from required parameters
 newDescribeCertificatesMessage :: DescribeCertificatesMessage
-newDescribeCertificatesMessage  = DescribeCertificatesMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCertificatesMessage  = DescribeCertificatesMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeCertificatesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCertificatesMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeCertificatesMessage
-newDescribeCertificatesMessage'  customize = (DescribeCertificatesMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeCertificatesMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeCertificatesMessage
+newDescribeCertificatesMessage'  customize = (DescribeCertificatesMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 newtype DescribeCertificatesResponse = DescribeCertificatesResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "Certificates" :: NullOrUndefined (CertificateList)
+  { "Marker" :: Maybe (String)
+  , "Certificates" :: Maybe (CertificateList)
   }
 derive instance newtypeDescribeCertificatesResponse :: Newtype DescribeCertificatesResponse _
 derive instance repGenericDescribeCertificatesResponse :: Generic DescribeCertificatesResponse _
@@ -801,20 +800,20 @@ instance encodeDescribeCertificatesResponse :: Encode DescribeCertificatesRespon
 
 -- | Constructs DescribeCertificatesResponse from required parameters
 newDescribeCertificatesResponse :: DescribeCertificatesResponse
-newDescribeCertificatesResponse  = DescribeCertificatesResponse { "Certificates": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeCertificatesResponse  = DescribeCertificatesResponse { "Certificates": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeCertificatesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCertificatesResponse' :: ( { "Marker" :: NullOrUndefined (String) , "Certificates" :: NullOrUndefined (CertificateList) } -> {"Marker" :: NullOrUndefined (String) , "Certificates" :: NullOrUndefined (CertificateList) } ) -> DescribeCertificatesResponse
-newDescribeCertificatesResponse'  customize = (DescribeCertificatesResponse <<< customize) { "Certificates": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeCertificatesResponse' :: ( { "Marker" :: Maybe (String) , "Certificates" :: Maybe (CertificateList) } -> {"Marker" :: Maybe (String) , "Certificates" :: Maybe (CertificateList) } ) -> DescribeCertificatesResponse
+newDescribeCertificatesResponse'  customize = (DescribeCertificatesResponse <<< customize) { "Certificates": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeConnectionsMessage = DescribeConnectionsMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeConnectionsMessage :: Newtype DescribeConnectionsMessage _
 derive instance repGenericDescribeConnectionsMessage :: Generic DescribeConnectionsMessage _
@@ -824,19 +823,19 @@ instance encodeDescribeConnectionsMessage :: Encode DescribeConnectionsMessage w
 
 -- | Constructs DescribeConnectionsMessage from required parameters
 newDescribeConnectionsMessage :: DescribeConnectionsMessage
-newDescribeConnectionsMessage  = DescribeConnectionsMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeConnectionsMessage  = DescribeConnectionsMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeConnectionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConnectionsMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeConnectionsMessage
-newDescribeConnectionsMessage'  customize = (DescribeConnectionsMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeConnectionsMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeConnectionsMessage
+newDescribeConnectionsMessage'  customize = (DescribeConnectionsMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeConnectionsResponse = DescribeConnectionsResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "Connections" :: NullOrUndefined (ConnectionList)
+  { "Marker" :: Maybe (String)
+  , "Connections" :: Maybe (ConnectionList)
   }
 derive instance newtypeDescribeConnectionsResponse :: Newtype DescribeConnectionsResponse _
 derive instance repGenericDescribeConnectionsResponse :: Generic DescribeConnectionsResponse _
@@ -846,20 +845,20 @@ instance encodeDescribeConnectionsResponse :: Encode DescribeConnectionsResponse
 
 -- | Constructs DescribeConnectionsResponse from required parameters
 newDescribeConnectionsResponse :: DescribeConnectionsResponse
-newDescribeConnectionsResponse  = DescribeConnectionsResponse { "Connections": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeConnectionsResponse  = DescribeConnectionsResponse { "Connections": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeConnectionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConnectionsResponse' :: ( { "Marker" :: NullOrUndefined (String) , "Connections" :: NullOrUndefined (ConnectionList) } -> {"Marker" :: NullOrUndefined (String) , "Connections" :: NullOrUndefined (ConnectionList) } ) -> DescribeConnectionsResponse
-newDescribeConnectionsResponse'  customize = (DescribeConnectionsResponse <<< customize) { "Connections": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeConnectionsResponse' :: ( { "Marker" :: Maybe (String) , "Connections" :: Maybe (ConnectionList) } -> {"Marker" :: Maybe (String) , "Connections" :: Maybe (ConnectionList) } ) -> DescribeConnectionsResponse
+newDescribeConnectionsResponse'  customize = (DescribeConnectionsResponse <<< customize) { "Connections": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEndpointTypesMessage = DescribeEndpointTypesMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEndpointTypesMessage :: Newtype DescribeEndpointTypesMessage _
 derive instance repGenericDescribeEndpointTypesMessage :: Generic DescribeEndpointTypesMessage _
@@ -869,19 +868,19 @@ instance encodeDescribeEndpointTypesMessage :: Encode DescribeEndpointTypesMessa
 
 -- | Constructs DescribeEndpointTypesMessage from required parameters
 newDescribeEndpointTypesMessage :: DescribeEndpointTypesMessage
-newDescribeEndpointTypesMessage  = DescribeEndpointTypesMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeEndpointTypesMessage  = DescribeEndpointTypesMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeEndpointTypesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEndpointTypesMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEndpointTypesMessage
-newDescribeEndpointTypesMessage'  customize = (DescribeEndpointTypesMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeEndpointTypesMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEndpointTypesMessage
+newDescribeEndpointTypesMessage'  customize = (DescribeEndpointTypesMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEndpointTypesResponse = DescribeEndpointTypesResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "SupportedEndpointTypes" :: NullOrUndefined (SupportedEndpointTypeList)
+  { "Marker" :: Maybe (String)
+  , "SupportedEndpointTypes" :: Maybe (SupportedEndpointTypeList)
   }
 derive instance newtypeDescribeEndpointTypesResponse :: Newtype DescribeEndpointTypesResponse _
 derive instance repGenericDescribeEndpointTypesResponse :: Generic DescribeEndpointTypesResponse _
@@ -891,20 +890,20 @@ instance encodeDescribeEndpointTypesResponse :: Encode DescribeEndpointTypesResp
 
 -- | Constructs DescribeEndpointTypesResponse from required parameters
 newDescribeEndpointTypesResponse :: DescribeEndpointTypesResponse
-newDescribeEndpointTypesResponse  = DescribeEndpointTypesResponse { "Marker": (NullOrUndefined Nothing), "SupportedEndpointTypes": (NullOrUndefined Nothing) }
+newDescribeEndpointTypesResponse  = DescribeEndpointTypesResponse { "Marker": Nothing, "SupportedEndpointTypes": Nothing }
 
 -- | Constructs DescribeEndpointTypesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEndpointTypesResponse' :: ( { "Marker" :: NullOrUndefined (String) , "SupportedEndpointTypes" :: NullOrUndefined (SupportedEndpointTypeList) } -> {"Marker" :: NullOrUndefined (String) , "SupportedEndpointTypes" :: NullOrUndefined (SupportedEndpointTypeList) } ) -> DescribeEndpointTypesResponse
-newDescribeEndpointTypesResponse'  customize = (DescribeEndpointTypesResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "SupportedEndpointTypes": (NullOrUndefined Nothing) }
+newDescribeEndpointTypesResponse' :: ( { "Marker" :: Maybe (String) , "SupportedEndpointTypes" :: Maybe (SupportedEndpointTypeList) } -> {"Marker" :: Maybe (String) , "SupportedEndpointTypes" :: Maybe (SupportedEndpointTypeList) } ) -> DescribeEndpointTypesResponse
+newDescribeEndpointTypesResponse'  customize = (DescribeEndpointTypesResponse <<< customize) { "Marker": Nothing, "SupportedEndpointTypes": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEndpointsMessage = DescribeEndpointsMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEndpointsMessage :: Newtype DescribeEndpointsMessage _
 derive instance repGenericDescribeEndpointsMessage :: Generic DescribeEndpointsMessage _
@@ -914,19 +913,19 @@ instance encodeDescribeEndpointsMessage :: Encode DescribeEndpointsMessage where
 
 -- | Constructs DescribeEndpointsMessage from required parameters
 newDescribeEndpointsMessage :: DescribeEndpointsMessage
-newDescribeEndpointsMessage  = DescribeEndpointsMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeEndpointsMessage  = DescribeEndpointsMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeEndpointsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEndpointsMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEndpointsMessage
-newDescribeEndpointsMessage'  customize = (DescribeEndpointsMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeEndpointsMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEndpointsMessage
+newDescribeEndpointsMessage'  customize = (DescribeEndpointsMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEndpointsResponse = DescribeEndpointsResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "Endpoints" :: NullOrUndefined (EndpointList)
+  { "Marker" :: Maybe (String)
+  , "Endpoints" :: Maybe (EndpointList)
   }
 derive instance newtypeDescribeEndpointsResponse :: Newtype DescribeEndpointsResponse _
 derive instance repGenericDescribeEndpointsResponse :: Generic DescribeEndpointsResponse _
@@ -936,19 +935,19 @@ instance encodeDescribeEndpointsResponse :: Encode DescribeEndpointsResponse whe
 
 -- | Constructs DescribeEndpointsResponse from required parameters
 newDescribeEndpointsResponse :: DescribeEndpointsResponse
-newDescribeEndpointsResponse  = DescribeEndpointsResponse { "Endpoints": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeEndpointsResponse  = DescribeEndpointsResponse { "Endpoints": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeEndpointsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEndpointsResponse' :: ( { "Marker" :: NullOrUndefined (String) , "Endpoints" :: NullOrUndefined (EndpointList) } -> {"Marker" :: NullOrUndefined (String) , "Endpoints" :: NullOrUndefined (EndpointList) } ) -> DescribeEndpointsResponse
-newDescribeEndpointsResponse'  customize = (DescribeEndpointsResponse <<< customize) { "Endpoints": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeEndpointsResponse' :: ( { "Marker" :: Maybe (String) , "Endpoints" :: Maybe (EndpointList) } -> {"Marker" :: Maybe (String) , "Endpoints" :: Maybe (EndpointList) } ) -> DescribeEndpointsResponse
+newDescribeEndpointsResponse'  customize = (DescribeEndpointsResponse <<< customize) { "Endpoints": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventCategoriesMessage = DescribeEventCategoriesMessage 
-  { "SourceType" :: NullOrUndefined (String)
-  , "Filters" :: NullOrUndefined (FilterList)
+  { "SourceType" :: Maybe (String)
+  , "Filters" :: Maybe (FilterList)
   }
 derive instance newtypeDescribeEventCategoriesMessage :: Newtype DescribeEventCategoriesMessage _
 derive instance repGenericDescribeEventCategoriesMessage :: Generic DescribeEventCategoriesMessage _
@@ -958,18 +957,18 @@ instance encodeDescribeEventCategoriesMessage :: Encode DescribeEventCategoriesM
 
 -- | Constructs DescribeEventCategoriesMessage from required parameters
 newDescribeEventCategoriesMessage :: DescribeEventCategoriesMessage
-newDescribeEventCategoriesMessage  = DescribeEventCategoriesMessage { "Filters": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newDescribeEventCategoriesMessage  = DescribeEventCategoriesMessage { "Filters": Nothing, "SourceType": Nothing }
 
 -- | Constructs DescribeEventCategoriesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventCategoriesMessage' :: ( { "SourceType" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (FilterList) } -> {"SourceType" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (FilterList) } ) -> DescribeEventCategoriesMessage
-newDescribeEventCategoriesMessage'  customize = (DescribeEventCategoriesMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newDescribeEventCategoriesMessage' :: ( { "SourceType" :: Maybe (String) , "Filters" :: Maybe (FilterList) } -> {"SourceType" :: Maybe (String) , "Filters" :: Maybe (FilterList) } ) -> DescribeEventCategoriesMessage
+newDescribeEventCategoriesMessage'  customize = (DescribeEventCategoriesMessage <<< customize) { "Filters": Nothing, "SourceType": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventCategoriesResponse = DescribeEventCategoriesResponse 
-  { "EventCategoryGroupList" :: NullOrUndefined (EventCategoryGroupList)
+  { "EventCategoryGroupList" :: Maybe (EventCategoryGroupList)
   }
 derive instance newtypeDescribeEventCategoriesResponse :: Newtype DescribeEventCategoriesResponse _
 derive instance repGenericDescribeEventCategoriesResponse :: Generic DescribeEventCategoriesResponse _
@@ -979,21 +978,21 @@ instance encodeDescribeEventCategoriesResponse :: Encode DescribeEventCategories
 
 -- | Constructs DescribeEventCategoriesResponse from required parameters
 newDescribeEventCategoriesResponse :: DescribeEventCategoriesResponse
-newDescribeEventCategoriesResponse  = DescribeEventCategoriesResponse { "EventCategoryGroupList": (NullOrUndefined Nothing) }
+newDescribeEventCategoriesResponse  = DescribeEventCategoriesResponse { "EventCategoryGroupList": Nothing }
 
 -- | Constructs DescribeEventCategoriesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventCategoriesResponse' :: ( { "EventCategoryGroupList" :: NullOrUndefined (EventCategoryGroupList) } -> {"EventCategoryGroupList" :: NullOrUndefined (EventCategoryGroupList) } ) -> DescribeEventCategoriesResponse
-newDescribeEventCategoriesResponse'  customize = (DescribeEventCategoriesResponse <<< customize) { "EventCategoryGroupList": (NullOrUndefined Nothing) }
+newDescribeEventCategoriesResponse' :: ( { "EventCategoryGroupList" :: Maybe (EventCategoryGroupList) } -> {"EventCategoryGroupList" :: Maybe (EventCategoryGroupList) } ) -> DescribeEventCategoriesResponse
+newDescribeEventCategoriesResponse'  customize = (DescribeEventCategoriesResponse <<< customize) { "EventCategoryGroupList": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventSubscriptionsMessage = DescribeEventSubscriptionsMessage 
-  { "SubscriptionName" :: NullOrUndefined (String)
-  , "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "SubscriptionName" :: Maybe (String)
+  , "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEventSubscriptionsMessage :: Newtype DescribeEventSubscriptionsMessage _
 derive instance repGenericDescribeEventSubscriptionsMessage :: Generic DescribeEventSubscriptionsMessage _
@@ -1003,19 +1002,19 @@ instance encodeDescribeEventSubscriptionsMessage :: Encode DescribeEventSubscrip
 
 -- | Constructs DescribeEventSubscriptionsMessage from required parameters
 newDescribeEventSubscriptionsMessage :: DescribeEventSubscriptionsMessage
-newDescribeEventSubscriptionsMessage  = DescribeEventSubscriptionsMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SubscriptionName": (NullOrUndefined Nothing) }
+newDescribeEventSubscriptionsMessage  = DescribeEventSubscriptionsMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SubscriptionName": Nothing }
 
 -- | Constructs DescribeEventSubscriptionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventSubscriptionsMessage' :: ( { "SubscriptionName" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"SubscriptionName" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEventSubscriptionsMessage
-newDescribeEventSubscriptionsMessage'  customize = (DescribeEventSubscriptionsMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SubscriptionName": (NullOrUndefined Nothing) }
+newDescribeEventSubscriptionsMessage' :: ( { "SubscriptionName" :: Maybe (String) , "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"SubscriptionName" :: Maybe (String) , "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEventSubscriptionsMessage
+newDescribeEventSubscriptionsMessage'  customize = (DescribeEventSubscriptionsMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SubscriptionName": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventSubscriptionsResponse = DescribeEventSubscriptionsResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList)
+  { "Marker" :: Maybe (String)
+  , "EventSubscriptionsList" :: Maybe (EventSubscriptionsList)
   }
 derive instance newtypeDescribeEventSubscriptionsResponse :: Newtype DescribeEventSubscriptionsResponse _
 derive instance repGenericDescribeEventSubscriptionsResponse :: Generic DescribeEventSubscriptionsResponse _
@@ -1025,26 +1024,26 @@ instance encodeDescribeEventSubscriptionsResponse :: Encode DescribeEventSubscri
 
 -- | Constructs DescribeEventSubscriptionsResponse from required parameters
 newDescribeEventSubscriptionsResponse :: DescribeEventSubscriptionsResponse
-newDescribeEventSubscriptionsResponse  = DescribeEventSubscriptionsResponse { "EventSubscriptionsList": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeEventSubscriptionsResponse  = DescribeEventSubscriptionsResponse { "EventSubscriptionsList": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeEventSubscriptionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventSubscriptionsResponse' :: ( { "Marker" :: NullOrUndefined (String) , "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) } -> {"Marker" :: NullOrUndefined (String) , "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) } ) -> DescribeEventSubscriptionsResponse
-newDescribeEventSubscriptionsResponse'  customize = (DescribeEventSubscriptionsResponse <<< customize) { "EventSubscriptionsList": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeEventSubscriptionsResponse' :: ( { "Marker" :: Maybe (String) , "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) } -> {"Marker" :: Maybe (String) , "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) } ) -> DescribeEventSubscriptionsResponse
+newDescribeEventSubscriptionsResponse'  customize = (DescribeEventSubscriptionsResponse <<< customize) { "EventSubscriptionsList": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventsMessage = DescribeEventsMessage 
-  { "SourceIdentifier" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "EndTime" :: NullOrUndefined (TStamp)
-  , "Duration" :: NullOrUndefined (IntegerOptional)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "SourceIdentifier" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "StartTime" :: Maybe (TStamp)
+  , "EndTime" :: Maybe (TStamp)
+  , "Duration" :: Maybe (IntegerOptional)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEventsMessage :: Newtype DescribeEventsMessage _
 derive instance repGenericDescribeEventsMessage :: Generic DescribeEventsMessage _
@@ -1054,19 +1053,19 @@ instance encodeDescribeEventsMessage :: Encode DescribeEventsMessage where encod
 
 -- | Constructs DescribeEventsMessage from required parameters
 newDescribeEventsMessage :: DescribeEventsMessage
-newDescribeEventsMessage  = DescribeEventsMessage { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsMessage  = DescribeEventsMessage { "Duration": Nothing, "EndTime": Nothing, "EventCategories": Nothing, "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 -- | Constructs DescribeEventsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventsMessage' :: ( { "SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEventsMessage
-newDescribeEventsMessage'  customize = (DescribeEventsMessage <<< customize) { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsMessage' :: ( { "SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "EventCategories" :: Maybe (EventCategoriesList) , "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "EventCategories" :: Maybe (EventCategoriesList) , "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEventsMessage
+newDescribeEventsMessage'  customize = (DescribeEventsMessage <<< customize) { "Duration": Nothing, "EndTime": Nothing, "EventCategories": Nothing, "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventsResponse = DescribeEventsResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "Events" :: NullOrUndefined (EventList)
+  { "Marker" :: Maybe (String)
+  , "Events" :: Maybe (EventList)
   }
 derive instance newtypeDescribeEventsResponse :: Newtype DescribeEventsResponse _
 derive instance repGenericDescribeEventsResponse :: Generic DescribeEventsResponse _
@@ -1076,19 +1075,19 @@ instance encodeDescribeEventsResponse :: Encode DescribeEventsResponse where enc
 
 -- | Constructs DescribeEventsResponse from required parameters
 newDescribeEventsResponse :: DescribeEventsResponse
-newDescribeEventsResponse  = DescribeEventsResponse { "Events": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeEventsResponse  = DescribeEventsResponse { "Events": Nothing, "Marker": Nothing }
 
 -- | Constructs DescribeEventsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventsResponse' :: ( { "Marker" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } -> {"Marker" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } ) -> DescribeEventsResponse
-newDescribeEventsResponse'  customize = (DescribeEventsResponse <<< customize) { "Events": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newDescribeEventsResponse' :: ( { "Marker" :: Maybe (String) , "Events" :: Maybe (EventList) } -> {"Marker" :: Maybe (String) , "Events" :: Maybe (EventList) } ) -> DescribeEventsResponse
+newDescribeEventsResponse'  customize = (DescribeEventsResponse <<< customize) { "Events": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeOrderableReplicationInstancesMessage = DescribeOrderableReplicationInstancesMessage 
-  { "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeOrderableReplicationInstancesMessage :: Newtype DescribeOrderableReplicationInstancesMessage _
 derive instance repGenericDescribeOrderableReplicationInstancesMessage :: Generic DescribeOrderableReplicationInstancesMessage _
@@ -1098,19 +1097,19 @@ instance encodeDescribeOrderableReplicationInstancesMessage :: Encode DescribeOr
 
 -- | Constructs DescribeOrderableReplicationInstancesMessage from required parameters
 newDescribeOrderableReplicationInstancesMessage :: DescribeOrderableReplicationInstancesMessage
-newDescribeOrderableReplicationInstancesMessage  = DescribeOrderableReplicationInstancesMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeOrderableReplicationInstancesMessage  = DescribeOrderableReplicationInstancesMessage { "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeOrderableReplicationInstancesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeOrderableReplicationInstancesMessage' :: ( { "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeOrderableReplicationInstancesMessage
-newDescribeOrderableReplicationInstancesMessage'  customize = (DescribeOrderableReplicationInstancesMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeOrderableReplicationInstancesMessage' :: ( { "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeOrderableReplicationInstancesMessage
+newDescribeOrderableReplicationInstancesMessage'  customize = (DescribeOrderableReplicationInstancesMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeOrderableReplicationInstancesResponse = DescribeOrderableReplicationInstancesResponse 
-  { "OrderableReplicationInstances" :: NullOrUndefined (OrderableReplicationInstanceList)
-  , "Marker" :: NullOrUndefined (String)
+  { "OrderableReplicationInstances" :: Maybe (OrderableReplicationInstanceList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeOrderableReplicationInstancesResponse :: Newtype DescribeOrderableReplicationInstancesResponse _
 derive instance repGenericDescribeOrderableReplicationInstancesResponse :: Generic DescribeOrderableReplicationInstancesResponse _
@@ -1120,12 +1119,12 @@ instance encodeDescribeOrderableReplicationInstancesResponse :: Encode DescribeO
 
 -- | Constructs DescribeOrderableReplicationInstancesResponse from required parameters
 newDescribeOrderableReplicationInstancesResponse :: DescribeOrderableReplicationInstancesResponse
-newDescribeOrderableReplicationInstancesResponse  = DescribeOrderableReplicationInstancesResponse { "Marker": (NullOrUndefined Nothing), "OrderableReplicationInstances": (NullOrUndefined Nothing) }
+newDescribeOrderableReplicationInstancesResponse  = DescribeOrderableReplicationInstancesResponse { "Marker": Nothing, "OrderableReplicationInstances": Nothing }
 
 -- | Constructs DescribeOrderableReplicationInstancesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeOrderableReplicationInstancesResponse' :: ( { "OrderableReplicationInstances" :: NullOrUndefined (OrderableReplicationInstanceList) , "Marker" :: NullOrUndefined (String) } -> {"OrderableReplicationInstances" :: NullOrUndefined (OrderableReplicationInstanceList) , "Marker" :: NullOrUndefined (String) } ) -> DescribeOrderableReplicationInstancesResponse
-newDescribeOrderableReplicationInstancesResponse'  customize = (DescribeOrderableReplicationInstancesResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "OrderableReplicationInstances": (NullOrUndefined Nothing) }
+newDescribeOrderableReplicationInstancesResponse' :: ( { "OrderableReplicationInstances" :: Maybe (OrderableReplicationInstanceList) , "Marker" :: Maybe (String) } -> {"OrderableReplicationInstances" :: Maybe (OrderableReplicationInstanceList) , "Marker" :: Maybe (String) } ) -> DescribeOrderableReplicationInstancesResponse
+newDescribeOrderableReplicationInstancesResponse'  customize = (DescribeOrderableReplicationInstancesResponse <<< customize) { "Marker": Nothing, "OrderableReplicationInstances": Nothing }
 
 
 
@@ -1152,7 +1151,7 @@ newDescribeRefreshSchemasStatusMessage' _EndpointArn customize = (DescribeRefres
 
 -- | <p/>
 newtype DescribeRefreshSchemasStatusResponse = DescribeRefreshSchemasStatusResponse 
-  { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus)
+  { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus)
   }
 derive instance newtypeDescribeRefreshSchemasStatusResponse :: Newtype DescribeRefreshSchemasStatusResponse _
 derive instance repGenericDescribeRefreshSchemasStatusResponse :: Generic DescribeRefreshSchemasStatusResponse _
@@ -1162,19 +1161,19 @@ instance encodeDescribeRefreshSchemasStatusResponse :: Encode DescribeRefreshSch
 
 -- | Constructs DescribeRefreshSchemasStatusResponse from required parameters
 newDescribeRefreshSchemasStatusResponse :: DescribeRefreshSchemasStatusResponse
-newDescribeRefreshSchemasStatusResponse  = DescribeRefreshSchemasStatusResponse { "RefreshSchemasStatus": (NullOrUndefined Nothing) }
+newDescribeRefreshSchemasStatusResponse  = DescribeRefreshSchemasStatusResponse { "RefreshSchemasStatus": Nothing }
 
 -- | Constructs DescribeRefreshSchemasStatusResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeRefreshSchemasStatusResponse' :: ( { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) } -> {"RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) } ) -> DescribeRefreshSchemasStatusResponse
-newDescribeRefreshSchemasStatusResponse'  customize = (DescribeRefreshSchemasStatusResponse <<< customize) { "RefreshSchemasStatus": (NullOrUndefined Nothing) }
+newDescribeRefreshSchemasStatusResponse' :: ( { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) } -> {"RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) } ) -> DescribeRefreshSchemasStatusResponse
+newDescribeRefreshSchemasStatusResponse'  customize = (DescribeRefreshSchemasStatusResponse <<< customize) { "RefreshSchemasStatus": Nothing }
 
 
 
 newtype DescribeReplicationInstanceTaskLogsMessage = DescribeReplicationInstanceTaskLogsMessage 
   { "ReplicationInstanceArn" :: (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationInstanceTaskLogsMessage :: Newtype DescribeReplicationInstanceTaskLogsMessage _
 derive instance repGenericDescribeReplicationInstanceTaskLogsMessage :: Generic DescribeReplicationInstanceTaskLogsMessage _
@@ -1184,19 +1183,19 @@ instance encodeDescribeReplicationInstanceTaskLogsMessage :: Encode DescribeRepl
 
 -- | Constructs DescribeReplicationInstanceTaskLogsMessage from required parameters
 newDescribeReplicationInstanceTaskLogsMessage :: String -> DescribeReplicationInstanceTaskLogsMessage
-newDescribeReplicationInstanceTaskLogsMessage _ReplicationInstanceArn = DescribeReplicationInstanceTaskLogsMessage { "ReplicationInstanceArn": _ReplicationInstanceArn, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationInstanceTaskLogsMessage _ReplicationInstanceArn = DescribeReplicationInstanceTaskLogsMessage { "ReplicationInstanceArn": _ReplicationInstanceArn, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeReplicationInstanceTaskLogsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationInstanceTaskLogsMessage' :: String -> ( { "ReplicationInstanceArn" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReplicationInstanceArn" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationInstanceTaskLogsMessage
-newDescribeReplicationInstanceTaskLogsMessage' _ReplicationInstanceArn customize = (DescribeReplicationInstanceTaskLogsMessage <<< customize) { "ReplicationInstanceArn": _ReplicationInstanceArn, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationInstanceTaskLogsMessage' :: String -> ( { "ReplicationInstanceArn" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReplicationInstanceArn" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReplicationInstanceTaskLogsMessage
+newDescribeReplicationInstanceTaskLogsMessage' _ReplicationInstanceArn customize = (DescribeReplicationInstanceTaskLogsMessage <<< customize) { "ReplicationInstanceArn": _ReplicationInstanceArn, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 newtype DescribeReplicationInstanceTaskLogsResponse = DescribeReplicationInstanceTaskLogsResponse 
-  { "ReplicationInstanceArn" :: NullOrUndefined (String)
-  , "ReplicationInstanceTaskLogs" :: NullOrUndefined (ReplicationInstanceTaskLogsList)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReplicationInstanceArn" :: Maybe (String)
+  , "ReplicationInstanceTaskLogs" :: Maybe (ReplicationInstanceTaskLogsList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationInstanceTaskLogsResponse :: Newtype DescribeReplicationInstanceTaskLogsResponse _
 derive instance repGenericDescribeReplicationInstanceTaskLogsResponse :: Generic DescribeReplicationInstanceTaskLogsResponse _
@@ -1206,20 +1205,20 @@ instance encodeDescribeReplicationInstanceTaskLogsResponse :: Encode DescribeRep
 
 -- | Constructs DescribeReplicationInstanceTaskLogsResponse from required parameters
 newDescribeReplicationInstanceTaskLogsResponse :: DescribeReplicationInstanceTaskLogsResponse
-newDescribeReplicationInstanceTaskLogsResponse  = DescribeReplicationInstanceTaskLogsResponse { "Marker": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationInstanceTaskLogs": (NullOrUndefined Nothing) }
+newDescribeReplicationInstanceTaskLogsResponse  = DescribeReplicationInstanceTaskLogsResponse { "Marker": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationInstanceTaskLogs": Nothing }
 
 -- | Constructs DescribeReplicationInstanceTaskLogsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationInstanceTaskLogsResponse' :: ( { "ReplicationInstanceArn" :: NullOrUndefined (String) , "ReplicationInstanceTaskLogs" :: NullOrUndefined (ReplicationInstanceTaskLogsList) , "Marker" :: NullOrUndefined (String) } -> {"ReplicationInstanceArn" :: NullOrUndefined (String) , "ReplicationInstanceTaskLogs" :: NullOrUndefined (ReplicationInstanceTaskLogsList) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationInstanceTaskLogsResponse
-newDescribeReplicationInstanceTaskLogsResponse'  customize = (DescribeReplicationInstanceTaskLogsResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationInstanceTaskLogs": (NullOrUndefined Nothing) }
+newDescribeReplicationInstanceTaskLogsResponse' :: ( { "ReplicationInstanceArn" :: Maybe (String) , "ReplicationInstanceTaskLogs" :: Maybe (ReplicationInstanceTaskLogsList) , "Marker" :: Maybe (String) } -> {"ReplicationInstanceArn" :: Maybe (String) , "ReplicationInstanceTaskLogs" :: Maybe (ReplicationInstanceTaskLogsList) , "Marker" :: Maybe (String) } ) -> DescribeReplicationInstanceTaskLogsResponse
+newDescribeReplicationInstanceTaskLogsResponse'  customize = (DescribeReplicationInstanceTaskLogsResponse <<< customize) { "Marker": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationInstanceTaskLogs": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationInstancesMessage = DescribeReplicationInstancesMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationInstancesMessage :: Newtype DescribeReplicationInstancesMessage _
 derive instance repGenericDescribeReplicationInstancesMessage :: Generic DescribeReplicationInstancesMessage _
@@ -1229,19 +1228,19 @@ instance encodeDescribeReplicationInstancesMessage :: Encode DescribeReplication
 
 -- | Constructs DescribeReplicationInstancesMessage from required parameters
 newDescribeReplicationInstancesMessage :: DescribeReplicationInstancesMessage
-newDescribeReplicationInstancesMessage  = DescribeReplicationInstancesMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationInstancesMessage  = DescribeReplicationInstancesMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeReplicationInstancesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationInstancesMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationInstancesMessage
-newDescribeReplicationInstancesMessage'  customize = (DescribeReplicationInstancesMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationInstancesMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReplicationInstancesMessage
+newDescribeReplicationInstancesMessage'  customize = (DescribeReplicationInstancesMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationInstancesResponse = DescribeReplicationInstancesResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReplicationInstances" :: NullOrUndefined (ReplicationInstanceList)
+  { "Marker" :: Maybe (String)
+  , "ReplicationInstances" :: Maybe (ReplicationInstanceList)
   }
 derive instance newtypeDescribeReplicationInstancesResponse :: Newtype DescribeReplicationInstancesResponse _
 derive instance repGenericDescribeReplicationInstancesResponse :: Generic DescribeReplicationInstancesResponse _
@@ -1251,20 +1250,20 @@ instance encodeDescribeReplicationInstancesResponse :: Encode DescribeReplicatio
 
 -- | Constructs DescribeReplicationInstancesResponse from required parameters
 newDescribeReplicationInstancesResponse :: DescribeReplicationInstancesResponse
-newDescribeReplicationInstancesResponse  = DescribeReplicationInstancesResponse { "Marker": (NullOrUndefined Nothing), "ReplicationInstances": (NullOrUndefined Nothing) }
+newDescribeReplicationInstancesResponse  = DescribeReplicationInstancesResponse { "Marker": Nothing, "ReplicationInstances": Nothing }
 
 -- | Constructs DescribeReplicationInstancesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationInstancesResponse' :: ( { "Marker" :: NullOrUndefined (String) , "ReplicationInstances" :: NullOrUndefined (ReplicationInstanceList) } -> {"Marker" :: NullOrUndefined (String) , "ReplicationInstances" :: NullOrUndefined (ReplicationInstanceList) } ) -> DescribeReplicationInstancesResponse
-newDescribeReplicationInstancesResponse'  customize = (DescribeReplicationInstancesResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "ReplicationInstances": (NullOrUndefined Nothing) }
+newDescribeReplicationInstancesResponse' :: ( { "Marker" :: Maybe (String) , "ReplicationInstances" :: Maybe (ReplicationInstanceList) } -> {"Marker" :: Maybe (String) , "ReplicationInstances" :: Maybe (ReplicationInstanceList) } ) -> DescribeReplicationInstancesResponse
+newDescribeReplicationInstancesResponse'  customize = (DescribeReplicationInstancesResponse <<< customize) { "Marker": Nothing, "ReplicationInstances": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationSubnetGroupsMessage = DescribeReplicationSubnetGroupsMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationSubnetGroupsMessage :: Newtype DescribeReplicationSubnetGroupsMessage _
 derive instance repGenericDescribeReplicationSubnetGroupsMessage :: Generic DescribeReplicationSubnetGroupsMessage _
@@ -1274,19 +1273,19 @@ instance encodeDescribeReplicationSubnetGroupsMessage :: Encode DescribeReplicat
 
 -- | Constructs DescribeReplicationSubnetGroupsMessage from required parameters
 newDescribeReplicationSubnetGroupsMessage :: DescribeReplicationSubnetGroupsMessage
-newDescribeReplicationSubnetGroupsMessage  = DescribeReplicationSubnetGroupsMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationSubnetGroupsMessage  = DescribeReplicationSubnetGroupsMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeReplicationSubnetGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationSubnetGroupsMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationSubnetGroupsMessage
-newDescribeReplicationSubnetGroupsMessage'  customize = (DescribeReplicationSubnetGroupsMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationSubnetGroupsMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReplicationSubnetGroupsMessage
+newDescribeReplicationSubnetGroupsMessage'  customize = (DescribeReplicationSubnetGroupsMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationSubnetGroupsResponse = DescribeReplicationSubnetGroupsResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReplicationSubnetGroups" :: NullOrUndefined (ReplicationSubnetGroups)
+  { "Marker" :: Maybe (String)
+  , "ReplicationSubnetGroups" :: Maybe (ReplicationSubnetGroups)
   }
 derive instance newtypeDescribeReplicationSubnetGroupsResponse :: Newtype DescribeReplicationSubnetGroupsResponse _
 derive instance repGenericDescribeReplicationSubnetGroupsResponse :: Generic DescribeReplicationSubnetGroupsResponse _
@@ -1296,20 +1295,20 @@ instance encodeDescribeReplicationSubnetGroupsResponse :: Encode DescribeReplica
 
 -- | Constructs DescribeReplicationSubnetGroupsResponse from required parameters
 newDescribeReplicationSubnetGroupsResponse :: DescribeReplicationSubnetGroupsResponse
-newDescribeReplicationSubnetGroupsResponse  = DescribeReplicationSubnetGroupsResponse { "Marker": (NullOrUndefined Nothing), "ReplicationSubnetGroups": (NullOrUndefined Nothing) }
+newDescribeReplicationSubnetGroupsResponse  = DescribeReplicationSubnetGroupsResponse { "Marker": Nothing, "ReplicationSubnetGroups": Nothing }
 
 -- | Constructs DescribeReplicationSubnetGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationSubnetGroupsResponse' :: ( { "Marker" :: NullOrUndefined (String) , "ReplicationSubnetGroups" :: NullOrUndefined (ReplicationSubnetGroups) } -> {"Marker" :: NullOrUndefined (String) , "ReplicationSubnetGroups" :: NullOrUndefined (ReplicationSubnetGroups) } ) -> DescribeReplicationSubnetGroupsResponse
-newDescribeReplicationSubnetGroupsResponse'  customize = (DescribeReplicationSubnetGroupsResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "ReplicationSubnetGroups": (NullOrUndefined Nothing) }
+newDescribeReplicationSubnetGroupsResponse' :: ( { "Marker" :: Maybe (String) , "ReplicationSubnetGroups" :: Maybe (ReplicationSubnetGroups) } -> {"Marker" :: Maybe (String) , "ReplicationSubnetGroups" :: Maybe (ReplicationSubnetGroups) } ) -> DescribeReplicationSubnetGroupsResponse
+newDescribeReplicationSubnetGroupsResponse'  customize = (DescribeReplicationSubnetGroupsResponse <<< customize) { "Marker": Nothing, "ReplicationSubnetGroups": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationTaskAssessmentResultsMessage = DescribeReplicationTaskAssessmentResultsMessage 
-  { "ReplicationTaskArn" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReplicationTaskArn" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationTaskAssessmentResultsMessage :: Newtype DescribeReplicationTaskAssessmentResultsMessage _
 derive instance repGenericDescribeReplicationTaskAssessmentResultsMessage :: Generic DescribeReplicationTaskAssessmentResultsMessage _
@@ -1319,20 +1318,20 @@ instance encodeDescribeReplicationTaskAssessmentResultsMessage :: Encode Describ
 
 -- | Constructs DescribeReplicationTaskAssessmentResultsMessage from required parameters
 newDescribeReplicationTaskAssessmentResultsMessage :: DescribeReplicationTaskAssessmentResultsMessage
-newDescribeReplicationTaskAssessmentResultsMessage  = DescribeReplicationTaskAssessmentResultsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing) }
+newDescribeReplicationTaskAssessmentResultsMessage  = DescribeReplicationTaskAssessmentResultsMessage { "Marker": Nothing, "MaxRecords": Nothing, "ReplicationTaskArn": Nothing }
 
 -- | Constructs DescribeReplicationTaskAssessmentResultsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationTaskAssessmentResultsMessage' :: ( { "ReplicationTaskArn" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReplicationTaskArn" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationTaskAssessmentResultsMessage
-newDescribeReplicationTaskAssessmentResultsMessage'  customize = (DescribeReplicationTaskAssessmentResultsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing) }
+newDescribeReplicationTaskAssessmentResultsMessage' :: ( { "ReplicationTaskArn" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReplicationTaskArn" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReplicationTaskAssessmentResultsMessage
+newDescribeReplicationTaskAssessmentResultsMessage'  customize = (DescribeReplicationTaskAssessmentResultsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "ReplicationTaskArn": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationTaskAssessmentResultsResponse = DescribeReplicationTaskAssessmentResultsResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "BucketName" :: NullOrUndefined (String)
-  , "ReplicationTaskAssessmentResults" :: NullOrUndefined (ReplicationTaskAssessmentResultList)
+  { "Marker" :: Maybe (String)
+  , "BucketName" :: Maybe (String)
+  , "ReplicationTaskAssessmentResults" :: Maybe (ReplicationTaskAssessmentResultList)
   }
 derive instance newtypeDescribeReplicationTaskAssessmentResultsResponse :: Newtype DescribeReplicationTaskAssessmentResultsResponse _
 derive instance repGenericDescribeReplicationTaskAssessmentResultsResponse :: Generic DescribeReplicationTaskAssessmentResultsResponse _
@@ -1342,20 +1341,20 @@ instance encodeDescribeReplicationTaskAssessmentResultsResponse :: Encode Descri
 
 -- | Constructs DescribeReplicationTaskAssessmentResultsResponse from required parameters
 newDescribeReplicationTaskAssessmentResultsResponse :: DescribeReplicationTaskAssessmentResultsResponse
-newDescribeReplicationTaskAssessmentResultsResponse  = DescribeReplicationTaskAssessmentResultsResponse { "BucketName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "ReplicationTaskAssessmentResults": (NullOrUndefined Nothing) }
+newDescribeReplicationTaskAssessmentResultsResponse  = DescribeReplicationTaskAssessmentResultsResponse { "BucketName": Nothing, "Marker": Nothing, "ReplicationTaskAssessmentResults": Nothing }
 
 -- | Constructs DescribeReplicationTaskAssessmentResultsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationTaskAssessmentResultsResponse' :: ( { "Marker" :: NullOrUndefined (String) , "BucketName" :: NullOrUndefined (String) , "ReplicationTaskAssessmentResults" :: NullOrUndefined (ReplicationTaskAssessmentResultList) } -> {"Marker" :: NullOrUndefined (String) , "BucketName" :: NullOrUndefined (String) , "ReplicationTaskAssessmentResults" :: NullOrUndefined (ReplicationTaskAssessmentResultList) } ) -> DescribeReplicationTaskAssessmentResultsResponse
-newDescribeReplicationTaskAssessmentResultsResponse'  customize = (DescribeReplicationTaskAssessmentResultsResponse <<< customize) { "BucketName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "ReplicationTaskAssessmentResults": (NullOrUndefined Nothing) }
+newDescribeReplicationTaskAssessmentResultsResponse' :: ( { "Marker" :: Maybe (String) , "BucketName" :: Maybe (String) , "ReplicationTaskAssessmentResults" :: Maybe (ReplicationTaskAssessmentResultList) } -> {"Marker" :: Maybe (String) , "BucketName" :: Maybe (String) , "ReplicationTaskAssessmentResults" :: Maybe (ReplicationTaskAssessmentResultList) } ) -> DescribeReplicationTaskAssessmentResultsResponse
+newDescribeReplicationTaskAssessmentResultsResponse'  customize = (DescribeReplicationTaskAssessmentResultsResponse <<< customize) { "BucketName": Nothing, "Marker": Nothing, "ReplicationTaskAssessmentResults": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationTasksMessage = DescribeReplicationTasksMessage 
-  { "Filters" :: NullOrUndefined (FilterList)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "Filters" :: Maybe (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReplicationTasksMessage :: Newtype DescribeReplicationTasksMessage _
 derive instance repGenericDescribeReplicationTasksMessage :: Generic DescribeReplicationTasksMessage _
@@ -1365,19 +1364,19 @@ instance encodeDescribeReplicationTasksMessage :: Encode DescribeReplicationTask
 
 -- | Constructs DescribeReplicationTasksMessage from required parameters
 newDescribeReplicationTasksMessage :: DescribeReplicationTasksMessage
-newDescribeReplicationTasksMessage  = DescribeReplicationTasksMessage { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationTasksMessage  = DescribeReplicationTasksMessage { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeReplicationTasksMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationTasksMessage' :: ( { "Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"Filters" :: NullOrUndefined (FilterList) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReplicationTasksMessage
-newDescribeReplicationTasksMessage'  customize = (DescribeReplicationTasksMessage <<< customize) { "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeReplicationTasksMessage' :: ( { "Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"Filters" :: Maybe (FilterList) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReplicationTasksMessage
+newDescribeReplicationTasksMessage'  customize = (DescribeReplicationTasksMessage <<< customize) { "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReplicationTasksResponse = DescribeReplicationTasksResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReplicationTasks" :: NullOrUndefined (ReplicationTaskList)
+  { "Marker" :: Maybe (String)
+  , "ReplicationTasks" :: Maybe (ReplicationTaskList)
   }
 derive instance newtypeDescribeReplicationTasksResponse :: Newtype DescribeReplicationTasksResponse _
 derive instance repGenericDescribeReplicationTasksResponse :: Generic DescribeReplicationTasksResponse _
@@ -1387,20 +1386,20 @@ instance encodeDescribeReplicationTasksResponse :: Encode DescribeReplicationTas
 
 -- | Constructs DescribeReplicationTasksResponse from required parameters
 newDescribeReplicationTasksResponse :: DescribeReplicationTasksResponse
-newDescribeReplicationTasksResponse  = DescribeReplicationTasksResponse { "Marker": (NullOrUndefined Nothing), "ReplicationTasks": (NullOrUndefined Nothing) }
+newDescribeReplicationTasksResponse  = DescribeReplicationTasksResponse { "Marker": Nothing, "ReplicationTasks": Nothing }
 
 -- | Constructs DescribeReplicationTasksResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReplicationTasksResponse' :: ( { "Marker" :: NullOrUndefined (String) , "ReplicationTasks" :: NullOrUndefined (ReplicationTaskList) } -> {"Marker" :: NullOrUndefined (String) , "ReplicationTasks" :: NullOrUndefined (ReplicationTaskList) } ) -> DescribeReplicationTasksResponse
-newDescribeReplicationTasksResponse'  customize = (DescribeReplicationTasksResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "ReplicationTasks": (NullOrUndefined Nothing) }
+newDescribeReplicationTasksResponse' :: ( { "Marker" :: Maybe (String) , "ReplicationTasks" :: Maybe (ReplicationTaskList) } -> {"Marker" :: Maybe (String) , "ReplicationTasks" :: Maybe (ReplicationTaskList) } ) -> DescribeReplicationTasksResponse
+newDescribeReplicationTasksResponse'  customize = (DescribeReplicationTasksResponse <<< customize) { "Marker": Nothing, "ReplicationTasks": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeSchemasMessage = DescribeSchemasMessage 
   { "EndpointArn" :: (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeSchemasMessage :: Newtype DescribeSchemasMessage _
 derive instance repGenericDescribeSchemasMessage :: Generic DescribeSchemasMessage _
@@ -1410,19 +1409,19 @@ instance encodeDescribeSchemasMessage :: Encode DescribeSchemasMessage where enc
 
 -- | Constructs DescribeSchemasMessage from required parameters
 newDescribeSchemasMessage :: String -> DescribeSchemasMessage
-newDescribeSchemasMessage _EndpointArn = DescribeSchemasMessage { "EndpointArn": _EndpointArn, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeSchemasMessage _EndpointArn = DescribeSchemasMessage { "EndpointArn": _EndpointArn, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeSchemasMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSchemasMessage' :: String -> ( { "EndpointArn" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"EndpointArn" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeSchemasMessage
-newDescribeSchemasMessage' _EndpointArn customize = (DescribeSchemasMessage <<< customize) { "EndpointArn": _EndpointArn, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeSchemasMessage' :: String -> ( { "EndpointArn" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"EndpointArn" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeSchemasMessage
+newDescribeSchemasMessage' _EndpointArn customize = (DescribeSchemasMessage <<< customize) { "EndpointArn": _EndpointArn, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeSchemasResponse = DescribeSchemasResponse 
-  { "Marker" :: NullOrUndefined (String)
-  , "Schemas" :: NullOrUndefined (SchemaList)
+  { "Marker" :: Maybe (String)
+  , "Schemas" :: Maybe (SchemaList)
   }
 derive instance newtypeDescribeSchemasResponse :: Newtype DescribeSchemasResponse _
 derive instance repGenericDescribeSchemasResponse :: Generic DescribeSchemasResponse _
@@ -1432,21 +1431,21 @@ instance encodeDescribeSchemasResponse :: Encode DescribeSchemasResponse where e
 
 -- | Constructs DescribeSchemasResponse from required parameters
 newDescribeSchemasResponse :: DescribeSchemasResponse
-newDescribeSchemasResponse  = DescribeSchemasResponse { "Marker": (NullOrUndefined Nothing), "Schemas": (NullOrUndefined Nothing) }
+newDescribeSchemasResponse  = DescribeSchemasResponse { "Marker": Nothing, "Schemas": Nothing }
 
 -- | Constructs DescribeSchemasResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSchemasResponse' :: ( { "Marker" :: NullOrUndefined (String) , "Schemas" :: NullOrUndefined (SchemaList) } -> {"Marker" :: NullOrUndefined (String) , "Schemas" :: NullOrUndefined (SchemaList) } ) -> DescribeSchemasResponse
-newDescribeSchemasResponse'  customize = (DescribeSchemasResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "Schemas": (NullOrUndefined Nothing) }
+newDescribeSchemasResponse' :: ( { "Marker" :: Maybe (String) , "Schemas" :: Maybe (SchemaList) } -> {"Marker" :: Maybe (String) , "Schemas" :: Maybe (SchemaList) } ) -> DescribeSchemasResponse
+newDescribeSchemasResponse'  customize = (DescribeSchemasResponse <<< customize) { "Marker": Nothing, "Schemas": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeTableStatisticsMessage = DescribeTableStatisticsMessage 
   { "ReplicationTaskArn" :: (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "Filters" :: NullOrUndefined (FilterList)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "Filters" :: Maybe (FilterList)
   }
 derive instance newtypeDescribeTableStatisticsMessage :: Newtype DescribeTableStatisticsMessage _
 derive instance repGenericDescribeTableStatisticsMessage :: Generic DescribeTableStatisticsMessage _
@@ -1456,20 +1455,20 @@ instance encodeDescribeTableStatisticsMessage :: Encode DescribeTableStatisticsM
 
 -- | Constructs DescribeTableStatisticsMessage from required parameters
 newDescribeTableStatisticsMessage :: String -> DescribeTableStatisticsMessage
-newDescribeTableStatisticsMessage _ReplicationTaskArn = DescribeTableStatisticsMessage { "ReplicationTaskArn": _ReplicationTaskArn, "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeTableStatisticsMessage _ReplicationTaskArn = DescribeTableStatisticsMessage { "ReplicationTaskArn": _ReplicationTaskArn, "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeTableStatisticsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTableStatisticsMessage' :: String -> ( { "ReplicationTaskArn" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (FilterList) } -> {"ReplicationTaskArn" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "Filters" :: NullOrUndefined (FilterList) } ) -> DescribeTableStatisticsMessage
-newDescribeTableStatisticsMessage' _ReplicationTaskArn customize = (DescribeTableStatisticsMessage <<< customize) { "ReplicationTaskArn": _ReplicationTaskArn, "Filters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeTableStatisticsMessage' :: String -> ( { "ReplicationTaskArn" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "Filters" :: Maybe (FilterList) } -> {"ReplicationTaskArn" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "Filters" :: Maybe (FilterList) } ) -> DescribeTableStatisticsMessage
+newDescribeTableStatisticsMessage' _ReplicationTaskArn customize = (DescribeTableStatisticsMessage <<< customize) { "ReplicationTaskArn": _ReplicationTaskArn, "Filters": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeTableStatisticsResponse = DescribeTableStatisticsResponse 
-  { "ReplicationTaskArn" :: NullOrUndefined (String)
-  , "TableStatistics" :: NullOrUndefined (TableStatisticsList)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReplicationTaskArn" :: Maybe (String)
+  , "TableStatistics" :: Maybe (TableStatisticsList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeTableStatisticsResponse :: Newtype DescribeTableStatisticsResponse _
 derive instance repGenericDescribeTableStatisticsResponse :: Generic DescribeTableStatisticsResponse _
@@ -1479,12 +1478,12 @@ instance encodeDescribeTableStatisticsResponse :: Encode DescribeTableStatistics
 
 -- | Constructs DescribeTableStatisticsResponse from required parameters
 newDescribeTableStatisticsResponse :: DescribeTableStatisticsResponse
-newDescribeTableStatisticsResponse  = DescribeTableStatisticsResponse { "Marker": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "TableStatistics": (NullOrUndefined Nothing) }
+newDescribeTableStatisticsResponse  = DescribeTableStatisticsResponse { "Marker": Nothing, "ReplicationTaskArn": Nothing, "TableStatistics": Nothing }
 
 -- | Constructs DescribeTableStatisticsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTableStatisticsResponse' :: ( { "ReplicationTaskArn" :: NullOrUndefined (String) , "TableStatistics" :: NullOrUndefined (TableStatisticsList) , "Marker" :: NullOrUndefined (String) } -> {"ReplicationTaskArn" :: NullOrUndefined (String) , "TableStatistics" :: NullOrUndefined (TableStatisticsList) , "Marker" :: NullOrUndefined (String) } ) -> DescribeTableStatisticsResponse
-newDescribeTableStatisticsResponse'  customize = (DescribeTableStatisticsResponse <<< customize) { "Marker": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "TableStatistics": (NullOrUndefined Nothing) }
+newDescribeTableStatisticsResponse' :: ( { "ReplicationTaskArn" :: Maybe (String) , "TableStatistics" :: Maybe (TableStatisticsList) , "Marker" :: Maybe (String) } -> {"ReplicationTaskArn" :: Maybe (String) , "TableStatistics" :: Maybe (TableStatisticsList) , "Marker" :: Maybe (String) } ) -> DescribeTableStatisticsResponse
+newDescribeTableStatisticsResponse'  customize = (DescribeTableStatisticsResponse <<< customize) { "Marker": Nothing, "ReplicationTaskArn": Nothing, "TableStatistics": Nothing }
 
 
 
@@ -1520,23 +1519,23 @@ newDynamoDbSettings' _ServiceAccessRoleArn customize = (DynamoDbSettings <<< cus
 
 -- | <p/>
 newtype Endpoint = Endpoint 
-  { "EndpointIdentifier" :: NullOrUndefined (String)
-  , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue)
-  , "EngineName" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
-  , "ServerName" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "DatabaseName" :: NullOrUndefined (String)
-  , "ExtraConnectionAttributes" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "EndpointArn" :: NullOrUndefined (String)
-  , "CertificateArn" :: NullOrUndefined (String)
-  , "SslMode" :: NullOrUndefined (DmsSslModeValue)
-  , "ExternalId" :: NullOrUndefined (String)
-  , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings)
-  , "S3Settings" :: NullOrUndefined (S3Settings)
-  , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings)
+  { "EndpointIdentifier" :: Maybe (String)
+  , "EndpointType" :: Maybe (ReplicationEndpointTypeValue)
+  , "EngineName" :: Maybe (String)
+  , "Username" :: Maybe (String)
+  , "ServerName" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "DatabaseName" :: Maybe (String)
+  , "ExtraConnectionAttributes" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "KmsKeyId" :: Maybe (String)
+  , "EndpointArn" :: Maybe (String)
+  , "CertificateArn" :: Maybe (String)
+  , "SslMode" :: Maybe (DmsSslModeValue)
+  , "ExternalId" :: Maybe (String)
+  , "DynamoDbSettings" :: Maybe (DynamoDbSettings)
+  , "S3Settings" :: Maybe (S3Settings)
+  , "MongoDbSettings" :: Maybe (MongoDbSettings)
   }
 derive instance newtypeEndpoint :: Newtype Endpoint _
 derive instance repGenericEndpoint :: Generic Endpoint _
@@ -1546,12 +1545,12 @@ instance encodeEndpoint :: Encode Endpoint where encode = genericEncode options
 
 -- | Constructs Endpoint from required parameters
 newEndpoint :: Endpoint
-newEndpoint  = Endpoint { "CertificateArn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DynamoDbSettings": (NullOrUndefined Nothing), "EndpointArn": (NullOrUndefined Nothing), "EndpointIdentifier": (NullOrUndefined Nothing), "EndpointType": (NullOrUndefined Nothing), "EngineName": (NullOrUndefined Nothing), "ExternalId": (NullOrUndefined Nothing), "ExtraConnectionAttributes": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MongoDbSettings": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "S3Settings": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "SslMode": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newEndpoint  = Endpoint { "CertificateArn": Nothing, "DatabaseName": Nothing, "DynamoDbSettings": Nothing, "EndpointArn": Nothing, "EndpointIdentifier": Nothing, "EndpointType": Nothing, "EngineName": Nothing, "ExternalId": Nothing, "ExtraConnectionAttributes": Nothing, "KmsKeyId": Nothing, "MongoDbSettings": Nothing, "Port": Nothing, "S3Settings": Nothing, "ServerName": Nothing, "SslMode": Nothing, "Status": Nothing, "Username": Nothing }
 
 -- | Constructs Endpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEndpoint' :: ( { "EndpointIdentifier" :: NullOrUndefined (String) , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) , "EngineName" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "ExtraConnectionAttributes" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "KmsKeyId" :: NullOrUndefined (String) , "EndpointArn" :: NullOrUndefined (String) , "CertificateArn" :: NullOrUndefined (String) , "SslMode" :: NullOrUndefined (DmsSslModeValue) , "ExternalId" :: NullOrUndefined (String) , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings) , "S3Settings" :: NullOrUndefined (S3Settings) , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } -> {"EndpointIdentifier" :: NullOrUndefined (String) , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) , "EngineName" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "ExtraConnectionAttributes" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "KmsKeyId" :: NullOrUndefined (String) , "EndpointArn" :: NullOrUndefined (String) , "CertificateArn" :: NullOrUndefined (String) , "SslMode" :: NullOrUndefined (DmsSslModeValue) , "ExternalId" :: NullOrUndefined (String) , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings) , "S3Settings" :: NullOrUndefined (S3Settings) , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } ) -> Endpoint
-newEndpoint'  customize = (Endpoint <<< customize) { "CertificateArn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DynamoDbSettings": (NullOrUndefined Nothing), "EndpointArn": (NullOrUndefined Nothing), "EndpointIdentifier": (NullOrUndefined Nothing), "EndpointType": (NullOrUndefined Nothing), "EngineName": (NullOrUndefined Nothing), "ExternalId": (NullOrUndefined Nothing), "ExtraConnectionAttributes": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MongoDbSettings": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "S3Settings": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "SslMode": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newEndpoint' :: ( { "EndpointIdentifier" :: Maybe (String) , "EndpointType" :: Maybe (ReplicationEndpointTypeValue) , "EngineName" :: Maybe (String) , "Username" :: Maybe (String) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "ExtraConnectionAttributes" :: Maybe (String) , "Status" :: Maybe (String) , "KmsKeyId" :: Maybe (String) , "EndpointArn" :: Maybe (String) , "CertificateArn" :: Maybe (String) , "SslMode" :: Maybe (DmsSslModeValue) , "ExternalId" :: Maybe (String) , "DynamoDbSettings" :: Maybe (DynamoDbSettings) , "S3Settings" :: Maybe (S3Settings) , "MongoDbSettings" :: Maybe (MongoDbSettings) } -> {"EndpointIdentifier" :: Maybe (String) , "EndpointType" :: Maybe (ReplicationEndpointTypeValue) , "EngineName" :: Maybe (String) , "Username" :: Maybe (String) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "ExtraConnectionAttributes" :: Maybe (String) , "Status" :: Maybe (String) , "KmsKeyId" :: Maybe (String) , "EndpointArn" :: Maybe (String) , "CertificateArn" :: Maybe (String) , "SslMode" :: Maybe (DmsSslModeValue) , "ExternalId" :: Maybe (String) , "DynamoDbSettings" :: Maybe (DynamoDbSettings) , "S3Settings" :: Maybe (S3Settings) , "MongoDbSettings" :: Maybe (MongoDbSettings) } ) -> Endpoint
+newEndpoint'  customize = (Endpoint <<< customize) { "CertificateArn": Nothing, "DatabaseName": Nothing, "DynamoDbSettings": Nothing, "EndpointArn": Nothing, "EndpointIdentifier": Nothing, "EndpointType": Nothing, "EngineName": Nothing, "ExternalId": Nothing, "ExtraConnectionAttributes": Nothing, "KmsKeyId": Nothing, "MongoDbSettings": Nothing, "Port": Nothing, "S3Settings": Nothing, "ServerName": Nothing, "SslMode": Nothing, "Status": Nothing, "Username": Nothing }
 
 
 
@@ -1566,11 +1565,11 @@ instance encodeEndpointList :: Encode EndpointList where encode = genericEncode 
 
 -- | <p/>
 newtype Event = Event 
-  { "SourceIdentifier" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "Message" :: NullOrUndefined (String)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "Date" :: NullOrUndefined (TStamp)
+  { "SourceIdentifier" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "Message" :: Maybe (String)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "Date" :: Maybe (TStamp)
   }
 derive instance newtypeEvent :: Newtype Event _
 derive instance repGenericEvent :: Generic Event _
@@ -1580,12 +1579,12 @@ instance encodeEvent :: Encode Event where encode = genericEncode options
 
 -- | Constructs Event from required parameters
 newEvent :: Event
-newEvent  = Event { "Date": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent  = Event { "Date": Nothing, "EventCategories": Nothing, "Message": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing }
 
 -- | Constructs Event's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEvent' :: ( { "SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Date" :: NullOrUndefined (TStamp) } -> {"SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Date" :: NullOrUndefined (TStamp) } ) -> Event
-newEvent'  customize = (Event <<< customize) { "Date": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent' :: ( { "SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "Date" :: Maybe (TStamp) } -> {"SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "Date" :: Maybe (TStamp) } ) -> Event
+newEvent'  customize = (Event <<< customize) { "Date": Nothing, "EventCategories": Nothing, "Message": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing }
 
 
 
@@ -1600,8 +1599,8 @@ instance encodeEventCategoriesList :: Encode EventCategoriesList where encode = 
 
 -- | <p/>
 newtype EventCategoryGroup = EventCategoryGroup 
-  { "SourceType" :: NullOrUndefined (String)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
+  { "SourceType" :: Maybe (String)
+  , "EventCategories" :: Maybe (EventCategoriesList)
   }
 derive instance newtypeEventCategoryGroup :: Newtype EventCategoryGroup _
 derive instance repGenericEventCategoryGroup :: Generic EventCategoryGroup _
@@ -1611,12 +1610,12 @@ instance encodeEventCategoryGroup :: Encode EventCategoryGroup where encode = ge
 
 -- | Constructs EventCategoryGroup from required parameters
 newEventCategoryGroup :: EventCategoryGroup
-newEventCategoryGroup  = EventCategoryGroup { "EventCategories": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEventCategoryGroup  = EventCategoryGroup { "EventCategories": Nothing, "SourceType": Nothing }
 
 -- | Constructs EventCategoryGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventCategoryGroup' :: ( { "SourceType" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) } -> {"SourceType" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) } ) -> EventCategoryGroup
-newEventCategoryGroup'  customize = (EventCategoryGroup <<< customize) { "EventCategories": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEventCategoryGroup' :: ( { "SourceType" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) } -> {"SourceType" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) } ) -> EventCategoryGroup
+newEventCategoryGroup'  customize = (EventCategoryGroup <<< customize) { "EventCategories": Nothing, "SourceType": Nothing }
 
 
 
@@ -1640,15 +1639,15 @@ instance encodeEventList :: Encode EventList where encode = genericEncode option
 
 -- | <p/>
 newtype EventSubscription = EventSubscription 
-  { "CustomerAwsId" :: NullOrUndefined (String)
-  , "CustSubscriptionId" :: NullOrUndefined (String)
-  , "SnsTopicArn" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "SubscriptionCreationTime" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (String)
-  , "SourceIdsList" :: NullOrUndefined (SourceIdsList)
-  , "EventCategoriesList" :: NullOrUndefined (EventCategoriesList)
-  , "Enabled" :: NullOrUndefined (Boolean)
+  { "CustomerAwsId" :: Maybe (String)
+  , "CustSubscriptionId" :: Maybe (String)
+  , "SnsTopicArn" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "SubscriptionCreationTime" :: Maybe (String)
+  , "SourceType" :: Maybe (String)
+  , "SourceIdsList" :: Maybe (SourceIdsList)
+  , "EventCategoriesList" :: Maybe (EventCategoriesList)
+  , "Enabled" :: Maybe (Boolean)
   }
 derive instance newtypeEventSubscription :: Newtype EventSubscription _
 derive instance repGenericEventSubscription :: Generic EventSubscription _
@@ -1658,12 +1657,12 @@ instance encodeEventSubscription :: Encode EventSubscription where encode = gene
 
 -- | Constructs EventSubscription from required parameters
 newEventSubscription :: EventSubscription
-newEventSubscription  = EventSubscription { "CustSubscriptionId": (NullOrUndefined Nothing), "CustomerAwsId": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "EventCategoriesList": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceIdsList": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubscriptionCreationTime": (NullOrUndefined Nothing) }
+newEventSubscription  = EventSubscription { "CustSubscriptionId": Nothing, "CustomerAwsId": Nothing, "Enabled": Nothing, "EventCategoriesList": Nothing, "SnsTopicArn": Nothing, "SourceIdsList": Nothing, "SourceType": Nothing, "Status": Nothing, "SubscriptionCreationTime": Nothing }
 
 -- | Constructs EventSubscription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventSubscription' :: ( { "CustomerAwsId" :: NullOrUndefined (String) , "CustSubscriptionId" :: NullOrUndefined (String) , "SnsTopicArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "SubscriptionCreationTime" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (String) , "SourceIdsList" :: NullOrUndefined (SourceIdsList) , "EventCategoriesList" :: NullOrUndefined (EventCategoriesList) , "Enabled" :: NullOrUndefined (Boolean) } -> {"CustomerAwsId" :: NullOrUndefined (String) , "CustSubscriptionId" :: NullOrUndefined (String) , "SnsTopicArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "SubscriptionCreationTime" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (String) , "SourceIdsList" :: NullOrUndefined (SourceIdsList) , "EventCategoriesList" :: NullOrUndefined (EventCategoriesList) , "Enabled" :: NullOrUndefined (Boolean) } ) -> EventSubscription
-newEventSubscription'  customize = (EventSubscription <<< customize) { "CustSubscriptionId": (NullOrUndefined Nothing), "CustomerAwsId": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "EventCategoriesList": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceIdsList": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubscriptionCreationTime": (NullOrUndefined Nothing) }
+newEventSubscription' :: ( { "CustomerAwsId" :: Maybe (String) , "CustSubscriptionId" :: Maybe (String) , "SnsTopicArn" :: Maybe (String) , "Status" :: Maybe (String) , "SubscriptionCreationTime" :: Maybe (String) , "SourceType" :: Maybe (String) , "SourceIdsList" :: Maybe (SourceIdsList) , "EventCategoriesList" :: Maybe (EventCategoriesList) , "Enabled" :: Maybe (Boolean) } -> {"CustomerAwsId" :: Maybe (String) , "CustSubscriptionId" :: Maybe (String) , "SnsTopicArn" :: Maybe (String) , "Status" :: Maybe (String) , "SubscriptionCreationTime" :: Maybe (String) , "SourceType" :: Maybe (String) , "SourceIdsList" :: Maybe (SourceIdsList) , "EventCategoriesList" :: Maybe (EventCategoriesList) , "Enabled" :: Maybe (Boolean) } ) -> EventSubscription
+newEventSubscription'  customize = (EventSubscription <<< customize) { "CustSubscriptionId": Nothing, "CustomerAwsId": Nothing, "Enabled": Nothing, "EventCategoriesList": Nothing, "SnsTopicArn": Nothing, "SourceIdsList": Nothing, "SourceType": Nothing, "Status": Nothing, "SubscriptionCreationTime": Nothing }
 
 
 
@@ -1727,9 +1726,9 @@ instance encodeFilterValueList :: Encode FilterValueList where encode = genericE
 
 newtype ImportCertificateMessage = ImportCertificateMessage 
   { "CertificateIdentifier" :: (String)
-  , "CertificatePem" :: NullOrUndefined (String)
-  , "CertificateWallet" :: NullOrUndefined (CertificateWallet)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "CertificatePem" :: Maybe (String)
+  , "CertificateWallet" :: Maybe (CertificateWallet)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeImportCertificateMessage :: Newtype ImportCertificateMessage _
 derive instance repGenericImportCertificateMessage :: Generic ImportCertificateMessage _
@@ -1739,17 +1738,17 @@ instance encodeImportCertificateMessage :: Encode ImportCertificateMessage where
 
 -- | Constructs ImportCertificateMessage from required parameters
 newImportCertificateMessage :: String -> ImportCertificateMessage
-newImportCertificateMessage _CertificateIdentifier = ImportCertificateMessage { "CertificateIdentifier": _CertificateIdentifier, "CertificatePem": (NullOrUndefined Nothing), "CertificateWallet": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newImportCertificateMessage _CertificateIdentifier = ImportCertificateMessage { "CertificateIdentifier": _CertificateIdentifier, "CertificatePem": Nothing, "CertificateWallet": Nothing, "Tags": Nothing }
 
 -- | Constructs ImportCertificateMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newImportCertificateMessage' :: String -> ( { "CertificateIdentifier" :: (String) , "CertificatePem" :: NullOrUndefined (String) , "CertificateWallet" :: NullOrUndefined (CertificateWallet) , "Tags" :: NullOrUndefined (TagList) } -> {"CertificateIdentifier" :: (String) , "CertificatePem" :: NullOrUndefined (String) , "CertificateWallet" :: NullOrUndefined (CertificateWallet) , "Tags" :: NullOrUndefined (TagList) } ) -> ImportCertificateMessage
-newImportCertificateMessage' _CertificateIdentifier customize = (ImportCertificateMessage <<< customize) { "CertificateIdentifier": _CertificateIdentifier, "CertificatePem": (NullOrUndefined Nothing), "CertificateWallet": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newImportCertificateMessage' :: String -> ( { "CertificateIdentifier" :: (String) , "CertificatePem" :: Maybe (String) , "CertificateWallet" :: Maybe (CertificateWallet) , "Tags" :: Maybe (TagList) } -> {"CertificateIdentifier" :: (String) , "CertificatePem" :: Maybe (String) , "CertificateWallet" :: Maybe (CertificateWallet) , "Tags" :: Maybe (TagList) } ) -> ImportCertificateMessage
+newImportCertificateMessage' _CertificateIdentifier customize = (ImportCertificateMessage <<< customize) { "CertificateIdentifier": _CertificateIdentifier, "CertificatePem": Nothing, "CertificateWallet": Nothing, "Tags": Nothing }
 
 
 
 newtype ImportCertificateResponse = ImportCertificateResponse 
-  { "Certificate" :: NullOrUndefined (Certificate)
+  { "Certificate" :: Maybe (Certificate)
   }
 derive instance newtypeImportCertificateResponse :: Newtype ImportCertificateResponse _
 derive instance repGenericImportCertificateResponse :: Generic ImportCertificateResponse _
@@ -1759,18 +1758,18 @@ instance encodeImportCertificateResponse :: Encode ImportCertificateResponse whe
 
 -- | Constructs ImportCertificateResponse from required parameters
 newImportCertificateResponse :: ImportCertificateResponse
-newImportCertificateResponse  = ImportCertificateResponse { "Certificate": (NullOrUndefined Nothing) }
+newImportCertificateResponse  = ImportCertificateResponse { "Certificate": Nothing }
 
 -- | Constructs ImportCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newImportCertificateResponse' :: ( { "Certificate" :: NullOrUndefined (Certificate) } -> {"Certificate" :: NullOrUndefined (Certificate) } ) -> ImportCertificateResponse
-newImportCertificateResponse'  customize = (ImportCertificateResponse <<< customize) { "Certificate": (NullOrUndefined Nothing) }
+newImportCertificateResponse' :: ( { "Certificate" :: Maybe (Certificate) } -> {"Certificate" :: Maybe (Certificate) } ) -> ImportCertificateResponse
+newImportCertificateResponse'  customize = (ImportCertificateResponse <<< customize) { "Certificate": Nothing }
 
 
 
 -- | <p>There are not enough resources allocated to the database migration.</p>
 newtype InsufficientResourceCapacityFault = InsufficientResourceCapacityFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInsufficientResourceCapacityFault :: Newtype InsufficientResourceCapacityFault _
 derive instance repGenericInsufficientResourceCapacityFault :: Generic InsufficientResourceCapacityFault _
@@ -1780,12 +1779,12 @@ instance encodeInsufficientResourceCapacityFault :: Encode InsufficientResourceC
 
 -- | Constructs InsufficientResourceCapacityFault from required parameters
 newInsufficientResourceCapacityFault :: InsufficientResourceCapacityFault
-newInsufficientResourceCapacityFault  = InsufficientResourceCapacityFault { "message": (NullOrUndefined Nothing) }
+newInsufficientResourceCapacityFault  = InsufficientResourceCapacityFault { "message": Nothing }
 
 -- | Constructs InsufficientResourceCapacityFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInsufficientResourceCapacityFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> InsufficientResourceCapacityFault
-newInsufficientResourceCapacityFault'  customize = (InsufficientResourceCapacityFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newInsufficientResourceCapacityFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> InsufficientResourceCapacityFault
+newInsufficientResourceCapacityFault'  customize = (InsufficientResourceCapacityFault <<< customize) { "message": Nothing }
 
 
 
@@ -1800,7 +1799,7 @@ instance encodeIntegerOptional :: Encode IntegerOptional where encode = genericE
 
 -- | <p>The certificate was not valid.</p>
 newtype InvalidCertificateFault = InvalidCertificateFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidCertificateFault :: Newtype InvalidCertificateFault _
 derive instance repGenericInvalidCertificateFault :: Generic InvalidCertificateFault _
@@ -1810,18 +1809,18 @@ instance encodeInvalidCertificateFault :: Encode InvalidCertificateFault where e
 
 -- | Constructs InvalidCertificateFault from required parameters
 newInvalidCertificateFault :: InvalidCertificateFault
-newInvalidCertificateFault  = InvalidCertificateFault { "message": (NullOrUndefined Nothing) }
+newInvalidCertificateFault  = InvalidCertificateFault { "message": Nothing }
 
 -- | Constructs InvalidCertificateFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidCertificateFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidCertificateFault
-newInvalidCertificateFault'  customize = (InvalidCertificateFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidCertificateFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> InvalidCertificateFault
+newInvalidCertificateFault'  customize = (InvalidCertificateFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The resource is in a state that prevents it from being used for database migration.</p>
 newtype InvalidResourceStateFault = InvalidResourceStateFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidResourceStateFault :: Newtype InvalidResourceStateFault _
 derive instance repGenericInvalidResourceStateFault :: Generic InvalidResourceStateFault _
@@ -1831,18 +1830,18 @@ instance encodeInvalidResourceStateFault :: Encode InvalidResourceStateFault whe
 
 -- | Constructs InvalidResourceStateFault from required parameters
 newInvalidResourceStateFault :: InvalidResourceStateFault
-newInvalidResourceStateFault  = InvalidResourceStateFault { "message": (NullOrUndefined Nothing) }
+newInvalidResourceStateFault  = InvalidResourceStateFault { "message": Nothing }
 
 -- | Constructs InvalidResourceStateFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidResourceStateFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidResourceStateFault
-newInvalidResourceStateFault'  customize = (InvalidResourceStateFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidResourceStateFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> InvalidResourceStateFault
+newInvalidResourceStateFault'  customize = (InvalidResourceStateFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The subnet provided is invalid.</p>
 newtype InvalidSubnet = InvalidSubnet 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidSubnet :: Newtype InvalidSubnet _
 derive instance repGenericInvalidSubnet :: Generic InvalidSubnet _
@@ -1852,18 +1851,18 @@ instance encodeInvalidSubnet :: Encode InvalidSubnet where encode = genericEncod
 
 -- | Constructs InvalidSubnet from required parameters
 newInvalidSubnet :: InvalidSubnet
-newInvalidSubnet  = InvalidSubnet { "message": (NullOrUndefined Nothing) }
+newInvalidSubnet  = InvalidSubnet { "message": Nothing }
 
 -- | Constructs InvalidSubnet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidSubnet' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidSubnet
-newInvalidSubnet'  customize = (InvalidSubnet <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidSubnet' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> InvalidSubnet
+newInvalidSubnet'  customize = (InvalidSubnet <<< customize) { "message": Nothing }
 
 
 
 -- | <p>AWS DMS cannot access the KMS key.</p>
 newtype KMSKeyNotAccessibleFault = KMSKeyNotAccessibleFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeKMSKeyNotAccessibleFault :: Newtype KMSKeyNotAccessibleFault _
 derive instance repGenericKMSKeyNotAccessibleFault :: Generic KMSKeyNotAccessibleFault _
@@ -1873,12 +1872,12 @@ instance encodeKMSKeyNotAccessibleFault :: Encode KMSKeyNotAccessibleFault where
 
 -- | Constructs KMSKeyNotAccessibleFault from required parameters
 newKMSKeyNotAccessibleFault :: KMSKeyNotAccessibleFault
-newKMSKeyNotAccessibleFault  = KMSKeyNotAccessibleFault { "message": (NullOrUndefined Nothing) }
+newKMSKeyNotAccessibleFault  = KMSKeyNotAccessibleFault { "message": Nothing }
 
 -- | Constructs KMSKeyNotAccessibleFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKMSKeyNotAccessibleFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> KMSKeyNotAccessibleFault
-newKMSKeyNotAccessibleFault'  customize = (KMSKeyNotAccessibleFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newKMSKeyNotAccessibleFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> KMSKeyNotAccessibleFault
+newKMSKeyNotAccessibleFault'  customize = (KMSKeyNotAccessibleFault <<< customize) { "message": Nothing }
 
 
 
@@ -1914,7 +1913,7 @@ newListTagsForResourceMessage' _ResourceArn customize = (ListTagsForResourceMess
 
 -- | <p/>
 newtype ListTagsForResourceResponse = ListTagsForResourceResponse 
-  { "TagList" :: NullOrUndefined (TagList)
+  { "TagList" :: Maybe (TagList)
   }
 derive instance newtypeListTagsForResourceResponse :: Newtype ListTagsForResourceResponse _
 derive instance repGenericListTagsForResourceResponse :: Generic ListTagsForResourceResponse _
@@ -1924,12 +1923,12 @@ instance encodeListTagsForResourceResponse :: Encode ListTagsForResourceResponse
 
 -- | Constructs ListTagsForResourceResponse from required parameters
 newListTagsForResourceResponse :: ListTagsForResourceResponse
-newListTagsForResourceResponse  = ListTagsForResourceResponse { "TagList": (NullOrUndefined Nothing) }
+newListTagsForResourceResponse  = ListTagsForResourceResponse { "TagList": Nothing }
 
 -- | Constructs ListTagsForResourceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForResourceResponse' :: ( { "TagList" :: NullOrUndefined (TagList) } -> {"TagList" :: NullOrUndefined (TagList) } ) -> ListTagsForResourceResponse
-newListTagsForResourceResponse'  customize = (ListTagsForResourceResponse <<< customize) { "TagList": (NullOrUndefined Nothing) }
+newListTagsForResourceResponse' :: ( { "TagList" :: Maybe (TagList) } -> {"TagList" :: Maybe (TagList) } ) -> ListTagsForResourceResponse
+newListTagsForResourceResponse'  customize = (ListTagsForResourceResponse <<< customize) { "TagList": Nothing }
 
 
 
@@ -1945,20 +1944,20 @@ instance encodeMigrationTypeValue :: Encode MigrationTypeValue where encode = ge
 -- | <p/>
 newtype ModifyEndpointMessage = ModifyEndpointMessage 
   { "EndpointArn" :: (String)
-  , "EndpointIdentifier" :: NullOrUndefined (String)
-  , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue)
-  , "EngineName" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
-  , "Password" :: NullOrUndefined (SecretString)
-  , "ServerName" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "DatabaseName" :: NullOrUndefined (String)
-  , "ExtraConnectionAttributes" :: NullOrUndefined (String)
-  , "CertificateArn" :: NullOrUndefined (String)
-  , "SslMode" :: NullOrUndefined (DmsSslModeValue)
-  , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings)
-  , "S3Settings" :: NullOrUndefined (S3Settings)
-  , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings)
+  , "EndpointIdentifier" :: Maybe (String)
+  , "EndpointType" :: Maybe (ReplicationEndpointTypeValue)
+  , "EngineName" :: Maybe (String)
+  , "Username" :: Maybe (String)
+  , "Password" :: Maybe (SecretString)
+  , "ServerName" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "DatabaseName" :: Maybe (String)
+  , "ExtraConnectionAttributes" :: Maybe (String)
+  , "CertificateArn" :: Maybe (String)
+  , "SslMode" :: Maybe (DmsSslModeValue)
+  , "DynamoDbSettings" :: Maybe (DynamoDbSettings)
+  , "S3Settings" :: Maybe (S3Settings)
+  , "MongoDbSettings" :: Maybe (MongoDbSettings)
   }
 derive instance newtypeModifyEndpointMessage :: Newtype ModifyEndpointMessage _
 derive instance repGenericModifyEndpointMessage :: Generic ModifyEndpointMessage _
@@ -1968,18 +1967,18 @@ instance encodeModifyEndpointMessage :: Encode ModifyEndpointMessage where encod
 
 -- | Constructs ModifyEndpointMessage from required parameters
 newModifyEndpointMessage :: String -> ModifyEndpointMessage
-newModifyEndpointMessage _EndpointArn = ModifyEndpointMessage { "EndpointArn": _EndpointArn, "CertificateArn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DynamoDbSettings": (NullOrUndefined Nothing), "EndpointIdentifier": (NullOrUndefined Nothing), "EndpointType": (NullOrUndefined Nothing), "EngineName": (NullOrUndefined Nothing), "ExtraConnectionAttributes": (NullOrUndefined Nothing), "MongoDbSettings": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "S3Settings": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "SslMode": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newModifyEndpointMessage _EndpointArn = ModifyEndpointMessage { "EndpointArn": _EndpointArn, "CertificateArn": Nothing, "DatabaseName": Nothing, "DynamoDbSettings": Nothing, "EndpointIdentifier": Nothing, "EndpointType": Nothing, "EngineName": Nothing, "ExtraConnectionAttributes": Nothing, "MongoDbSettings": Nothing, "Password": Nothing, "Port": Nothing, "S3Settings": Nothing, "ServerName": Nothing, "SslMode": Nothing, "Username": Nothing }
 
 -- | Constructs ModifyEndpointMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyEndpointMessage' :: String -> ( { "EndpointArn" :: (String) , "EndpointIdentifier" :: NullOrUndefined (String) , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) , "EngineName" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (SecretString) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "ExtraConnectionAttributes" :: NullOrUndefined (String) , "CertificateArn" :: NullOrUndefined (String) , "SslMode" :: NullOrUndefined (DmsSslModeValue) , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings) , "S3Settings" :: NullOrUndefined (S3Settings) , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } -> {"EndpointArn" :: (String) , "EndpointIdentifier" :: NullOrUndefined (String) , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) , "EngineName" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (SecretString) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "ExtraConnectionAttributes" :: NullOrUndefined (String) , "CertificateArn" :: NullOrUndefined (String) , "SslMode" :: NullOrUndefined (DmsSslModeValue) , "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings) , "S3Settings" :: NullOrUndefined (S3Settings) , "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } ) -> ModifyEndpointMessage
-newModifyEndpointMessage' _EndpointArn customize = (ModifyEndpointMessage <<< customize) { "EndpointArn": _EndpointArn, "CertificateArn": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DynamoDbSettings": (NullOrUndefined Nothing), "EndpointIdentifier": (NullOrUndefined Nothing), "EndpointType": (NullOrUndefined Nothing), "EngineName": (NullOrUndefined Nothing), "ExtraConnectionAttributes": (NullOrUndefined Nothing), "MongoDbSettings": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "S3Settings": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "SslMode": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newModifyEndpointMessage' :: String -> ( { "EndpointArn" :: (String) , "EndpointIdentifier" :: Maybe (String) , "EndpointType" :: Maybe (ReplicationEndpointTypeValue) , "EngineName" :: Maybe (String) , "Username" :: Maybe (String) , "Password" :: Maybe (SecretString) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "ExtraConnectionAttributes" :: Maybe (String) , "CertificateArn" :: Maybe (String) , "SslMode" :: Maybe (DmsSslModeValue) , "DynamoDbSettings" :: Maybe (DynamoDbSettings) , "S3Settings" :: Maybe (S3Settings) , "MongoDbSettings" :: Maybe (MongoDbSettings) } -> {"EndpointArn" :: (String) , "EndpointIdentifier" :: Maybe (String) , "EndpointType" :: Maybe (ReplicationEndpointTypeValue) , "EngineName" :: Maybe (String) , "Username" :: Maybe (String) , "Password" :: Maybe (SecretString) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "ExtraConnectionAttributes" :: Maybe (String) , "CertificateArn" :: Maybe (String) , "SslMode" :: Maybe (DmsSslModeValue) , "DynamoDbSettings" :: Maybe (DynamoDbSettings) , "S3Settings" :: Maybe (S3Settings) , "MongoDbSettings" :: Maybe (MongoDbSettings) } ) -> ModifyEndpointMessage
+newModifyEndpointMessage' _EndpointArn customize = (ModifyEndpointMessage <<< customize) { "EndpointArn": _EndpointArn, "CertificateArn": Nothing, "DatabaseName": Nothing, "DynamoDbSettings": Nothing, "EndpointIdentifier": Nothing, "EndpointType": Nothing, "EngineName": Nothing, "ExtraConnectionAttributes": Nothing, "MongoDbSettings": Nothing, "Password": Nothing, "Port": Nothing, "S3Settings": Nothing, "ServerName": Nothing, "SslMode": Nothing, "Username": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyEndpointResponse = ModifyEndpointResponse 
-  { "Endpoint" :: NullOrUndefined (Endpoint)
+  { "Endpoint" :: Maybe (Endpoint)
   }
 derive instance newtypeModifyEndpointResponse :: Newtype ModifyEndpointResponse _
 derive instance repGenericModifyEndpointResponse :: Generic ModifyEndpointResponse _
@@ -1989,22 +1988,22 @@ instance encodeModifyEndpointResponse :: Encode ModifyEndpointResponse where enc
 
 -- | Constructs ModifyEndpointResponse from required parameters
 newModifyEndpointResponse :: ModifyEndpointResponse
-newModifyEndpointResponse  = ModifyEndpointResponse { "Endpoint": (NullOrUndefined Nothing) }
+newModifyEndpointResponse  = ModifyEndpointResponse { "Endpoint": Nothing }
 
 -- | Constructs ModifyEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyEndpointResponse' :: ( { "Endpoint" :: NullOrUndefined (Endpoint) } -> {"Endpoint" :: NullOrUndefined (Endpoint) } ) -> ModifyEndpointResponse
-newModifyEndpointResponse'  customize = (ModifyEndpointResponse <<< customize) { "Endpoint": (NullOrUndefined Nothing) }
+newModifyEndpointResponse' :: ( { "Endpoint" :: Maybe (Endpoint) } -> {"Endpoint" :: Maybe (Endpoint) } ) -> ModifyEndpointResponse
+newModifyEndpointResponse'  customize = (ModifyEndpointResponse <<< customize) { "Endpoint": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyEventSubscriptionMessage = ModifyEventSubscriptionMessage 
   { "SubscriptionName" :: (String)
-  , "SnsTopicArn" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (String)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "Enabled" :: NullOrUndefined (BooleanOptional)
+  , "SnsTopicArn" :: Maybe (String)
+  , "SourceType" :: Maybe (String)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "Enabled" :: Maybe (BooleanOptional)
   }
 derive instance newtypeModifyEventSubscriptionMessage :: Newtype ModifyEventSubscriptionMessage _
 derive instance repGenericModifyEventSubscriptionMessage :: Generic ModifyEventSubscriptionMessage _
@@ -2014,18 +2013,18 @@ instance encodeModifyEventSubscriptionMessage :: Encode ModifyEventSubscriptionM
 
 -- | Constructs ModifyEventSubscriptionMessage from required parameters
 newModifyEventSubscriptionMessage :: String -> ModifyEventSubscriptionMessage
-newModifyEventSubscriptionMessage _SubscriptionName = ModifyEventSubscriptionMessage { "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionMessage _SubscriptionName = ModifyEventSubscriptionMessage { "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "SnsTopicArn": Nothing, "SourceType": Nothing }
 
 -- | Constructs ModifyEventSubscriptionMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyEventSubscriptionMessage' :: String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Enabled" :: NullOrUndefined (BooleanOptional) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Enabled" :: NullOrUndefined (BooleanOptional) } ) -> ModifyEventSubscriptionMessage
-newModifyEventSubscriptionMessage' _SubscriptionName customize = (ModifyEventSubscriptionMessage <<< customize) { "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionMessage' :: String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: Maybe (String) , "SourceType" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "Enabled" :: Maybe (BooleanOptional) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: Maybe (String) , "SourceType" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "Enabled" :: Maybe (BooleanOptional) } ) -> ModifyEventSubscriptionMessage
+newModifyEventSubscriptionMessage' _SubscriptionName customize = (ModifyEventSubscriptionMessage <<< customize) { "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "SnsTopicArn": Nothing, "SourceType": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyEventSubscriptionResponse = ModifyEventSubscriptionResponse 
-  { "EventSubscription" :: NullOrUndefined (EventSubscription)
+  { "EventSubscription" :: Maybe (EventSubscription)
   }
 derive instance newtypeModifyEventSubscriptionResponse :: Newtype ModifyEventSubscriptionResponse _
 derive instance repGenericModifyEventSubscriptionResponse :: Generic ModifyEventSubscriptionResponse _
@@ -2035,28 +2034,28 @@ instance encodeModifyEventSubscriptionResponse :: Encode ModifyEventSubscription
 
 -- | Constructs ModifyEventSubscriptionResponse from required parameters
 newModifyEventSubscriptionResponse :: ModifyEventSubscriptionResponse
-newModifyEventSubscriptionResponse  = ModifyEventSubscriptionResponse { "EventSubscription": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionResponse  = ModifyEventSubscriptionResponse { "EventSubscription": Nothing }
 
 -- | Constructs ModifyEventSubscriptionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyEventSubscriptionResponse' :: ( { "EventSubscription" :: NullOrUndefined (EventSubscription) } -> {"EventSubscription" :: NullOrUndefined (EventSubscription) } ) -> ModifyEventSubscriptionResponse
-newModifyEventSubscriptionResponse'  customize = (ModifyEventSubscriptionResponse <<< customize) { "EventSubscription": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionResponse' :: ( { "EventSubscription" :: Maybe (EventSubscription) } -> {"EventSubscription" :: Maybe (EventSubscription) } ) -> ModifyEventSubscriptionResponse
+newModifyEventSubscriptionResponse'  customize = (ModifyEventSubscriptionResponse <<< customize) { "EventSubscription": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyReplicationInstanceMessage = ModifyReplicationInstanceMessage 
   { "ReplicationInstanceArn" :: (String)
-  , "AllocatedStorage" :: NullOrUndefined (IntegerOptional)
-  , "ApplyImmediately" :: NullOrUndefined (Boolean)
-  , "ReplicationInstanceClass" :: NullOrUndefined (String)
-  , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "MultiAZ" :: NullOrUndefined (BooleanOptional)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "AllowMajorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "ReplicationInstanceIdentifier" :: NullOrUndefined (String)
+  , "AllocatedStorage" :: Maybe (IntegerOptional)
+  , "ApplyImmediately" :: Maybe (Boolean)
+  , "ReplicationInstanceClass" :: Maybe (String)
+  , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "MultiAZ" :: Maybe (BooleanOptional)
+  , "EngineVersion" :: Maybe (String)
+  , "AllowMajorVersionUpgrade" :: Maybe (Boolean)
+  , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional)
+  , "ReplicationInstanceIdentifier" :: Maybe (String)
   }
 derive instance newtypeModifyReplicationInstanceMessage :: Newtype ModifyReplicationInstanceMessage _
 derive instance repGenericModifyReplicationInstanceMessage :: Generic ModifyReplicationInstanceMessage _
@@ -2066,18 +2065,18 @@ instance encodeModifyReplicationInstanceMessage :: Encode ModifyReplicationInsta
 
 -- | Constructs ModifyReplicationInstanceMessage from required parameters
 newModifyReplicationInstanceMessage :: String -> ModifyReplicationInstanceMessage
-newModifyReplicationInstanceMessage _ReplicationInstanceArn = ModifyReplicationInstanceMessage { "ReplicationInstanceArn": _ReplicationInstanceArn, "AllocatedStorage": (NullOrUndefined Nothing), "AllowMajorVersionUpgrade": (NullOrUndefined Nothing), "ApplyImmediately": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing), "ReplicationInstanceIdentifier": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newModifyReplicationInstanceMessage _ReplicationInstanceArn = ModifyReplicationInstanceMessage { "ReplicationInstanceArn": _ReplicationInstanceArn, "AllocatedStorage": Nothing, "AllowMajorVersionUpgrade": Nothing, "ApplyImmediately": Nothing, "AutoMinorVersionUpgrade": Nothing, "EngineVersion": Nothing, "MultiAZ": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationInstanceClass": Nothing, "ReplicationInstanceIdentifier": Nothing, "VpcSecurityGroupIds": Nothing }
 
 -- | Constructs ModifyReplicationInstanceMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationInstanceMessage' :: String -> ( { "ReplicationInstanceArn" :: (String) , "AllocatedStorage" :: NullOrUndefined (IntegerOptional) , "ApplyImmediately" :: NullOrUndefined (Boolean) , "ReplicationInstanceClass" :: NullOrUndefined (String) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "MultiAZ" :: NullOrUndefined (BooleanOptional) , "EngineVersion" :: NullOrUndefined (String) , "AllowMajorVersionUpgrade" :: NullOrUndefined (Boolean) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "ReplicationInstanceIdentifier" :: NullOrUndefined (String) } -> {"ReplicationInstanceArn" :: (String) , "AllocatedStorage" :: NullOrUndefined (IntegerOptional) , "ApplyImmediately" :: NullOrUndefined (Boolean) , "ReplicationInstanceClass" :: NullOrUndefined (String) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "MultiAZ" :: NullOrUndefined (BooleanOptional) , "EngineVersion" :: NullOrUndefined (String) , "AllowMajorVersionUpgrade" :: NullOrUndefined (Boolean) , "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "ReplicationInstanceIdentifier" :: NullOrUndefined (String) } ) -> ModifyReplicationInstanceMessage
-newModifyReplicationInstanceMessage' _ReplicationInstanceArn customize = (ModifyReplicationInstanceMessage <<< customize) { "ReplicationInstanceArn": _ReplicationInstanceArn, "AllocatedStorage": (NullOrUndefined Nothing), "AllowMajorVersionUpgrade": (NullOrUndefined Nothing), "ApplyImmediately": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing), "ReplicationInstanceIdentifier": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newModifyReplicationInstanceMessage' :: String -> ( { "ReplicationInstanceArn" :: (String) , "AllocatedStorage" :: Maybe (IntegerOptional) , "ApplyImmediately" :: Maybe (Boolean) , "ReplicationInstanceClass" :: Maybe (String) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: Maybe (String) , "MultiAZ" :: Maybe (BooleanOptional) , "EngineVersion" :: Maybe (String) , "AllowMajorVersionUpgrade" :: Maybe (Boolean) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "ReplicationInstanceIdentifier" :: Maybe (String) } -> {"ReplicationInstanceArn" :: (String) , "AllocatedStorage" :: Maybe (IntegerOptional) , "ApplyImmediately" :: Maybe (Boolean) , "ReplicationInstanceClass" :: Maybe (String) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: Maybe (String) , "MultiAZ" :: Maybe (BooleanOptional) , "EngineVersion" :: Maybe (String) , "AllowMajorVersionUpgrade" :: Maybe (Boolean) , "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional) , "ReplicationInstanceIdentifier" :: Maybe (String) } ) -> ModifyReplicationInstanceMessage
+newModifyReplicationInstanceMessage' _ReplicationInstanceArn customize = (ModifyReplicationInstanceMessage <<< customize) { "ReplicationInstanceArn": _ReplicationInstanceArn, "AllocatedStorage": Nothing, "AllowMajorVersionUpgrade": Nothing, "ApplyImmediately": Nothing, "AutoMinorVersionUpgrade": Nothing, "EngineVersion": Nothing, "MultiAZ": Nothing, "PreferredMaintenanceWindow": Nothing, "ReplicationInstanceClass": Nothing, "ReplicationInstanceIdentifier": Nothing, "VpcSecurityGroupIds": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyReplicationInstanceResponse = ModifyReplicationInstanceResponse 
-  { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance)
+  { "ReplicationInstance" :: Maybe (ReplicationInstance)
   }
 derive instance newtypeModifyReplicationInstanceResponse :: Newtype ModifyReplicationInstanceResponse _
 derive instance repGenericModifyReplicationInstanceResponse :: Generic ModifyReplicationInstanceResponse _
@@ -2087,19 +2086,19 @@ instance encodeModifyReplicationInstanceResponse :: Encode ModifyReplicationInst
 
 -- | Constructs ModifyReplicationInstanceResponse from required parameters
 newModifyReplicationInstanceResponse :: ModifyReplicationInstanceResponse
-newModifyReplicationInstanceResponse  = ModifyReplicationInstanceResponse { "ReplicationInstance": (NullOrUndefined Nothing) }
+newModifyReplicationInstanceResponse  = ModifyReplicationInstanceResponse { "ReplicationInstance": Nothing }
 
 -- | Constructs ModifyReplicationInstanceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationInstanceResponse' :: ( { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> {"ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } ) -> ModifyReplicationInstanceResponse
-newModifyReplicationInstanceResponse'  customize = (ModifyReplicationInstanceResponse <<< customize) { "ReplicationInstance": (NullOrUndefined Nothing) }
+newModifyReplicationInstanceResponse' :: ( { "ReplicationInstance" :: Maybe (ReplicationInstance) } -> {"ReplicationInstance" :: Maybe (ReplicationInstance) } ) -> ModifyReplicationInstanceResponse
+newModifyReplicationInstanceResponse'  customize = (ModifyReplicationInstanceResponse <<< customize) { "ReplicationInstance": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyReplicationSubnetGroupMessage = ModifyReplicationSubnetGroupMessage 
   { "ReplicationSubnetGroupIdentifier" :: (String)
-  , "ReplicationSubnetGroupDescription" :: NullOrUndefined (String)
+  , "ReplicationSubnetGroupDescription" :: Maybe (String)
   , "SubnetIds" :: (SubnetIdentifierList)
   }
 derive instance newtypeModifyReplicationSubnetGroupMessage :: Newtype ModifyReplicationSubnetGroupMessage _
@@ -2110,18 +2109,18 @@ instance encodeModifyReplicationSubnetGroupMessage :: Encode ModifyReplicationSu
 
 -- | Constructs ModifyReplicationSubnetGroupMessage from required parameters
 newModifyReplicationSubnetGroupMessage :: String -> SubnetIdentifierList -> ModifyReplicationSubnetGroupMessage
-newModifyReplicationSubnetGroupMessage _ReplicationSubnetGroupIdentifier _SubnetIds = ModifyReplicationSubnetGroupMessage { "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "ReplicationSubnetGroupDescription": (NullOrUndefined Nothing) }
+newModifyReplicationSubnetGroupMessage _ReplicationSubnetGroupIdentifier _SubnetIds = ModifyReplicationSubnetGroupMessage { "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "ReplicationSubnetGroupDescription": Nothing }
 
 -- | Constructs ModifyReplicationSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationSubnetGroupMessage' :: String -> SubnetIdentifierList -> ( { "ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: NullOrUndefined (String) , "SubnetIds" :: (SubnetIdentifierList) } -> {"ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: NullOrUndefined (String) , "SubnetIds" :: (SubnetIdentifierList) } ) -> ModifyReplicationSubnetGroupMessage
-newModifyReplicationSubnetGroupMessage' _ReplicationSubnetGroupIdentifier _SubnetIds customize = (ModifyReplicationSubnetGroupMessage <<< customize) { "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "ReplicationSubnetGroupDescription": (NullOrUndefined Nothing) }
+newModifyReplicationSubnetGroupMessage' :: String -> SubnetIdentifierList -> ( { "ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: Maybe (String) , "SubnetIds" :: (SubnetIdentifierList) } -> {"ReplicationSubnetGroupIdentifier" :: (String) , "ReplicationSubnetGroupDescription" :: Maybe (String) , "SubnetIds" :: (SubnetIdentifierList) } ) -> ModifyReplicationSubnetGroupMessage
+newModifyReplicationSubnetGroupMessage' _ReplicationSubnetGroupIdentifier _SubnetIds customize = (ModifyReplicationSubnetGroupMessage <<< customize) { "ReplicationSubnetGroupIdentifier": _ReplicationSubnetGroupIdentifier, "SubnetIds": _SubnetIds, "ReplicationSubnetGroupDescription": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyReplicationSubnetGroupResponse = ModifyReplicationSubnetGroupResponse 
-  { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup)
+  { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup)
   }
 derive instance newtypeModifyReplicationSubnetGroupResponse :: Newtype ModifyReplicationSubnetGroupResponse _
 derive instance repGenericModifyReplicationSubnetGroupResponse :: Generic ModifyReplicationSubnetGroupResponse _
@@ -2131,23 +2130,23 @@ instance encodeModifyReplicationSubnetGroupResponse :: Encode ModifyReplicationS
 
 -- | Constructs ModifyReplicationSubnetGroupResponse from required parameters
 newModifyReplicationSubnetGroupResponse :: ModifyReplicationSubnetGroupResponse
-newModifyReplicationSubnetGroupResponse  = ModifyReplicationSubnetGroupResponse { "ReplicationSubnetGroup": (NullOrUndefined Nothing) }
+newModifyReplicationSubnetGroupResponse  = ModifyReplicationSubnetGroupResponse { "ReplicationSubnetGroup": Nothing }
 
 -- | Constructs ModifyReplicationSubnetGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationSubnetGroupResponse' :: ( { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) } -> {"ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) } ) -> ModifyReplicationSubnetGroupResponse
-newModifyReplicationSubnetGroupResponse'  customize = (ModifyReplicationSubnetGroupResponse <<< customize) { "ReplicationSubnetGroup": (NullOrUndefined Nothing) }
+newModifyReplicationSubnetGroupResponse' :: ( { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) } -> {"ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) } ) -> ModifyReplicationSubnetGroupResponse
+newModifyReplicationSubnetGroupResponse'  customize = (ModifyReplicationSubnetGroupResponse <<< customize) { "ReplicationSubnetGroup": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyReplicationTaskMessage = ModifyReplicationTaskMessage 
   { "ReplicationTaskArn" :: (String)
-  , "ReplicationTaskIdentifier" :: NullOrUndefined (String)
-  , "MigrationType" :: NullOrUndefined (MigrationTypeValue)
-  , "TableMappings" :: NullOrUndefined (String)
-  , "ReplicationTaskSettings" :: NullOrUndefined (String)
-  , "CdcStartTime" :: NullOrUndefined (TStamp)
+  , "ReplicationTaskIdentifier" :: Maybe (String)
+  , "MigrationType" :: Maybe (MigrationTypeValue)
+  , "TableMappings" :: Maybe (String)
+  , "ReplicationTaskSettings" :: Maybe (String)
+  , "CdcStartTime" :: Maybe (TStamp)
   }
 derive instance newtypeModifyReplicationTaskMessage :: Newtype ModifyReplicationTaskMessage _
 derive instance repGenericModifyReplicationTaskMessage :: Generic ModifyReplicationTaskMessage _
@@ -2157,18 +2156,18 @@ instance encodeModifyReplicationTaskMessage :: Encode ModifyReplicationTaskMessa
 
 -- | Constructs ModifyReplicationTaskMessage from required parameters
 newModifyReplicationTaskMessage :: String -> ModifyReplicationTaskMessage
-newModifyReplicationTaskMessage _ReplicationTaskArn = ModifyReplicationTaskMessage { "ReplicationTaskArn": _ReplicationTaskArn, "CdcStartTime": (NullOrUndefined Nothing), "MigrationType": (NullOrUndefined Nothing), "ReplicationTaskIdentifier": (NullOrUndefined Nothing), "ReplicationTaskSettings": (NullOrUndefined Nothing), "TableMappings": (NullOrUndefined Nothing) }
+newModifyReplicationTaskMessage _ReplicationTaskArn = ModifyReplicationTaskMessage { "ReplicationTaskArn": _ReplicationTaskArn, "CdcStartTime": Nothing, "MigrationType": Nothing, "ReplicationTaskIdentifier": Nothing, "ReplicationTaskSettings": Nothing, "TableMappings": Nothing }
 
 -- | Constructs ModifyReplicationTaskMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationTaskMessage' :: String -> ( { "ReplicationTaskArn" :: (String) , "ReplicationTaskIdentifier" :: NullOrUndefined (String) , "MigrationType" :: NullOrUndefined (MigrationTypeValue) , "TableMappings" :: NullOrUndefined (String) , "ReplicationTaskSettings" :: NullOrUndefined (String) , "CdcStartTime" :: NullOrUndefined (TStamp) } -> {"ReplicationTaskArn" :: (String) , "ReplicationTaskIdentifier" :: NullOrUndefined (String) , "MigrationType" :: NullOrUndefined (MigrationTypeValue) , "TableMappings" :: NullOrUndefined (String) , "ReplicationTaskSettings" :: NullOrUndefined (String) , "CdcStartTime" :: NullOrUndefined (TStamp) } ) -> ModifyReplicationTaskMessage
-newModifyReplicationTaskMessage' _ReplicationTaskArn customize = (ModifyReplicationTaskMessage <<< customize) { "ReplicationTaskArn": _ReplicationTaskArn, "CdcStartTime": (NullOrUndefined Nothing), "MigrationType": (NullOrUndefined Nothing), "ReplicationTaskIdentifier": (NullOrUndefined Nothing), "ReplicationTaskSettings": (NullOrUndefined Nothing), "TableMappings": (NullOrUndefined Nothing) }
+newModifyReplicationTaskMessage' :: String -> ( { "ReplicationTaskArn" :: (String) , "ReplicationTaskIdentifier" :: Maybe (String) , "MigrationType" :: Maybe (MigrationTypeValue) , "TableMappings" :: Maybe (String) , "ReplicationTaskSettings" :: Maybe (String) , "CdcStartTime" :: Maybe (TStamp) } -> {"ReplicationTaskArn" :: (String) , "ReplicationTaskIdentifier" :: Maybe (String) , "MigrationType" :: Maybe (MigrationTypeValue) , "TableMappings" :: Maybe (String) , "ReplicationTaskSettings" :: Maybe (String) , "CdcStartTime" :: Maybe (TStamp) } ) -> ModifyReplicationTaskMessage
+newModifyReplicationTaskMessage' _ReplicationTaskArn customize = (ModifyReplicationTaskMessage <<< customize) { "ReplicationTaskArn": _ReplicationTaskArn, "CdcStartTime": Nothing, "MigrationType": Nothing, "ReplicationTaskIdentifier": Nothing, "ReplicationTaskSettings": Nothing, "TableMappings": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyReplicationTaskResponse = ModifyReplicationTaskResponse 
-  { "ReplicationTask" :: NullOrUndefined (ReplicationTask)
+  { "ReplicationTask" :: Maybe (ReplicationTask)
   }
 derive instance newtypeModifyReplicationTaskResponse :: Newtype ModifyReplicationTaskResponse _
 derive instance repGenericModifyReplicationTaskResponse :: Generic ModifyReplicationTaskResponse _
@@ -2178,28 +2177,28 @@ instance encodeModifyReplicationTaskResponse :: Encode ModifyReplicationTaskResp
 
 -- | Constructs ModifyReplicationTaskResponse from required parameters
 newModifyReplicationTaskResponse :: ModifyReplicationTaskResponse
-newModifyReplicationTaskResponse  = ModifyReplicationTaskResponse { "ReplicationTask": (NullOrUndefined Nothing) }
+newModifyReplicationTaskResponse  = ModifyReplicationTaskResponse { "ReplicationTask": Nothing }
 
 -- | Constructs ModifyReplicationTaskResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyReplicationTaskResponse' :: ( { "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> {"ReplicationTask" :: NullOrUndefined (ReplicationTask) } ) -> ModifyReplicationTaskResponse
-newModifyReplicationTaskResponse'  customize = (ModifyReplicationTaskResponse <<< customize) { "ReplicationTask": (NullOrUndefined Nothing) }
+newModifyReplicationTaskResponse' :: ( { "ReplicationTask" :: Maybe (ReplicationTask) } -> {"ReplicationTask" :: Maybe (ReplicationTask) } ) -> ModifyReplicationTaskResponse
+newModifyReplicationTaskResponse'  customize = (ModifyReplicationTaskResponse <<< customize) { "ReplicationTask": Nothing }
 
 
 
 -- | <p/>
 newtype MongoDbSettings = MongoDbSettings 
-  { "Username" :: NullOrUndefined (String)
-  , "Password" :: NullOrUndefined (SecretString)
-  , "ServerName" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "DatabaseName" :: NullOrUndefined (String)
-  , "AuthType" :: NullOrUndefined (AuthTypeValue)
-  , "AuthMechanism" :: NullOrUndefined (AuthMechanismValue)
-  , "NestingLevel" :: NullOrUndefined (NestingLevelValue)
-  , "ExtractDocId" :: NullOrUndefined (String)
-  , "DocsToInvestigate" :: NullOrUndefined (String)
-  , "AuthSource" :: NullOrUndefined (String)
+  { "Username" :: Maybe (String)
+  , "Password" :: Maybe (SecretString)
+  , "ServerName" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "DatabaseName" :: Maybe (String)
+  , "AuthType" :: Maybe (AuthTypeValue)
+  , "AuthMechanism" :: Maybe (AuthMechanismValue)
+  , "NestingLevel" :: Maybe (NestingLevelValue)
+  , "ExtractDocId" :: Maybe (String)
+  , "DocsToInvestigate" :: Maybe (String)
+  , "AuthSource" :: Maybe (String)
   }
 derive instance newtypeMongoDbSettings :: Newtype MongoDbSettings _
 derive instance repGenericMongoDbSettings :: Generic MongoDbSettings _
@@ -2209,12 +2208,12 @@ instance encodeMongoDbSettings :: Encode MongoDbSettings where encode = genericE
 
 -- | Constructs MongoDbSettings from required parameters
 newMongoDbSettings :: MongoDbSettings
-newMongoDbSettings  = MongoDbSettings { "AuthMechanism": (NullOrUndefined Nothing), "AuthSource": (NullOrUndefined Nothing), "AuthType": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DocsToInvestigate": (NullOrUndefined Nothing), "ExtractDocId": (NullOrUndefined Nothing), "NestingLevel": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newMongoDbSettings  = MongoDbSettings { "AuthMechanism": Nothing, "AuthSource": Nothing, "AuthType": Nothing, "DatabaseName": Nothing, "DocsToInvestigate": Nothing, "ExtractDocId": Nothing, "NestingLevel": Nothing, "Password": Nothing, "Port": Nothing, "ServerName": Nothing, "Username": Nothing }
 
 -- | Constructs MongoDbSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMongoDbSettings' :: ( { "Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (SecretString) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "AuthType" :: NullOrUndefined (AuthTypeValue) , "AuthMechanism" :: NullOrUndefined (AuthMechanismValue) , "NestingLevel" :: NullOrUndefined (NestingLevelValue) , "ExtractDocId" :: NullOrUndefined (String) , "DocsToInvestigate" :: NullOrUndefined (String) , "AuthSource" :: NullOrUndefined (String) } -> {"Username" :: NullOrUndefined (String) , "Password" :: NullOrUndefined (SecretString) , "ServerName" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "DatabaseName" :: NullOrUndefined (String) , "AuthType" :: NullOrUndefined (AuthTypeValue) , "AuthMechanism" :: NullOrUndefined (AuthMechanismValue) , "NestingLevel" :: NullOrUndefined (NestingLevelValue) , "ExtractDocId" :: NullOrUndefined (String) , "DocsToInvestigate" :: NullOrUndefined (String) , "AuthSource" :: NullOrUndefined (String) } ) -> MongoDbSettings
-newMongoDbSettings'  customize = (MongoDbSettings <<< customize) { "AuthMechanism": (NullOrUndefined Nothing), "AuthSource": (NullOrUndefined Nothing), "AuthType": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "DocsToInvestigate": (NullOrUndefined Nothing), "ExtractDocId": (NullOrUndefined Nothing), "NestingLevel": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "ServerName": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newMongoDbSettings' :: ( { "Username" :: Maybe (String) , "Password" :: Maybe (SecretString) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "AuthType" :: Maybe (AuthTypeValue) , "AuthMechanism" :: Maybe (AuthMechanismValue) , "NestingLevel" :: Maybe (NestingLevelValue) , "ExtractDocId" :: Maybe (String) , "DocsToInvestigate" :: Maybe (String) , "AuthSource" :: Maybe (String) } -> {"Username" :: Maybe (String) , "Password" :: Maybe (SecretString) , "ServerName" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "DatabaseName" :: Maybe (String) , "AuthType" :: Maybe (AuthTypeValue) , "AuthMechanism" :: Maybe (AuthMechanismValue) , "NestingLevel" :: Maybe (NestingLevelValue) , "ExtractDocId" :: Maybe (String) , "DocsToInvestigate" :: Maybe (String) , "AuthSource" :: Maybe (String) } ) -> MongoDbSettings
+newMongoDbSettings'  customize = (MongoDbSettings <<< customize) { "AuthMechanism": Nothing, "AuthSource": Nothing, "AuthType": Nothing, "DatabaseName": Nothing, "DocsToInvestigate": Nothing, "ExtractDocId": Nothing, "NestingLevel": Nothing, "Password": Nothing, "Port": Nothing, "ServerName": Nothing, "Username": Nothing }
 
 
 
@@ -2229,13 +2228,13 @@ instance encodeNestingLevelValue :: Encode NestingLevelValue where encode = gene
 
 -- | <p/>
 newtype OrderableReplicationInstance = OrderableReplicationInstance 
-  { "EngineVersion" :: NullOrUndefined (String)
-  , "ReplicationInstanceClass" :: NullOrUndefined (String)
-  , "StorageType" :: NullOrUndefined (String)
-  , "MinAllocatedStorage" :: NullOrUndefined (Int)
-  , "MaxAllocatedStorage" :: NullOrUndefined (Int)
-  , "DefaultAllocatedStorage" :: NullOrUndefined (Int)
-  , "IncludedAllocatedStorage" :: NullOrUndefined (Int)
+  { "EngineVersion" :: Maybe (String)
+  , "ReplicationInstanceClass" :: Maybe (String)
+  , "StorageType" :: Maybe (String)
+  , "MinAllocatedStorage" :: Maybe (Int)
+  , "MaxAllocatedStorage" :: Maybe (Int)
+  , "DefaultAllocatedStorage" :: Maybe (Int)
+  , "IncludedAllocatedStorage" :: Maybe (Int)
   }
 derive instance newtypeOrderableReplicationInstance :: Newtype OrderableReplicationInstance _
 derive instance repGenericOrderableReplicationInstance :: Generic OrderableReplicationInstance _
@@ -2245,12 +2244,12 @@ instance encodeOrderableReplicationInstance :: Encode OrderableReplicationInstan
 
 -- | Constructs OrderableReplicationInstance from required parameters
 newOrderableReplicationInstance :: OrderableReplicationInstance
-newOrderableReplicationInstance  = OrderableReplicationInstance { "DefaultAllocatedStorage": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "IncludedAllocatedStorage": (NullOrUndefined Nothing), "MaxAllocatedStorage": (NullOrUndefined Nothing), "MinAllocatedStorage": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing), "StorageType": (NullOrUndefined Nothing) }
+newOrderableReplicationInstance  = OrderableReplicationInstance { "DefaultAllocatedStorage": Nothing, "EngineVersion": Nothing, "IncludedAllocatedStorage": Nothing, "MaxAllocatedStorage": Nothing, "MinAllocatedStorage": Nothing, "ReplicationInstanceClass": Nothing, "StorageType": Nothing }
 
 -- | Constructs OrderableReplicationInstance's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOrderableReplicationInstance' :: ( { "EngineVersion" :: NullOrUndefined (String) , "ReplicationInstanceClass" :: NullOrUndefined (String) , "StorageType" :: NullOrUndefined (String) , "MinAllocatedStorage" :: NullOrUndefined (Int) , "MaxAllocatedStorage" :: NullOrUndefined (Int) , "DefaultAllocatedStorage" :: NullOrUndefined (Int) , "IncludedAllocatedStorage" :: NullOrUndefined (Int) } -> {"EngineVersion" :: NullOrUndefined (String) , "ReplicationInstanceClass" :: NullOrUndefined (String) , "StorageType" :: NullOrUndefined (String) , "MinAllocatedStorage" :: NullOrUndefined (Int) , "MaxAllocatedStorage" :: NullOrUndefined (Int) , "DefaultAllocatedStorage" :: NullOrUndefined (Int) , "IncludedAllocatedStorage" :: NullOrUndefined (Int) } ) -> OrderableReplicationInstance
-newOrderableReplicationInstance'  customize = (OrderableReplicationInstance <<< customize) { "DefaultAllocatedStorage": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "IncludedAllocatedStorage": (NullOrUndefined Nothing), "MaxAllocatedStorage": (NullOrUndefined Nothing), "MinAllocatedStorage": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing), "StorageType": (NullOrUndefined Nothing) }
+newOrderableReplicationInstance' :: ( { "EngineVersion" :: Maybe (String) , "ReplicationInstanceClass" :: Maybe (String) , "StorageType" :: Maybe (String) , "MinAllocatedStorage" :: Maybe (Int) , "MaxAllocatedStorage" :: Maybe (Int) , "DefaultAllocatedStorage" :: Maybe (Int) , "IncludedAllocatedStorage" :: Maybe (Int) } -> {"EngineVersion" :: Maybe (String) , "ReplicationInstanceClass" :: Maybe (String) , "StorageType" :: Maybe (String) , "MinAllocatedStorage" :: Maybe (Int) , "MaxAllocatedStorage" :: Maybe (Int) , "DefaultAllocatedStorage" :: Maybe (Int) , "IncludedAllocatedStorage" :: Maybe (Int) } ) -> OrderableReplicationInstance
+newOrderableReplicationInstance'  customize = (OrderableReplicationInstance <<< customize) { "DefaultAllocatedStorage": Nothing, "EngineVersion": Nothing, "IncludedAllocatedStorage": Nothing, "MaxAllocatedStorage": Nothing, "MinAllocatedStorage": Nothing, "ReplicationInstanceClass": Nothing, "StorageType": Nothing }
 
 
 
@@ -2265,7 +2264,7 @@ instance encodeOrderableReplicationInstanceList :: Encode OrderableReplicationIn
 
 newtype RebootReplicationInstanceMessage = RebootReplicationInstanceMessage 
   { "ReplicationInstanceArn" :: (String)
-  , "ForceFailover" :: NullOrUndefined (BooleanOptional)
+  , "ForceFailover" :: Maybe (BooleanOptional)
   }
 derive instance newtypeRebootReplicationInstanceMessage :: Newtype RebootReplicationInstanceMessage _
 derive instance repGenericRebootReplicationInstanceMessage :: Generic RebootReplicationInstanceMessage _
@@ -2275,17 +2274,17 @@ instance encodeRebootReplicationInstanceMessage :: Encode RebootReplicationInsta
 
 -- | Constructs RebootReplicationInstanceMessage from required parameters
 newRebootReplicationInstanceMessage :: String -> RebootReplicationInstanceMessage
-newRebootReplicationInstanceMessage _ReplicationInstanceArn = RebootReplicationInstanceMessage { "ReplicationInstanceArn": _ReplicationInstanceArn, "ForceFailover": (NullOrUndefined Nothing) }
+newRebootReplicationInstanceMessage _ReplicationInstanceArn = RebootReplicationInstanceMessage { "ReplicationInstanceArn": _ReplicationInstanceArn, "ForceFailover": Nothing }
 
 -- | Constructs RebootReplicationInstanceMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRebootReplicationInstanceMessage' :: String -> ( { "ReplicationInstanceArn" :: (String) , "ForceFailover" :: NullOrUndefined (BooleanOptional) } -> {"ReplicationInstanceArn" :: (String) , "ForceFailover" :: NullOrUndefined (BooleanOptional) } ) -> RebootReplicationInstanceMessage
-newRebootReplicationInstanceMessage' _ReplicationInstanceArn customize = (RebootReplicationInstanceMessage <<< customize) { "ReplicationInstanceArn": _ReplicationInstanceArn, "ForceFailover": (NullOrUndefined Nothing) }
+newRebootReplicationInstanceMessage' :: String -> ( { "ReplicationInstanceArn" :: (String) , "ForceFailover" :: Maybe (BooleanOptional) } -> {"ReplicationInstanceArn" :: (String) , "ForceFailover" :: Maybe (BooleanOptional) } ) -> RebootReplicationInstanceMessage
+newRebootReplicationInstanceMessage' _ReplicationInstanceArn customize = (RebootReplicationInstanceMessage <<< customize) { "ReplicationInstanceArn": _ReplicationInstanceArn, "ForceFailover": Nothing }
 
 
 
 newtype RebootReplicationInstanceResponse = RebootReplicationInstanceResponse 
-  { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance)
+  { "ReplicationInstance" :: Maybe (ReplicationInstance)
   }
 derive instance newtypeRebootReplicationInstanceResponse :: Newtype RebootReplicationInstanceResponse _
 derive instance repGenericRebootReplicationInstanceResponse :: Generic RebootReplicationInstanceResponse _
@@ -2295,12 +2294,12 @@ instance encodeRebootReplicationInstanceResponse :: Encode RebootReplicationInst
 
 -- | Constructs RebootReplicationInstanceResponse from required parameters
 newRebootReplicationInstanceResponse :: RebootReplicationInstanceResponse
-newRebootReplicationInstanceResponse  = RebootReplicationInstanceResponse { "ReplicationInstance": (NullOrUndefined Nothing) }
+newRebootReplicationInstanceResponse  = RebootReplicationInstanceResponse { "ReplicationInstance": Nothing }
 
 -- | Constructs RebootReplicationInstanceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRebootReplicationInstanceResponse' :: ( { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> {"ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } ) -> RebootReplicationInstanceResponse
-newRebootReplicationInstanceResponse'  customize = (RebootReplicationInstanceResponse <<< customize) { "ReplicationInstance": (NullOrUndefined Nothing) }
+newRebootReplicationInstanceResponse' :: ( { "ReplicationInstance" :: Maybe (ReplicationInstance) } -> {"ReplicationInstance" :: Maybe (ReplicationInstance) } ) -> RebootReplicationInstanceResponse
+newRebootReplicationInstanceResponse'  customize = (RebootReplicationInstanceResponse <<< customize) { "ReplicationInstance": Nothing }
 
 
 
@@ -2328,7 +2327,7 @@ newRefreshSchemasMessage' _EndpointArn _ReplicationInstanceArn customize = (Refr
 
 -- | <p/>
 newtype RefreshSchemasResponse = RefreshSchemasResponse 
-  { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus)
+  { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus)
   }
 derive instance newtypeRefreshSchemasResponse :: Newtype RefreshSchemasResponse _
 derive instance repGenericRefreshSchemasResponse :: Generic RefreshSchemasResponse _
@@ -2338,22 +2337,22 @@ instance encodeRefreshSchemasResponse :: Encode RefreshSchemasResponse where enc
 
 -- | Constructs RefreshSchemasResponse from required parameters
 newRefreshSchemasResponse :: RefreshSchemasResponse
-newRefreshSchemasResponse  = RefreshSchemasResponse { "RefreshSchemasStatus": (NullOrUndefined Nothing) }
+newRefreshSchemasResponse  = RefreshSchemasResponse { "RefreshSchemasStatus": Nothing }
 
 -- | Constructs RefreshSchemasResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRefreshSchemasResponse' :: ( { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) } -> {"RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) } ) -> RefreshSchemasResponse
-newRefreshSchemasResponse'  customize = (RefreshSchemasResponse <<< customize) { "RefreshSchemasStatus": (NullOrUndefined Nothing) }
+newRefreshSchemasResponse' :: ( { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) } -> {"RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) } ) -> RefreshSchemasResponse
+newRefreshSchemasResponse'  customize = (RefreshSchemasResponse <<< customize) { "RefreshSchemasStatus": Nothing }
 
 
 
 -- | <p/>
 newtype RefreshSchemasStatus = RefreshSchemasStatus 
-  { "EndpointArn" :: NullOrUndefined (String)
-  , "ReplicationInstanceArn" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (RefreshSchemasStatusTypeValue)
-  , "LastRefreshDate" :: NullOrUndefined (TStamp)
-  , "LastFailureMessage" :: NullOrUndefined (String)
+  { "EndpointArn" :: Maybe (String)
+  , "ReplicationInstanceArn" :: Maybe (String)
+  , "Status" :: Maybe (RefreshSchemasStatusTypeValue)
+  , "LastRefreshDate" :: Maybe (TStamp)
+  , "LastFailureMessage" :: Maybe (String)
   }
 derive instance newtypeRefreshSchemasStatus :: Newtype RefreshSchemasStatus _
 derive instance repGenericRefreshSchemasStatus :: Generic RefreshSchemasStatus _
@@ -2363,12 +2362,12 @@ instance encodeRefreshSchemasStatus :: Encode RefreshSchemasStatus where encode 
 
 -- | Constructs RefreshSchemasStatus from required parameters
 newRefreshSchemasStatus :: RefreshSchemasStatus
-newRefreshSchemasStatus  = RefreshSchemasStatus { "EndpointArn": (NullOrUndefined Nothing), "LastFailureMessage": (NullOrUndefined Nothing), "LastRefreshDate": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newRefreshSchemasStatus  = RefreshSchemasStatus { "EndpointArn": Nothing, "LastFailureMessage": Nothing, "LastRefreshDate": Nothing, "ReplicationInstanceArn": Nothing, "Status": Nothing }
 
 -- | Constructs RefreshSchemasStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRefreshSchemasStatus' :: ( { "EndpointArn" :: NullOrUndefined (String) , "ReplicationInstanceArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (RefreshSchemasStatusTypeValue) , "LastRefreshDate" :: NullOrUndefined (TStamp) , "LastFailureMessage" :: NullOrUndefined (String) } -> {"EndpointArn" :: NullOrUndefined (String) , "ReplicationInstanceArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (RefreshSchemasStatusTypeValue) , "LastRefreshDate" :: NullOrUndefined (TStamp) , "LastFailureMessage" :: NullOrUndefined (String) } ) -> RefreshSchemasStatus
-newRefreshSchemasStatus'  customize = (RefreshSchemasStatus <<< customize) { "EndpointArn": (NullOrUndefined Nothing), "LastFailureMessage": (NullOrUndefined Nothing), "LastRefreshDate": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newRefreshSchemasStatus' :: ( { "EndpointArn" :: Maybe (String) , "ReplicationInstanceArn" :: Maybe (String) , "Status" :: Maybe (RefreshSchemasStatusTypeValue) , "LastRefreshDate" :: Maybe (TStamp) , "LastFailureMessage" :: Maybe (String) } -> {"EndpointArn" :: Maybe (String) , "ReplicationInstanceArn" :: Maybe (String) , "Status" :: Maybe (RefreshSchemasStatusTypeValue) , "LastRefreshDate" :: Maybe (TStamp) , "LastFailureMessage" :: Maybe (String) } ) -> RefreshSchemasStatus
+newRefreshSchemasStatus'  customize = (RefreshSchemasStatus <<< customize) { "EndpointArn": Nothing, "LastFailureMessage": Nothing, "LastRefreshDate": Nothing, "ReplicationInstanceArn": Nothing, "Status": Nothing }
 
 
 
@@ -2403,7 +2402,7 @@ newReloadTablesMessage' _ReplicationTaskArn _TablesToReload customize = (ReloadT
 
 
 newtype ReloadTablesResponse = ReloadTablesResponse 
-  { "ReplicationTaskArn" :: NullOrUndefined (String)
+  { "ReplicationTaskArn" :: Maybe (String)
   }
 derive instance newtypeReloadTablesResponse :: Newtype ReloadTablesResponse _
 derive instance repGenericReloadTablesResponse :: Generic ReloadTablesResponse _
@@ -2413,12 +2412,12 @@ instance encodeReloadTablesResponse :: Encode ReloadTablesResponse where encode 
 
 -- | Constructs ReloadTablesResponse from required parameters
 newReloadTablesResponse :: ReloadTablesResponse
-newReloadTablesResponse  = ReloadTablesResponse { "ReplicationTaskArn": (NullOrUndefined Nothing) }
+newReloadTablesResponse  = ReloadTablesResponse { "ReplicationTaskArn": Nothing }
 
 -- | Constructs ReloadTablesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReloadTablesResponse' :: ( { "ReplicationTaskArn" :: NullOrUndefined (String) } -> {"ReplicationTaskArn" :: NullOrUndefined (String) } ) -> ReloadTablesResponse
-newReloadTablesResponse'  customize = (ReloadTablesResponse <<< customize) { "ReplicationTaskArn": (NullOrUndefined Nothing) }
+newReloadTablesResponse' :: ( { "ReplicationTaskArn" :: Maybe (String) } -> {"ReplicationTaskArn" :: Maybe (String) } ) -> ReloadTablesResponse
+newReloadTablesResponse'  customize = (ReloadTablesResponse <<< customize) { "ReplicationTaskArn": Nothing }
 
 
 
@@ -2465,27 +2464,27 @@ instance encodeReplicationEndpointTypeValue :: Encode ReplicationEndpointTypeVal
 
 -- | <p/>
 newtype ReplicationInstance = ReplicationInstance 
-  { "ReplicationInstanceIdentifier" :: NullOrUndefined (String)
-  , "ReplicationInstanceClass" :: NullOrUndefined (String)
-  , "ReplicationInstanceStatus" :: NullOrUndefined (String)
-  , "AllocatedStorage" :: NullOrUndefined (Int)
-  , "InstanceCreateTime" :: NullOrUndefined (TStamp)
-  , "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "PendingModifiedValues" :: NullOrUndefined (ReplicationPendingModifiedValues)
-  , "MultiAZ" :: NullOrUndefined (Boolean)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "ReplicationInstanceArn" :: NullOrUndefined (String)
-  , "ReplicationInstancePublicIpAddress" :: NullOrUndefined (String)
-  , "ReplicationInstancePrivateIpAddress" :: NullOrUndefined (String)
-  , "ReplicationInstancePublicIpAddresses" :: NullOrUndefined (ReplicationInstancePublicIpAddressList)
-  , "ReplicationInstancePrivateIpAddresses" :: NullOrUndefined (ReplicationInstancePrivateIpAddressList)
-  , "PubliclyAccessible" :: NullOrUndefined (Boolean)
-  , "SecondaryAvailabilityZone" :: NullOrUndefined (String)
+  { "ReplicationInstanceIdentifier" :: Maybe (String)
+  , "ReplicationInstanceClass" :: Maybe (String)
+  , "ReplicationInstanceStatus" :: Maybe (String)
+  , "AllocatedStorage" :: Maybe (Int)
+  , "InstanceCreateTime" :: Maybe (TStamp)
+  , "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList)
+  , "AvailabilityZone" :: Maybe (String)
+  , "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "PendingModifiedValues" :: Maybe (ReplicationPendingModifiedValues)
+  , "MultiAZ" :: Maybe (Boolean)
+  , "EngineVersion" :: Maybe (String)
+  , "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "KmsKeyId" :: Maybe (String)
+  , "ReplicationInstanceArn" :: Maybe (String)
+  , "ReplicationInstancePublicIpAddress" :: Maybe (String)
+  , "ReplicationInstancePrivateIpAddress" :: Maybe (String)
+  , "ReplicationInstancePublicIpAddresses" :: Maybe (ReplicationInstancePublicIpAddressList)
+  , "ReplicationInstancePrivateIpAddresses" :: Maybe (ReplicationInstancePrivateIpAddressList)
+  , "PubliclyAccessible" :: Maybe (Boolean)
+  , "SecondaryAvailabilityZone" :: Maybe (String)
   }
 derive instance newtypeReplicationInstance :: Newtype ReplicationInstance _
 derive instance repGenericReplicationInstance :: Generic ReplicationInstance _
@@ -2495,12 +2494,12 @@ instance encodeReplicationInstance :: Encode ReplicationInstance where encode = 
 
 -- | Constructs ReplicationInstance from required parameters
 newReplicationInstance :: ReplicationInstance
-newReplicationInstance  = ReplicationInstance { "AllocatedStorage": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "InstanceCreateTime": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing), "ReplicationInstanceIdentifier": (NullOrUndefined Nothing), "ReplicationInstancePrivateIpAddress": (NullOrUndefined Nothing), "ReplicationInstancePrivateIpAddresses": (NullOrUndefined Nothing), "ReplicationInstancePublicIpAddress": (NullOrUndefined Nothing), "ReplicationInstancePublicIpAddresses": (NullOrUndefined Nothing), "ReplicationInstanceStatus": (NullOrUndefined Nothing), "ReplicationSubnetGroup": (NullOrUndefined Nothing), "SecondaryAvailabilityZone": (NullOrUndefined Nothing), "VpcSecurityGroups": (NullOrUndefined Nothing) }
+newReplicationInstance  = ReplicationInstance { "AllocatedStorage": Nothing, "AutoMinorVersionUpgrade": Nothing, "AvailabilityZone": Nothing, "EngineVersion": Nothing, "InstanceCreateTime": Nothing, "KmsKeyId": Nothing, "MultiAZ": Nothing, "PendingModifiedValues": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationInstanceClass": Nothing, "ReplicationInstanceIdentifier": Nothing, "ReplicationInstancePrivateIpAddress": Nothing, "ReplicationInstancePrivateIpAddresses": Nothing, "ReplicationInstancePublicIpAddress": Nothing, "ReplicationInstancePublicIpAddresses": Nothing, "ReplicationInstanceStatus": Nothing, "ReplicationSubnetGroup": Nothing, "SecondaryAvailabilityZone": Nothing, "VpcSecurityGroups": Nothing }
 
 -- | Constructs ReplicationInstance's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationInstance' :: ( { "ReplicationInstanceIdentifier" :: NullOrUndefined (String) , "ReplicationInstanceClass" :: NullOrUndefined (String) , "ReplicationInstanceStatus" :: NullOrUndefined (String) , "AllocatedStorage" :: NullOrUndefined (Int) , "InstanceCreateTime" :: NullOrUndefined (TStamp) , "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList) , "AvailabilityZone" :: NullOrUndefined (String) , "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (ReplicationPendingModifiedValues) , "MultiAZ" :: NullOrUndefined (Boolean) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "KmsKeyId" :: NullOrUndefined (String) , "ReplicationInstanceArn" :: NullOrUndefined (String) , "ReplicationInstancePublicIpAddress" :: NullOrUndefined (String) , "ReplicationInstancePrivateIpAddress" :: NullOrUndefined (String) , "ReplicationInstancePublicIpAddresses" :: NullOrUndefined (ReplicationInstancePublicIpAddressList) , "ReplicationInstancePrivateIpAddresses" :: NullOrUndefined (ReplicationInstancePrivateIpAddressList) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecondaryAvailabilityZone" :: NullOrUndefined (String) } -> {"ReplicationInstanceIdentifier" :: NullOrUndefined (String) , "ReplicationInstanceClass" :: NullOrUndefined (String) , "ReplicationInstanceStatus" :: NullOrUndefined (String) , "AllocatedStorage" :: NullOrUndefined (Int) , "InstanceCreateTime" :: NullOrUndefined (TStamp) , "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList) , "AvailabilityZone" :: NullOrUndefined (String) , "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (ReplicationPendingModifiedValues) , "MultiAZ" :: NullOrUndefined (Boolean) , "EngineVersion" :: NullOrUndefined (String) , "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "KmsKeyId" :: NullOrUndefined (String) , "ReplicationInstanceArn" :: NullOrUndefined (String) , "ReplicationInstancePublicIpAddress" :: NullOrUndefined (String) , "ReplicationInstancePrivateIpAddress" :: NullOrUndefined (String) , "ReplicationInstancePublicIpAddresses" :: NullOrUndefined (ReplicationInstancePublicIpAddressList) , "ReplicationInstancePrivateIpAddresses" :: NullOrUndefined (ReplicationInstancePrivateIpAddressList) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecondaryAvailabilityZone" :: NullOrUndefined (String) } ) -> ReplicationInstance
-newReplicationInstance'  customize = (ReplicationInstance <<< customize) { "AllocatedStorage": (NullOrUndefined Nothing), "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "InstanceCreateTime": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing), "ReplicationInstanceIdentifier": (NullOrUndefined Nothing), "ReplicationInstancePrivateIpAddress": (NullOrUndefined Nothing), "ReplicationInstancePrivateIpAddresses": (NullOrUndefined Nothing), "ReplicationInstancePublicIpAddress": (NullOrUndefined Nothing), "ReplicationInstancePublicIpAddresses": (NullOrUndefined Nothing), "ReplicationInstanceStatus": (NullOrUndefined Nothing), "ReplicationSubnetGroup": (NullOrUndefined Nothing), "SecondaryAvailabilityZone": (NullOrUndefined Nothing), "VpcSecurityGroups": (NullOrUndefined Nothing) }
+newReplicationInstance' :: ( { "ReplicationInstanceIdentifier" :: Maybe (String) , "ReplicationInstanceClass" :: Maybe (String) , "ReplicationInstanceStatus" :: Maybe (String) , "AllocatedStorage" :: Maybe (Int) , "InstanceCreateTime" :: Maybe (TStamp) , "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList) , "AvailabilityZone" :: Maybe (String) , "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) , "PreferredMaintenanceWindow" :: Maybe (String) , "PendingModifiedValues" :: Maybe (ReplicationPendingModifiedValues) , "MultiAZ" :: Maybe (Boolean) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "KmsKeyId" :: Maybe (String) , "ReplicationInstanceArn" :: Maybe (String) , "ReplicationInstancePublicIpAddress" :: Maybe (String) , "ReplicationInstancePrivateIpAddress" :: Maybe (String) , "ReplicationInstancePublicIpAddresses" :: Maybe (ReplicationInstancePublicIpAddressList) , "ReplicationInstancePrivateIpAddresses" :: Maybe (ReplicationInstancePrivateIpAddressList) , "PubliclyAccessible" :: Maybe (Boolean) , "SecondaryAvailabilityZone" :: Maybe (String) } -> {"ReplicationInstanceIdentifier" :: Maybe (String) , "ReplicationInstanceClass" :: Maybe (String) , "ReplicationInstanceStatus" :: Maybe (String) , "AllocatedStorage" :: Maybe (Int) , "InstanceCreateTime" :: Maybe (TStamp) , "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList) , "AvailabilityZone" :: Maybe (String) , "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) , "PreferredMaintenanceWindow" :: Maybe (String) , "PendingModifiedValues" :: Maybe (ReplicationPendingModifiedValues) , "MultiAZ" :: Maybe (Boolean) , "EngineVersion" :: Maybe (String) , "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "KmsKeyId" :: Maybe (String) , "ReplicationInstanceArn" :: Maybe (String) , "ReplicationInstancePublicIpAddress" :: Maybe (String) , "ReplicationInstancePrivateIpAddress" :: Maybe (String) , "ReplicationInstancePublicIpAddresses" :: Maybe (ReplicationInstancePublicIpAddressList) , "ReplicationInstancePrivateIpAddresses" :: Maybe (ReplicationInstancePrivateIpAddressList) , "PubliclyAccessible" :: Maybe (Boolean) , "SecondaryAvailabilityZone" :: Maybe (String) } ) -> ReplicationInstance
+newReplicationInstance'  customize = (ReplicationInstance <<< customize) { "AllocatedStorage": Nothing, "AutoMinorVersionUpgrade": Nothing, "AvailabilityZone": Nothing, "EngineVersion": Nothing, "InstanceCreateTime": Nothing, "KmsKeyId": Nothing, "MultiAZ": Nothing, "PendingModifiedValues": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationInstanceClass": Nothing, "ReplicationInstanceIdentifier": Nothing, "ReplicationInstancePrivateIpAddress": Nothing, "ReplicationInstancePrivateIpAddresses": Nothing, "ReplicationInstancePublicIpAddress": Nothing, "ReplicationInstancePublicIpAddresses": Nothing, "ReplicationInstanceStatus": Nothing, "ReplicationSubnetGroup": Nothing, "SecondaryAvailabilityZone": Nothing, "VpcSecurityGroups": Nothing }
 
 
 
@@ -2533,9 +2532,9 @@ instance encodeReplicationInstancePublicIpAddressList :: Encode ReplicationInsta
 
 -- | <p>Contains metadata for a replication instance task log.</p>
 newtype ReplicationInstanceTaskLog = ReplicationInstanceTaskLog 
-  { "ReplicationTaskName" :: NullOrUndefined (String)
-  , "ReplicationTaskArn" :: NullOrUndefined (String)
-  , "ReplicationInstanceTaskLogSize" :: NullOrUndefined (Number)
+  { "ReplicationTaskName" :: Maybe (String)
+  , "ReplicationTaskArn" :: Maybe (String)
+  , "ReplicationInstanceTaskLogSize" :: Maybe (Number)
   }
 derive instance newtypeReplicationInstanceTaskLog :: Newtype ReplicationInstanceTaskLog _
 derive instance repGenericReplicationInstanceTaskLog :: Generic ReplicationInstanceTaskLog _
@@ -2545,12 +2544,12 @@ instance encodeReplicationInstanceTaskLog :: Encode ReplicationInstanceTaskLog w
 
 -- | Constructs ReplicationInstanceTaskLog from required parameters
 newReplicationInstanceTaskLog :: ReplicationInstanceTaskLog
-newReplicationInstanceTaskLog  = ReplicationInstanceTaskLog { "ReplicationInstanceTaskLogSize": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "ReplicationTaskName": (NullOrUndefined Nothing) }
+newReplicationInstanceTaskLog  = ReplicationInstanceTaskLog { "ReplicationInstanceTaskLogSize": Nothing, "ReplicationTaskArn": Nothing, "ReplicationTaskName": Nothing }
 
 -- | Constructs ReplicationInstanceTaskLog's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationInstanceTaskLog' :: ( { "ReplicationTaskName" :: NullOrUndefined (String) , "ReplicationTaskArn" :: NullOrUndefined (String) , "ReplicationInstanceTaskLogSize" :: NullOrUndefined (Number) } -> {"ReplicationTaskName" :: NullOrUndefined (String) , "ReplicationTaskArn" :: NullOrUndefined (String) , "ReplicationInstanceTaskLogSize" :: NullOrUndefined (Number) } ) -> ReplicationInstanceTaskLog
-newReplicationInstanceTaskLog'  customize = (ReplicationInstanceTaskLog <<< customize) { "ReplicationInstanceTaskLogSize": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "ReplicationTaskName": (NullOrUndefined Nothing) }
+newReplicationInstanceTaskLog' :: ( { "ReplicationTaskName" :: Maybe (String) , "ReplicationTaskArn" :: Maybe (String) , "ReplicationInstanceTaskLogSize" :: Maybe (Number) } -> {"ReplicationTaskName" :: Maybe (String) , "ReplicationTaskArn" :: Maybe (String) , "ReplicationInstanceTaskLogSize" :: Maybe (Number) } ) -> ReplicationInstanceTaskLog
+newReplicationInstanceTaskLog'  customize = (ReplicationInstanceTaskLog <<< customize) { "ReplicationInstanceTaskLogSize": Nothing, "ReplicationTaskArn": Nothing, "ReplicationTaskName": Nothing }
 
 
 
@@ -2565,10 +2564,10 @@ instance encodeReplicationInstanceTaskLogsList :: Encode ReplicationInstanceTask
 
 -- | <p/>
 newtype ReplicationPendingModifiedValues = ReplicationPendingModifiedValues 
-  { "ReplicationInstanceClass" :: NullOrUndefined (String)
-  , "AllocatedStorage" :: NullOrUndefined (IntegerOptional)
-  , "MultiAZ" :: NullOrUndefined (BooleanOptional)
-  , "EngineVersion" :: NullOrUndefined (String)
+  { "ReplicationInstanceClass" :: Maybe (String)
+  , "AllocatedStorage" :: Maybe (IntegerOptional)
+  , "MultiAZ" :: Maybe (BooleanOptional)
+  , "EngineVersion" :: Maybe (String)
   }
 derive instance newtypeReplicationPendingModifiedValues :: Newtype ReplicationPendingModifiedValues _
 derive instance repGenericReplicationPendingModifiedValues :: Generic ReplicationPendingModifiedValues _
@@ -2578,22 +2577,22 @@ instance encodeReplicationPendingModifiedValues :: Encode ReplicationPendingModi
 
 -- | Constructs ReplicationPendingModifiedValues from required parameters
 newReplicationPendingModifiedValues :: ReplicationPendingModifiedValues
-newReplicationPendingModifiedValues  = ReplicationPendingModifiedValues { "AllocatedStorage": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing) }
+newReplicationPendingModifiedValues  = ReplicationPendingModifiedValues { "AllocatedStorage": Nothing, "EngineVersion": Nothing, "MultiAZ": Nothing, "ReplicationInstanceClass": Nothing }
 
 -- | Constructs ReplicationPendingModifiedValues's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationPendingModifiedValues' :: ( { "ReplicationInstanceClass" :: NullOrUndefined (String) , "AllocatedStorage" :: NullOrUndefined (IntegerOptional) , "MultiAZ" :: NullOrUndefined (BooleanOptional) , "EngineVersion" :: NullOrUndefined (String) } -> {"ReplicationInstanceClass" :: NullOrUndefined (String) , "AllocatedStorage" :: NullOrUndefined (IntegerOptional) , "MultiAZ" :: NullOrUndefined (BooleanOptional) , "EngineVersion" :: NullOrUndefined (String) } ) -> ReplicationPendingModifiedValues
-newReplicationPendingModifiedValues'  customize = (ReplicationPendingModifiedValues <<< customize) { "AllocatedStorage": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "MultiAZ": (NullOrUndefined Nothing), "ReplicationInstanceClass": (NullOrUndefined Nothing) }
+newReplicationPendingModifiedValues' :: ( { "ReplicationInstanceClass" :: Maybe (String) , "AllocatedStorage" :: Maybe (IntegerOptional) , "MultiAZ" :: Maybe (BooleanOptional) , "EngineVersion" :: Maybe (String) } -> {"ReplicationInstanceClass" :: Maybe (String) , "AllocatedStorage" :: Maybe (IntegerOptional) , "MultiAZ" :: Maybe (BooleanOptional) , "EngineVersion" :: Maybe (String) } ) -> ReplicationPendingModifiedValues
+newReplicationPendingModifiedValues'  customize = (ReplicationPendingModifiedValues <<< customize) { "AllocatedStorage": Nothing, "EngineVersion": Nothing, "MultiAZ": Nothing, "ReplicationInstanceClass": Nothing }
 
 
 
 -- | <p/>
 newtype ReplicationSubnetGroup = ReplicationSubnetGroup 
-  { "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String)
-  , "ReplicationSubnetGroupDescription" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "SubnetGroupStatus" :: NullOrUndefined (String)
-  , "Subnets" :: NullOrUndefined (SubnetList)
+  { "ReplicationSubnetGroupIdentifier" :: Maybe (String)
+  , "ReplicationSubnetGroupDescription" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "SubnetGroupStatus" :: Maybe (String)
+  , "Subnets" :: Maybe (SubnetList)
   }
 derive instance newtypeReplicationSubnetGroup :: Newtype ReplicationSubnetGroup _
 derive instance repGenericReplicationSubnetGroup :: Generic ReplicationSubnetGroup _
@@ -2603,18 +2602,18 @@ instance encodeReplicationSubnetGroup :: Encode ReplicationSubnetGroup where enc
 
 -- | Constructs ReplicationSubnetGroup from required parameters
 newReplicationSubnetGroup :: ReplicationSubnetGroup
-newReplicationSubnetGroup  = ReplicationSubnetGroup { "ReplicationSubnetGroupDescription": (NullOrUndefined Nothing), "ReplicationSubnetGroupIdentifier": (NullOrUndefined Nothing), "SubnetGroupStatus": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newReplicationSubnetGroup  = ReplicationSubnetGroup { "ReplicationSubnetGroupDescription": Nothing, "ReplicationSubnetGroupIdentifier": Nothing, "SubnetGroupStatus": Nothing, "Subnets": Nothing, "VpcId": Nothing }
 
 -- | Constructs ReplicationSubnetGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationSubnetGroup' :: ( { "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String) , "ReplicationSubnetGroupDescription" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "SubnetGroupStatus" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) } -> {"ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String) , "ReplicationSubnetGroupDescription" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "SubnetGroupStatus" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) } ) -> ReplicationSubnetGroup
-newReplicationSubnetGroup'  customize = (ReplicationSubnetGroup <<< customize) { "ReplicationSubnetGroupDescription": (NullOrUndefined Nothing), "ReplicationSubnetGroupIdentifier": (NullOrUndefined Nothing), "SubnetGroupStatus": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newReplicationSubnetGroup' :: ( { "ReplicationSubnetGroupIdentifier" :: Maybe (String) , "ReplicationSubnetGroupDescription" :: Maybe (String) , "VpcId" :: Maybe (String) , "SubnetGroupStatus" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) } -> {"ReplicationSubnetGroupIdentifier" :: Maybe (String) , "ReplicationSubnetGroupDescription" :: Maybe (String) , "VpcId" :: Maybe (String) , "SubnetGroupStatus" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) } ) -> ReplicationSubnetGroup
+newReplicationSubnetGroup'  customize = (ReplicationSubnetGroup <<< customize) { "ReplicationSubnetGroupDescription": Nothing, "ReplicationSubnetGroupIdentifier": Nothing, "SubnetGroupStatus": Nothing, "Subnets": Nothing, "VpcId": Nothing }
 
 
 
 -- | <p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>
 newtype ReplicationSubnetGroupDoesNotCoverEnoughAZs = ReplicationSubnetGroupDoesNotCoverEnoughAZs 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeReplicationSubnetGroupDoesNotCoverEnoughAZs :: Newtype ReplicationSubnetGroupDoesNotCoverEnoughAZs _
 derive instance repGenericReplicationSubnetGroupDoesNotCoverEnoughAZs :: Generic ReplicationSubnetGroupDoesNotCoverEnoughAZs _
@@ -2624,12 +2623,12 @@ instance encodeReplicationSubnetGroupDoesNotCoverEnoughAZs :: Encode Replication
 
 -- | Constructs ReplicationSubnetGroupDoesNotCoverEnoughAZs from required parameters
 newReplicationSubnetGroupDoesNotCoverEnoughAZs :: ReplicationSubnetGroupDoesNotCoverEnoughAZs
-newReplicationSubnetGroupDoesNotCoverEnoughAZs  = ReplicationSubnetGroupDoesNotCoverEnoughAZs { "message": (NullOrUndefined Nothing) }
+newReplicationSubnetGroupDoesNotCoverEnoughAZs  = ReplicationSubnetGroupDoesNotCoverEnoughAZs { "message": Nothing }
 
 -- | Constructs ReplicationSubnetGroupDoesNotCoverEnoughAZs's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationSubnetGroupDoesNotCoverEnoughAZs' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> ReplicationSubnetGroupDoesNotCoverEnoughAZs
-newReplicationSubnetGroupDoesNotCoverEnoughAZs'  customize = (ReplicationSubnetGroupDoesNotCoverEnoughAZs <<< customize) { "message": (NullOrUndefined Nothing) }
+newReplicationSubnetGroupDoesNotCoverEnoughAZs' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> ReplicationSubnetGroupDoesNotCoverEnoughAZs
+newReplicationSubnetGroupDoesNotCoverEnoughAZs'  customize = (ReplicationSubnetGroupDoesNotCoverEnoughAZs <<< customize) { "message": Nothing }
 
 
 
@@ -2644,20 +2643,20 @@ instance encodeReplicationSubnetGroups :: Encode ReplicationSubnetGroups where e
 
 -- | <p/>
 newtype ReplicationTask = ReplicationTask 
-  { "ReplicationTaskIdentifier" :: NullOrUndefined (String)
-  , "SourceEndpointArn" :: NullOrUndefined (String)
-  , "TargetEndpointArn" :: NullOrUndefined (String)
-  , "ReplicationInstanceArn" :: NullOrUndefined (String)
-  , "MigrationType" :: NullOrUndefined (MigrationTypeValue)
-  , "TableMappings" :: NullOrUndefined (String)
-  , "ReplicationTaskSettings" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "LastFailureMessage" :: NullOrUndefined (String)
-  , "StopReason" :: NullOrUndefined (String)
-  , "ReplicationTaskCreationDate" :: NullOrUndefined (TStamp)
-  , "ReplicationTaskStartDate" :: NullOrUndefined (TStamp)
-  , "ReplicationTaskArn" :: NullOrUndefined (String)
-  , "ReplicationTaskStats" :: NullOrUndefined (ReplicationTaskStats)
+  { "ReplicationTaskIdentifier" :: Maybe (String)
+  , "SourceEndpointArn" :: Maybe (String)
+  , "TargetEndpointArn" :: Maybe (String)
+  , "ReplicationInstanceArn" :: Maybe (String)
+  , "MigrationType" :: Maybe (MigrationTypeValue)
+  , "TableMappings" :: Maybe (String)
+  , "ReplicationTaskSettings" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "LastFailureMessage" :: Maybe (String)
+  , "StopReason" :: Maybe (String)
+  , "ReplicationTaskCreationDate" :: Maybe (TStamp)
+  , "ReplicationTaskStartDate" :: Maybe (TStamp)
+  , "ReplicationTaskArn" :: Maybe (String)
+  , "ReplicationTaskStats" :: Maybe (ReplicationTaskStats)
   }
 derive instance newtypeReplicationTask :: Newtype ReplicationTask _
 derive instance repGenericReplicationTask :: Generic ReplicationTask _
@@ -2667,24 +2666,24 @@ instance encodeReplicationTask :: Encode ReplicationTask where encode = genericE
 
 -- | Constructs ReplicationTask from required parameters
 newReplicationTask :: ReplicationTask
-newReplicationTask  = ReplicationTask { "LastFailureMessage": (NullOrUndefined Nothing), "MigrationType": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "ReplicationTaskCreationDate": (NullOrUndefined Nothing), "ReplicationTaskIdentifier": (NullOrUndefined Nothing), "ReplicationTaskSettings": (NullOrUndefined Nothing), "ReplicationTaskStartDate": (NullOrUndefined Nothing), "ReplicationTaskStats": (NullOrUndefined Nothing), "SourceEndpointArn": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StopReason": (NullOrUndefined Nothing), "TableMappings": (NullOrUndefined Nothing), "TargetEndpointArn": (NullOrUndefined Nothing) }
+newReplicationTask  = ReplicationTask { "LastFailureMessage": Nothing, "MigrationType": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationTaskArn": Nothing, "ReplicationTaskCreationDate": Nothing, "ReplicationTaskIdentifier": Nothing, "ReplicationTaskSettings": Nothing, "ReplicationTaskStartDate": Nothing, "ReplicationTaskStats": Nothing, "SourceEndpointArn": Nothing, "Status": Nothing, "StopReason": Nothing, "TableMappings": Nothing, "TargetEndpointArn": Nothing }
 
 -- | Constructs ReplicationTask's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationTask' :: ( { "ReplicationTaskIdentifier" :: NullOrUndefined (String) , "SourceEndpointArn" :: NullOrUndefined (String) , "TargetEndpointArn" :: NullOrUndefined (String) , "ReplicationInstanceArn" :: NullOrUndefined (String) , "MigrationType" :: NullOrUndefined (MigrationTypeValue) , "TableMappings" :: NullOrUndefined (String) , "ReplicationTaskSettings" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "LastFailureMessage" :: NullOrUndefined (String) , "StopReason" :: NullOrUndefined (String) , "ReplicationTaskCreationDate" :: NullOrUndefined (TStamp) , "ReplicationTaskStartDate" :: NullOrUndefined (TStamp) , "ReplicationTaskArn" :: NullOrUndefined (String) , "ReplicationTaskStats" :: NullOrUndefined (ReplicationTaskStats) } -> {"ReplicationTaskIdentifier" :: NullOrUndefined (String) , "SourceEndpointArn" :: NullOrUndefined (String) , "TargetEndpointArn" :: NullOrUndefined (String) , "ReplicationInstanceArn" :: NullOrUndefined (String) , "MigrationType" :: NullOrUndefined (MigrationTypeValue) , "TableMappings" :: NullOrUndefined (String) , "ReplicationTaskSettings" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "LastFailureMessage" :: NullOrUndefined (String) , "StopReason" :: NullOrUndefined (String) , "ReplicationTaskCreationDate" :: NullOrUndefined (TStamp) , "ReplicationTaskStartDate" :: NullOrUndefined (TStamp) , "ReplicationTaskArn" :: NullOrUndefined (String) , "ReplicationTaskStats" :: NullOrUndefined (ReplicationTaskStats) } ) -> ReplicationTask
-newReplicationTask'  customize = (ReplicationTask <<< customize) { "LastFailureMessage": (NullOrUndefined Nothing), "MigrationType": (NullOrUndefined Nothing), "ReplicationInstanceArn": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "ReplicationTaskCreationDate": (NullOrUndefined Nothing), "ReplicationTaskIdentifier": (NullOrUndefined Nothing), "ReplicationTaskSettings": (NullOrUndefined Nothing), "ReplicationTaskStartDate": (NullOrUndefined Nothing), "ReplicationTaskStats": (NullOrUndefined Nothing), "SourceEndpointArn": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StopReason": (NullOrUndefined Nothing), "TableMappings": (NullOrUndefined Nothing), "TargetEndpointArn": (NullOrUndefined Nothing) }
+newReplicationTask' :: ( { "ReplicationTaskIdentifier" :: Maybe (String) , "SourceEndpointArn" :: Maybe (String) , "TargetEndpointArn" :: Maybe (String) , "ReplicationInstanceArn" :: Maybe (String) , "MigrationType" :: Maybe (MigrationTypeValue) , "TableMappings" :: Maybe (String) , "ReplicationTaskSettings" :: Maybe (String) , "Status" :: Maybe (String) , "LastFailureMessage" :: Maybe (String) , "StopReason" :: Maybe (String) , "ReplicationTaskCreationDate" :: Maybe (TStamp) , "ReplicationTaskStartDate" :: Maybe (TStamp) , "ReplicationTaskArn" :: Maybe (String) , "ReplicationTaskStats" :: Maybe (ReplicationTaskStats) } -> {"ReplicationTaskIdentifier" :: Maybe (String) , "SourceEndpointArn" :: Maybe (String) , "TargetEndpointArn" :: Maybe (String) , "ReplicationInstanceArn" :: Maybe (String) , "MigrationType" :: Maybe (MigrationTypeValue) , "TableMappings" :: Maybe (String) , "ReplicationTaskSettings" :: Maybe (String) , "Status" :: Maybe (String) , "LastFailureMessage" :: Maybe (String) , "StopReason" :: Maybe (String) , "ReplicationTaskCreationDate" :: Maybe (TStamp) , "ReplicationTaskStartDate" :: Maybe (TStamp) , "ReplicationTaskArn" :: Maybe (String) , "ReplicationTaskStats" :: Maybe (ReplicationTaskStats) } ) -> ReplicationTask
+newReplicationTask'  customize = (ReplicationTask <<< customize) { "LastFailureMessage": Nothing, "MigrationType": Nothing, "ReplicationInstanceArn": Nothing, "ReplicationTaskArn": Nothing, "ReplicationTaskCreationDate": Nothing, "ReplicationTaskIdentifier": Nothing, "ReplicationTaskSettings": Nothing, "ReplicationTaskStartDate": Nothing, "ReplicationTaskStats": Nothing, "SourceEndpointArn": Nothing, "Status": Nothing, "StopReason": Nothing, "TableMappings": Nothing, "TargetEndpointArn": Nothing }
 
 
 
 -- | <p> The task assessment report in JSON format. </p>
 newtype ReplicationTaskAssessmentResult = ReplicationTaskAssessmentResult 
-  { "ReplicationTaskIdentifier" :: NullOrUndefined (String)
-  , "ReplicationTaskArn" :: NullOrUndefined (String)
-  , "ReplicationTaskLastAssessmentDate" :: NullOrUndefined (TStamp)
-  , "AssessmentStatus" :: NullOrUndefined (String)
-  , "AssessmentResultsFile" :: NullOrUndefined (String)
-  , "AssessmentResults" :: NullOrUndefined (String)
-  , "S3ObjectUrl" :: NullOrUndefined (String)
+  { "ReplicationTaskIdentifier" :: Maybe (String)
+  , "ReplicationTaskArn" :: Maybe (String)
+  , "ReplicationTaskLastAssessmentDate" :: Maybe (TStamp)
+  , "AssessmentStatus" :: Maybe (String)
+  , "AssessmentResultsFile" :: Maybe (String)
+  , "AssessmentResults" :: Maybe (String)
+  , "S3ObjectUrl" :: Maybe (String)
   }
 derive instance newtypeReplicationTaskAssessmentResult :: Newtype ReplicationTaskAssessmentResult _
 derive instance repGenericReplicationTaskAssessmentResult :: Generic ReplicationTaskAssessmentResult _
@@ -2694,12 +2693,12 @@ instance encodeReplicationTaskAssessmentResult :: Encode ReplicationTaskAssessme
 
 -- | Constructs ReplicationTaskAssessmentResult from required parameters
 newReplicationTaskAssessmentResult :: ReplicationTaskAssessmentResult
-newReplicationTaskAssessmentResult  = ReplicationTaskAssessmentResult { "AssessmentResults": (NullOrUndefined Nothing), "AssessmentResultsFile": (NullOrUndefined Nothing), "AssessmentStatus": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "ReplicationTaskIdentifier": (NullOrUndefined Nothing), "ReplicationTaskLastAssessmentDate": (NullOrUndefined Nothing), "S3ObjectUrl": (NullOrUndefined Nothing) }
+newReplicationTaskAssessmentResult  = ReplicationTaskAssessmentResult { "AssessmentResults": Nothing, "AssessmentResultsFile": Nothing, "AssessmentStatus": Nothing, "ReplicationTaskArn": Nothing, "ReplicationTaskIdentifier": Nothing, "ReplicationTaskLastAssessmentDate": Nothing, "S3ObjectUrl": Nothing }
 
 -- | Constructs ReplicationTaskAssessmentResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationTaskAssessmentResult' :: ( { "ReplicationTaskIdentifier" :: NullOrUndefined (String) , "ReplicationTaskArn" :: NullOrUndefined (String) , "ReplicationTaskLastAssessmentDate" :: NullOrUndefined (TStamp) , "AssessmentStatus" :: NullOrUndefined (String) , "AssessmentResultsFile" :: NullOrUndefined (String) , "AssessmentResults" :: NullOrUndefined (String) , "S3ObjectUrl" :: NullOrUndefined (String) } -> {"ReplicationTaskIdentifier" :: NullOrUndefined (String) , "ReplicationTaskArn" :: NullOrUndefined (String) , "ReplicationTaskLastAssessmentDate" :: NullOrUndefined (TStamp) , "AssessmentStatus" :: NullOrUndefined (String) , "AssessmentResultsFile" :: NullOrUndefined (String) , "AssessmentResults" :: NullOrUndefined (String) , "S3ObjectUrl" :: NullOrUndefined (String) } ) -> ReplicationTaskAssessmentResult
-newReplicationTaskAssessmentResult'  customize = (ReplicationTaskAssessmentResult <<< customize) { "AssessmentResults": (NullOrUndefined Nothing), "AssessmentResultsFile": (NullOrUndefined Nothing), "AssessmentStatus": (NullOrUndefined Nothing), "ReplicationTaskArn": (NullOrUndefined Nothing), "ReplicationTaskIdentifier": (NullOrUndefined Nothing), "ReplicationTaskLastAssessmentDate": (NullOrUndefined Nothing), "S3ObjectUrl": (NullOrUndefined Nothing) }
+newReplicationTaskAssessmentResult' :: ( { "ReplicationTaskIdentifier" :: Maybe (String) , "ReplicationTaskArn" :: Maybe (String) , "ReplicationTaskLastAssessmentDate" :: Maybe (TStamp) , "AssessmentStatus" :: Maybe (String) , "AssessmentResultsFile" :: Maybe (String) , "AssessmentResults" :: Maybe (String) , "S3ObjectUrl" :: Maybe (String) } -> {"ReplicationTaskIdentifier" :: Maybe (String) , "ReplicationTaskArn" :: Maybe (String) , "ReplicationTaskLastAssessmentDate" :: Maybe (TStamp) , "AssessmentStatus" :: Maybe (String) , "AssessmentResultsFile" :: Maybe (String) , "AssessmentResults" :: Maybe (String) , "S3ObjectUrl" :: Maybe (String) } ) -> ReplicationTaskAssessmentResult
+newReplicationTaskAssessmentResult'  customize = (ReplicationTaskAssessmentResult <<< customize) { "AssessmentResults": Nothing, "AssessmentResultsFile": Nothing, "AssessmentStatus": Nothing, "ReplicationTaskArn": Nothing, "ReplicationTaskIdentifier": Nothing, "ReplicationTaskLastAssessmentDate": Nothing, "S3ObjectUrl": Nothing }
 
 
 
@@ -2723,12 +2722,12 @@ instance encodeReplicationTaskList :: Encode ReplicationTaskList where encode = 
 
 -- | <p/>
 newtype ReplicationTaskStats = ReplicationTaskStats 
-  { "FullLoadProgressPercent" :: NullOrUndefined (Int)
-  , "ElapsedTimeMillis" :: NullOrUndefined (Number)
-  , "TablesLoaded" :: NullOrUndefined (Int)
-  , "TablesLoading" :: NullOrUndefined (Int)
-  , "TablesQueued" :: NullOrUndefined (Int)
-  , "TablesErrored" :: NullOrUndefined (Int)
+  { "FullLoadProgressPercent" :: Maybe (Int)
+  , "ElapsedTimeMillis" :: Maybe (Number)
+  , "TablesLoaded" :: Maybe (Int)
+  , "TablesLoading" :: Maybe (Int)
+  , "TablesQueued" :: Maybe (Int)
+  , "TablesErrored" :: Maybe (Int)
   }
 derive instance newtypeReplicationTaskStats :: Newtype ReplicationTaskStats _
 derive instance repGenericReplicationTaskStats :: Generic ReplicationTaskStats _
@@ -2738,18 +2737,18 @@ instance encodeReplicationTaskStats :: Encode ReplicationTaskStats where encode 
 
 -- | Constructs ReplicationTaskStats from required parameters
 newReplicationTaskStats :: ReplicationTaskStats
-newReplicationTaskStats  = ReplicationTaskStats { "ElapsedTimeMillis": (NullOrUndefined Nothing), "FullLoadProgressPercent": (NullOrUndefined Nothing), "TablesErrored": (NullOrUndefined Nothing), "TablesLoaded": (NullOrUndefined Nothing), "TablesLoading": (NullOrUndefined Nothing), "TablesQueued": (NullOrUndefined Nothing) }
+newReplicationTaskStats  = ReplicationTaskStats { "ElapsedTimeMillis": Nothing, "FullLoadProgressPercent": Nothing, "TablesErrored": Nothing, "TablesLoaded": Nothing, "TablesLoading": Nothing, "TablesQueued": Nothing }
 
 -- | Constructs ReplicationTaskStats's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationTaskStats' :: ( { "FullLoadProgressPercent" :: NullOrUndefined (Int) , "ElapsedTimeMillis" :: NullOrUndefined (Number) , "TablesLoaded" :: NullOrUndefined (Int) , "TablesLoading" :: NullOrUndefined (Int) , "TablesQueued" :: NullOrUndefined (Int) , "TablesErrored" :: NullOrUndefined (Int) } -> {"FullLoadProgressPercent" :: NullOrUndefined (Int) , "ElapsedTimeMillis" :: NullOrUndefined (Number) , "TablesLoaded" :: NullOrUndefined (Int) , "TablesLoading" :: NullOrUndefined (Int) , "TablesQueued" :: NullOrUndefined (Int) , "TablesErrored" :: NullOrUndefined (Int) } ) -> ReplicationTaskStats
-newReplicationTaskStats'  customize = (ReplicationTaskStats <<< customize) { "ElapsedTimeMillis": (NullOrUndefined Nothing), "FullLoadProgressPercent": (NullOrUndefined Nothing), "TablesErrored": (NullOrUndefined Nothing), "TablesLoaded": (NullOrUndefined Nothing), "TablesLoading": (NullOrUndefined Nothing), "TablesQueued": (NullOrUndefined Nothing) }
+newReplicationTaskStats' :: ( { "FullLoadProgressPercent" :: Maybe (Int) , "ElapsedTimeMillis" :: Maybe (Number) , "TablesLoaded" :: Maybe (Int) , "TablesLoading" :: Maybe (Int) , "TablesQueued" :: Maybe (Int) , "TablesErrored" :: Maybe (Int) } -> {"FullLoadProgressPercent" :: Maybe (Int) , "ElapsedTimeMillis" :: Maybe (Number) , "TablesLoaded" :: Maybe (Int) , "TablesLoading" :: Maybe (Int) , "TablesQueued" :: Maybe (Int) , "TablesErrored" :: Maybe (Int) } ) -> ReplicationTaskStats
+newReplicationTaskStats'  customize = (ReplicationTaskStats <<< customize) { "ElapsedTimeMillis": Nothing, "FullLoadProgressPercent": Nothing, "TablesErrored": Nothing, "TablesLoaded": Nothing, "TablesLoading": Nothing, "TablesQueued": Nothing }
 
 
 
 -- | <p>The resource you are attempting to create already exists.</p>
 newtype ResourceAlreadyExistsFault = ResourceAlreadyExistsFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeResourceAlreadyExistsFault :: Newtype ResourceAlreadyExistsFault _
 derive instance repGenericResourceAlreadyExistsFault :: Generic ResourceAlreadyExistsFault _
@@ -2759,18 +2758,18 @@ instance encodeResourceAlreadyExistsFault :: Encode ResourceAlreadyExistsFault w
 
 -- | Constructs ResourceAlreadyExistsFault from required parameters
 newResourceAlreadyExistsFault :: ResourceAlreadyExistsFault
-newResourceAlreadyExistsFault  = ResourceAlreadyExistsFault { "message": (NullOrUndefined Nothing) }
+newResourceAlreadyExistsFault  = ResourceAlreadyExistsFault { "message": Nothing }
 
 -- | Constructs ResourceAlreadyExistsFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceAlreadyExistsFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> ResourceAlreadyExistsFault
-newResourceAlreadyExistsFault'  customize = (ResourceAlreadyExistsFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceAlreadyExistsFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> ResourceAlreadyExistsFault
+newResourceAlreadyExistsFault'  customize = (ResourceAlreadyExistsFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The resource could not be found.</p>
 newtype ResourceNotFoundFault = ResourceNotFoundFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeResourceNotFoundFault :: Newtype ResourceNotFoundFault _
 derive instance repGenericResourceNotFoundFault :: Generic ResourceNotFoundFault _
@@ -2780,18 +2779,18 @@ instance encodeResourceNotFoundFault :: Encode ResourceNotFoundFault where encod
 
 -- | Constructs ResourceNotFoundFault from required parameters
 newResourceNotFoundFault :: ResourceNotFoundFault
-newResourceNotFoundFault  = ResourceNotFoundFault { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundFault  = ResourceNotFoundFault { "message": Nothing }
 
 -- | Constructs ResourceNotFoundFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> ResourceNotFoundFault
-newResourceNotFoundFault'  customize = (ResourceNotFoundFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> ResourceNotFoundFault
+newResourceNotFoundFault'  customize = (ResourceNotFoundFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The quota for this resource quota has been exceeded.</p>
 newtype ResourceQuotaExceededFault = ResourceQuotaExceededFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeResourceQuotaExceededFault :: Newtype ResourceQuotaExceededFault _
 derive instance repGenericResourceQuotaExceededFault :: Generic ResourceQuotaExceededFault _
@@ -2801,24 +2800,24 @@ instance encodeResourceQuotaExceededFault :: Encode ResourceQuotaExceededFault w
 
 -- | Constructs ResourceQuotaExceededFault from required parameters
 newResourceQuotaExceededFault :: ResourceQuotaExceededFault
-newResourceQuotaExceededFault  = ResourceQuotaExceededFault { "message": (NullOrUndefined Nothing) }
+newResourceQuotaExceededFault  = ResourceQuotaExceededFault { "message": Nothing }
 
 -- | Constructs ResourceQuotaExceededFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceQuotaExceededFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> ResourceQuotaExceededFault
-newResourceQuotaExceededFault'  customize = (ResourceQuotaExceededFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceQuotaExceededFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> ResourceQuotaExceededFault
+newResourceQuotaExceededFault'  customize = (ResourceQuotaExceededFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p/>
 newtype S3Settings = S3Settings 
-  { "ServiceAccessRoleArn" :: NullOrUndefined (String)
-  , "ExternalTableDefinition" :: NullOrUndefined (String)
-  , "CsvRowDelimiter" :: NullOrUndefined (String)
-  , "CsvDelimiter" :: NullOrUndefined (String)
-  , "BucketFolder" :: NullOrUndefined (String)
-  , "BucketName" :: NullOrUndefined (String)
-  , "CompressionType" :: NullOrUndefined (CompressionTypeValue)
+  { "ServiceAccessRoleArn" :: Maybe (String)
+  , "ExternalTableDefinition" :: Maybe (String)
+  , "CsvRowDelimiter" :: Maybe (String)
+  , "CsvDelimiter" :: Maybe (String)
+  , "BucketFolder" :: Maybe (String)
+  , "BucketName" :: Maybe (String)
+  , "CompressionType" :: Maybe (CompressionTypeValue)
   }
 derive instance newtypeS3Settings :: Newtype S3Settings _
 derive instance repGenericS3Settings :: Generic S3Settings _
@@ -2828,18 +2827,18 @@ instance encodeS3Settings :: Encode S3Settings where encode = genericEncode opti
 
 -- | Constructs S3Settings from required parameters
 newS3Settings :: S3Settings
-newS3Settings  = S3Settings { "BucketFolder": (NullOrUndefined Nothing), "BucketName": (NullOrUndefined Nothing), "CompressionType": (NullOrUndefined Nothing), "CsvDelimiter": (NullOrUndefined Nothing), "CsvRowDelimiter": (NullOrUndefined Nothing), "ExternalTableDefinition": (NullOrUndefined Nothing), "ServiceAccessRoleArn": (NullOrUndefined Nothing) }
+newS3Settings  = S3Settings { "BucketFolder": Nothing, "BucketName": Nothing, "CompressionType": Nothing, "CsvDelimiter": Nothing, "CsvRowDelimiter": Nothing, "ExternalTableDefinition": Nothing, "ServiceAccessRoleArn": Nothing }
 
 -- | Constructs S3Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3Settings' :: ( { "ServiceAccessRoleArn" :: NullOrUndefined (String) , "ExternalTableDefinition" :: NullOrUndefined (String) , "CsvRowDelimiter" :: NullOrUndefined (String) , "CsvDelimiter" :: NullOrUndefined (String) , "BucketFolder" :: NullOrUndefined (String) , "BucketName" :: NullOrUndefined (String) , "CompressionType" :: NullOrUndefined (CompressionTypeValue) } -> {"ServiceAccessRoleArn" :: NullOrUndefined (String) , "ExternalTableDefinition" :: NullOrUndefined (String) , "CsvRowDelimiter" :: NullOrUndefined (String) , "CsvDelimiter" :: NullOrUndefined (String) , "BucketFolder" :: NullOrUndefined (String) , "BucketName" :: NullOrUndefined (String) , "CompressionType" :: NullOrUndefined (CompressionTypeValue) } ) -> S3Settings
-newS3Settings'  customize = (S3Settings <<< customize) { "BucketFolder": (NullOrUndefined Nothing), "BucketName": (NullOrUndefined Nothing), "CompressionType": (NullOrUndefined Nothing), "CsvDelimiter": (NullOrUndefined Nothing), "CsvRowDelimiter": (NullOrUndefined Nothing), "ExternalTableDefinition": (NullOrUndefined Nothing), "ServiceAccessRoleArn": (NullOrUndefined Nothing) }
+newS3Settings' :: ( { "ServiceAccessRoleArn" :: Maybe (String) , "ExternalTableDefinition" :: Maybe (String) , "CsvRowDelimiter" :: Maybe (String) , "CsvDelimiter" :: Maybe (String) , "BucketFolder" :: Maybe (String) , "BucketName" :: Maybe (String) , "CompressionType" :: Maybe (CompressionTypeValue) } -> {"ServiceAccessRoleArn" :: Maybe (String) , "ExternalTableDefinition" :: Maybe (String) , "CsvRowDelimiter" :: Maybe (String) , "CsvDelimiter" :: Maybe (String) , "BucketFolder" :: Maybe (String) , "BucketName" :: Maybe (String) , "CompressionType" :: Maybe (CompressionTypeValue) } ) -> S3Settings
+newS3Settings'  customize = (S3Settings <<< customize) { "BucketFolder": Nothing, "BucketName": Nothing, "CompressionType": Nothing, "CsvDelimiter": Nothing, "CsvRowDelimiter": Nothing, "ExternalTableDefinition": Nothing, "ServiceAccessRoleArn": Nothing }
 
 
 
 -- | <p>The SNS topic is invalid.</p>
 newtype SNSInvalidTopicFault = SNSInvalidTopicFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeSNSInvalidTopicFault :: Newtype SNSInvalidTopicFault _
 derive instance repGenericSNSInvalidTopicFault :: Generic SNSInvalidTopicFault _
@@ -2849,18 +2848,18 @@ instance encodeSNSInvalidTopicFault :: Encode SNSInvalidTopicFault where encode 
 
 -- | Constructs SNSInvalidTopicFault from required parameters
 newSNSInvalidTopicFault :: SNSInvalidTopicFault
-newSNSInvalidTopicFault  = SNSInvalidTopicFault { "message": (NullOrUndefined Nothing) }
+newSNSInvalidTopicFault  = SNSInvalidTopicFault { "message": Nothing }
 
 -- | Constructs SNSInvalidTopicFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSNSInvalidTopicFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> SNSInvalidTopicFault
-newSNSInvalidTopicFault'  customize = (SNSInvalidTopicFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newSNSInvalidTopicFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> SNSInvalidTopicFault
+newSNSInvalidTopicFault'  customize = (SNSInvalidTopicFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p>You are not authorized for the SNS subscription.</p>
 newtype SNSNoAuthorizationFault = SNSNoAuthorizationFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeSNSNoAuthorizationFault :: Newtype SNSNoAuthorizationFault _
 derive instance repGenericSNSNoAuthorizationFault :: Generic SNSNoAuthorizationFault _
@@ -2870,12 +2869,12 @@ instance encodeSNSNoAuthorizationFault :: Encode SNSNoAuthorizationFault where e
 
 -- | Constructs SNSNoAuthorizationFault from required parameters
 newSNSNoAuthorizationFault :: SNSNoAuthorizationFault
-newSNSNoAuthorizationFault  = SNSNoAuthorizationFault { "message": (NullOrUndefined Nothing) }
+newSNSNoAuthorizationFault  = SNSNoAuthorizationFault { "message": Nothing }
 
 -- | Constructs SNSNoAuthorizationFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSNSNoAuthorizationFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> SNSNoAuthorizationFault
-newSNSNoAuthorizationFault'  customize = (SNSNoAuthorizationFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newSNSNoAuthorizationFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> SNSNoAuthorizationFault
+newSNSNoAuthorizationFault'  customize = (SNSNoAuthorizationFault <<< customize) { "message": Nothing }
 
 
 
@@ -2938,7 +2937,7 @@ newStartReplicationTaskAssessmentMessage' _ReplicationTaskArn customize = (Start
 
 -- | <p/>
 newtype StartReplicationTaskAssessmentResponse = StartReplicationTaskAssessmentResponse 
-  { "ReplicationTask" :: NullOrUndefined (ReplicationTask)
+  { "ReplicationTask" :: Maybe (ReplicationTask)
   }
 derive instance newtypeStartReplicationTaskAssessmentResponse :: Newtype StartReplicationTaskAssessmentResponse _
 derive instance repGenericStartReplicationTaskAssessmentResponse :: Generic StartReplicationTaskAssessmentResponse _
@@ -2948,12 +2947,12 @@ instance encodeStartReplicationTaskAssessmentResponse :: Encode StartReplication
 
 -- | Constructs StartReplicationTaskAssessmentResponse from required parameters
 newStartReplicationTaskAssessmentResponse :: StartReplicationTaskAssessmentResponse
-newStartReplicationTaskAssessmentResponse  = StartReplicationTaskAssessmentResponse { "ReplicationTask": (NullOrUndefined Nothing) }
+newStartReplicationTaskAssessmentResponse  = StartReplicationTaskAssessmentResponse { "ReplicationTask": Nothing }
 
 -- | Constructs StartReplicationTaskAssessmentResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartReplicationTaskAssessmentResponse' :: ( { "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> {"ReplicationTask" :: NullOrUndefined (ReplicationTask) } ) -> StartReplicationTaskAssessmentResponse
-newStartReplicationTaskAssessmentResponse'  customize = (StartReplicationTaskAssessmentResponse <<< customize) { "ReplicationTask": (NullOrUndefined Nothing) }
+newStartReplicationTaskAssessmentResponse' :: ( { "ReplicationTask" :: Maybe (ReplicationTask) } -> {"ReplicationTask" :: Maybe (ReplicationTask) } ) -> StartReplicationTaskAssessmentResponse
+newStartReplicationTaskAssessmentResponse'  customize = (StartReplicationTaskAssessmentResponse <<< customize) { "ReplicationTask": Nothing }
 
 
 
@@ -2961,7 +2960,7 @@ newStartReplicationTaskAssessmentResponse'  customize = (StartReplicationTaskAss
 newtype StartReplicationTaskMessage = StartReplicationTaskMessage 
   { "ReplicationTaskArn" :: (String)
   , "StartReplicationTaskType" :: (StartReplicationTaskTypeValue)
-  , "CdcStartTime" :: NullOrUndefined (TStamp)
+  , "CdcStartTime" :: Maybe (TStamp)
   }
 derive instance newtypeStartReplicationTaskMessage :: Newtype StartReplicationTaskMessage _
 derive instance repGenericStartReplicationTaskMessage :: Generic StartReplicationTaskMessage _
@@ -2971,18 +2970,18 @@ instance encodeStartReplicationTaskMessage :: Encode StartReplicationTaskMessage
 
 -- | Constructs StartReplicationTaskMessage from required parameters
 newStartReplicationTaskMessage :: String -> StartReplicationTaskTypeValue -> StartReplicationTaskMessage
-newStartReplicationTaskMessage _ReplicationTaskArn _StartReplicationTaskType = StartReplicationTaskMessage { "ReplicationTaskArn": _ReplicationTaskArn, "StartReplicationTaskType": _StartReplicationTaskType, "CdcStartTime": (NullOrUndefined Nothing) }
+newStartReplicationTaskMessage _ReplicationTaskArn _StartReplicationTaskType = StartReplicationTaskMessage { "ReplicationTaskArn": _ReplicationTaskArn, "StartReplicationTaskType": _StartReplicationTaskType, "CdcStartTime": Nothing }
 
 -- | Constructs StartReplicationTaskMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartReplicationTaskMessage' :: String -> StartReplicationTaskTypeValue -> ( { "ReplicationTaskArn" :: (String) , "StartReplicationTaskType" :: (StartReplicationTaskTypeValue) , "CdcStartTime" :: NullOrUndefined (TStamp) } -> {"ReplicationTaskArn" :: (String) , "StartReplicationTaskType" :: (StartReplicationTaskTypeValue) , "CdcStartTime" :: NullOrUndefined (TStamp) } ) -> StartReplicationTaskMessage
-newStartReplicationTaskMessage' _ReplicationTaskArn _StartReplicationTaskType customize = (StartReplicationTaskMessage <<< customize) { "ReplicationTaskArn": _ReplicationTaskArn, "StartReplicationTaskType": _StartReplicationTaskType, "CdcStartTime": (NullOrUndefined Nothing) }
+newStartReplicationTaskMessage' :: String -> StartReplicationTaskTypeValue -> ( { "ReplicationTaskArn" :: (String) , "StartReplicationTaskType" :: (StartReplicationTaskTypeValue) , "CdcStartTime" :: Maybe (TStamp) } -> {"ReplicationTaskArn" :: (String) , "StartReplicationTaskType" :: (StartReplicationTaskTypeValue) , "CdcStartTime" :: Maybe (TStamp) } ) -> StartReplicationTaskMessage
+newStartReplicationTaskMessage' _ReplicationTaskArn _StartReplicationTaskType customize = (StartReplicationTaskMessage <<< customize) { "ReplicationTaskArn": _ReplicationTaskArn, "StartReplicationTaskType": _StartReplicationTaskType, "CdcStartTime": Nothing }
 
 
 
 -- | <p/>
 newtype StartReplicationTaskResponse = StartReplicationTaskResponse 
-  { "ReplicationTask" :: NullOrUndefined (ReplicationTask)
+  { "ReplicationTask" :: Maybe (ReplicationTask)
   }
 derive instance newtypeStartReplicationTaskResponse :: Newtype StartReplicationTaskResponse _
 derive instance repGenericStartReplicationTaskResponse :: Generic StartReplicationTaskResponse _
@@ -2992,12 +2991,12 @@ instance encodeStartReplicationTaskResponse :: Encode StartReplicationTaskRespon
 
 -- | Constructs StartReplicationTaskResponse from required parameters
 newStartReplicationTaskResponse :: StartReplicationTaskResponse
-newStartReplicationTaskResponse  = StartReplicationTaskResponse { "ReplicationTask": (NullOrUndefined Nothing) }
+newStartReplicationTaskResponse  = StartReplicationTaskResponse { "ReplicationTask": Nothing }
 
 -- | Constructs StartReplicationTaskResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartReplicationTaskResponse' :: ( { "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> {"ReplicationTask" :: NullOrUndefined (ReplicationTask) } ) -> StartReplicationTaskResponse
-newStartReplicationTaskResponse'  customize = (StartReplicationTaskResponse <<< customize) { "ReplicationTask": (NullOrUndefined Nothing) }
+newStartReplicationTaskResponse' :: ( { "ReplicationTask" :: Maybe (ReplicationTask) } -> {"ReplicationTask" :: Maybe (ReplicationTask) } ) -> StartReplicationTaskResponse
+newStartReplicationTaskResponse'  customize = (StartReplicationTaskResponse <<< customize) { "ReplicationTask": Nothing }
 
 
 
@@ -3033,7 +3032,7 @@ newStopReplicationTaskMessage' _ReplicationTaskArn customize = (StopReplicationT
 
 -- | <p/>
 newtype StopReplicationTaskResponse = StopReplicationTaskResponse 
-  { "ReplicationTask" :: NullOrUndefined (ReplicationTask)
+  { "ReplicationTask" :: Maybe (ReplicationTask)
   }
 derive instance newtypeStopReplicationTaskResponse :: Newtype StopReplicationTaskResponse _
 derive instance repGenericStopReplicationTaskResponse :: Generic StopReplicationTaskResponse _
@@ -3043,18 +3042,18 @@ instance encodeStopReplicationTaskResponse :: Encode StopReplicationTaskResponse
 
 -- | Constructs StopReplicationTaskResponse from required parameters
 newStopReplicationTaskResponse :: StopReplicationTaskResponse
-newStopReplicationTaskResponse  = StopReplicationTaskResponse { "ReplicationTask": (NullOrUndefined Nothing) }
+newStopReplicationTaskResponse  = StopReplicationTaskResponse { "ReplicationTask": Nothing }
 
 -- | Constructs StopReplicationTaskResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopReplicationTaskResponse' :: ( { "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> {"ReplicationTask" :: NullOrUndefined (ReplicationTask) } ) -> StopReplicationTaskResponse
-newStopReplicationTaskResponse'  customize = (StopReplicationTaskResponse <<< customize) { "ReplicationTask": (NullOrUndefined Nothing) }
+newStopReplicationTaskResponse' :: ( { "ReplicationTask" :: Maybe (ReplicationTask) } -> {"ReplicationTask" :: Maybe (ReplicationTask) } ) -> StopReplicationTaskResponse
+newStopReplicationTaskResponse'  customize = (StopReplicationTaskResponse <<< customize) { "ReplicationTask": Nothing }
 
 
 
 -- | <p>The storage quota has been exceeded.</p>
 newtype StorageQuotaExceededFault = StorageQuotaExceededFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeStorageQuotaExceededFault :: Newtype StorageQuotaExceededFault _
 derive instance repGenericStorageQuotaExceededFault :: Generic StorageQuotaExceededFault _
@@ -3064,20 +3063,20 @@ instance encodeStorageQuotaExceededFault :: Encode StorageQuotaExceededFault whe
 
 -- | Constructs StorageQuotaExceededFault from required parameters
 newStorageQuotaExceededFault :: StorageQuotaExceededFault
-newStorageQuotaExceededFault  = StorageQuotaExceededFault { "message": (NullOrUndefined Nothing) }
+newStorageQuotaExceededFault  = StorageQuotaExceededFault { "message": Nothing }
 
 -- | Constructs StorageQuotaExceededFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageQuotaExceededFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> StorageQuotaExceededFault
-newStorageQuotaExceededFault'  customize = (StorageQuotaExceededFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newStorageQuotaExceededFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> StorageQuotaExceededFault
+newStorageQuotaExceededFault'  customize = (StorageQuotaExceededFault <<< customize) { "message": Nothing }
 
 
 
 -- | <p/>
 newtype Subnet = Subnet 
-  { "SubnetIdentifier" :: NullOrUndefined (String)
-  , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone)
-  , "SubnetStatus" :: NullOrUndefined (String)
+  { "SubnetIdentifier" :: Maybe (String)
+  , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone)
+  , "SubnetStatus" :: Maybe (String)
   }
 derive instance newtypeSubnet :: Newtype Subnet _
 derive instance repGenericSubnet :: Generic Subnet _
@@ -3087,18 +3086,18 @@ instance encodeSubnet :: Encode Subnet where encode = genericEncode options
 
 -- | Constructs Subnet from required parameters
 newSubnet :: Subnet
-newSubnet  = Subnet { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing), "SubnetStatus": (NullOrUndefined Nothing) }
+newSubnet  = Subnet { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing, "SubnetStatus": Nothing }
 
 -- | Constructs Subnet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnet' :: ( { "SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) , "SubnetStatus" :: NullOrUndefined (String) } -> {"SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) , "SubnetStatus" :: NullOrUndefined (String) } ) -> Subnet
-newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing), "SubnetStatus": (NullOrUndefined Nothing) }
+newSubnet' :: ( { "SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) , "SubnetStatus" :: Maybe (String) } -> {"SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) , "SubnetStatus" :: Maybe (String) } ) -> Subnet
+newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing, "SubnetStatus": Nothing }
 
 
 
 -- | <p>The specified subnet is already in use.</p>
 newtype SubnetAlreadyInUse = SubnetAlreadyInUse 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeSubnetAlreadyInUse :: Newtype SubnetAlreadyInUse _
 derive instance repGenericSubnetAlreadyInUse :: Generic SubnetAlreadyInUse _
@@ -3108,12 +3107,12 @@ instance encodeSubnetAlreadyInUse :: Encode SubnetAlreadyInUse where encode = ge
 
 -- | Constructs SubnetAlreadyInUse from required parameters
 newSubnetAlreadyInUse :: SubnetAlreadyInUse
-newSubnetAlreadyInUse  = SubnetAlreadyInUse { "message": (NullOrUndefined Nothing) }
+newSubnetAlreadyInUse  = SubnetAlreadyInUse { "message": Nothing }
 
 -- | Constructs SubnetAlreadyInUse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnetAlreadyInUse' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> SubnetAlreadyInUse
-newSubnetAlreadyInUse'  customize = (SubnetAlreadyInUse <<< customize) { "message": (NullOrUndefined Nothing) }
+newSubnetAlreadyInUse' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> SubnetAlreadyInUse
+newSubnetAlreadyInUse'  customize = (SubnetAlreadyInUse <<< customize) { "message": Nothing }
 
 
 
@@ -3137,9 +3136,9 @@ instance encodeSubnetList :: Encode SubnetList where encode = genericEncode opti
 
 -- | <p/>
 newtype SupportedEndpointType = SupportedEndpointType 
-  { "EngineName" :: NullOrUndefined (String)
-  , "SupportsCDC" :: NullOrUndefined (Boolean)
-  , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue)
+  { "EngineName" :: Maybe (String)
+  , "SupportsCDC" :: Maybe (Boolean)
+  , "EndpointType" :: Maybe (ReplicationEndpointTypeValue)
   }
 derive instance newtypeSupportedEndpointType :: Newtype SupportedEndpointType _
 derive instance repGenericSupportedEndpointType :: Generic SupportedEndpointType _
@@ -3149,12 +3148,12 @@ instance encodeSupportedEndpointType :: Encode SupportedEndpointType where encod
 
 -- | Constructs SupportedEndpointType from required parameters
 newSupportedEndpointType :: SupportedEndpointType
-newSupportedEndpointType  = SupportedEndpointType { "EndpointType": (NullOrUndefined Nothing), "EngineName": (NullOrUndefined Nothing), "SupportsCDC": (NullOrUndefined Nothing) }
+newSupportedEndpointType  = SupportedEndpointType { "EndpointType": Nothing, "EngineName": Nothing, "SupportsCDC": Nothing }
 
 -- | Constructs SupportedEndpointType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSupportedEndpointType' :: ( { "EngineName" :: NullOrUndefined (String) , "SupportsCDC" :: NullOrUndefined (Boolean) , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) } -> {"EngineName" :: NullOrUndefined (String) , "SupportsCDC" :: NullOrUndefined (Boolean) , "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) } ) -> SupportedEndpointType
-newSupportedEndpointType'  customize = (SupportedEndpointType <<< customize) { "EndpointType": (NullOrUndefined Nothing), "EngineName": (NullOrUndefined Nothing), "SupportsCDC": (NullOrUndefined Nothing) }
+newSupportedEndpointType' :: ( { "EngineName" :: Maybe (String) , "SupportsCDC" :: Maybe (Boolean) , "EndpointType" :: Maybe (ReplicationEndpointTypeValue) } -> {"EngineName" :: Maybe (String) , "SupportsCDC" :: Maybe (Boolean) , "EndpointType" :: Maybe (ReplicationEndpointTypeValue) } ) -> SupportedEndpointType
+newSupportedEndpointType'  customize = (SupportedEndpointType <<< customize) { "EndpointType": Nothing, "EngineName": Nothing, "SupportsCDC": Nothing }
 
 
 
@@ -3187,21 +3186,21 @@ instance encodeTableListToReload :: Encode TableListToReload where encode = gene
 
 -- | <p/>
 newtype TableStatistics = TableStatistics 
-  { "SchemaName" :: NullOrUndefined (String)
-  , "TableName" :: NullOrUndefined (String)
-  , "Inserts" :: NullOrUndefined (Number)
-  , "Deletes" :: NullOrUndefined (Number)
-  , "Updates" :: NullOrUndefined (Number)
-  , "Ddls" :: NullOrUndefined (Number)
-  , "FullLoadRows" :: NullOrUndefined (Number)
-  , "FullLoadCondtnlChkFailedRows" :: NullOrUndefined (Number)
-  , "FullLoadErrorRows" :: NullOrUndefined (Number)
-  , "LastUpdateTime" :: NullOrUndefined (TStamp)
-  , "TableState" :: NullOrUndefined (String)
-  , "ValidationPendingRecords" :: NullOrUndefined (Number)
-  , "ValidationFailedRecords" :: NullOrUndefined (Number)
-  , "ValidationSuspendedRecords" :: NullOrUndefined (Number)
-  , "ValidationState" :: NullOrUndefined (String)
+  { "SchemaName" :: Maybe (String)
+  , "TableName" :: Maybe (String)
+  , "Inserts" :: Maybe (Number)
+  , "Deletes" :: Maybe (Number)
+  , "Updates" :: Maybe (Number)
+  , "Ddls" :: Maybe (Number)
+  , "FullLoadRows" :: Maybe (Number)
+  , "FullLoadCondtnlChkFailedRows" :: Maybe (Number)
+  , "FullLoadErrorRows" :: Maybe (Number)
+  , "LastUpdateTime" :: Maybe (TStamp)
+  , "TableState" :: Maybe (String)
+  , "ValidationPendingRecords" :: Maybe (Number)
+  , "ValidationFailedRecords" :: Maybe (Number)
+  , "ValidationSuspendedRecords" :: Maybe (Number)
+  , "ValidationState" :: Maybe (String)
   }
 derive instance newtypeTableStatistics :: Newtype TableStatistics _
 derive instance repGenericTableStatistics :: Generic TableStatistics _
@@ -3211,12 +3210,12 @@ instance encodeTableStatistics :: Encode TableStatistics where encode = genericE
 
 -- | Constructs TableStatistics from required parameters
 newTableStatistics :: TableStatistics
-newTableStatistics  = TableStatistics { "Ddls": (NullOrUndefined Nothing), "Deletes": (NullOrUndefined Nothing), "FullLoadCondtnlChkFailedRows": (NullOrUndefined Nothing), "FullLoadErrorRows": (NullOrUndefined Nothing), "FullLoadRows": (NullOrUndefined Nothing), "Inserts": (NullOrUndefined Nothing), "LastUpdateTime": (NullOrUndefined Nothing), "SchemaName": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing), "TableState": (NullOrUndefined Nothing), "Updates": (NullOrUndefined Nothing), "ValidationFailedRecords": (NullOrUndefined Nothing), "ValidationPendingRecords": (NullOrUndefined Nothing), "ValidationState": (NullOrUndefined Nothing), "ValidationSuspendedRecords": (NullOrUndefined Nothing) }
+newTableStatistics  = TableStatistics { "Ddls": Nothing, "Deletes": Nothing, "FullLoadCondtnlChkFailedRows": Nothing, "FullLoadErrorRows": Nothing, "FullLoadRows": Nothing, "Inserts": Nothing, "LastUpdateTime": Nothing, "SchemaName": Nothing, "TableName": Nothing, "TableState": Nothing, "Updates": Nothing, "ValidationFailedRecords": Nothing, "ValidationPendingRecords": Nothing, "ValidationState": Nothing, "ValidationSuspendedRecords": Nothing }
 
 -- | Constructs TableStatistics's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableStatistics' :: ( { "SchemaName" :: NullOrUndefined (String) , "TableName" :: NullOrUndefined (String) , "Inserts" :: NullOrUndefined (Number) , "Deletes" :: NullOrUndefined (Number) , "Updates" :: NullOrUndefined (Number) , "Ddls" :: NullOrUndefined (Number) , "FullLoadRows" :: NullOrUndefined (Number) , "FullLoadCondtnlChkFailedRows" :: NullOrUndefined (Number) , "FullLoadErrorRows" :: NullOrUndefined (Number) , "LastUpdateTime" :: NullOrUndefined (TStamp) , "TableState" :: NullOrUndefined (String) , "ValidationPendingRecords" :: NullOrUndefined (Number) , "ValidationFailedRecords" :: NullOrUndefined (Number) , "ValidationSuspendedRecords" :: NullOrUndefined (Number) , "ValidationState" :: NullOrUndefined (String) } -> {"SchemaName" :: NullOrUndefined (String) , "TableName" :: NullOrUndefined (String) , "Inserts" :: NullOrUndefined (Number) , "Deletes" :: NullOrUndefined (Number) , "Updates" :: NullOrUndefined (Number) , "Ddls" :: NullOrUndefined (Number) , "FullLoadRows" :: NullOrUndefined (Number) , "FullLoadCondtnlChkFailedRows" :: NullOrUndefined (Number) , "FullLoadErrorRows" :: NullOrUndefined (Number) , "LastUpdateTime" :: NullOrUndefined (TStamp) , "TableState" :: NullOrUndefined (String) , "ValidationPendingRecords" :: NullOrUndefined (Number) , "ValidationFailedRecords" :: NullOrUndefined (Number) , "ValidationSuspendedRecords" :: NullOrUndefined (Number) , "ValidationState" :: NullOrUndefined (String) } ) -> TableStatistics
-newTableStatistics'  customize = (TableStatistics <<< customize) { "Ddls": (NullOrUndefined Nothing), "Deletes": (NullOrUndefined Nothing), "FullLoadCondtnlChkFailedRows": (NullOrUndefined Nothing), "FullLoadErrorRows": (NullOrUndefined Nothing), "FullLoadRows": (NullOrUndefined Nothing), "Inserts": (NullOrUndefined Nothing), "LastUpdateTime": (NullOrUndefined Nothing), "SchemaName": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing), "TableState": (NullOrUndefined Nothing), "Updates": (NullOrUndefined Nothing), "ValidationFailedRecords": (NullOrUndefined Nothing), "ValidationPendingRecords": (NullOrUndefined Nothing), "ValidationState": (NullOrUndefined Nothing), "ValidationSuspendedRecords": (NullOrUndefined Nothing) }
+newTableStatistics' :: ( { "SchemaName" :: Maybe (String) , "TableName" :: Maybe (String) , "Inserts" :: Maybe (Number) , "Deletes" :: Maybe (Number) , "Updates" :: Maybe (Number) , "Ddls" :: Maybe (Number) , "FullLoadRows" :: Maybe (Number) , "FullLoadCondtnlChkFailedRows" :: Maybe (Number) , "FullLoadErrorRows" :: Maybe (Number) , "LastUpdateTime" :: Maybe (TStamp) , "TableState" :: Maybe (String) , "ValidationPendingRecords" :: Maybe (Number) , "ValidationFailedRecords" :: Maybe (Number) , "ValidationSuspendedRecords" :: Maybe (Number) , "ValidationState" :: Maybe (String) } -> {"SchemaName" :: Maybe (String) , "TableName" :: Maybe (String) , "Inserts" :: Maybe (Number) , "Deletes" :: Maybe (Number) , "Updates" :: Maybe (Number) , "Ddls" :: Maybe (Number) , "FullLoadRows" :: Maybe (Number) , "FullLoadCondtnlChkFailedRows" :: Maybe (Number) , "FullLoadErrorRows" :: Maybe (Number) , "LastUpdateTime" :: Maybe (TStamp) , "TableState" :: Maybe (String) , "ValidationPendingRecords" :: Maybe (Number) , "ValidationFailedRecords" :: Maybe (Number) , "ValidationSuspendedRecords" :: Maybe (Number) , "ValidationState" :: Maybe (String) } ) -> TableStatistics
+newTableStatistics'  customize = (TableStatistics <<< customize) { "Ddls": Nothing, "Deletes": Nothing, "FullLoadCondtnlChkFailedRows": Nothing, "FullLoadErrorRows": Nothing, "FullLoadRows": Nothing, "Inserts": Nothing, "LastUpdateTime": Nothing, "SchemaName": Nothing, "TableName": Nothing, "TableState": Nothing, "Updates": Nothing, "ValidationFailedRecords": Nothing, "ValidationPendingRecords": Nothing, "ValidationState": Nothing, "ValidationSuspendedRecords": Nothing }
 
 
 
@@ -3231,8 +3230,8 @@ instance encodeTableStatisticsList :: Encode TableStatisticsList where encode = 
 
 -- | <p/>
 newtype TableToReload = TableToReload 
-  { "SchemaName" :: NullOrUndefined (String)
-  , "TableName" :: NullOrUndefined (String)
+  { "SchemaName" :: Maybe (String)
+  , "TableName" :: Maybe (String)
   }
 derive instance newtypeTableToReload :: Newtype TableToReload _
 derive instance repGenericTableToReload :: Generic TableToReload _
@@ -3242,19 +3241,19 @@ instance encodeTableToReload :: Encode TableToReload where encode = genericEncod
 
 -- | Constructs TableToReload from required parameters
 newTableToReload :: TableToReload
-newTableToReload  = TableToReload { "SchemaName": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing) }
+newTableToReload  = TableToReload { "SchemaName": Nothing, "TableName": Nothing }
 
 -- | Constructs TableToReload's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableToReload' :: ( { "SchemaName" :: NullOrUndefined (String) , "TableName" :: NullOrUndefined (String) } -> {"SchemaName" :: NullOrUndefined (String) , "TableName" :: NullOrUndefined (String) } ) -> TableToReload
-newTableToReload'  customize = (TableToReload <<< customize) { "SchemaName": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing) }
+newTableToReload' :: ( { "SchemaName" :: Maybe (String) , "TableName" :: Maybe (String) } -> {"SchemaName" :: Maybe (String) , "TableName" :: Maybe (String) } ) -> TableToReload
+newTableToReload'  customize = (TableToReload <<< customize) { "SchemaName": Nothing, "TableName": Nothing }
 
 
 
 -- | <p/>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "Key" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -3264,12 +3263,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (String) , "Value" :: Maybe (String) } -> {"Key" :: Maybe (String) , "Value" :: Maybe (String) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -3306,7 +3305,7 @@ newTestConnectionMessage' _EndpointArn _ReplicationInstanceArn customize = (Test
 
 -- | <p/>
 newtype TestConnectionResponse = TestConnectionResponse 
-  { "Connection" :: NullOrUndefined (Connection)
+  { "Connection" :: Maybe (Connection)
   }
 derive instance newtypeTestConnectionResponse :: Newtype TestConnectionResponse _
 derive instance repGenericTestConnectionResponse :: Generic TestConnectionResponse _
@@ -3316,18 +3315,18 @@ instance encodeTestConnectionResponse :: Encode TestConnectionResponse where enc
 
 -- | Constructs TestConnectionResponse from required parameters
 newTestConnectionResponse :: TestConnectionResponse
-newTestConnectionResponse  = TestConnectionResponse { "Connection": (NullOrUndefined Nothing) }
+newTestConnectionResponse  = TestConnectionResponse { "Connection": Nothing }
 
 -- | Constructs TestConnectionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTestConnectionResponse' :: ( { "Connection" :: NullOrUndefined (Connection) } -> {"Connection" :: NullOrUndefined (Connection) } ) -> TestConnectionResponse
-newTestConnectionResponse'  customize = (TestConnectionResponse <<< customize) { "Connection": (NullOrUndefined Nothing) }
+newTestConnectionResponse' :: ( { "Connection" :: Maybe (Connection) } -> {"Connection" :: Maybe (Connection) } ) -> TestConnectionResponse
+newTestConnectionResponse'  customize = (TestConnectionResponse <<< customize) { "Connection": Nothing }
 
 
 
 -- | <p>An upgrade dependency is preventing the database migration.</p>
 newtype UpgradeDependencyFailureFault = UpgradeDependencyFailureFault 
-  { "message" :: NullOrUndefined (ExceptionMessage)
+  { "message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeUpgradeDependencyFailureFault :: Newtype UpgradeDependencyFailureFault _
 derive instance repGenericUpgradeDependencyFailureFault :: Generic UpgradeDependencyFailureFault _
@@ -3337,12 +3336,12 @@ instance encodeUpgradeDependencyFailureFault :: Encode UpgradeDependencyFailureF
 
 -- | Constructs UpgradeDependencyFailureFault from required parameters
 newUpgradeDependencyFailureFault :: UpgradeDependencyFailureFault
-newUpgradeDependencyFailureFault  = UpgradeDependencyFailureFault { "message": (NullOrUndefined Nothing) }
+newUpgradeDependencyFailureFault  = UpgradeDependencyFailureFault { "message": Nothing }
 
 -- | Constructs UpgradeDependencyFailureFault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpgradeDependencyFailureFault' :: ( { "message" :: NullOrUndefined (ExceptionMessage) } -> {"message" :: NullOrUndefined (ExceptionMessage) } ) -> UpgradeDependencyFailureFault
-newUpgradeDependencyFailureFault'  customize = (UpgradeDependencyFailureFault <<< customize) { "message": (NullOrUndefined Nothing) }
+newUpgradeDependencyFailureFault' :: ( { "message" :: Maybe (ExceptionMessage) } -> {"message" :: Maybe (ExceptionMessage) } ) -> UpgradeDependencyFailureFault
+newUpgradeDependencyFailureFault'  customize = (UpgradeDependencyFailureFault <<< customize) { "message": Nothing }
 
 
 
@@ -3357,8 +3356,8 @@ instance encodeVpcSecurityGroupIdList :: Encode VpcSecurityGroupIdList where enc
 
 -- | <p/>
 newtype VpcSecurityGroupMembership = VpcSecurityGroupMembership 
-  { "VpcSecurityGroupId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "VpcSecurityGroupId" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeVpcSecurityGroupMembership :: Newtype VpcSecurityGroupMembership _
 derive instance repGenericVpcSecurityGroupMembership :: Generic VpcSecurityGroupMembership _
@@ -3368,12 +3367,12 @@ instance encodeVpcSecurityGroupMembership :: Encode VpcSecurityGroupMembership w
 
 -- | Constructs VpcSecurityGroupMembership from required parameters
 newVpcSecurityGroupMembership :: VpcSecurityGroupMembership
-newVpcSecurityGroupMembership  = VpcSecurityGroupMembership { "Status": (NullOrUndefined Nothing), "VpcSecurityGroupId": (NullOrUndefined Nothing) }
+newVpcSecurityGroupMembership  = VpcSecurityGroupMembership { "Status": Nothing, "VpcSecurityGroupId": Nothing }
 
 -- | Constructs VpcSecurityGroupMembership's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVpcSecurityGroupMembership' :: ( { "VpcSecurityGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"VpcSecurityGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> VpcSecurityGroupMembership
-newVpcSecurityGroupMembership'  customize = (VpcSecurityGroupMembership <<< customize) { "Status": (NullOrUndefined Nothing), "VpcSecurityGroupId": (NullOrUndefined Nothing) }
+newVpcSecurityGroupMembership' :: ( { "VpcSecurityGroupId" :: Maybe (String) , "Status" :: Maybe (String) } -> {"VpcSecurityGroupId" :: Maybe (String) , "Status" :: Maybe (String) } ) -> VpcSecurityGroupMembership
+newVpcSecurityGroupMembership'  customize = (VpcSecurityGroupMembership <<< customize) { "Status": Nothing, "VpcSecurityGroupId": Nothing }
 
 
 

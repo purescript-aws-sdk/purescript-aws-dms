@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AccessDeniedFault
-  = AccessDeniedFault { message :: NullOrUndefined (ExceptionMessage) }
+  = AccessDeniedFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>AWS DMS was denied access to the endpoint.</p>
@@ -35,7 +35,7 @@ Constructs AccessDeniedFault from required parameters
 #### `newAccessDeniedFault'`
 
 ``` purescript
-newAccessDeniedFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> AccessDeniedFault
+newAccessDeniedFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> AccessDeniedFault
 ```
 
 Constructs AccessDeniedFault's fields from required parameters
@@ -44,7 +44,7 @@ Constructs AccessDeniedFault's fields from required parameters
 
 ``` purescript
 newtype AccountQuota
-  = AccountQuota { "AccountQuotaName" :: NullOrUndefined (String), "Used" :: NullOrUndefined (Number), "Max" :: NullOrUndefined (Number) }
+  = AccountQuota { "AccountQuotaName" :: Maybe (String), "Used" :: Maybe (Number), "Max" :: Maybe (Number) }
 ```
 
 <p>Describes a quota for an AWS account, for example, the number of replication instances allowed.</p>
@@ -69,7 +69,7 @@ Constructs AccountQuota from required parameters
 #### `newAccountQuota'`
 
 ``` purescript
-newAccountQuota' :: ({ "AccountQuotaName" :: NullOrUndefined (String), "Used" :: NullOrUndefined (Number), "Max" :: NullOrUndefined (Number) } -> { "AccountQuotaName" :: NullOrUndefined (String), "Used" :: NullOrUndefined (Number), "Max" :: NullOrUndefined (Number) }) -> AccountQuota
+newAccountQuota' :: ({ "AccountQuotaName" :: Maybe (String), "Used" :: Maybe (Number), "Max" :: Maybe (Number) } -> { "AccountQuotaName" :: Maybe (String), "Used" :: Maybe (Number), "Max" :: Maybe (Number) }) -> AccountQuota
 ```
 
 Constructs AccountQuota's fields from required parameters
@@ -178,7 +178,7 @@ Encode AuthTypeValue
 
 ``` purescript
 newtype AvailabilityZone
-  = AvailabilityZone { "Name" :: NullOrUndefined (String) }
+  = AvailabilityZone { "Name" :: Maybe (String) }
 ```
 
 <p/>
@@ -203,7 +203,7 @@ Constructs AvailabilityZone from required parameters
 #### `newAvailabilityZone'`
 
 ``` purescript
-newAvailabilityZone' :: ({ "Name" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (String) }) -> AvailabilityZone
+newAvailabilityZone' :: ({ "Name" :: Maybe (String) } -> { "Name" :: Maybe (String) }) -> AvailabilityZone
 ```
 
 Constructs AvailabilityZone's fields from required parameters
@@ -228,7 +228,7 @@ Encode BooleanOptional
 
 ``` purescript
 newtype Certificate
-  = Certificate { "CertificateIdentifier" :: NullOrUndefined (String), "CertificateCreationDate" :: NullOrUndefined (TStamp), "CertificatePem" :: NullOrUndefined (String), "CertificateWallet" :: NullOrUndefined (CertificateWallet), "CertificateArn" :: NullOrUndefined (String), "CertificateOwner" :: NullOrUndefined (String), "ValidFromDate" :: NullOrUndefined (TStamp), "ValidToDate" :: NullOrUndefined (TStamp), "SigningAlgorithm" :: NullOrUndefined (String), "KeyLength" :: NullOrUndefined (IntegerOptional) }
+  = Certificate { "CertificateIdentifier" :: Maybe (String), "CertificateCreationDate" :: Maybe (TStamp), "CertificatePem" :: Maybe (String), "CertificateWallet" :: Maybe (CertificateWallet), "CertificateArn" :: Maybe (String), "CertificateOwner" :: Maybe (String), "ValidFromDate" :: Maybe (TStamp), "ValidToDate" :: Maybe (TStamp), "SigningAlgorithm" :: Maybe (String), "KeyLength" :: Maybe (IntegerOptional) }
 ```
 
 <p>The SSL certificate that can be used to encrypt connections between the endpoints and the replication instance.</p>
@@ -253,7 +253,7 @@ Constructs Certificate from required parameters
 #### `newCertificate'`
 
 ``` purescript
-newCertificate' :: ({ "CertificateIdentifier" :: NullOrUndefined (String), "CertificateCreationDate" :: NullOrUndefined (TStamp), "CertificatePem" :: NullOrUndefined (String), "CertificateWallet" :: NullOrUndefined (CertificateWallet), "CertificateArn" :: NullOrUndefined (String), "CertificateOwner" :: NullOrUndefined (String), "ValidFromDate" :: NullOrUndefined (TStamp), "ValidToDate" :: NullOrUndefined (TStamp), "SigningAlgorithm" :: NullOrUndefined (String), "KeyLength" :: NullOrUndefined (IntegerOptional) } -> { "CertificateIdentifier" :: NullOrUndefined (String), "CertificateCreationDate" :: NullOrUndefined (TStamp), "CertificatePem" :: NullOrUndefined (String), "CertificateWallet" :: NullOrUndefined (CertificateWallet), "CertificateArn" :: NullOrUndefined (String), "CertificateOwner" :: NullOrUndefined (String), "ValidFromDate" :: NullOrUndefined (TStamp), "ValidToDate" :: NullOrUndefined (TStamp), "SigningAlgorithm" :: NullOrUndefined (String), "KeyLength" :: NullOrUndefined (IntegerOptional) }) -> Certificate
+newCertificate' :: ({ "CertificateIdentifier" :: Maybe (String), "CertificateCreationDate" :: Maybe (TStamp), "CertificatePem" :: Maybe (String), "CertificateWallet" :: Maybe (CertificateWallet), "CertificateArn" :: Maybe (String), "CertificateOwner" :: Maybe (String), "ValidFromDate" :: Maybe (TStamp), "ValidToDate" :: Maybe (TStamp), "SigningAlgorithm" :: Maybe (String), "KeyLength" :: Maybe (IntegerOptional) } -> { "CertificateIdentifier" :: Maybe (String), "CertificateCreationDate" :: Maybe (TStamp), "CertificatePem" :: Maybe (String), "CertificateWallet" :: Maybe (CertificateWallet), "CertificateArn" :: Maybe (String), "CertificateOwner" :: Maybe (String), "ValidFromDate" :: Maybe (TStamp), "ValidToDate" :: Maybe (TStamp), "SigningAlgorithm" :: Maybe (String), "KeyLength" :: Maybe (IntegerOptional) }) -> Certificate
 ```
 
 Constructs Certificate's fields from required parameters
@@ -310,7 +310,7 @@ Encode CompressionTypeValue
 
 ``` purescript
 newtype Connection
-  = Connection { "ReplicationInstanceArn" :: NullOrUndefined (String), "EndpointArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "LastFailureMessage" :: NullOrUndefined (String), "EndpointIdentifier" :: NullOrUndefined (String), "ReplicationInstanceIdentifier" :: NullOrUndefined (String) }
+  = Connection { "ReplicationInstanceArn" :: Maybe (String), "EndpointArn" :: Maybe (String), "Status" :: Maybe (String), "LastFailureMessage" :: Maybe (String), "EndpointIdentifier" :: Maybe (String), "ReplicationInstanceIdentifier" :: Maybe (String) }
 ```
 
 <p/>
@@ -335,7 +335,7 @@ Constructs Connection from required parameters
 #### `newConnection'`
 
 ``` purescript
-newConnection' :: ({ "ReplicationInstanceArn" :: NullOrUndefined (String), "EndpointArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "LastFailureMessage" :: NullOrUndefined (String), "EndpointIdentifier" :: NullOrUndefined (String), "ReplicationInstanceIdentifier" :: NullOrUndefined (String) } -> { "ReplicationInstanceArn" :: NullOrUndefined (String), "EndpointArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "LastFailureMessage" :: NullOrUndefined (String), "EndpointIdentifier" :: NullOrUndefined (String), "ReplicationInstanceIdentifier" :: NullOrUndefined (String) }) -> Connection
+newConnection' :: ({ "ReplicationInstanceArn" :: Maybe (String), "EndpointArn" :: Maybe (String), "Status" :: Maybe (String), "LastFailureMessage" :: Maybe (String), "EndpointIdentifier" :: Maybe (String), "ReplicationInstanceIdentifier" :: Maybe (String) } -> { "ReplicationInstanceArn" :: Maybe (String), "EndpointArn" :: Maybe (String), "Status" :: Maybe (String), "LastFailureMessage" :: Maybe (String), "EndpointIdentifier" :: Maybe (String), "ReplicationInstanceIdentifier" :: Maybe (String) }) -> Connection
 ```
 
 Constructs Connection's fields from required parameters
@@ -360,7 +360,7 @@ Encode ConnectionList
 
 ``` purescript
 newtype CreateEndpointMessage
-  = CreateEndpointMessage { "EndpointIdentifier" :: String, "EndpointType" :: ReplicationEndpointTypeValue, "EngineName" :: String, "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) }
+  = CreateEndpointMessage { "EndpointIdentifier" :: String, "EndpointType" :: ReplicationEndpointTypeValue, "EngineName" :: String, "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) }
 ```
 
 <p/>
@@ -385,7 +385,7 @@ Constructs CreateEndpointMessage from required parameters
 #### `newCreateEndpointMessage'`
 
 ``` purescript
-newCreateEndpointMessage' :: String -> ReplicationEndpointTypeValue -> String -> ({ "EndpointIdentifier" :: String, "EndpointType" :: ReplicationEndpointTypeValue, "EngineName" :: String, "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } -> { "EndpointIdentifier" :: String, "EndpointType" :: ReplicationEndpointTypeValue, "EngineName" :: String, "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) }) -> CreateEndpointMessage
+newCreateEndpointMessage' :: String -> ReplicationEndpointTypeValue -> String -> ({ "EndpointIdentifier" :: String, "EndpointType" :: ReplicationEndpointTypeValue, "EngineName" :: String, "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) } -> { "EndpointIdentifier" :: String, "EndpointType" :: ReplicationEndpointTypeValue, "EngineName" :: String, "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) }) -> CreateEndpointMessage
 ```
 
 Constructs CreateEndpointMessage's fields from required parameters
@@ -394,7 +394,7 @@ Constructs CreateEndpointMessage's fields from required parameters
 
 ``` purescript
 newtype CreateEndpointResponse
-  = CreateEndpointResponse { "Endpoint" :: NullOrUndefined (Endpoint) }
+  = CreateEndpointResponse { "Endpoint" :: Maybe (Endpoint) }
 ```
 
 <p/>
@@ -419,7 +419,7 @@ Constructs CreateEndpointResponse from required parameters
 #### `newCreateEndpointResponse'`
 
 ``` purescript
-newCreateEndpointResponse' :: ({ "Endpoint" :: NullOrUndefined (Endpoint) } -> { "Endpoint" :: NullOrUndefined (Endpoint) }) -> CreateEndpointResponse
+newCreateEndpointResponse' :: ({ "Endpoint" :: Maybe (Endpoint) } -> { "Endpoint" :: Maybe (Endpoint) }) -> CreateEndpointResponse
 ```
 
 Constructs CreateEndpointResponse's fields from required parameters
@@ -428,7 +428,7 @@ Constructs CreateEndpointResponse's fields from required parameters
 
 ``` purescript
 newtype CreateEventSubscriptionMessage
-  = CreateEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "SourceIds" :: NullOrUndefined (SourceIdsList), "Enabled" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList) }
+  = CreateEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "SourceIds" :: Maybe (SourceIdsList), "Enabled" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -453,7 +453,7 @@ Constructs CreateEventSubscriptionMessage from required parameters
 #### `newCreateEventSubscriptionMessage'`
 
 ``` purescript
-newCreateEventSubscriptionMessage' :: String -> String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "SourceIds" :: NullOrUndefined (SourceIdsList), "Enabled" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "SourceIds" :: NullOrUndefined (SourceIdsList), "Enabled" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList) }) -> CreateEventSubscriptionMessage
+newCreateEventSubscriptionMessage' :: String -> String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "SourceIds" :: Maybe (SourceIdsList), "Enabled" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "SourceIds" :: Maybe (SourceIdsList), "Enabled" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList) }) -> CreateEventSubscriptionMessage
 ```
 
 Constructs CreateEventSubscriptionMessage's fields from required parameters
@@ -462,7 +462,7 @@ Constructs CreateEventSubscriptionMessage's fields from required parameters
 
 ``` purescript
 newtype CreateEventSubscriptionResponse
-  = CreateEventSubscriptionResponse { "EventSubscription" :: NullOrUndefined (EventSubscription) }
+  = CreateEventSubscriptionResponse { "EventSubscription" :: Maybe (EventSubscription) }
 ```
 
 <p/>
@@ -487,7 +487,7 @@ Constructs CreateEventSubscriptionResponse from required parameters
 #### `newCreateEventSubscriptionResponse'`
 
 ``` purescript
-newCreateEventSubscriptionResponse' :: ({ "EventSubscription" :: NullOrUndefined (EventSubscription) } -> { "EventSubscription" :: NullOrUndefined (EventSubscription) }) -> CreateEventSubscriptionResponse
+newCreateEventSubscriptionResponse' :: ({ "EventSubscription" :: Maybe (EventSubscription) } -> { "EventSubscription" :: Maybe (EventSubscription) }) -> CreateEventSubscriptionResponse
 ```
 
 Constructs CreateEventSubscriptionResponse's fields from required parameters
@@ -496,7 +496,7 @@ Constructs CreateEventSubscriptionResponse's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationInstanceMessage
-  = CreateReplicationInstanceMessage { "ReplicationInstanceIdentifier" :: String, "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "ReplicationInstanceClass" :: String, "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "AvailabilityZone" :: NullOrUndefined (String), "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) }
+  = CreateReplicationInstanceMessage { "ReplicationInstanceIdentifier" :: String, "AllocatedStorage" :: Maybe (IntegerOptional), "ReplicationInstanceClass" :: String, "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "AvailabilityZone" :: Maybe (String), "ReplicationSubnetGroupIdentifier" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional) }
 ```
 
 <p/>
@@ -521,7 +521,7 @@ Constructs CreateReplicationInstanceMessage from required parameters
 #### `newCreateReplicationInstanceMessage'`
 
 ``` purescript
-newCreateReplicationInstanceMessage' :: String -> String -> ({ "ReplicationInstanceIdentifier" :: String, "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "ReplicationInstanceClass" :: String, "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "AvailabilityZone" :: NullOrUndefined (String), "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) } -> { "ReplicationInstanceIdentifier" :: String, "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "ReplicationInstanceClass" :: String, "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "AvailabilityZone" :: NullOrUndefined (String), "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) }) -> CreateReplicationInstanceMessage
+newCreateReplicationInstanceMessage' :: String -> String -> ({ "ReplicationInstanceIdentifier" :: String, "AllocatedStorage" :: Maybe (IntegerOptional), "ReplicationInstanceClass" :: String, "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "AvailabilityZone" :: Maybe (String), "ReplicationSubnetGroupIdentifier" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional) } -> { "ReplicationInstanceIdentifier" :: String, "AllocatedStorage" :: Maybe (IntegerOptional), "ReplicationInstanceClass" :: String, "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "AvailabilityZone" :: Maybe (String), "ReplicationSubnetGroupIdentifier" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional) }) -> CreateReplicationInstanceMessage
 ```
 
 Constructs CreateReplicationInstanceMessage's fields from required parameters
@@ -530,7 +530,7 @@ Constructs CreateReplicationInstanceMessage's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationInstanceResponse
-  = CreateReplicationInstanceResponse { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }
+  = CreateReplicationInstanceResponse { "ReplicationInstance" :: Maybe (ReplicationInstance) }
 ```
 
 <p/>
@@ -555,7 +555,7 @@ Constructs CreateReplicationInstanceResponse from required parameters
 #### `newCreateReplicationInstanceResponse'`
 
 ``` purescript
-newCreateReplicationInstanceResponse' :: ({ "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }) -> CreateReplicationInstanceResponse
+newCreateReplicationInstanceResponse' :: ({ "ReplicationInstance" :: Maybe (ReplicationInstance) } -> { "ReplicationInstance" :: Maybe (ReplicationInstance) }) -> CreateReplicationInstanceResponse
 ```
 
 Constructs CreateReplicationInstanceResponse's fields from required parameters
@@ -564,7 +564,7 @@ Constructs CreateReplicationInstanceResponse's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationSubnetGroupMessage
-  = CreateReplicationSubnetGroupMessage { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: NullOrUndefined (TagList) }
+  = CreateReplicationSubnetGroupMessage { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -589,7 +589,7 @@ Constructs CreateReplicationSubnetGroupMessage from required parameters
 #### `newCreateReplicationSubnetGroupMessage'`
 
 ``` purescript
-newCreateReplicationSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ({ "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: NullOrUndefined (TagList) } -> { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: NullOrUndefined (TagList) }) -> CreateReplicationSubnetGroupMessage
+newCreateReplicationSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ({ "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: Maybe (TagList) } -> { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: Maybe (TagList) }) -> CreateReplicationSubnetGroupMessage
 ```
 
 Constructs CreateReplicationSubnetGroupMessage's fields from required parameters
@@ -598,7 +598,7 @@ Constructs CreateReplicationSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationSubnetGroupResponse
-  = CreateReplicationSubnetGroupResponse { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) }
+  = CreateReplicationSubnetGroupResponse { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) }
 ```
 
 <p/>
@@ -623,7 +623,7 @@ Constructs CreateReplicationSubnetGroupResponse from required parameters
 #### `newCreateReplicationSubnetGroupResponse'`
 
 ``` purescript
-newCreateReplicationSubnetGroupResponse' :: ({ "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) } -> { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) }) -> CreateReplicationSubnetGroupResponse
+newCreateReplicationSubnetGroupResponse' :: ({ "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) } -> { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) }) -> CreateReplicationSubnetGroupResponse
 ```
 
 Constructs CreateReplicationSubnetGroupResponse's fields from required parameters
@@ -632,7 +632,7 @@ Constructs CreateReplicationSubnetGroupResponse's fields from required parameter
 
 ``` purescript
 newtype CreateReplicationTaskMessage
-  = CreateReplicationTaskMessage { "ReplicationTaskIdentifier" :: String, "SourceEndpointArn" :: String, "TargetEndpointArn" :: String, "ReplicationInstanceArn" :: String, "MigrationType" :: MigrationTypeValue, "TableMappings" :: String, "ReplicationTaskSettings" :: NullOrUndefined (String), "CdcStartTime" :: NullOrUndefined (TStamp), "Tags" :: NullOrUndefined (TagList) }
+  = CreateReplicationTaskMessage { "ReplicationTaskIdentifier" :: String, "SourceEndpointArn" :: String, "TargetEndpointArn" :: String, "ReplicationInstanceArn" :: String, "MigrationType" :: MigrationTypeValue, "TableMappings" :: String, "ReplicationTaskSettings" :: Maybe (String), "CdcStartTime" :: Maybe (TStamp), "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -657,7 +657,7 @@ Constructs CreateReplicationTaskMessage from required parameters
 #### `newCreateReplicationTaskMessage'`
 
 ``` purescript
-newCreateReplicationTaskMessage' :: MigrationTypeValue -> String -> String -> String -> String -> String -> ({ "ReplicationTaskIdentifier" :: String, "SourceEndpointArn" :: String, "TargetEndpointArn" :: String, "ReplicationInstanceArn" :: String, "MigrationType" :: MigrationTypeValue, "TableMappings" :: String, "ReplicationTaskSettings" :: NullOrUndefined (String), "CdcStartTime" :: NullOrUndefined (TStamp), "Tags" :: NullOrUndefined (TagList) } -> { "ReplicationTaskIdentifier" :: String, "SourceEndpointArn" :: String, "TargetEndpointArn" :: String, "ReplicationInstanceArn" :: String, "MigrationType" :: MigrationTypeValue, "TableMappings" :: String, "ReplicationTaskSettings" :: NullOrUndefined (String), "CdcStartTime" :: NullOrUndefined (TStamp), "Tags" :: NullOrUndefined (TagList) }) -> CreateReplicationTaskMessage
+newCreateReplicationTaskMessage' :: MigrationTypeValue -> String -> String -> String -> String -> String -> ({ "ReplicationTaskIdentifier" :: String, "SourceEndpointArn" :: String, "TargetEndpointArn" :: String, "ReplicationInstanceArn" :: String, "MigrationType" :: MigrationTypeValue, "TableMappings" :: String, "ReplicationTaskSettings" :: Maybe (String), "CdcStartTime" :: Maybe (TStamp), "Tags" :: Maybe (TagList) } -> { "ReplicationTaskIdentifier" :: String, "SourceEndpointArn" :: String, "TargetEndpointArn" :: String, "ReplicationInstanceArn" :: String, "MigrationType" :: MigrationTypeValue, "TableMappings" :: String, "ReplicationTaskSettings" :: Maybe (String), "CdcStartTime" :: Maybe (TStamp), "Tags" :: Maybe (TagList) }) -> CreateReplicationTaskMessage
 ```
 
 Constructs CreateReplicationTaskMessage's fields from required parameters
@@ -666,7 +666,7 @@ Constructs CreateReplicationTaskMessage's fields from required parameters
 
 ``` purescript
 newtype CreateReplicationTaskResponse
-  = CreateReplicationTaskResponse { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }
+  = CreateReplicationTaskResponse { "ReplicationTask" :: Maybe (ReplicationTask) }
 ```
 
 <p/>
@@ -691,7 +691,7 @@ Constructs CreateReplicationTaskResponse from required parameters
 #### `newCreateReplicationTaskResponse'`
 
 ``` purescript
-newCreateReplicationTaskResponse' :: ({ "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }) -> CreateReplicationTaskResponse
+newCreateReplicationTaskResponse' :: ({ "ReplicationTask" :: Maybe (ReplicationTask) } -> { "ReplicationTask" :: Maybe (ReplicationTask) }) -> CreateReplicationTaskResponse
 ```
 
 Constructs CreateReplicationTaskResponse's fields from required parameters
@@ -732,7 +732,7 @@ Constructs DeleteCertificateMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteCertificateResponse
-  = DeleteCertificateResponse { "Certificate" :: NullOrUndefined (Certificate) }
+  = DeleteCertificateResponse { "Certificate" :: Maybe (Certificate) }
 ```
 
 ##### Instances
@@ -755,7 +755,7 @@ Constructs DeleteCertificateResponse from required parameters
 #### `newDeleteCertificateResponse'`
 
 ``` purescript
-newDeleteCertificateResponse' :: ({ "Certificate" :: NullOrUndefined (Certificate) } -> { "Certificate" :: NullOrUndefined (Certificate) }) -> DeleteCertificateResponse
+newDeleteCertificateResponse' :: ({ "Certificate" :: Maybe (Certificate) } -> { "Certificate" :: Maybe (Certificate) }) -> DeleteCertificateResponse
 ```
 
 Constructs DeleteCertificateResponse's fields from required parameters
@@ -798,7 +798,7 @@ Constructs DeleteEndpointMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteEndpointResponse
-  = DeleteEndpointResponse { "Endpoint" :: NullOrUndefined (Endpoint) }
+  = DeleteEndpointResponse { "Endpoint" :: Maybe (Endpoint) }
 ```
 
 <p/>
@@ -823,7 +823,7 @@ Constructs DeleteEndpointResponse from required parameters
 #### `newDeleteEndpointResponse'`
 
 ``` purescript
-newDeleteEndpointResponse' :: ({ "Endpoint" :: NullOrUndefined (Endpoint) } -> { "Endpoint" :: NullOrUndefined (Endpoint) }) -> DeleteEndpointResponse
+newDeleteEndpointResponse' :: ({ "Endpoint" :: Maybe (Endpoint) } -> { "Endpoint" :: Maybe (Endpoint) }) -> DeleteEndpointResponse
 ```
 
 Constructs DeleteEndpointResponse's fields from required parameters
@@ -866,7 +866,7 @@ Constructs DeleteEventSubscriptionMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteEventSubscriptionResponse
-  = DeleteEventSubscriptionResponse { "EventSubscription" :: NullOrUndefined (EventSubscription) }
+  = DeleteEventSubscriptionResponse { "EventSubscription" :: Maybe (EventSubscription) }
 ```
 
 <p/>
@@ -891,7 +891,7 @@ Constructs DeleteEventSubscriptionResponse from required parameters
 #### `newDeleteEventSubscriptionResponse'`
 
 ``` purescript
-newDeleteEventSubscriptionResponse' :: ({ "EventSubscription" :: NullOrUndefined (EventSubscription) } -> { "EventSubscription" :: NullOrUndefined (EventSubscription) }) -> DeleteEventSubscriptionResponse
+newDeleteEventSubscriptionResponse' :: ({ "EventSubscription" :: Maybe (EventSubscription) } -> { "EventSubscription" :: Maybe (EventSubscription) }) -> DeleteEventSubscriptionResponse
 ```
 
 Constructs DeleteEventSubscriptionResponse's fields from required parameters
@@ -934,7 +934,7 @@ Constructs DeleteReplicationInstanceMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteReplicationInstanceResponse
-  = DeleteReplicationInstanceResponse { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }
+  = DeleteReplicationInstanceResponse { "ReplicationInstance" :: Maybe (ReplicationInstance) }
 ```
 
 <p/>
@@ -959,7 +959,7 @@ Constructs DeleteReplicationInstanceResponse from required parameters
 #### `newDeleteReplicationInstanceResponse'`
 
 ``` purescript
-newDeleteReplicationInstanceResponse' :: ({ "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }) -> DeleteReplicationInstanceResponse
+newDeleteReplicationInstanceResponse' :: ({ "ReplicationInstance" :: Maybe (ReplicationInstance) } -> { "ReplicationInstance" :: Maybe (ReplicationInstance) }) -> DeleteReplicationInstanceResponse
 ```
 
 Constructs DeleteReplicationInstanceResponse's fields from required parameters
@@ -1054,7 +1054,7 @@ Constructs DeleteReplicationTaskMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteReplicationTaskResponse
-  = DeleteReplicationTaskResponse { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }
+  = DeleteReplicationTaskResponse { "ReplicationTask" :: Maybe (ReplicationTask) }
 ```
 
 <p/>
@@ -1079,7 +1079,7 @@ Constructs DeleteReplicationTaskResponse from required parameters
 #### `newDeleteReplicationTaskResponse'`
 
 ``` purescript
-newDeleteReplicationTaskResponse' :: ({ "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }) -> DeleteReplicationTaskResponse
+newDeleteReplicationTaskResponse' :: ({ "ReplicationTask" :: Maybe (ReplicationTask) } -> { "ReplicationTask" :: Maybe (ReplicationTask) }) -> DeleteReplicationTaskResponse
 ```
 
 Constructs DeleteReplicationTaskResponse's fields from required parameters
@@ -1106,7 +1106,7 @@ Encode DescribeAccountAttributesMessage
 
 ``` purescript
 newtype DescribeAccountAttributesResponse
-  = DescribeAccountAttributesResponse { "AccountQuotas" :: NullOrUndefined (AccountQuotaList) }
+  = DescribeAccountAttributesResponse { "AccountQuotas" :: Maybe (AccountQuotaList) }
 ```
 
 <p/>
@@ -1131,7 +1131,7 @@ Constructs DescribeAccountAttributesResponse from required parameters
 #### `newDescribeAccountAttributesResponse'`
 
 ``` purescript
-newDescribeAccountAttributesResponse' :: ({ "AccountQuotas" :: NullOrUndefined (AccountQuotaList) } -> { "AccountQuotas" :: NullOrUndefined (AccountQuotaList) }) -> DescribeAccountAttributesResponse
+newDescribeAccountAttributesResponse' :: ({ "AccountQuotas" :: Maybe (AccountQuotaList) } -> { "AccountQuotas" :: Maybe (AccountQuotaList) }) -> DescribeAccountAttributesResponse
 ```
 
 Constructs DescribeAccountAttributesResponse's fields from required parameters
@@ -1140,7 +1140,7 @@ Constructs DescribeAccountAttributesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeCertificatesMessage
-  = DescribeCertificatesMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeCertificatesMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1163,7 +1163,7 @@ Constructs DescribeCertificatesMessage from required parameters
 #### `newDescribeCertificatesMessage'`
 
 ``` purescript
-newDescribeCertificatesMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeCertificatesMessage
+newDescribeCertificatesMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeCertificatesMessage
 ```
 
 Constructs DescribeCertificatesMessage's fields from required parameters
@@ -1172,7 +1172,7 @@ Constructs DescribeCertificatesMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeCertificatesResponse
-  = DescribeCertificatesResponse { "Marker" :: NullOrUndefined (String), "Certificates" :: NullOrUndefined (CertificateList) }
+  = DescribeCertificatesResponse { "Marker" :: Maybe (String), "Certificates" :: Maybe (CertificateList) }
 ```
 
 ##### Instances
@@ -1195,7 +1195,7 @@ Constructs DescribeCertificatesResponse from required parameters
 #### `newDescribeCertificatesResponse'`
 
 ``` purescript
-newDescribeCertificatesResponse' :: ({ "Marker" :: NullOrUndefined (String), "Certificates" :: NullOrUndefined (CertificateList) } -> { "Marker" :: NullOrUndefined (String), "Certificates" :: NullOrUndefined (CertificateList) }) -> DescribeCertificatesResponse
+newDescribeCertificatesResponse' :: ({ "Marker" :: Maybe (String), "Certificates" :: Maybe (CertificateList) } -> { "Marker" :: Maybe (String), "Certificates" :: Maybe (CertificateList) }) -> DescribeCertificatesResponse
 ```
 
 Constructs DescribeCertificatesResponse's fields from required parameters
@@ -1204,7 +1204,7 @@ Constructs DescribeCertificatesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeConnectionsMessage
-  = DescribeConnectionsMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeConnectionsMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1229,7 +1229,7 @@ Constructs DescribeConnectionsMessage from required parameters
 #### `newDescribeConnectionsMessage'`
 
 ``` purescript
-newDescribeConnectionsMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeConnectionsMessage
+newDescribeConnectionsMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeConnectionsMessage
 ```
 
 Constructs DescribeConnectionsMessage's fields from required parameters
@@ -1238,7 +1238,7 @@ Constructs DescribeConnectionsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeConnectionsResponse
-  = DescribeConnectionsResponse { "Marker" :: NullOrUndefined (String), "Connections" :: NullOrUndefined (ConnectionList) }
+  = DescribeConnectionsResponse { "Marker" :: Maybe (String), "Connections" :: Maybe (ConnectionList) }
 ```
 
 <p/>
@@ -1263,7 +1263,7 @@ Constructs DescribeConnectionsResponse from required parameters
 #### `newDescribeConnectionsResponse'`
 
 ``` purescript
-newDescribeConnectionsResponse' :: ({ "Marker" :: NullOrUndefined (String), "Connections" :: NullOrUndefined (ConnectionList) } -> { "Marker" :: NullOrUndefined (String), "Connections" :: NullOrUndefined (ConnectionList) }) -> DescribeConnectionsResponse
+newDescribeConnectionsResponse' :: ({ "Marker" :: Maybe (String), "Connections" :: Maybe (ConnectionList) } -> { "Marker" :: Maybe (String), "Connections" :: Maybe (ConnectionList) }) -> DescribeConnectionsResponse
 ```
 
 Constructs DescribeConnectionsResponse's fields from required parameters
@@ -1272,7 +1272,7 @@ Constructs DescribeConnectionsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeEndpointTypesMessage
-  = DescribeEndpointTypesMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEndpointTypesMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1297,7 +1297,7 @@ Constructs DescribeEndpointTypesMessage from required parameters
 #### `newDescribeEndpointTypesMessage'`
 
 ``` purescript
-newDescribeEndpointTypesMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEndpointTypesMessage
+newDescribeEndpointTypesMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEndpointTypesMessage
 ```
 
 Constructs DescribeEndpointTypesMessage's fields from required parameters
@@ -1306,7 +1306,7 @@ Constructs DescribeEndpointTypesMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEndpointTypesResponse
-  = DescribeEndpointTypesResponse { "Marker" :: NullOrUndefined (String), "SupportedEndpointTypes" :: NullOrUndefined (SupportedEndpointTypeList) }
+  = DescribeEndpointTypesResponse { "Marker" :: Maybe (String), "SupportedEndpointTypes" :: Maybe (SupportedEndpointTypeList) }
 ```
 
 <p/>
@@ -1331,7 +1331,7 @@ Constructs DescribeEndpointTypesResponse from required parameters
 #### `newDescribeEndpointTypesResponse'`
 
 ``` purescript
-newDescribeEndpointTypesResponse' :: ({ "Marker" :: NullOrUndefined (String), "SupportedEndpointTypes" :: NullOrUndefined (SupportedEndpointTypeList) } -> { "Marker" :: NullOrUndefined (String), "SupportedEndpointTypes" :: NullOrUndefined (SupportedEndpointTypeList) }) -> DescribeEndpointTypesResponse
+newDescribeEndpointTypesResponse' :: ({ "Marker" :: Maybe (String), "SupportedEndpointTypes" :: Maybe (SupportedEndpointTypeList) } -> { "Marker" :: Maybe (String), "SupportedEndpointTypes" :: Maybe (SupportedEndpointTypeList) }) -> DescribeEndpointTypesResponse
 ```
 
 Constructs DescribeEndpointTypesResponse's fields from required parameters
@@ -1340,7 +1340,7 @@ Constructs DescribeEndpointTypesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeEndpointsMessage
-  = DescribeEndpointsMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEndpointsMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1365,7 +1365,7 @@ Constructs DescribeEndpointsMessage from required parameters
 #### `newDescribeEndpointsMessage'`
 
 ``` purescript
-newDescribeEndpointsMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEndpointsMessage
+newDescribeEndpointsMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEndpointsMessage
 ```
 
 Constructs DescribeEndpointsMessage's fields from required parameters
@@ -1374,7 +1374,7 @@ Constructs DescribeEndpointsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEndpointsResponse
-  = DescribeEndpointsResponse { "Marker" :: NullOrUndefined (String), "Endpoints" :: NullOrUndefined (EndpointList) }
+  = DescribeEndpointsResponse { "Marker" :: Maybe (String), "Endpoints" :: Maybe (EndpointList) }
 ```
 
 <p/>
@@ -1399,7 +1399,7 @@ Constructs DescribeEndpointsResponse from required parameters
 #### `newDescribeEndpointsResponse'`
 
 ``` purescript
-newDescribeEndpointsResponse' :: ({ "Marker" :: NullOrUndefined (String), "Endpoints" :: NullOrUndefined (EndpointList) } -> { "Marker" :: NullOrUndefined (String), "Endpoints" :: NullOrUndefined (EndpointList) }) -> DescribeEndpointsResponse
+newDescribeEndpointsResponse' :: ({ "Marker" :: Maybe (String), "Endpoints" :: Maybe (EndpointList) } -> { "Marker" :: Maybe (String), "Endpoints" :: Maybe (EndpointList) }) -> DescribeEndpointsResponse
 ```
 
 Constructs DescribeEndpointsResponse's fields from required parameters
@@ -1408,7 +1408,7 @@ Constructs DescribeEndpointsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeEventCategoriesMessage
-  = DescribeEventCategoriesMessage { "SourceType" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList) }
+  = DescribeEventCategoriesMessage { "SourceType" :: Maybe (String), "Filters" :: Maybe (FilterList) }
 ```
 
 <p/>
@@ -1433,7 +1433,7 @@ Constructs DescribeEventCategoriesMessage from required parameters
 #### `newDescribeEventCategoriesMessage'`
 
 ``` purescript
-newDescribeEventCategoriesMessage' :: ({ "SourceType" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList) } -> { "SourceType" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList) }) -> DescribeEventCategoriesMessage
+newDescribeEventCategoriesMessage' :: ({ "SourceType" :: Maybe (String), "Filters" :: Maybe (FilterList) } -> { "SourceType" :: Maybe (String), "Filters" :: Maybe (FilterList) }) -> DescribeEventCategoriesMessage
 ```
 
 Constructs DescribeEventCategoriesMessage's fields from required parameters
@@ -1442,7 +1442,7 @@ Constructs DescribeEventCategoriesMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEventCategoriesResponse
-  = DescribeEventCategoriesResponse { "EventCategoryGroupList" :: NullOrUndefined (EventCategoryGroupList) }
+  = DescribeEventCategoriesResponse { "EventCategoryGroupList" :: Maybe (EventCategoryGroupList) }
 ```
 
 <p/>
@@ -1467,7 +1467,7 @@ Constructs DescribeEventCategoriesResponse from required parameters
 #### `newDescribeEventCategoriesResponse'`
 
 ``` purescript
-newDescribeEventCategoriesResponse' :: ({ "EventCategoryGroupList" :: NullOrUndefined (EventCategoryGroupList) } -> { "EventCategoryGroupList" :: NullOrUndefined (EventCategoryGroupList) }) -> DescribeEventCategoriesResponse
+newDescribeEventCategoriesResponse' :: ({ "EventCategoryGroupList" :: Maybe (EventCategoryGroupList) } -> { "EventCategoryGroupList" :: Maybe (EventCategoryGroupList) }) -> DescribeEventCategoriesResponse
 ```
 
 Constructs DescribeEventCategoriesResponse's fields from required parameters
@@ -1476,7 +1476,7 @@ Constructs DescribeEventCategoriesResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeEventSubscriptionsMessage
-  = DescribeEventSubscriptionsMessage { "SubscriptionName" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEventSubscriptionsMessage { "SubscriptionName" :: Maybe (String), "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1501,7 +1501,7 @@ Constructs DescribeEventSubscriptionsMessage from required parameters
 #### `newDescribeEventSubscriptionsMessage'`
 
 ``` purescript
-newDescribeEventSubscriptionsMessage' :: ({ "SubscriptionName" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "SubscriptionName" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEventSubscriptionsMessage
+newDescribeEventSubscriptionsMessage' :: ({ "SubscriptionName" :: Maybe (String), "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "SubscriptionName" :: Maybe (String), "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEventSubscriptionsMessage
 ```
 
 Constructs DescribeEventSubscriptionsMessage's fields from required parameters
@@ -1510,7 +1510,7 @@ Constructs DescribeEventSubscriptionsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEventSubscriptionsResponse
-  = DescribeEventSubscriptionsResponse { "Marker" :: NullOrUndefined (String), "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) }
+  = DescribeEventSubscriptionsResponse { "Marker" :: Maybe (String), "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) }
 ```
 
 <p/>
@@ -1535,7 +1535,7 @@ Constructs DescribeEventSubscriptionsResponse from required parameters
 #### `newDescribeEventSubscriptionsResponse'`
 
 ``` purescript
-newDescribeEventSubscriptionsResponse' :: ({ "Marker" :: NullOrUndefined (String), "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) } -> { "Marker" :: NullOrUndefined (String), "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) }) -> DescribeEventSubscriptionsResponse
+newDescribeEventSubscriptionsResponse' :: ({ "Marker" :: Maybe (String), "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) } -> { "Marker" :: Maybe (String), "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) }) -> DescribeEventSubscriptionsResponse
 ```
 
 Constructs DescribeEventSubscriptionsResponse's fields from required parameters
@@ -1544,7 +1544,7 @@ Constructs DescribeEventSubscriptionsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeEventsMessage
-  = DescribeEventsMessage { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEventsMessage { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "EventCategories" :: Maybe (EventCategoriesList), "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1569,7 +1569,7 @@ Constructs DescribeEventsMessage from required parameters
 #### `newDescribeEventsMessage'`
 
 ``` purescript
-newDescribeEventsMessage' :: ({ "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEventsMessage
+newDescribeEventsMessage' :: ({ "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "EventCategories" :: Maybe (EventCategoriesList), "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "EventCategories" :: Maybe (EventCategoriesList), "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEventsMessage
 ```
 
 Constructs DescribeEventsMessage's fields from required parameters
@@ -1578,7 +1578,7 @@ Constructs DescribeEventsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEventsResponse
-  = DescribeEventsResponse { "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }
+  = DescribeEventsResponse { "Marker" :: Maybe (String), "Events" :: Maybe (EventList) }
 ```
 
 <p/>
@@ -1603,7 +1603,7 @@ Constructs DescribeEventsResponse from required parameters
 #### `newDescribeEventsResponse'`
 
 ``` purescript
-newDescribeEventsResponse' :: ({ "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) } -> { "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }) -> DescribeEventsResponse
+newDescribeEventsResponse' :: ({ "Marker" :: Maybe (String), "Events" :: Maybe (EventList) } -> { "Marker" :: Maybe (String), "Events" :: Maybe (EventList) }) -> DescribeEventsResponse
 ```
 
 Constructs DescribeEventsResponse's fields from required parameters
@@ -1612,7 +1612,7 @@ Constructs DescribeEventsResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeOrderableReplicationInstancesMessage
-  = DescribeOrderableReplicationInstancesMessage { "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeOrderableReplicationInstancesMessage { "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1637,7 +1637,7 @@ Constructs DescribeOrderableReplicationInstancesMessage from required parameters
 #### `newDescribeOrderableReplicationInstancesMessage'`
 
 ``` purescript
-newDescribeOrderableReplicationInstancesMessage' :: ({ "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeOrderableReplicationInstancesMessage
+newDescribeOrderableReplicationInstancesMessage' :: ({ "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeOrderableReplicationInstancesMessage
 ```
 
 Constructs DescribeOrderableReplicationInstancesMessage's fields from required parameters
@@ -1646,7 +1646,7 @@ Constructs DescribeOrderableReplicationInstancesMessage's fields from required p
 
 ``` purescript
 newtype DescribeOrderableReplicationInstancesResponse
-  = DescribeOrderableReplicationInstancesResponse { "OrderableReplicationInstances" :: NullOrUndefined (OrderableReplicationInstanceList), "Marker" :: NullOrUndefined (String) }
+  = DescribeOrderableReplicationInstancesResponse { "OrderableReplicationInstances" :: Maybe (OrderableReplicationInstanceList), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1671,7 +1671,7 @@ Constructs DescribeOrderableReplicationInstancesResponse from required parameter
 #### `newDescribeOrderableReplicationInstancesResponse'`
 
 ``` purescript
-newDescribeOrderableReplicationInstancesResponse' :: ({ "OrderableReplicationInstances" :: NullOrUndefined (OrderableReplicationInstanceList), "Marker" :: NullOrUndefined (String) } -> { "OrderableReplicationInstances" :: NullOrUndefined (OrderableReplicationInstanceList), "Marker" :: NullOrUndefined (String) }) -> DescribeOrderableReplicationInstancesResponse
+newDescribeOrderableReplicationInstancesResponse' :: ({ "OrderableReplicationInstances" :: Maybe (OrderableReplicationInstanceList), "Marker" :: Maybe (String) } -> { "OrderableReplicationInstances" :: Maybe (OrderableReplicationInstanceList), "Marker" :: Maybe (String) }) -> DescribeOrderableReplicationInstancesResponse
 ```
 
 Constructs DescribeOrderableReplicationInstancesResponse's fields from required parameters
@@ -1714,7 +1714,7 @@ Constructs DescribeRefreshSchemasStatusMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeRefreshSchemasStatusResponse
-  = DescribeRefreshSchemasStatusResponse { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) }
+  = DescribeRefreshSchemasStatusResponse { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) }
 ```
 
 <p/>
@@ -1739,7 +1739,7 @@ Constructs DescribeRefreshSchemasStatusResponse from required parameters
 #### `newDescribeRefreshSchemasStatusResponse'`
 
 ``` purescript
-newDescribeRefreshSchemasStatusResponse' :: ({ "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) } -> { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) }) -> DescribeRefreshSchemasStatusResponse
+newDescribeRefreshSchemasStatusResponse' :: ({ "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) } -> { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) }) -> DescribeRefreshSchemasStatusResponse
 ```
 
 Constructs DescribeRefreshSchemasStatusResponse's fields from required parameters
@@ -1748,7 +1748,7 @@ Constructs DescribeRefreshSchemasStatusResponse's fields from required parameter
 
 ``` purescript
 newtype DescribeReplicationInstanceTaskLogsMessage
-  = DescribeReplicationInstanceTaskLogsMessage { "ReplicationInstanceArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationInstanceTaskLogsMessage { "ReplicationInstanceArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1771,7 +1771,7 @@ Constructs DescribeReplicationInstanceTaskLogsMessage from required parameters
 #### `newDescribeReplicationInstanceTaskLogsMessage'`
 
 ``` purescript
-newDescribeReplicationInstanceTaskLogsMessage' :: String -> ({ "ReplicationInstanceArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReplicationInstanceArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationInstanceTaskLogsMessage
+newDescribeReplicationInstanceTaskLogsMessage' :: String -> ({ "ReplicationInstanceArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReplicationInstanceArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReplicationInstanceTaskLogsMessage
 ```
 
 Constructs DescribeReplicationInstanceTaskLogsMessage's fields from required parameters
@@ -1780,7 +1780,7 @@ Constructs DescribeReplicationInstanceTaskLogsMessage's fields from required par
 
 ``` purescript
 newtype DescribeReplicationInstanceTaskLogsResponse
-  = DescribeReplicationInstanceTaskLogsResponse { "ReplicationInstanceArn" :: NullOrUndefined (String), "ReplicationInstanceTaskLogs" :: NullOrUndefined (ReplicationInstanceTaskLogsList), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationInstanceTaskLogsResponse { "ReplicationInstanceArn" :: Maybe (String), "ReplicationInstanceTaskLogs" :: Maybe (ReplicationInstanceTaskLogsList), "Marker" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1803,7 +1803,7 @@ Constructs DescribeReplicationInstanceTaskLogsResponse from required parameters
 #### `newDescribeReplicationInstanceTaskLogsResponse'`
 
 ``` purescript
-newDescribeReplicationInstanceTaskLogsResponse' :: ({ "ReplicationInstanceArn" :: NullOrUndefined (String), "ReplicationInstanceTaskLogs" :: NullOrUndefined (ReplicationInstanceTaskLogsList), "Marker" :: NullOrUndefined (String) } -> { "ReplicationInstanceArn" :: NullOrUndefined (String), "ReplicationInstanceTaskLogs" :: NullOrUndefined (ReplicationInstanceTaskLogsList), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationInstanceTaskLogsResponse
+newDescribeReplicationInstanceTaskLogsResponse' :: ({ "ReplicationInstanceArn" :: Maybe (String), "ReplicationInstanceTaskLogs" :: Maybe (ReplicationInstanceTaskLogsList), "Marker" :: Maybe (String) } -> { "ReplicationInstanceArn" :: Maybe (String), "ReplicationInstanceTaskLogs" :: Maybe (ReplicationInstanceTaskLogsList), "Marker" :: Maybe (String) }) -> DescribeReplicationInstanceTaskLogsResponse
 ```
 
 Constructs DescribeReplicationInstanceTaskLogsResponse's fields from required parameters
@@ -1812,7 +1812,7 @@ Constructs DescribeReplicationInstanceTaskLogsResponse's fields from required pa
 
 ``` purescript
 newtype DescribeReplicationInstancesMessage
-  = DescribeReplicationInstancesMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationInstancesMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1837,7 +1837,7 @@ Constructs DescribeReplicationInstancesMessage from required parameters
 #### `newDescribeReplicationInstancesMessage'`
 
 ``` purescript
-newDescribeReplicationInstancesMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationInstancesMessage
+newDescribeReplicationInstancesMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReplicationInstancesMessage
 ```
 
 Constructs DescribeReplicationInstancesMessage's fields from required parameters
@@ -1846,7 +1846,7 @@ Constructs DescribeReplicationInstancesMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeReplicationInstancesResponse
-  = DescribeReplicationInstancesResponse { "Marker" :: NullOrUndefined (String), "ReplicationInstances" :: NullOrUndefined (ReplicationInstanceList) }
+  = DescribeReplicationInstancesResponse { "Marker" :: Maybe (String), "ReplicationInstances" :: Maybe (ReplicationInstanceList) }
 ```
 
 <p/>
@@ -1871,7 +1871,7 @@ Constructs DescribeReplicationInstancesResponse from required parameters
 #### `newDescribeReplicationInstancesResponse'`
 
 ``` purescript
-newDescribeReplicationInstancesResponse' :: ({ "Marker" :: NullOrUndefined (String), "ReplicationInstances" :: NullOrUndefined (ReplicationInstanceList) } -> { "Marker" :: NullOrUndefined (String), "ReplicationInstances" :: NullOrUndefined (ReplicationInstanceList) }) -> DescribeReplicationInstancesResponse
+newDescribeReplicationInstancesResponse' :: ({ "Marker" :: Maybe (String), "ReplicationInstances" :: Maybe (ReplicationInstanceList) } -> { "Marker" :: Maybe (String), "ReplicationInstances" :: Maybe (ReplicationInstanceList) }) -> DescribeReplicationInstancesResponse
 ```
 
 Constructs DescribeReplicationInstancesResponse's fields from required parameters
@@ -1880,7 +1880,7 @@ Constructs DescribeReplicationInstancesResponse's fields from required parameter
 
 ``` purescript
 newtype DescribeReplicationSubnetGroupsMessage
-  = DescribeReplicationSubnetGroupsMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationSubnetGroupsMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1905,7 +1905,7 @@ Constructs DescribeReplicationSubnetGroupsMessage from required parameters
 #### `newDescribeReplicationSubnetGroupsMessage'`
 
 ``` purescript
-newDescribeReplicationSubnetGroupsMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationSubnetGroupsMessage
+newDescribeReplicationSubnetGroupsMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReplicationSubnetGroupsMessage
 ```
 
 Constructs DescribeReplicationSubnetGroupsMessage's fields from required parameters
@@ -1914,7 +1914,7 @@ Constructs DescribeReplicationSubnetGroupsMessage's fields from required paramet
 
 ``` purescript
 newtype DescribeReplicationSubnetGroupsResponse
-  = DescribeReplicationSubnetGroupsResponse { "Marker" :: NullOrUndefined (String), "ReplicationSubnetGroups" :: NullOrUndefined (ReplicationSubnetGroups) }
+  = DescribeReplicationSubnetGroupsResponse { "Marker" :: Maybe (String), "ReplicationSubnetGroups" :: Maybe (ReplicationSubnetGroups) }
 ```
 
 <p/>
@@ -1939,7 +1939,7 @@ Constructs DescribeReplicationSubnetGroupsResponse from required parameters
 #### `newDescribeReplicationSubnetGroupsResponse'`
 
 ``` purescript
-newDescribeReplicationSubnetGroupsResponse' :: ({ "Marker" :: NullOrUndefined (String), "ReplicationSubnetGroups" :: NullOrUndefined (ReplicationSubnetGroups) } -> { "Marker" :: NullOrUndefined (String), "ReplicationSubnetGroups" :: NullOrUndefined (ReplicationSubnetGroups) }) -> DescribeReplicationSubnetGroupsResponse
+newDescribeReplicationSubnetGroupsResponse' :: ({ "Marker" :: Maybe (String), "ReplicationSubnetGroups" :: Maybe (ReplicationSubnetGroups) } -> { "Marker" :: Maybe (String), "ReplicationSubnetGroups" :: Maybe (ReplicationSubnetGroups) }) -> DescribeReplicationSubnetGroupsResponse
 ```
 
 Constructs DescribeReplicationSubnetGroupsResponse's fields from required parameters
@@ -1948,7 +1948,7 @@ Constructs DescribeReplicationSubnetGroupsResponse's fields from required parame
 
 ``` purescript
 newtype DescribeReplicationTaskAssessmentResultsMessage
-  = DescribeReplicationTaskAssessmentResultsMessage { "ReplicationTaskArn" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationTaskAssessmentResultsMessage { "ReplicationTaskArn" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -1973,7 +1973,7 @@ Constructs DescribeReplicationTaskAssessmentResultsMessage from required paramet
 #### `newDescribeReplicationTaskAssessmentResultsMessage'`
 
 ``` purescript
-newDescribeReplicationTaskAssessmentResultsMessage' :: ({ "ReplicationTaskArn" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReplicationTaskArn" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationTaskAssessmentResultsMessage
+newDescribeReplicationTaskAssessmentResultsMessage' :: ({ "ReplicationTaskArn" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReplicationTaskArn" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReplicationTaskAssessmentResultsMessage
 ```
 
 Constructs DescribeReplicationTaskAssessmentResultsMessage's fields from required parameters
@@ -1982,7 +1982,7 @@ Constructs DescribeReplicationTaskAssessmentResultsMessage's fields from require
 
 ``` purescript
 newtype DescribeReplicationTaskAssessmentResultsResponse
-  = DescribeReplicationTaskAssessmentResultsResponse { "Marker" :: NullOrUndefined (String), "BucketName" :: NullOrUndefined (String), "ReplicationTaskAssessmentResults" :: NullOrUndefined (ReplicationTaskAssessmentResultList) }
+  = DescribeReplicationTaskAssessmentResultsResponse { "Marker" :: Maybe (String), "BucketName" :: Maybe (String), "ReplicationTaskAssessmentResults" :: Maybe (ReplicationTaskAssessmentResultList) }
 ```
 
 <p/>
@@ -2007,7 +2007,7 @@ Constructs DescribeReplicationTaskAssessmentResultsResponse from required parame
 #### `newDescribeReplicationTaskAssessmentResultsResponse'`
 
 ``` purescript
-newDescribeReplicationTaskAssessmentResultsResponse' :: ({ "Marker" :: NullOrUndefined (String), "BucketName" :: NullOrUndefined (String), "ReplicationTaskAssessmentResults" :: NullOrUndefined (ReplicationTaskAssessmentResultList) } -> { "Marker" :: NullOrUndefined (String), "BucketName" :: NullOrUndefined (String), "ReplicationTaskAssessmentResults" :: NullOrUndefined (ReplicationTaskAssessmentResultList) }) -> DescribeReplicationTaskAssessmentResultsResponse
+newDescribeReplicationTaskAssessmentResultsResponse' :: ({ "Marker" :: Maybe (String), "BucketName" :: Maybe (String), "ReplicationTaskAssessmentResults" :: Maybe (ReplicationTaskAssessmentResultList) } -> { "Marker" :: Maybe (String), "BucketName" :: Maybe (String), "ReplicationTaskAssessmentResults" :: Maybe (ReplicationTaskAssessmentResultList) }) -> DescribeReplicationTaskAssessmentResultsResponse
 ```
 
 Constructs DescribeReplicationTaskAssessmentResultsResponse's fields from required parameters
@@ -2016,7 +2016,7 @@ Constructs DescribeReplicationTaskAssessmentResultsResponse's fields from requir
 
 ``` purescript
 newtype DescribeReplicationTasksMessage
-  = DescribeReplicationTasksMessage { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReplicationTasksMessage { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -2041,7 +2041,7 @@ Constructs DescribeReplicationTasksMessage from required parameters
 #### `newDescribeReplicationTasksMessage'`
 
 ``` purescript
-newDescribeReplicationTasksMessage' :: ({ "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "Filters" :: NullOrUndefined (FilterList), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReplicationTasksMessage
+newDescribeReplicationTasksMessage' :: ({ "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "Filters" :: Maybe (FilterList), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReplicationTasksMessage
 ```
 
 Constructs DescribeReplicationTasksMessage's fields from required parameters
@@ -2050,7 +2050,7 @@ Constructs DescribeReplicationTasksMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeReplicationTasksResponse
-  = DescribeReplicationTasksResponse { "Marker" :: NullOrUndefined (String), "ReplicationTasks" :: NullOrUndefined (ReplicationTaskList) }
+  = DescribeReplicationTasksResponse { "Marker" :: Maybe (String), "ReplicationTasks" :: Maybe (ReplicationTaskList) }
 ```
 
 <p/>
@@ -2075,7 +2075,7 @@ Constructs DescribeReplicationTasksResponse from required parameters
 #### `newDescribeReplicationTasksResponse'`
 
 ``` purescript
-newDescribeReplicationTasksResponse' :: ({ "Marker" :: NullOrUndefined (String), "ReplicationTasks" :: NullOrUndefined (ReplicationTaskList) } -> { "Marker" :: NullOrUndefined (String), "ReplicationTasks" :: NullOrUndefined (ReplicationTaskList) }) -> DescribeReplicationTasksResponse
+newDescribeReplicationTasksResponse' :: ({ "Marker" :: Maybe (String), "ReplicationTasks" :: Maybe (ReplicationTaskList) } -> { "Marker" :: Maybe (String), "ReplicationTasks" :: Maybe (ReplicationTaskList) }) -> DescribeReplicationTasksResponse
 ```
 
 Constructs DescribeReplicationTasksResponse's fields from required parameters
@@ -2084,7 +2084,7 @@ Constructs DescribeReplicationTasksResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeSchemasMessage
-  = DescribeSchemasMessage { "EndpointArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeSchemasMessage { "EndpointArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -2109,7 +2109,7 @@ Constructs DescribeSchemasMessage from required parameters
 #### `newDescribeSchemasMessage'`
 
 ``` purescript
-newDescribeSchemasMessage' :: String -> ({ "EndpointArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "EndpointArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeSchemasMessage
+newDescribeSchemasMessage' :: String -> ({ "EndpointArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "EndpointArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeSchemasMessage
 ```
 
 Constructs DescribeSchemasMessage's fields from required parameters
@@ -2118,7 +2118,7 @@ Constructs DescribeSchemasMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeSchemasResponse
-  = DescribeSchemasResponse { "Marker" :: NullOrUndefined (String), "Schemas" :: NullOrUndefined (SchemaList) }
+  = DescribeSchemasResponse { "Marker" :: Maybe (String), "Schemas" :: Maybe (SchemaList) }
 ```
 
 <p/>
@@ -2143,7 +2143,7 @@ Constructs DescribeSchemasResponse from required parameters
 #### `newDescribeSchemasResponse'`
 
 ``` purescript
-newDescribeSchemasResponse' :: ({ "Marker" :: NullOrUndefined (String), "Schemas" :: NullOrUndefined (SchemaList) } -> { "Marker" :: NullOrUndefined (String), "Schemas" :: NullOrUndefined (SchemaList) }) -> DescribeSchemasResponse
+newDescribeSchemasResponse' :: ({ "Marker" :: Maybe (String), "Schemas" :: Maybe (SchemaList) } -> { "Marker" :: Maybe (String), "Schemas" :: Maybe (SchemaList) }) -> DescribeSchemasResponse
 ```
 
 Constructs DescribeSchemasResponse's fields from required parameters
@@ -2152,7 +2152,7 @@ Constructs DescribeSchemasResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeTableStatisticsMessage
-  = DescribeTableStatisticsMessage { "ReplicationTaskArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList) }
+  = DescribeTableStatisticsMessage { "ReplicationTaskArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "Filters" :: Maybe (FilterList) }
 ```
 
 <p/>
@@ -2177,7 +2177,7 @@ Constructs DescribeTableStatisticsMessage from required parameters
 #### `newDescribeTableStatisticsMessage'`
 
 ``` purescript
-newDescribeTableStatisticsMessage' :: String -> ({ "ReplicationTaskArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList) } -> { "ReplicationTaskArn" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "Filters" :: NullOrUndefined (FilterList) }) -> DescribeTableStatisticsMessage
+newDescribeTableStatisticsMessage' :: String -> ({ "ReplicationTaskArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "Filters" :: Maybe (FilterList) } -> { "ReplicationTaskArn" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "Filters" :: Maybe (FilterList) }) -> DescribeTableStatisticsMessage
 ```
 
 Constructs DescribeTableStatisticsMessage's fields from required parameters
@@ -2186,7 +2186,7 @@ Constructs DescribeTableStatisticsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeTableStatisticsResponse
-  = DescribeTableStatisticsResponse { "ReplicationTaskArn" :: NullOrUndefined (String), "TableStatistics" :: NullOrUndefined (TableStatisticsList), "Marker" :: NullOrUndefined (String) }
+  = DescribeTableStatisticsResponse { "ReplicationTaskArn" :: Maybe (String), "TableStatistics" :: Maybe (TableStatisticsList), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -2211,7 +2211,7 @@ Constructs DescribeTableStatisticsResponse from required parameters
 #### `newDescribeTableStatisticsResponse'`
 
 ``` purescript
-newDescribeTableStatisticsResponse' :: ({ "ReplicationTaskArn" :: NullOrUndefined (String), "TableStatistics" :: NullOrUndefined (TableStatisticsList), "Marker" :: NullOrUndefined (String) } -> { "ReplicationTaskArn" :: NullOrUndefined (String), "TableStatistics" :: NullOrUndefined (TableStatisticsList), "Marker" :: NullOrUndefined (String) }) -> DescribeTableStatisticsResponse
+newDescribeTableStatisticsResponse' :: ({ "ReplicationTaskArn" :: Maybe (String), "TableStatistics" :: Maybe (TableStatisticsList), "Marker" :: Maybe (String) } -> { "ReplicationTaskArn" :: Maybe (String), "TableStatistics" :: Maybe (TableStatisticsList), "Marker" :: Maybe (String) }) -> DescribeTableStatisticsResponse
 ```
 
 Constructs DescribeTableStatisticsResponse's fields from required parameters
@@ -2270,7 +2270,7 @@ Constructs DynamoDbSettings's fields from required parameters
 
 ``` purescript
 newtype Endpoint
-  = Endpoint { "EndpointIdentifier" :: NullOrUndefined (String), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue), "EngineName" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "EndpointArn" :: NullOrUndefined (String), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "ExternalId" :: NullOrUndefined (String), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) }
+  = Endpoint { "EndpointIdentifier" :: Maybe (String), "EndpointType" :: Maybe (ReplicationEndpointTypeValue), "EngineName" :: Maybe (String), "Username" :: Maybe (String), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "Status" :: Maybe (String), "KmsKeyId" :: Maybe (String), "EndpointArn" :: Maybe (String), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "ExternalId" :: Maybe (String), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) }
 ```
 
 <p/>
@@ -2295,7 +2295,7 @@ Constructs Endpoint from required parameters
 #### `newEndpoint'`
 
 ``` purescript
-newEndpoint' :: ({ "EndpointIdentifier" :: NullOrUndefined (String), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue), "EngineName" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "EndpointArn" :: NullOrUndefined (String), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "ExternalId" :: NullOrUndefined (String), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } -> { "EndpointIdentifier" :: NullOrUndefined (String), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue), "EngineName" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "EndpointArn" :: NullOrUndefined (String), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "ExternalId" :: NullOrUndefined (String), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) }) -> Endpoint
+newEndpoint' :: ({ "EndpointIdentifier" :: Maybe (String), "EndpointType" :: Maybe (ReplicationEndpointTypeValue), "EngineName" :: Maybe (String), "Username" :: Maybe (String), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "Status" :: Maybe (String), "KmsKeyId" :: Maybe (String), "EndpointArn" :: Maybe (String), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "ExternalId" :: Maybe (String), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) } -> { "EndpointIdentifier" :: Maybe (String), "EndpointType" :: Maybe (ReplicationEndpointTypeValue), "EngineName" :: Maybe (String), "Username" :: Maybe (String), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "Status" :: Maybe (String), "KmsKeyId" :: Maybe (String), "EndpointArn" :: Maybe (String), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "ExternalId" :: Maybe (String), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) }) -> Endpoint
 ```
 
 Constructs Endpoint's fields from required parameters
@@ -2320,7 +2320,7 @@ Encode EndpointList
 
 ``` purescript
 newtype Event
-  = Event { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Date" :: NullOrUndefined (TStamp) }
+  = Event { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Date" :: Maybe (TStamp) }
 ```
 
 <p/>
@@ -2345,7 +2345,7 @@ Constructs Event from required parameters
 #### `newEvent'`
 
 ``` purescript
-newEvent' :: ({ "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Date" :: NullOrUndefined (TStamp) } -> { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Date" :: NullOrUndefined (TStamp) }) -> Event
+newEvent' :: ({ "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Date" :: Maybe (TStamp) } -> { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Date" :: Maybe (TStamp) }) -> Event
 ```
 
 Constructs Event's fields from required parameters
@@ -2370,7 +2370,7 @@ Encode EventCategoriesList
 
 ``` purescript
 newtype EventCategoryGroup
-  = EventCategoryGroup { "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList) }
+  = EventCategoryGroup { "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList) }
 ```
 
 <p/>
@@ -2395,7 +2395,7 @@ Constructs EventCategoryGroup from required parameters
 #### `newEventCategoryGroup'`
 
 ``` purescript
-newEventCategoryGroup' :: ({ "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList) } -> { "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList) }) -> EventCategoryGroup
+newEventCategoryGroup' :: ({ "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList) } -> { "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList) }) -> EventCategoryGroup
 ```
 
 Constructs EventCategoryGroup's fields from required parameters
@@ -2436,7 +2436,7 @@ Encode EventList
 
 ``` purescript
 newtype EventSubscription
-  = EventSubscription { "CustomerAwsId" :: NullOrUndefined (String), "CustSubscriptionId" :: NullOrUndefined (String), "SnsTopicArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubscriptionCreationTime" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "SourceIdsList" :: NullOrUndefined (SourceIdsList), "EventCategoriesList" :: NullOrUndefined (EventCategoriesList), "Enabled" :: NullOrUndefined (Boolean) }
+  = EventSubscription { "CustomerAwsId" :: Maybe (String), "CustSubscriptionId" :: Maybe (String), "SnsTopicArn" :: Maybe (String), "Status" :: Maybe (String), "SubscriptionCreationTime" :: Maybe (String), "SourceType" :: Maybe (String), "SourceIdsList" :: Maybe (SourceIdsList), "EventCategoriesList" :: Maybe (EventCategoriesList), "Enabled" :: Maybe (Boolean) }
 ```
 
 <p/>
@@ -2461,7 +2461,7 @@ Constructs EventSubscription from required parameters
 #### `newEventSubscription'`
 
 ``` purescript
-newEventSubscription' :: ({ "CustomerAwsId" :: NullOrUndefined (String), "CustSubscriptionId" :: NullOrUndefined (String), "SnsTopicArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubscriptionCreationTime" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "SourceIdsList" :: NullOrUndefined (SourceIdsList), "EventCategoriesList" :: NullOrUndefined (EventCategoriesList), "Enabled" :: NullOrUndefined (Boolean) } -> { "CustomerAwsId" :: NullOrUndefined (String), "CustSubscriptionId" :: NullOrUndefined (String), "SnsTopicArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubscriptionCreationTime" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "SourceIdsList" :: NullOrUndefined (SourceIdsList), "EventCategoriesList" :: NullOrUndefined (EventCategoriesList), "Enabled" :: NullOrUndefined (Boolean) }) -> EventSubscription
+newEventSubscription' :: ({ "CustomerAwsId" :: Maybe (String), "CustSubscriptionId" :: Maybe (String), "SnsTopicArn" :: Maybe (String), "Status" :: Maybe (String), "SubscriptionCreationTime" :: Maybe (String), "SourceType" :: Maybe (String), "SourceIdsList" :: Maybe (SourceIdsList), "EventCategoriesList" :: Maybe (EventCategoriesList), "Enabled" :: Maybe (Boolean) } -> { "CustomerAwsId" :: Maybe (String), "CustSubscriptionId" :: Maybe (String), "SnsTopicArn" :: Maybe (String), "Status" :: Maybe (String), "SubscriptionCreationTime" :: Maybe (String), "SourceType" :: Maybe (String), "SourceIdsList" :: Maybe (SourceIdsList), "EventCategoriesList" :: Maybe (EventCategoriesList), "Enabled" :: Maybe (Boolean) }) -> EventSubscription
 ```
 
 Constructs EventSubscription's fields from required parameters
@@ -2568,7 +2568,7 @@ Encode FilterValueList
 
 ``` purescript
 newtype ImportCertificateMessage
-  = ImportCertificateMessage { "CertificateIdentifier" :: String, "CertificatePem" :: NullOrUndefined (String), "CertificateWallet" :: NullOrUndefined (CertificateWallet), "Tags" :: NullOrUndefined (TagList) }
+  = ImportCertificateMessage { "CertificateIdentifier" :: String, "CertificatePem" :: Maybe (String), "CertificateWallet" :: Maybe (CertificateWallet), "Tags" :: Maybe (TagList) }
 ```
 
 ##### Instances
@@ -2591,7 +2591,7 @@ Constructs ImportCertificateMessage from required parameters
 #### `newImportCertificateMessage'`
 
 ``` purescript
-newImportCertificateMessage' :: String -> ({ "CertificateIdentifier" :: String, "CertificatePem" :: NullOrUndefined (String), "CertificateWallet" :: NullOrUndefined (CertificateWallet), "Tags" :: NullOrUndefined (TagList) } -> { "CertificateIdentifier" :: String, "CertificatePem" :: NullOrUndefined (String), "CertificateWallet" :: NullOrUndefined (CertificateWallet), "Tags" :: NullOrUndefined (TagList) }) -> ImportCertificateMessage
+newImportCertificateMessage' :: String -> ({ "CertificateIdentifier" :: String, "CertificatePem" :: Maybe (String), "CertificateWallet" :: Maybe (CertificateWallet), "Tags" :: Maybe (TagList) } -> { "CertificateIdentifier" :: String, "CertificatePem" :: Maybe (String), "CertificateWallet" :: Maybe (CertificateWallet), "Tags" :: Maybe (TagList) }) -> ImportCertificateMessage
 ```
 
 Constructs ImportCertificateMessage's fields from required parameters
@@ -2600,7 +2600,7 @@ Constructs ImportCertificateMessage's fields from required parameters
 
 ``` purescript
 newtype ImportCertificateResponse
-  = ImportCertificateResponse { "Certificate" :: NullOrUndefined (Certificate) }
+  = ImportCertificateResponse { "Certificate" :: Maybe (Certificate) }
 ```
 
 ##### Instances
@@ -2623,7 +2623,7 @@ Constructs ImportCertificateResponse from required parameters
 #### `newImportCertificateResponse'`
 
 ``` purescript
-newImportCertificateResponse' :: ({ "Certificate" :: NullOrUndefined (Certificate) } -> { "Certificate" :: NullOrUndefined (Certificate) }) -> ImportCertificateResponse
+newImportCertificateResponse' :: ({ "Certificate" :: Maybe (Certificate) } -> { "Certificate" :: Maybe (Certificate) }) -> ImportCertificateResponse
 ```
 
 Constructs ImportCertificateResponse's fields from required parameters
@@ -2632,7 +2632,7 @@ Constructs ImportCertificateResponse's fields from required parameters
 
 ``` purescript
 newtype InsufficientResourceCapacityFault
-  = InsufficientResourceCapacityFault { message :: NullOrUndefined (ExceptionMessage) }
+  = InsufficientResourceCapacityFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>There are not enough resources allocated to the database migration.</p>
@@ -2657,7 +2657,7 @@ Constructs InsufficientResourceCapacityFault from required parameters
 #### `newInsufficientResourceCapacityFault'`
 
 ``` purescript
-newInsufficientResourceCapacityFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> InsufficientResourceCapacityFault
+newInsufficientResourceCapacityFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> InsufficientResourceCapacityFault
 ```
 
 Constructs InsufficientResourceCapacityFault's fields from required parameters
@@ -2682,7 +2682,7 @@ Encode IntegerOptional
 
 ``` purescript
 newtype InvalidCertificateFault
-  = InvalidCertificateFault { message :: NullOrUndefined (ExceptionMessage) }
+  = InvalidCertificateFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The certificate was not valid.</p>
@@ -2707,7 +2707,7 @@ Constructs InvalidCertificateFault from required parameters
 #### `newInvalidCertificateFault'`
 
 ``` purescript
-newInvalidCertificateFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> InvalidCertificateFault
+newInvalidCertificateFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> InvalidCertificateFault
 ```
 
 Constructs InvalidCertificateFault's fields from required parameters
@@ -2716,7 +2716,7 @@ Constructs InvalidCertificateFault's fields from required parameters
 
 ``` purescript
 newtype InvalidResourceStateFault
-  = InvalidResourceStateFault { message :: NullOrUndefined (ExceptionMessage) }
+  = InvalidResourceStateFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The resource is in a state that prevents it from being used for database migration.</p>
@@ -2741,7 +2741,7 @@ Constructs InvalidResourceStateFault from required parameters
 #### `newInvalidResourceStateFault'`
 
 ``` purescript
-newInvalidResourceStateFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> InvalidResourceStateFault
+newInvalidResourceStateFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> InvalidResourceStateFault
 ```
 
 Constructs InvalidResourceStateFault's fields from required parameters
@@ -2750,7 +2750,7 @@ Constructs InvalidResourceStateFault's fields from required parameters
 
 ``` purescript
 newtype InvalidSubnet
-  = InvalidSubnet { message :: NullOrUndefined (ExceptionMessage) }
+  = InvalidSubnet { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The subnet provided is invalid.</p>
@@ -2775,7 +2775,7 @@ Constructs InvalidSubnet from required parameters
 #### `newInvalidSubnet'`
 
 ``` purescript
-newInvalidSubnet' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> InvalidSubnet
+newInvalidSubnet' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> InvalidSubnet
 ```
 
 Constructs InvalidSubnet's fields from required parameters
@@ -2784,7 +2784,7 @@ Constructs InvalidSubnet's fields from required parameters
 
 ``` purescript
 newtype KMSKeyNotAccessibleFault
-  = KMSKeyNotAccessibleFault { message :: NullOrUndefined (ExceptionMessage) }
+  = KMSKeyNotAccessibleFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>AWS DMS cannot access the KMS key.</p>
@@ -2809,7 +2809,7 @@ Constructs KMSKeyNotAccessibleFault from required parameters
 #### `newKMSKeyNotAccessibleFault'`
 
 ``` purescript
-newKMSKeyNotAccessibleFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> KMSKeyNotAccessibleFault
+newKMSKeyNotAccessibleFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> KMSKeyNotAccessibleFault
 ```
 
 Constructs KMSKeyNotAccessibleFault's fields from required parameters
@@ -2868,7 +2868,7 @@ Constructs ListTagsForResourceMessage's fields from required parameters
 
 ``` purescript
 newtype ListTagsForResourceResponse
-  = ListTagsForResourceResponse { "TagList" :: NullOrUndefined (TagList) }
+  = ListTagsForResourceResponse { "TagList" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -2893,7 +2893,7 @@ Constructs ListTagsForResourceResponse from required parameters
 #### `newListTagsForResourceResponse'`
 
 ``` purescript
-newListTagsForResourceResponse' :: ({ "TagList" :: NullOrUndefined (TagList) } -> { "TagList" :: NullOrUndefined (TagList) }) -> ListTagsForResourceResponse
+newListTagsForResourceResponse' :: ({ "TagList" :: Maybe (TagList) } -> { "TagList" :: Maybe (TagList) }) -> ListTagsForResourceResponse
 ```
 
 Constructs ListTagsForResourceResponse's fields from required parameters
@@ -2918,7 +2918,7 @@ Encode MigrationTypeValue
 
 ``` purescript
 newtype ModifyEndpointMessage
-  = ModifyEndpointMessage { "EndpointArn" :: String, "EndpointIdentifier" :: NullOrUndefined (String), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue), "EngineName" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) }
+  = ModifyEndpointMessage { "EndpointArn" :: String, "EndpointIdentifier" :: Maybe (String), "EndpointType" :: Maybe (ReplicationEndpointTypeValue), "EngineName" :: Maybe (String), "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) }
 ```
 
 <p/>
@@ -2943,7 +2943,7 @@ Constructs ModifyEndpointMessage from required parameters
 #### `newModifyEndpointMessage'`
 
 ``` purescript
-newModifyEndpointMessage' :: String -> ({ "EndpointArn" :: String, "EndpointIdentifier" :: NullOrUndefined (String), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue), "EngineName" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) } -> { "EndpointArn" :: String, "EndpointIdentifier" :: NullOrUndefined (String), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue), "EngineName" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "ExtraConnectionAttributes" :: NullOrUndefined (String), "CertificateArn" :: NullOrUndefined (String), "SslMode" :: NullOrUndefined (DmsSslModeValue), "DynamoDbSettings" :: NullOrUndefined (DynamoDbSettings), "S3Settings" :: NullOrUndefined (S3Settings), "MongoDbSettings" :: NullOrUndefined (MongoDbSettings) }) -> ModifyEndpointMessage
+newModifyEndpointMessage' :: String -> ({ "EndpointArn" :: String, "EndpointIdentifier" :: Maybe (String), "EndpointType" :: Maybe (ReplicationEndpointTypeValue), "EngineName" :: Maybe (String), "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) } -> { "EndpointArn" :: String, "EndpointIdentifier" :: Maybe (String), "EndpointType" :: Maybe (ReplicationEndpointTypeValue), "EngineName" :: Maybe (String), "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "ExtraConnectionAttributes" :: Maybe (String), "CertificateArn" :: Maybe (String), "SslMode" :: Maybe (DmsSslModeValue), "DynamoDbSettings" :: Maybe (DynamoDbSettings), "S3Settings" :: Maybe (S3Settings), "MongoDbSettings" :: Maybe (MongoDbSettings) }) -> ModifyEndpointMessage
 ```
 
 Constructs ModifyEndpointMessage's fields from required parameters
@@ -2952,7 +2952,7 @@ Constructs ModifyEndpointMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyEndpointResponse
-  = ModifyEndpointResponse { "Endpoint" :: NullOrUndefined (Endpoint) }
+  = ModifyEndpointResponse { "Endpoint" :: Maybe (Endpoint) }
 ```
 
 <p/>
@@ -2977,7 +2977,7 @@ Constructs ModifyEndpointResponse from required parameters
 #### `newModifyEndpointResponse'`
 
 ``` purescript
-newModifyEndpointResponse' :: ({ "Endpoint" :: NullOrUndefined (Endpoint) } -> { "Endpoint" :: NullOrUndefined (Endpoint) }) -> ModifyEndpointResponse
+newModifyEndpointResponse' :: ({ "Endpoint" :: Maybe (Endpoint) } -> { "Endpoint" :: Maybe (Endpoint) }) -> ModifyEndpointResponse
 ```
 
 Constructs ModifyEndpointResponse's fields from required parameters
@@ -2986,7 +2986,7 @@ Constructs ModifyEndpointResponse's fields from required parameters
 
 ``` purescript
 newtype ModifyEventSubscriptionMessage
-  = ModifyEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Enabled" :: NullOrUndefined (BooleanOptional) }
+  = ModifyEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: Maybe (String), "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Enabled" :: Maybe (BooleanOptional) }
 ```
 
 <p/>
@@ -3011,7 +3011,7 @@ Constructs ModifyEventSubscriptionMessage from required parameters
 #### `newModifyEventSubscriptionMessage'`
 
 ``` purescript
-newModifyEventSubscriptionMessage' :: String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Enabled" :: NullOrUndefined (BooleanOptional) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Enabled" :: NullOrUndefined (BooleanOptional) }) -> ModifyEventSubscriptionMessage
+newModifyEventSubscriptionMessage' :: String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: Maybe (String), "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Enabled" :: Maybe (BooleanOptional) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: Maybe (String), "SourceType" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Enabled" :: Maybe (BooleanOptional) }) -> ModifyEventSubscriptionMessage
 ```
 
 Constructs ModifyEventSubscriptionMessage's fields from required parameters
@@ -3020,7 +3020,7 @@ Constructs ModifyEventSubscriptionMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyEventSubscriptionResponse
-  = ModifyEventSubscriptionResponse { "EventSubscription" :: NullOrUndefined (EventSubscription) }
+  = ModifyEventSubscriptionResponse { "EventSubscription" :: Maybe (EventSubscription) }
 ```
 
 <p/>
@@ -3045,7 +3045,7 @@ Constructs ModifyEventSubscriptionResponse from required parameters
 #### `newModifyEventSubscriptionResponse'`
 
 ``` purescript
-newModifyEventSubscriptionResponse' :: ({ "EventSubscription" :: NullOrUndefined (EventSubscription) } -> { "EventSubscription" :: NullOrUndefined (EventSubscription) }) -> ModifyEventSubscriptionResponse
+newModifyEventSubscriptionResponse' :: ({ "EventSubscription" :: Maybe (EventSubscription) } -> { "EventSubscription" :: Maybe (EventSubscription) }) -> ModifyEventSubscriptionResponse
 ```
 
 Constructs ModifyEventSubscriptionResponse's fields from required parameters
@@ -3054,7 +3054,7 @@ Constructs ModifyEventSubscriptionResponse's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationInstanceMessage
-  = ModifyReplicationInstanceMessage { "ReplicationInstanceArn" :: String, "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "ApplyImmediately" :: NullOrUndefined (Boolean), "ReplicationInstanceClass" :: NullOrUndefined (String), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String), "AllowMajorVersionUpgrade" :: NullOrUndefined (Boolean), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "ReplicationInstanceIdentifier" :: NullOrUndefined (String) }
+  = ModifyReplicationInstanceMessage { "ReplicationInstanceArn" :: String, "AllocatedStorage" :: Maybe (IntegerOptional), "ApplyImmediately" :: Maybe (Boolean), "ReplicationInstanceClass" :: Maybe (String), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: Maybe (String), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String), "AllowMajorVersionUpgrade" :: Maybe (Boolean), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "ReplicationInstanceIdentifier" :: Maybe (String) }
 ```
 
 <p/>
@@ -3079,7 +3079,7 @@ Constructs ModifyReplicationInstanceMessage from required parameters
 #### `newModifyReplicationInstanceMessage'`
 
 ``` purescript
-newModifyReplicationInstanceMessage' :: String -> ({ "ReplicationInstanceArn" :: String, "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "ApplyImmediately" :: NullOrUndefined (Boolean), "ReplicationInstanceClass" :: NullOrUndefined (String), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String), "AllowMajorVersionUpgrade" :: NullOrUndefined (Boolean), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "ReplicationInstanceIdentifier" :: NullOrUndefined (String) } -> { "ReplicationInstanceArn" :: String, "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "ApplyImmediately" :: NullOrUndefined (Boolean), "ReplicationInstanceClass" :: NullOrUndefined (String), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String), "AllowMajorVersionUpgrade" :: NullOrUndefined (Boolean), "AutoMinorVersionUpgrade" :: NullOrUndefined (BooleanOptional), "ReplicationInstanceIdentifier" :: NullOrUndefined (String) }) -> ModifyReplicationInstanceMessage
+newModifyReplicationInstanceMessage' :: String -> ({ "ReplicationInstanceArn" :: String, "AllocatedStorage" :: Maybe (IntegerOptional), "ApplyImmediately" :: Maybe (Boolean), "ReplicationInstanceClass" :: Maybe (String), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: Maybe (String), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String), "AllowMajorVersionUpgrade" :: Maybe (Boolean), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "ReplicationInstanceIdentifier" :: Maybe (String) } -> { "ReplicationInstanceArn" :: String, "AllocatedStorage" :: Maybe (IntegerOptional), "ApplyImmediately" :: Maybe (Boolean), "ReplicationInstanceClass" :: Maybe (String), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: Maybe (String), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String), "AllowMajorVersionUpgrade" :: Maybe (Boolean), "AutoMinorVersionUpgrade" :: Maybe (BooleanOptional), "ReplicationInstanceIdentifier" :: Maybe (String) }) -> ModifyReplicationInstanceMessage
 ```
 
 Constructs ModifyReplicationInstanceMessage's fields from required parameters
@@ -3088,7 +3088,7 @@ Constructs ModifyReplicationInstanceMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationInstanceResponse
-  = ModifyReplicationInstanceResponse { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }
+  = ModifyReplicationInstanceResponse { "ReplicationInstance" :: Maybe (ReplicationInstance) }
 ```
 
 <p/>
@@ -3113,7 +3113,7 @@ Constructs ModifyReplicationInstanceResponse from required parameters
 #### `newModifyReplicationInstanceResponse'`
 
 ``` purescript
-newModifyReplicationInstanceResponse' :: ({ "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }) -> ModifyReplicationInstanceResponse
+newModifyReplicationInstanceResponse' :: ({ "ReplicationInstance" :: Maybe (ReplicationInstance) } -> { "ReplicationInstance" :: Maybe (ReplicationInstance) }) -> ModifyReplicationInstanceResponse
 ```
 
 Constructs ModifyReplicationInstanceResponse's fields from required parameters
@@ -3122,7 +3122,7 @@ Constructs ModifyReplicationInstanceResponse's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationSubnetGroupMessage
-  = ModifyReplicationSubnetGroupMessage { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList }
+  = ModifyReplicationSubnetGroupMessage { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList }
 ```
 
 <p/>
@@ -3147,7 +3147,7 @@ Constructs ModifyReplicationSubnetGroupMessage from required parameters
 #### `newModifyReplicationSubnetGroupMessage'`
 
 ``` purescript
-newModifyReplicationSubnetGroupMessage' :: String -> SubnetIdentifierList -> ({ "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList } -> { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList }) -> ModifyReplicationSubnetGroupMessage
+newModifyReplicationSubnetGroupMessage' :: String -> SubnetIdentifierList -> ({ "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList } -> { "ReplicationSubnetGroupIdentifier" :: String, "ReplicationSubnetGroupDescription" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList }) -> ModifyReplicationSubnetGroupMessage
 ```
 
 Constructs ModifyReplicationSubnetGroupMessage's fields from required parameters
@@ -3156,7 +3156,7 @@ Constructs ModifyReplicationSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationSubnetGroupResponse
-  = ModifyReplicationSubnetGroupResponse { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) }
+  = ModifyReplicationSubnetGroupResponse { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) }
 ```
 
 <p/>
@@ -3181,7 +3181,7 @@ Constructs ModifyReplicationSubnetGroupResponse from required parameters
 #### `newModifyReplicationSubnetGroupResponse'`
 
 ``` purescript
-newModifyReplicationSubnetGroupResponse' :: ({ "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) } -> { "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup) }) -> ModifyReplicationSubnetGroupResponse
+newModifyReplicationSubnetGroupResponse' :: ({ "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) } -> { "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup) }) -> ModifyReplicationSubnetGroupResponse
 ```
 
 Constructs ModifyReplicationSubnetGroupResponse's fields from required parameters
@@ -3190,7 +3190,7 @@ Constructs ModifyReplicationSubnetGroupResponse's fields from required parameter
 
 ``` purescript
 newtype ModifyReplicationTaskMessage
-  = ModifyReplicationTaskMessage { "ReplicationTaskArn" :: String, "ReplicationTaskIdentifier" :: NullOrUndefined (String), "MigrationType" :: NullOrUndefined (MigrationTypeValue), "TableMappings" :: NullOrUndefined (String), "ReplicationTaskSettings" :: NullOrUndefined (String), "CdcStartTime" :: NullOrUndefined (TStamp) }
+  = ModifyReplicationTaskMessage { "ReplicationTaskArn" :: String, "ReplicationTaskIdentifier" :: Maybe (String), "MigrationType" :: Maybe (MigrationTypeValue), "TableMappings" :: Maybe (String), "ReplicationTaskSettings" :: Maybe (String), "CdcStartTime" :: Maybe (TStamp) }
 ```
 
 <p/>
@@ -3215,7 +3215,7 @@ Constructs ModifyReplicationTaskMessage from required parameters
 #### `newModifyReplicationTaskMessage'`
 
 ``` purescript
-newModifyReplicationTaskMessage' :: String -> ({ "ReplicationTaskArn" :: String, "ReplicationTaskIdentifier" :: NullOrUndefined (String), "MigrationType" :: NullOrUndefined (MigrationTypeValue), "TableMappings" :: NullOrUndefined (String), "ReplicationTaskSettings" :: NullOrUndefined (String), "CdcStartTime" :: NullOrUndefined (TStamp) } -> { "ReplicationTaskArn" :: String, "ReplicationTaskIdentifier" :: NullOrUndefined (String), "MigrationType" :: NullOrUndefined (MigrationTypeValue), "TableMappings" :: NullOrUndefined (String), "ReplicationTaskSettings" :: NullOrUndefined (String), "CdcStartTime" :: NullOrUndefined (TStamp) }) -> ModifyReplicationTaskMessage
+newModifyReplicationTaskMessage' :: String -> ({ "ReplicationTaskArn" :: String, "ReplicationTaskIdentifier" :: Maybe (String), "MigrationType" :: Maybe (MigrationTypeValue), "TableMappings" :: Maybe (String), "ReplicationTaskSettings" :: Maybe (String), "CdcStartTime" :: Maybe (TStamp) } -> { "ReplicationTaskArn" :: String, "ReplicationTaskIdentifier" :: Maybe (String), "MigrationType" :: Maybe (MigrationTypeValue), "TableMappings" :: Maybe (String), "ReplicationTaskSettings" :: Maybe (String), "CdcStartTime" :: Maybe (TStamp) }) -> ModifyReplicationTaskMessage
 ```
 
 Constructs ModifyReplicationTaskMessage's fields from required parameters
@@ -3224,7 +3224,7 @@ Constructs ModifyReplicationTaskMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyReplicationTaskResponse
-  = ModifyReplicationTaskResponse { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }
+  = ModifyReplicationTaskResponse { "ReplicationTask" :: Maybe (ReplicationTask) }
 ```
 
 <p/>
@@ -3249,7 +3249,7 @@ Constructs ModifyReplicationTaskResponse from required parameters
 #### `newModifyReplicationTaskResponse'`
 
 ``` purescript
-newModifyReplicationTaskResponse' :: ({ "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }) -> ModifyReplicationTaskResponse
+newModifyReplicationTaskResponse' :: ({ "ReplicationTask" :: Maybe (ReplicationTask) } -> { "ReplicationTask" :: Maybe (ReplicationTask) }) -> ModifyReplicationTaskResponse
 ```
 
 Constructs ModifyReplicationTaskResponse's fields from required parameters
@@ -3258,7 +3258,7 @@ Constructs ModifyReplicationTaskResponse's fields from required parameters
 
 ``` purescript
 newtype MongoDbSettings
-  = MongoDbSettings { "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "AuthType" :: NullOrUndefined (AuthTypeValue), "AuthMechanism" :: NullOrUndefined (AuthMechanismValue), "NestingLevel" :: NullOrUndefined (NestingLevelValue), "ExtractDocId" :: NullOrUndefined (String), "DocsToInvestigate" :: NullOrUndefined (String), "AuthSource" :: NullOrUndefined (String) }
+  = MongoDbSettings { "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "AuthType" :: Maybe (AuthTypeValue), "AuthMechanism" :: Maybe (AuthMechanismValue), "NestingLevel" :: Maybe (NestingLevelValue), "ExtractDocId" :: Maybe (String), "DocsToInvestigate" :: Maybe (String), "AuthSource" :: Maybe (String) }
 ```
 
 <p/>
@@ -3283,7 +3283,7 @@ Constructs MongoDbSettings from required parameters
 #### `newMongoDbSettings'`
 
 ``` purescript
-newMongoDbSettings' :: ({ "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "AuthType" :: NullOrUndefined (AuthTypeValue), "AuthMechanism" :: NullOrUndefined (AuthMechanismValue), "NestingLevel" :: NullOrUndefined (NestingLevelValue), "ExtractDocId" :: NullOrUndefined (String), "DocsToInvestigate" :: NullOrUndefined (String), "AuthSource" :: NullOrUndefined (String) } -> { "Username" :: NullOrUndefined (String), "Password" :: NullOrUndefined (SecretString), "ServerName" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "DatabaseName" :: NullOrUndefined (String), "AuthType" :: NullOrUndefined (AuthTypeValue), "AuthMechanism" :: NullOrUndefined (AuthMechanismValue), "NestingLevel" :: NullOrUndefined (NestingLevelValue), "ExtractDocId" :: NullOrUndefined (String), "DocsToInvestigate" :: NullOrUndefined (String), "AuthSource" :: NullOrUndefined (String) }) -> MongoDbSettings
+newMongoDbSettings' :: ({ "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "AuthType" :: Maybe (AuthTypeValue), "AuthMechanism" :: Maybe (AuthMechanismValue), "NestingLevel" :: Maybe (NestingLevelValue), "ExtractDocId" :: Maybe (String), "DocsToInvestigate" :: Maybe (String), "AuthSource" :: Maybe (String) } -> { "Username" :: Maybe (String), "Password" :: Maybe (SecretString), "ServerName" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "DatabaseName" :: Maybe (String), "AuthType" :: Maybe (AuthTypeValue), "AuthMechanism" :: Maybe (AuthMechanismValue), "NestingLevel" :: Maybe (NestingLevelValue), "ExtractDocId" :: Maybe (String), "DocsToInvestigate" :: Maybe (String), "AuthSource" :: Maybe (String) }) -> MongoDbSettings
 ```
 
 Constructs MongoDbSettings's fields from required parameters
@@ -3308,7 +3308,7 @@ Encode NestingLevelValue
 
 ``` purescript
 newtype OrderableReplicationInstance
-  = OrderableReplicationInstance { "EngineVersion" :: NullOrUndefined (String), "ReplicationInstanceClass" :: NullOrUndefined (String), "StorageType" :: NullOrUndefined (String), "MinAllocatedStorage" :: NullOrUndefined (Int), "MaxAllocatedStorage" :: NullOrUndefined (Int), "DefaultAllocatedStorage" :: NullOrUndefined (Int), "IncludedAllocatedStorage" :: NullOrUndefined (Int) }
+  = OrderableReplicationInstance { "EngineVersion" :: Maybe (String), "ReplicationInstanceClass" :: Maybe (String), "StorageType" :: Maybe (String), "MinAllocatedStorage" :: Maybe (Int), "MaxAllocatedStorage" :: Maybe (Int), "DefaultAllocatedStorage" :: Maybe (Int), "IncludedAllocatedStorage" :: Maybe (Int) }
 ```
 
 <p/>
@@ -3333,7 +3333,7 @@ Constructs OrderableReplicationInstance from required parameters
 #### `newOrderableReplicationInstance'`
 
 ``` purescript
-newOrderableReplicationInstance' :: ({ "EngineVersion" :: NullOrUndefined (String), "ReplicationInstanceClass" :: NullOrUndefined (String), "StorageType" :: NullOrUndefined (String), "MinAllocatedStorage" :: NullOrUndefined (Int), "MaxAllocatedStorage" :: NullOrUndefined (Int), "DefaultAllocatedStorage" :: NullOrUndefined (Int), "IncludedAllocatedStorage" :: NullOrUndefined (Int) } -> { "EngineVersion" :: NullOrUndefined (String), "ReplicationInstanceClass" :: NullOrUndefined (String), "StorageType" :: NullOrUndefined (String), "MinAllocatedStorage" :: NullOrUndefined (Int), "MaxAllocatedStorage" :: NullOrUndefined (Int), "DefaultAllocatedStorage" :: NullOrUndefined (Int), "IncludedAllocatedStorage" :: NullOrUndefined (Int) }) -> OrderableReplicationInstance
+newOrderableReplicationInstance' :: ({ "EngineVersion" :: Maybe (String), "ReplicationInstanceClass" :: Maybe (String), "StorageType" :: Maybe (String), "MinAllocatedStorage" :: Maybe (Int), "MaxAllocatedStorage" :: Maybe (Int), "DefaultAllocatedStorage" :: Maybe (Int), "IncludedAllocatedStorage" :: Maybe (Int) } -> { "EngineVersion" :: Maybe (String), "ReplicationInstanceClass" :: Maybe (String), "StorageType" :: Maybe (String), "MinAllocatedStorage" :: Maybe (Int), "MaxAllocatedStorage" :: Maybe (Int), "DefaultAllocatedStorage" :: Maybe (Int), "IncludedAllocatedStorage" :: Maybe (Int) }) -> OrderableReplicationInstance
 ```
 
 Constructs OrderableReplicationInstance's fields from required parameters
@@ -3358,7 +3358,7 @@ Encode OrderableReplicationInstanceList
 
 ``` purescript
 newtype RebootReplicationInstanceMessage
-  = RebootReplicationInstanceMessage { "ReplicationInstanceArn" :: String, "ForceFailover" :: NullOrUndefined (BooleanOptional) }
+  = RebootReplicationInstanceMessage { "ReplicationInstanceArn" :: String, "ForceFailover" :: Maybe (BooleanOptional) }
 ```
 
 ##### Instances
@@ -3381,7 +3381,7 @@ Constructs RebootReplicationInstanceMessage from required parameters
 #### `newRebootReplicationInstanceMessage'`
 
 ``` purescript
-newRebootReplicationInstanceMessage' :: String -> ({ "ReplicationInstanceArn" :: String, "ForceFailover" :: NullOrUndefined (BooleanOptional) } -> { "ReplicationInstanceArn" :: String, "ForceFailover" :: NullOrUndefined (BooleanOptional) }) -> RebootReplicationInstanceMessage
+newRebootReplicationInstanceMessage' :: String -> ({ "ReplicationInstanceArn" :: String, "ForceFailover" :: Maybe (BooleanOptional) } -> { "ReplicationInstanceArn" :: String, "ForceFailover" :: Maybe (BooleanOptional) }) -> RebootReplicationInstanceMessage
 ```
 
 Constructs RebootReplicationInstanceMessage's fields from required parameters
@@ -3390,7 +3390,7 @@ Constructs RebootReplicationInstanceMessage's fields from required parameters
 
 ``` purescript
 newtype RebootReplicationInstanceResponse
-  = RebootReplicationInstanceResponse { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }
+  = RebootReplicationInstanceResponse { "ReplicationInstance" :: Maybe (ReplicationInstance) }
 ```
 
 ##### Instances
@@ -3413,7 +3413,7 @@ Constructs RebootReplicationInstanceResponse from required parameters
 #### `newRebootReplicationInstanceResponse'`
 
 ``` purescript
-newRebootReplicationInstanceResponse' :: ({ "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) } -> { "ReplicationInstance" :: NullOrUndefined (ReplicationInstance) }) -> RebootReplicationInstanceResponse
+newRebootReplicationInstanceResponse' :: ({ "ReplicationInstance" :: Maybe (ReplicationInstance) } -> { "ReplicationInstance" :: Maybe (ReplicationInstance) }) -> RebootReplicationInstanceResponse
 ```
 
 Constructs RebootReplicationInstanceResponse's fields from required parameters
@@ -3456,7 +3456,7 @@ Constructs RefreshSchemasMessage's fields from required parameters
 
 ``` purescript
 newtype RefreshSchemasResponse
-  = RefreshSchemasResponse { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) }
+  = RefreshSchemasResponse { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) }
 ```
 
 <p/>
@@ -3481,7 +3481,7 @@ Constructs RefreshSchemasResponse from required parameters
 #### `newRefreshSchemasResponse'`
 
 ``` purescript
-newRefreshSchemasResponse' :: ({ "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) } -> { "RefreshSchemasStatus" :: NullOrUndefined (RefreshSchemasStatus) }) -> RefreshSchemasResponse
+newRefreshSchemasResponse' :: ({ "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) } -> { "RefreshSchemasStatus" :: Maybe (RefreshSchemasStatus) }) -> RefreshSchemasResponse
 ```
 
 Constructs RefreshSchemasResponse's fields from required parameters
@@ -3490,7 +3490,7 @@ Constructs RefreshSchemasResponse's fields from required parameters
 
 ``` purescript
 newtype RefreshSchemasStatus
-  = RefreshSchemasStatus { "EndpointArn" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (RefreshSchemasStatusTypeValue), "LastRefreshDate" :: NullOrUndefined (TStamp), "LastFailureMessage" :: NullOrUndefined (String) }
+  = RefreshSchemasStatus { "EndpointArn" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "Status" :: Maybe (RefreshSchemasStatusTypeValue), "LastRefreshDate" :: Maybe (TStamp), "LastFailureMessage" :: Maybe (String) }
 ```
 
 <p/>
@@ -3515,7 +3515,7 @@ Constructs RefreshSchemasStatus from required parameters
 #### `newRefreshSchemasStatus'`
 
 ``` purescript
-newRefreshSchemasStatus' :: ({ "EndpointArn" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (RefreshSchemasStatusTypeValue), "LastRefreshDate" :: NullOrUndefined (TStamp), "LastFailureMessage" :: NullOrUndefined (String) } -> { "EndpointArn" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (RefreshSchemasStatusTypeValue), "LastRefreshDate" :: NullOrUndefined (TStamp), "LastFailureMessage" :: NullOrUndefined (String) }) -> RefreshSchemasStatus
+newRefreshSchemasStatus' :: ({ "EndpointArn" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "Status" :: Maybe (RefreshSchemasStatusTypeValue), "LastRefreshDate" :: Maybe (TStamp), "LastFailureMessage" :: Maybe (String) } -> { "EndpointArn" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "Status" :: Maybe (RefreshSchemasStatusTypeValue), "LastRefreshDate" :: Maybe (TStamp), "LastFailureMessage" :: Maybe (String) }) -> RefreshSchemasStatus
 ```
 
 Constructs RefreshSchemasStatus's fields from required parameters
@@ -3572,7 +3572,7 @@ Constructs ReloadTablesMessage's fields from required parameters
 
 ``` purescript
 newtype ReloadTablesResponse
-  = ReloadTablesResponse { "ReplicationTaskArn" :: NullOrUndefined (String) }
+  = ReloadTablesResponse { "ReplicationTaskArn" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -3595,7 +3595,7 @@ Constructs ReloadTablesResponse from required parameters
 #### `newReloadTablesResponse'`
 
 ``` purescript
-newReloadTablesResponse' :: ({ "ReplicationTaskArn" :: NullOrUndefined (String) } -> { "ReplicationTaskArn" :: NullOrUndefined (String) }) -> ReloadTablesResponse
+newReloadTablesResponse' :: ({ "ReplicationTaskArn" :: Maybe (String) } -> { "ReplicationTaskArn" :: Maybe (String) }) -> ReloadTablesResponse
 ```
 
 Constructs ReloadTablesResponse's fields from required parameters
@@ -3672,7 +3672,7 @@ Encode ReplicationEndpointTypeValue
 
 ``` purescript
 newtype ReplicationInstance
-  = ReplicationInstance { "ReplicationInstanceIdentifier" :: NullOrUndefined (String), "ReplicationInstanceClass" :: NullOrUndefined (String), "ReplicationInstanceStatus" :: NullOrUndefined (String), "AllocatedStorage" :: NullOrUndefined (Int), "InstanceCreateTime" :: NullOrUndefined (TStamp), "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList), "AvailabilityZone" :: NullOrUndefined (String), "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (ReplicationPendingModifiedValues), "MultiAZ" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "ReplicationInstancePublicIpAddress" :: NullOrUndefined (String), "ReplicationInstancePrivateIpAddress" :: NullOrUndefined (String), "ReplicationInstancePublicIpAddresses" :: NullOrUndefined (ReplicationInstancePublicIpAddressList), "ReplicationInstancePrivateIpAddresses" :: NullOrUndefined (ReplicationInstancePrivateIpAddressList), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecondaryAvailabilityZone" :: NullOrUndefined (String) }
+  = ReplicationInstance { "ReplicationInstanceIdentifier" :: Maybe (String), "ReplicationInstanceClass" :: Maybe (String), "ReplicationInstanceStatus" :: Maybe (String), "AllocatedStorage" :: Maybe (Int), "InstanceCreateTime" :: Maybe (TStamp), "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList), "AvailabilityZone" :: Maybe (String), "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (ReplicationPendingModifiedValues), "MultiAZ" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "KmsKeyId" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "ReplicationInstancePublicIpAddress" :: Maybe (String), "ReplicationInstancePrivateIpAddress" :: Maybe (String), "ReplicationInstancePublicIpAddresses" :: Maybe (ReplicationInstancePublicIpAddressList), "ReplicationInstancePrivateIpAddresses" :: Maybe (ReplicationInstancePrivateIpAddressList), "PubliclyAccessible" :: Maybe (Boolean), "SecondaryAvailabilityZone" :: Maybe (String) }
 ```
 
 <p/>
@@ -3697,7 +3697,7 @@ Constructs ReplicationInstance from required parameters
 #### `newReplicationInstance'`
 
 ``` purescript
-newReplicationInstance' :: ({ "ReplicationInstanceIdentifier" :: NullOrUndefined (String), "ReplicationInstanceClass" :: NullOrUndefined (String), "ReplicationInstanceStatus" :: NullOrUndefined (String), "AllocatedStorage" :: NullOrUndefined (Int), "InstanceCreateTime" :: NullOrUndefined (TStamp), "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList), "AvailabilityZone" :: NullOrUndefined (String), "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (ReplicationPendingModifiedValues), "MultiAZ" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "ReplicationInstancePublicIpAddress" :: NullOrUndefined (String), "ReplicationInstancePrivateIpAddress" :: NullOrUndefined (String), "ReplicationInstancePublicIpAddresses" :: NullOrUndefined (ReplicationInstancePublicIpAddressList), "ReplicationInstancePrivateIpAddresses" :: NullOrUndefined (ReplicationInstancePrivateIpAddressList), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecondaryAvailabilityZone" :: NullOrUndefined (String) } -> { "ReplicationInstanceIdentifier" :: NullOrUndefined (String), "ReplicationInstanceClass" :: NullOrUndefined (String), "ReplicationInstanceStatus" :: NullOrUndefined (String), "AllocatedStorage" :: NullOrUndefined (Int), "InstanceCreateTime" :: NullOrUndefined (TStamp), "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList), "AvailabilityZone" :: NullOrUndefined (String), "ReplicationSubnetGroup" :: NullOrUndefined (ReplicationSubnetGroup), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (ReplicationPendingModifiedValues), "MultiAZ" :: NullOrUndefined (Boolean), "EngineVersion" :: NullOrUndefined (String), "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "ReplicationInstancePublicIpAddress" :: NullOrUndefined (String), "ReplicationInstancePrivateIpAddress" :: NullOrUndefined (String), "ReplicationInstancePublicIpAddresses" :: NullOrUndefined (ReplicationInstancePublicIpAddressList), "ReplicationInstancePrivateIpAddresses" :: NullOrUndefined (ReplicationInstancePrivateIpAddressList), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecondaryAvailabilityZone" :: NullOrUndefined (String) }) -> ReplicationInstance
+newReplicationInstance' :: ({ "ReplicationInstanceIdentifier" :: Maybe (String), "ReplicationInstanceClass" :: Maybe (String), "ReplicationInstanceStatus" :: Maybe (String), "AllocatedStorage" :: Maybe (Int), "InstanceCreateTime" :: Maybe (TStamp), "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList), "AvailabilityZone" :: Maybe (String), "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (ReplicationPendingModifiedValues), "MultiAZ" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "KmsKeyId" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "ReplicationInstancePublicIpAddress" :: Maybe (String), "ReplicationInstancePrivateIpAddress" :: Maybe (String), "ReplicationInstancePublicIpAddresses" :: Maybe (ReplicationInstancePublicIpAddressList), "ReplicationInstancePrivateIpAddresses" :: Maybe (ReplicationInstancePrivateIpAddressList), "PubliclyAccessible" :: Maybe (Boolean), "SecondaryAvailabilityZone" :: Maybe (String) } -> { "ReplicationInstanceIdentifier" :: Maybe (String), "ReplicationInstanceClass" :: Maybe (String), "ReplicationInstanceStatus" :: Maybe (String), "AllocatedStorage" :: Maybe (Int), "InstanceCreateTime" :: Maybe (TStamp), "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList), "AvailabilityZone" :: Maybe (String), "ReplicationSubnetGroup" :: Maybe (ReplicationSubnetGroup), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (ReplicationPendingModifiedValues), "MultiAZ" :: Maybe (Boolean), "EngineVersion" :: Maybe (String), "AutoMinorVersionUpgrade" :: Maybe (Boolean), "KmsKeyId" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "ReplicationInstancePublicIpAddress" :: Maybe (String), "ReplicationInstancePrivateIpAddress" :: Maybe (String), "ReplicationInstancePublicIpAddresses" :: Maybe (ReplicationInstancePublicIpAddressList), "ReplicationInstancePrivateIpAddresses" :: Maybe (ReplicationInstancePrivateIpAddressList), "PubliclyAccessible" :: Maybe (Boolean), "SecondaryAvailabilityZone" :: Maybe (String) }) -> ReplicationInstance
 ```
 
 Constructs ReplicationInstance's fields from required parameters
@@ -3754,7 +3754,7 @@ Encode ReplicationInstancePublicIpAddressList
 
 ``` purescript
 newtype ReplicationInstanceTaskLog
-  = ReplicationInstanceTaskLog { "ReplicationTaskName" :: NullOrUndefined (String), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationInstanceTaskLogSize" :: NullOrUndefined (Number) }
+  = ReplicationInstanceTaskLog { "ReplicationTaskName" :: Maybe (String), "ReplicationTaskArn" :: Maybe (String), "ReplicationInstanceTaskLogSize" :: Maybe (Number) }
 ```
 
 <p>Contains metadata for a replication instance task log.</p>
@@ -3779,7 +3779,7 @@ Constructs ReplicationInstanceTaskLog from required parameters
 #### `newReplicationInstanceTaskLog'`
 
 ``` purescript
-newReplicationInstanceTaskLog' :: ({ "ReplicationTaskName" :: NullOrUndefined (String), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationInstanceTaskLogSize" :: NullOrUndefined (Number) } -> { "ReplicationTaskName" :: NullOrUndefined (String), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationInstanceTaskLogSize" :: NullOrUndefined (Number) }) -> ReplicationInstanceTaskLog
+newReplicationInstanceTaskLog' :: ({ "ReplicationTaskName" :: Maybe (String), "ReplicationTaskArn" :: Maybe (String), "ReplicationInstanceTaskLogSize" :: Maybe (Number) } -> { "ReplicationTaskName" :: Maybe (String), "ReplicationTaskArn" :: Maybe (String), "ReplicationInstanceTaskLogSize" :: Maybe (Number) }) -> ReplicationInstanceTaskLog
 ```
 
 Constructs ReplicationInstanceTaskLog's fields from required parameters
@@ -3804,7 +3804,7 @@ Encode ReplicationInstanceTaskLogsList
 
 ``` purescript
 newtype ReplicationPendingModifiedValues
-  = ReplicationPendingModifiedValues { "ReplicationInstanceClass" :: NullOrUndefined (String), "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String) }
+  = ReplicationPendingModifiedValues { "ReplicationInstanceClass" :: Maybe (String), "AllocatedStorage" :: Maybe (IntegerOptional), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String) }
 ```
 
 <p/>
@@ -3829,7 +3829,7 @@ Constructs ReplicationPendingModifiedValues from required parameters
 #### `newReplicationPendingModifiedValues'`
 
 ``` purescript
-newReplicationPendingModifiedValues' :: ({ "ReplicationInstanceClass" :: NullOrUndefined (String), "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String) } -> { "ReplicationInstanceClass" :: NullOrUndefined (String), "AllocatedStorage" :: NullOrUndefined (IntegerOptional), "MultiAZ" :: NullOrUndefined (BooleanOptional), "EngineVersion" :: NullOrUndefined (String) }) -> ReplicationPendingModifiedValues
+newReplicationPendingModifiedValues' :: ({ "ReplicationInstanceClass" :: Maybe (String), "AllocatedStorage" :: Maybe (IntegerOptional), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String) } -> { "ReplicationInstanceClass" :: Maybe (String), "AllocatedStorage" :: Maybe (IntegerOptional), "MultiAZ" :: Maybe (BooleanOptional), "EngineVersion" :: Maybe (String) }) -> ReplicationPendingModifiedValues
 ```
 
 Constructs ReplicationPendingModifiedValues's fields from required parameters
@@ -3838,7 +3838,7 @@ Constructs ReplicationPendingModifiedValues's fields from required parameters
 
 ``` purescript
 newtype ReplicationSubnetGroup
-  = ReplicationSubnetGroup { "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String), "ReplicationSubnetGroupDescription" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "SubnetGroupStatus" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) }
+  = ReplicationSubnetGroup { "ReplicationSubnetGroupIdentifier" :: Maybe (String), "ReplicationSubnetGroupDescription" :: Maybe (String), "VpcId" :: Maybe (String), "SubnetGroupStatus" :: Maybe (String), "Subnets" :: Maybe (SubnetList) }
 ```
 
 <p/>
@@ -3863,7 +3863,7 @@ Constructs ReplicationSubnetGroup from required parameters
 #### `newReplicationSubnetGroup'`
 
 ``` purescript
-newReplicationSubnetGroup' :: ({ "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String), "ReplicationSubnetGroupDescription" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "SubnetGroupStatus" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) } -> { "ReplicationSubnetGroupIdentifier" :: NullOrUndefined (String), "ReplicationSubnetGroupDescription" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "SubnetGroupStatus" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList) }) -> ReplicationSubnetGroup
+newReplicationSubnetGroup' :: ({ "ReplicationSubnetGroupIdentifier" :: Maybe (String), "ReplicationSubnetGroupDescription" :: Maybe (String), "VpcId" :: Maybe (String), "SubnetGroupStatus" :: Maybe (String), "Subnets" :: Maybe (SubnetList) } -> { "ReplicationSubnetGroupIdentifier" :: Maybe (String), "ReplicationSubnetGroupDescription" :: Maybe (String), "VpcId" :: Maybe (String), "SubnetGroupStatus" :: Maybe (String), "Subnets" :: Maybe (SubnetList) }) -> ReplicationSubnetGroup
 ```
 
 Constructs ReplicationSubnetGroup's fields from required parameters
@@ -3872,7 +3872,7 @@ Constructs ReplicationSubnetGroup's fields from required parameters
 
 ``` purescript
 newtype ReplicationSubnetGroupDoesNotCoverEnoughAZs
-  = ReplicationSubnetGroupDoesNotCoverEnoughAZs { message :: NullOrUndefined (ExceptionMessage) }
+  = ReplicationSubnetGroupDoesNotCoverEnoughAZs { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet group and add more AZs.</p>
@@ -3897,7 +3897,7 @@ Constructs ReplicationSubnetGroupDoesNotCoverEnoughAZs from required parameters
 #### `newReplicationSubnetGroupDoesNotCoverEnoughAZs'`
 
 ``` purescript
-newReplicationSubnetGroupDoesNotCoverEnoughAZs' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> ReplicationSubnetGroupDoesNotCoverEnoughAZs
+newReplicationSubnetGroupDoesNotCoverEnoughAZs' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> ReplicationSubnetGroupDoesNotCoverEnoughAZs
 ```
 
 Constructs ReplicationSubnetGroupDoesNotCoverEnoughAZs's fields from required parameters
@@ -3922,7 +3922,7 @@ Encode ReplicationSubnetGroups
 
 ``` purescript
 newtype ReplicationTask
-  = ReplicationTask { "ReplicationTaskIdentifier" :: NullOrUndefined (String), "SourceEndpointArn" :: NullOrUndefined (String), "TargetEndpointArn" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "MigrationType" :: NullOrUndefined (MigrationTypeValue), "TableMappings" :: NullOrUndefined (String), "ReplicationTaskSettings" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "LastFailureMessage" :: NullOrUndefined (String), "StopReason" :: NullOrUndefined (String), "ReplicationTaskCreationDate" :: NullOrUndefined (TStamp), "ReplicationTaskStartDate" :: NullOrUndefined (TStamp), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationTaskStats" :: NullOrUndefined (ReplicationTaskStats) }
+  = ReplicationTask { "ReplicationTaskIdentifier" :: Maybe (String), "SourceEndpointArn" :: Maybe (String), "TargetEndpointArn" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "MigrationType" :: Maybe (MigrationTypeValue), "TableMappings" :: Maybe (String), "ReplicationTaskSettings" :: Maybe (String), "Status" :: Maybe (String), "LastFailureMessage" :: Maybe (String), "StopReason" :: Maybe (String), "ReplicationTaskCreationDate" :: Maybe (TStamp), "ReplicationTaskStartDate" :: Maybe (TStamp), "ReplicationTaskArn" :: Maybe (String), "ReplicationTaskStats" :: Maybe (ReplicationTaskStats) }
 ```
 
 <p/>
@@ -3947,7 +3947,7 @@ Constructs ReplicationTask from required parameters
 #### `newReplicationTask'`
 
 ``` purescript
-newReplicationTask' :: ({ "ReplicationTaskIdentifier" :: NullOrUndefined (String), "SourceEndpointArn" :: NullOrUndefined (String), "TargetEndpointArn" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "MigrationType" :: NullOrUndefined (MigrationTypeValue), "TableMappings" :: NullOrUndefined (String), "ReplicationTaskSettings" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "LastFailureMessage" :: NullOrUndefined (String), "StopReason" :: NullOrUndefined (String), "ReplicationTaskCreationDate" :: NullOrUndefined (TStamp), "ReplicationTaskStartDate" :: NullOrUndefined (TStamp), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationTaskStats" :: NullOrUndefined (ReplicationTaskStats) } -> { "ReplicationTaskIdentifier" :: NullOrUndefined (String), "SourceEndpointArn" :: NullOrUndefined (String), "TargetEndpointArn" :: NullOrUndefined (String), "ReplicationInstanceArn" :: NullOrUndefined (String), "MigrationType" :: NullOrUndefined (MigrationTypeValue), "TableMappings" :: NullOrUndefined (String), "ReplicationTaskSettings" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "LastFailureMessage" :: NullOrUndefined (String), "StopReason" :: NullOrUndefined (String), "ReplicationTaskCreationDate" :: NullOrUndefined (TStamp), "ReplicationTaskStartDate" :: NullOrUndefined (TStamp), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationTaskStats" :: NullOrUndefined (ReplicationTaskStats) }) -> ReplicationTask
+newReplicationTask' :: ({ "ReplicationTaskIdentifier" :: Maybe (String), "SourceEndpointArn" :: Maybe (String), "TargetEndpointArn" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "MigrationType" :: Maybe (MigrationTypeValue), "TableMappings" :: Maybe (String), "ReplicationTaskSettings" :: Maybe (String), "Status" :: Maybe (String), "LastFailureMessage" :: Maybe (String), "StopReason" :: Maybe (String), "ReplicationTaskCreationDate" :: Maybe (TStamp), "ReplicationTaskStartDate" :: Maybe (TStamp), "ReplicationTaskArn" :: Maybe (String), "ReplicationTaskStats" :: Maybe (ReplicationTaskStats) } -> { "ReplicationTaskIdentifier" :: Maybe (String), "SourceEndpointArn" :: Maybe (String), "TargetEndpointArn" :: Maybe (String), "ReplicationInstanceArn" :: Maybe (String), "MigrationType" :: Maybe (MigrationTypeValue), "TableMappings" :: Maybe (String), "ReplicationTaskSettings" :: Maybe (String), "Status" :: Maybe (String), "LastFailureMessage" :: Maybe (String), "StopReason" :: Maybe (String), "ReplicationTaskCreationDate" :: Maybe (TStamp), "ReplicationTaskStartDate" :: Maybe (TStamp), "ReplicationTaskArn" :: Maybe (String), "ReplicationTaskStats" :: Maybe (ReplicationTaskStats) }) -> ReplicationTask
 ```
 
 Constructs ReplicationTask's fields from required parameters
@@ -3956,7 +3956,7 @@ Constructs ReplicationTask's fields from required parameters
 
 ``` purescript
 newtype ReplicationTaskAssessmentResult
-  = ReplicationTaskAssessmentResult { "ReplicationTaskIdentifier" :: NullOrUndefined (String), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationTaskLastAssessmentDate" :: NullOrUndefined (TStamp), "AssessmentStatus" :: NullOrUndefined (String), "AssessmentResultsFile" :: NullOrUndefined (String), "AssessmentResults" :: NullOrUndefined (String), "S3ObjectUrl" :: NullOrUndefined (String) }
+  = ReplicationTaskAssessmentResult { "ReplicationTaskIdentifier" :: Maybe (String), "ReplicationTaskArn" :: Maybe (String), "ReplicationTaskLastAssessmentDate" :: Maybe (TStamp), "AssessmentStatus" :: Maybe (String), "AssessmentResultsFile" :: Maybe (String), "AssessmentResults" :: Maybe (String), "S3ObjectUrl" :: Maybe (String) }
 ```
 
 <p> The task assessment report in JSON format. </p>
@@ -3981,7 +3981,7 @@ Constructs ReplicationTaskAssessmentResult from required parameters
 #### `newReplicationTaskAssessmentResult'`
 
 ``` purescript
-newReplicationTaskAssessmentResult' :: ({ "ReplicationTaskIdentifier" :: NullOrUndefined (String), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationTaskLastAssessmentDate" :: NullOrUndefined (TStamp), "AssessmentStatus" :: NullOrUndefined (String), "AssessmentResultsFile" :: NullOrUndefined (String), "AssessmentResults" :: NullOrUndefined (String), "S3ObjectUrl" :: NullOrUndefined (String) } -> { "ReplicationTaskIdentifier" :: NullOrUndefined (String), "ReplicationTaskArn" :: NullOrUndefined (String), "ReplicationTaskLastAssessmentDate" :: NullOrUndefined (TStamp), "AssessmentStatus" :: NullOrUndefined (String), "AssessmentResultsFile" :: NullOrUndefined (String), "AssessmentResults" :: NullOrUndefined (String), "S3ObjectUrl" :: NullOrUndefined (String) }) -> ReplicationTaskAssessmentResult
+newReplicationTaskAssessmentResult' :: ({ "ReplicationTaskIdentifier" :: Maybe (String), "ReplicationTaskArn" :: Maybe (String), "ReplicationTaskLastAssessmentDate" :: Maybe (TStamp), "AssessmentStatus" :: Maybe (String), "AssessmentResultsFile" :: Maybe (String), "AssessmentResults" :: Maybe (String), "S3ObjectUrl" :: Maybe (String) } -> { "ReplicationTaskIdentifier" :: Maybe (String), "ReplicationTaskArn" :: Maybe (String), "ReplicationTaskLastAssessmentDate" :: Maybe (TStamp), "AssessmentStatus" :: Maybe (String), "AssessmentResultsFile" :: Maybe (String), "AssessmentResults" :: Maybe (String), "S3ObjectUrl" :: Maybe (String) }) -> ReplicationTaskAssessmentResult
 ```
 
 Constructs ReplicationTaskAssessmentResult's fields from required parameters
@@ -4022,7 +4022,7 @@ Encode ReplicationTaskList
 
 ``` purescript
 newtype ReplicationTaskStats
-  = ReplicationTaskStats { "FullLoadProgressPercent" :: NullOrUndefined (Int), "ElapsedTimeMillis" :: NullOrUndefined (Number), "TablesLoaded" :: NullOrUndefined (Int), "TablesLoading" :: NullOrUndefined (Int), "TablesQueued" :: NullOrUndefined (Int), "TablesErrored" :: NullOrUndefined (Int) }
+  = ReplicationTaskStats { "FullLoadProgressPercent" :: Maybe (Int), "ElapsedTimeMillis" :: Maybe (Number), "TablesLoaded" :: Maybe (Int), "TablesLoading" :: Maybe (Int), "TablesQueued" :: Maybe (Int), "TablesErrored" :: Maybe (Int) }
 ```
 
 <p/>
@@ -4047,7 +4047,7 @@ Constructs ReplicationTaskStats from required parameters
 #### `newReplicationTaskStats'`
 
 ``` purescript
-newReplicationTaskStats' :: ({ "FullLoadProgressPercent" :: NullOrUndefined (Int), "ElapsedTimeMillis" :: NullOrUndefined (Number), "TablesLoaded" :: NullOrUndefined (Int), "TablesLoading" :: NullOrUndefined (Int), "TablesQueued" :: NullOrUndefined (Int), "TablesErrored" :: NullOrUndefined (Int) } -> { "FullLoadProgressPercent" :: NullOrUndefined (Int), "ElapsedTimeMillis" :: NullOrUndefined (Number), "TablesLoaded" :: NullOrUndefined (Int), "TablesLoading" :: NullOrUndefined (Int), "TablesQueued" :: NullOrUndefined (Int), "TablesErrored" :: NullOrUndefined (Int) }) -> ReplicationTaskStats
+newReplicationTaskStats' :: ({ "FullLoadProgressPercent" :: Maybe (Int), "ElapsedTimeMillis" :: Maybe (Number), "TablesLoaded" :: Maybe (Int), "TablesLoading" :: Maybe (Int), "TablesQueued" :: Maybe (Int), "TablesErrored" :: Maybe (Int) } -> { "FullLoadProgressPercent" :: Maybe (Int), "ElapsedTimeMillis" :: Maybe (Number), "TablesLoaded" :: Maybe (Int), "TablesLoading" :: Maybe (Int), "TablesQueued" :: Maybe (Int), "TablesErrored" :: Maybe (Int) }) -> ReplicationTaskStats
 ```
 
 Constructs ReplicationTaskStats's fields from required parameters
@@ -4056,7 +4056,7 @@ Constructs ReplicationTaskStats's fields from required parameters
 
 ``` purescript
 newtype ResourceAlreadyExistsFault
-  = ResourceAlreadyExistsFault { message :: NullOrUndefined (ExceptionMessage) }
+  = ResourceAlreadyExistsFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The resource you are attempting to create already exists.</p>
@@ -4081,7 +4081,7 @@ Constructs ResourceAlreadyExistsFault from required parameters
 #### `newResourceAlreadyExistsFault'`
 
 ``` purescript
-newResourceAlreadyExistsFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> ResourceAlreadyExistsFault
+newResourceAlreadyExistsFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> ResourceAlreadyExistsFault
 ```
 
 Constructs ResourceAlreadyExistsFault's fields from required parameters
@@ -4090,7 +4090,7 @@ Constructs ResourceAlreadyExistsFault's fields from required parameters
 
 ``` purescript
 newtype ResourceNotFoundFault
-  = ResourceNotFoundFault { message :: NullOrUndefined (ExceptionMessage) }
+  = ResourceNotFoundFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The resource could not be found.</p>
@@ -4115,7 +4115,7 @@ Constructs ResourceNotFoundFault from required parameters
 #### `newResourceNotFoundFault'`
 
 ``` purescript
-newResourceNotFoundFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> ResourceNotFoundFault
+newResourceNotFoundFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> ResourceNotFoundFault
 ```
 
 Constructs ResourceNotFoundFault's fields from required parameters
@@ -4124,7 +4124,7 @@ Constructs ResourceNotFoundFault's fields from required parameters
 
 ``` purescript
 newtype ResourceQuotaExceededFault
-  = ResourceQuotaExceededFault { message :: NullOrUndefined (ExceptionMessage) }
+  = ResourceQuotaExceededFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The quota for this resource quota has been exceeded.</p>
@@ -4149,7 +4149,7 @@ Constructs ResourceQuotaExceededFault from required parameters
 #### `newResourceQuotaExceededFault'`
 
 ``` purescript
-newResourceQuotaExceededFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> ResourceQuotaExceededFault
+newResourceQuotaExceededFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> ResourceQuotaExceededFault
 ```
 
 Constructs ResourceQuotaExceededFault's fields from required parameters
@@ -4158,7 +4158,7 @@ Constructs ResourceQuotaExceededFault's fields from required parameters
 
 ``` purescript
 newtype S3Settings
-  = S3Settings { "ServiceAccessRoleArn" :: NullOrUndefined (String), "ExternalTableDefinition" :: NullOrUndefined (String), "CsvRowDelimiter" :: NullOrUndefined (String), "CsvDelimiter" :: NullOrUndefined (String), "BucketFolder" :: NullOrUndefined (String), "BucketName" :: NullOrUndefined (String), "CompressionType" :: NullOrUndefined (CompressionTypeValue) }
+  = S3Settings { "ServiceAccessRoleArn" :: Maybe (String), "ExternalTableDefinition" :: Maybe (String), "CsvRowDelimiter" :: Maybe (String), "CsvDelimiter" :: Maybe (String), "BucketFolder" :: Maybe (String), "BucketName" :: Maybe (String), "CompressionType" :: Maybe (CompressionTypeValue) }
 ```
 
 <p/>
@@ -4183,7 +4183,7 @@ Constructs S3Settings from required parameters
 #### `newS3Settings'`
 
 ``` purescript
-newS3Settings' :: ({ "ServiceAccessRoleArn" :: NullOrUndefined (String), "ExternalTableDefinition" :: NullOrUndefined (String), "CsvRowDelimiter" :: NullOrUndefined (String), "CsvDelimiter" :: NullOrUndefined (String), "BucketFolder" :: NullOrUndefined (String), "BucketName" :: NullOrUndefined (String), "CompressionType" :: NullOrUndefined (CompressionTypeValue) } -> { "ServiceAccessRoleArn" :: NullOrUndefined (String), "ExternalTableDefinition" :: NullOrUndefined (String), "CsvRowDelimiter" :: NullOrUndefined (String), "CsvDelimiter" :: NullOrUndefined (String), "BucketFolder" :: NullOrUndefined (String), "BucketName" :: NullOrUndefined (String), "CompressionType" :: NullOrUndefined (CompressionTypeValue) }) -> S3Settings
+newS3Settings' :: ({ "ServiceAccessRoleArn" :: Maybe (String), "ExternalTableDefinition" :: Maybe (String), "CsvRowDelimiter" :: Maybe (String), "CsvDelimiter" :: Maybe (String), "BucketFolder" :: Maybe (String), "BucketName" :: Maybe (String), "CompressionType" :: Maybe (CompressionTypeValue) } -> { "ServiceAccessRoleArn" :: Maybe (String), "ExternalTableDefinition" :: Maybe (String), "CsvRowDelimiter" :: Maybe (String), "CsvDelimiter" :: Maybe (String), "BucketFolder" :: Maybe (String), "BucketName" :: Maybe (String), "CompressionType" :: Maybe (CompressionTypeValue) }) -> S3Settings
 ```
 
 Constructs S3Settings's fields from required parameters
@@ -4192,7 +4192,7 @@ Constructs S3Settings's fields from required parameters
 
 ``` purescript
 newtype SNSInvalidTopicFault
-  = SNSInvalidTopicFault { message :: NullOrUndefined (ExceptionMessage) }
+  = SNSInvalidTopicFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The SNS topic is invalid.</p>
@@ -4217,7 +4217,7 @@ Constructs SNSInvalidTopicFault from required parameters
 #### `newSNSInvalidTopicFault'`
 
 ``` purescript
-newSNSInvalidTopicFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> SNSInvalidTopicFault
+newSNSInvalidTopicFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> SNSInvalidTopicFault
 ```
 
 Constructs SNSInvalidTopicFault's fields from required parameters
@@ -4226,7 +4226,7 @@ Constructs SNSInvalidTopicFault's fields from required parameters
 
 ``` purescript
 newtype SNSNoAuthorizationFault
-  = SNSNoAuthorizationFault { message :: NullOrUndefined (ExceptionMessage) }
+  = SNSNoAuthorizationFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>You are not authorized for the SNS subscription.</p>
@@ -4251,7 +4251,7 @@ Constructs SNSNoAuthorizationFault from required parameters
 #### `newSNSNoAuthorizationFault'`
 
 ``` purescript
-newSNSNoAuthorizationFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> SNSNoAuthorizationFault
+newSNSNoAuthorizationFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> SNSNoAuthorizationFault
 ```
 
 Constructs SNSNoAuthorizationFault's fields from required parameters
@@ -4358,7 +4358,7 @@ Constructs StartReplicationTaskAssessmentMessage's fields from required paramete
 
 ``` purescript
 newtype StartReplicationTaskAssessmentResponse
-  = StartReplicationTaskAssessmentResponse { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }
+  = StartReplicationTaskAssessmentResponse { "ReplicationTask" :: Maybe (ReplicationTask) }
 ```
 
 <p/>
@@ -4383,7 +4383,7 @@ Constructs StartReplicationTaskAssessmentResponse from required parameters
 #### `newStartReplicationTaskAssessmentResponse'`
 
 ``` purescript
-newStartReplicationTaskAssessmentResponse' :: ({ "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }) -> StartReplicationTaskAssessmentResponse
+newStartReplicationTaskAssessmentResponse' :: ({ "ReplicationTask" :: Maybe (ReplicationTask) } -> { "ReplicationTask" :: Maybe (ReplicationTask) }) -> StartReplicationTaskAssessmentResponse
 ```
 
 Constructs StartReplicationTaskAssessmentResponse's fields from required parameters
@@ -4392,7 +4392,7 @@ Constructs StartReplicationTaskAssessmentResponse's fields from required paramet
 
 ``` purescript
 newtype StartReplicationTaskMessage
-  = StartReplicationTaskMessage { "ReplicationTaskArn" :: String, "StartReplicationTaskType" :: StartReplicationTaskTypeValue, "CdcStartTime" :: NullOrUndefined (TStamp) }
+  = StartReplicationTaskMessage { "ReplicationTaskArn" :: String, "StartReplicationTaskType" :: StartReplicationTaskTypeValue, "CdcStartTime" :: Maybe (TStamp) }
 ```
 
 <p/>
@@ -4417,7 +4417,7 @@ Constructs StartReplicationTaskMessage from required parameters
 #### `newStartReplicationTaskMessage'`
 
 ``` purescript
-newStartReplicationTaskMessage' :: String -> StartReplicationTaskTypeValue -> ({ "ReplicationTaskArn" :: String, "StartReplicationTaskType" :: StartReplicationTaskTypeValue, "CdcStartTime" :: NullOrUndefined (TStamp) } -> { "ReplicationTaskArn" :: String, "StartReplicationTaskType" :: StartReplicationTaskTypeValue, "CdcStartTime" :: NullOrUndefined (TStamp) }) -> StartReplicationTaskMessage
+newStartReplicationTaskMessage' :: String -> StartReplicationTaskTypeValue -> ({ "ReplicationTaskArn" :: String, "StartReplicationTaskType" :: StartReplicationTaskTypeValue, "CdcStartTime" :: Maybe (TStamp) } -> { "ReplicationTaskArn" :: String, "StartReplicationTaskType" :: StartReplicationTaskTypeValue, "CdcStartTime" :: Maybe (TStamp) }) -> StartReplicationTaskMessage
 ```
 
 Constructs StartReplicationTaskMessage's fields from required parameters
@@ -4426,7 +4426,7 @@ Constructs StartReplicationTaskMessage's fields from required parameters
 
 ``` purescript
 newtype StartReplicationTaskResponse
-  = StartReplicationTaskResponse { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }
+  = StartReplicationTaskResponse { "ReplicationTask" :: Maybe (ReplicationTask) }
 ```
 
 <p/>
@@ -4451,7 +4451,7 @@ Constructs StartReplicationTaskResponse from required parameters
 #### `newStartReplicationTaskResponse'`
 
 ``` purescript
-newStartReplicationTaskResponse' :: ({ "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }) -> StartReplicationTaskResponse
+newStartReplicationTaskResponse' :: ({ "ReplicationTask" :: Maybe (ReplicationTask) } -> { "ReplicationTask" :: Maybe (ReplicationTask) }) -> StartReplicationTaskResponse
 ```
 
 Constructs StartReplicationTaskResponse's fields from required parameters
@@ -4510,7 +4510,7 @@ Constructs StopReplicationTaskMessage's fields from required parameters
 
 ``` purescript
 newtype StopReplicationTaskResponse
-  = StopReplicationTaskResponse { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }
+  = StopReplicationTaskResponse { "ReplicationTask" :: Maybe (ReplicationTask) }
 ```
 
 <p/>
@@ -4535,7 +4535,7 @@ Constructs StopReplicationTaskResponse from required parameters
 #### `newStopReplicationTaskResponse'`
 
 ``` purescript
-newStopReplicationTaskResponse' :: ({ "ReplicationTask" :: NullOrUndefined (ReplicationTask) } -> { "ReplicationTask" :: NullOrUndefined (ReplicationTask) }) -> StopReplicationTaskResponse
+newStopReplicationTaskResponse' :: ({ "ReplicationTask" :: Maybe (ReplicationTask) } -> { "ReplicationTask" :: Maybe (ReplicationTask) }) -> StopReplicationTaskResponse
 ```
 
 Constructs StopReplicationTaskResponse's fields from required parameters
@@ -4544,7 +4544,7 @@ Constructs StopReplicationTaskResponse's fields from required parameters
 
 ``` purescript
 newtype StorageQuotaExceededFault
-  = StorageQuotaExceededFault { message :: NullOrUndefined (ExceptionMessage) }
+  = StorageQuotaExceededFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The storage quota has been exceeded.</p>
@@ -4569,7 +4569,7 @@ Constructs StorageQuotaExceededFault from required parameters
 #### `newStorageQuotaExceededFault'`
 
 ``` purescript
-newStorageQuotaExceededFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> StorageQuotaExceededFault
+newStorageQuotaExceededFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> StorageQuotaExceededFault
 ```
 
 Constructs StorageQuotaExceededFault's fields from required parameters
@@ -4578,7 +4578,7 @@ Constructs StorageQuotaExceededFault's fields from required parameters
 
 ``` purescript
 newtype Subnet
-  = Subnet { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone), "SubnetStatus" :: NullOrUndefined (String) }
+  = Subnet { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone), "SubnetStatus" :: Maybe (String) }
 ```
 
 <p/>
@@ -4603,7 +4603,7 @@ Constructs Subnet from required parameters
 #### `newSubnet'`
 
 ``` purescript
-newSubnet' :: ({ "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone), "SubnetStatus" :: NullOrUndefined (String) } -> { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone), "SubnetStatus" :: NullOrUndefined (String) }) -> Subnet
+newSubnet' :: ({ "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone), "SubnetStatus" :: Maybe (String) } -> { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone), "SubnetStatus" :: Maybe (String) }) -> Subnet
 ```
 
 Constructs Subnet's fields from required parameters
@@ -4612,7 +4612,7 @@ Constructs Subnet's fields from required parameters
 
 ``` purescript
 newtype SubnetAlreadyInUse
-  = SubnetAlreadyInUse { message :: NullOrUndefined (ExceptionMessage) }
+  = SubnetAlreadyInUse { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>The specified subnet is already in use.</p>
@@ -4637,7 +4637,7 @@ Constructs SubnetAlreadyInUse from required parameters
 #### `newSubnetAlreadyInUse'`
 
 ``` purescript
-newSubnetAlreadyInUse' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> SubnetAlreadyInUse
+newSubnetAlreadyInUse' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> SubnetAlreadyInUse
 ```
 
 Constructs SubnetAlreadyInUse's fields from required parameters
@@ -4678,7 +4678,7 @@ Encode SubnetList
 
 ``` purescript
 newtype SupportedEndpointType
-  = SupportedEndpointType { "EngineName" :: NullOrUndefined (String), "SupportsCDC" :: NullOrUndefined (Boolean), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) }
+  = SupportedEndpointType { "EngineName" :: Maybe (String), "SupportsCDC" :: Maybe (Boolean), "EndpointType" :: Maybe (ReplicationEndpointTypeValue) }
 ```
 
 <p/>
@@ -4703,7 +4703,7 @@ Constructs SupportedEndpointType from required parameters
 #### `newSupportedEndpointType'`
 
 ``` purescript
-newSupportedEndpointType' :: ({ "EngineName" :: NullOrUndefined (String), "SupportsCDC" :: NullOrUndefined (Boolean), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) } -> { "EngineName" :: NullOrUndefined (String), "SupportsCDC" :: NullOrUndefined (Boolean), "EndpointType" :: NullOrUndefined (ReplicationEndpointTypeValue) }) -> SupportedEndpointType
+newSupportedEndpointType' :: ({ "EngineName" :: Maybe (String), "SupportsCDC" :: Maybe (Boolean), "EndpointType" :: Maybe (ReplicationEndpointTypeValue) } -> { "EngineName" :: Maybe (String), "SupportsCDC" :: Maybe (Boolean), "EndpointType" :: Maybe (ReplicationEndpointTypeValue) }) -> SupportedEndpointType
 ```
 
 Constructs SupportedEndpointType's fields from required parameters
@@ -4760,7 +4760,7 @@ Encode TableListToReload
 
 ``` purescript
 newtype TableStatistics
-  = TableStatistics { "SchemaName" :: NullOrUndefined (String), "TableName" :: NullOrUndefined (String), "Inserts" :: NullOrUndefined (Number), "Deletes" :: NullOrUndefined (Number), "Updates" :: NullOrUndefined (Number), "Ddls" :: NullOrUndefined (Number), "FullLoadRows" :: NullOrUndefined (Number), "FullLoadCondtnlChkFailedRows" :: NullOrUndefined (Number), "FullLoadErrorRows" :: NullOrUndefined (Number), "LastUpdateTime" :: NullOrUndefined (TStamp), "TableState" :: NullOrUndefined (String), "ValidationPendingRecords" :: NullOrUndefined (Number), "ValidationFailedRecords" :: NullOrUndefined (Number), "ValidationSuspendedRecords" :: NullOrUndefined (Number), "ValidationState" :: NullOrUndefined (String) }
+  = TableStatistics { "SchemaName" :: Maybe (String), "TableName" :: Maybe (String), "Inserts" :: Maybe (Number), "Deletes" :: Maybe (Number), "Updates" :: Maybe (Number), "Ddls" :: Maybe (Number), "FullLoadRows" :: Maybe (Number), "FullLoadCondtnlChkFailedRows" :: Maybe (Number), "FullLoadErrorRows" :: Maybe (Number), "LastUpdateTime" :: Maybe (TStamp), "TableState" :: Maybe (String), "ValidationPendingRecords" :: Maybe (Number), "ValidationFailedRecords" :: Maybe (Number), "ValidationSuspendedRecords" :: Maybe (Number), "ValidationState" :: Maybe (String) }
 ```
 
 <p/>
@@ -4785,7 +4785,7 @@ Constructs TableStatistics from required parameters
 #### `newTableStatistics'`
 
 ``` purescript
-newTableStatistics' :: ({ "SchemaName" :: NullOrUndefined (String), "TableName" :: NullOrUndefined (String), "Inserts" :: NullOrUndefined (Number), "Deletes" :: NullOrUndefined (Number), "Updates" :: NullOrUndefined (Number), "Ddls" :: NullOrUndefined (Number), "FullLoadRows" :: NullOrUndefined (Number), "FullLoadCondtnlChkFailedRows" :: NullOrUndefined (Number), "FullLoadErrorRows" :: NullOrUndefined (Number), "LastUpdateTime" :: NullOrUndefined (TStamp), "TableState" :: NullOrUndefined (String), "ValidationPendingRecords" :: NullOrUndefined (Number), "ValidationFailedRecords" :: NullOrUndefined (Number), "ValidationSuspendedRecords" :: NullOrUndefined (Number), "ValidationState" :: NullOrUndefined (String) } -> { "SchemaName" :: NullOrUndefined (String), "TableName" :: NullOrUndefined (String), "Inserts" :: NullOrUndefined (Number), "Deletes" :: NullOrUndefined (Number), "Updates" :: NullOrUndefined (Number), "Ddls" :: NullOrUndefined (Number), "FullLoadRows" :: NullOrUndefined (Number), "FullLoadCondtnlChkFailedRows" :: NullOrUndefined (Number), "FullLoadErrorRows" :: NullOrUndefined (Number), "LastUpdateTime" :: NullOrUndefined (TStamp), "TableState" :: NullOrUndefined (String), "ValidationPendingRecords" :: NullOrUndefined (Number), "ValidationFailedRecords" :: NullOrUndefined (Number), "ValidationSuspendedRecords" :: NullOrUndefined (Number), "ValidationState" :: NullOrUndefined (String) }) -> TableStatistics
+newTableStatistics' :: ({ "SchemaName" :: Maybe (String), "TableName" :: Maybe (String), "Inserts" :: Maybe (Number), "Deletes" :: Maybe (Number), "Updates" :: Maybe (Number), "Ddls" :: Maybe (Number), "FullLoadRows" :: Maybe (Number), "FullLoadCondtnlChkFailedRows" :: Maybe (Number), "FullLoadErrorRows" :: Maybe (Number), "LastUpdateTime" :: Maybe (TStamp), "TableState" :: Maybe (String), "ValidationPendingRecords" :: Maybe (Number), "ValidationFailedRecords" :: Maybe (Number), "ValidationSuspendedRecords" :: Maybe (Number), "ValidationState" :: Maybe (String) } -> { "SchemaName" :: Maybe (String), "TableName" :: Maybe (String), "Inserts" :: Maybe (Number), "Deletes" :: Maybe (Number), "Updates" :: Maybe (Number), "Ddls" :: Maybe (Number), "FullLoadRows" :: Maybe (Number), "FullLoadCondtnlChkFailedRows" :: Maybe (Number), "FullLoadErrorRows" :: Maybe (Number), "LastUpdateTime" :: Maybe (TStamp), "TableState" :: Maybe (String), "ValidationPendingRecords" :: Maybe (Number), "ValidationFailedRecords" :: Maybe (Number), "ValidationSuspendedRecords" :: Maybe (Number), "ValidationState" :: Maybe (String) }) -> TableStatistics
 ```
 
 Constructs TableStatistics's fields from required parameters
@@ -4810,7 +4810,7 @@ Encode TableStatisticsList
 
 ``` purescript
 newtype TableToReload
-  = TableToReload { "SchemaName" :: NullOrUndefined (String), "TableName" :: NullOrUndefined (String) }
+  = TableToReload { "SchemaName" :: Maybe (String), "TableName" :: Maybe (String) }
 ```
 
 <p/>
@@ -4835,7 +4835,7 @@ Constructs TableToReload from required parameters
 #### `newTableToReload'`
 
 ``` purescript
-newTableToReload' :: ({ "SchemaName" :: NullOrUndefined (String), "TableName" :: NullOrUndefined (String) } -> { "SchemaName" :: NullOrUndefined (String), "TableName" :: NullOrUndefined (String) }) -> TableToReload
+newTableToReload' :: ({ "SchemaName" :: Maybe (String), "TableName" :: Maybe (String) } -> { "SchemaName" :: Maybe (String), "TableName" :: Maybe (String) }) -> TableToReload
 ```
 
 Constructs TableToReload's fields from required parameters
@@ -4844,7 +4844,7 @@ Constructs TableToReload's fields from required parameters
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = Tag { "Key" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p/>
@@ -4869,7 +4869,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (String), "Value" :: Maybe (String) } -> { "Key" :: Maybe (String), "Value" :: Maybe (String) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -4928,7 +4928,7 @@ Constructs TestConnectionMessage's fields from required parameters
 
 ``` purescript
 newtype TestConnectionResponse
-  = TestConnectionResponse { "Connection" :: NullOrUndefined (Connection) }
+  = TestConnectionResponse { "Connection" :: Maybe (Connection) }
 ```
 
 <p/>
@@ -4953,7 +4953,7 @@ Constructs TestConnectionResponse from required parameters
 #### `newTestConnectionResponse'`
 
 ``` purescript
-newTestConnectionResponse' :: ({ "Connection" :: NullOrUndefined (Connection) } -> { "Connection" :: NullOrUndefined (Connection) }) -> TestConnectionResponse
+newTestConnectionResponse' :: ({ "Connection" :: Maybe (Connection) } -> { "Connection" :: Maybe (Connection) }) -> TestConnectionResponse
 ```
 
 Constructs TestConnectionResponse's fields from required parameters
@@ -4962,7 +4962,7 @@ Constructs TestConnectionResponse's fields from required parameters
 
 ``` purescript
 newtype UpgradeDependencyFailureFault
-  = UpgradeDependencyFailureFault { message :: NullOrUndefined (ExceptionMessage) }
+  = UpgradeDependencyFailureFault { message :: Maybe (ExceptionMessage) }
 ```
 
 <p>An upgrade dependency is preventing the database migration.</p>
@@ -4987,7 +4987,7 @@ Constructs UpgradeDependencyFailureFault from required parameters
 #### `newUpgradeDependencyFailureFault'`
 
 ``` purescript
-newUpgradeDependencyFailureFault' :: ({ message :: NullOrUndefined (ExceptionMessage) } -> { message :: NullOrUndefined (ExceptionMessage) }) -> UpgradeDependencyFailureFault
+newUpgradeDependencyFailureFault' :: ({ message :: Maybe (ExceptionMessage) } -> { message :: Maybe (ExceptionMessage) }) -> UpgradeDependencyFailureFault
 ```
 
 Constructs UpgradeDependencyFailureFault's fields from required parameters
@@ -5012,7 +5012,7 @@ Encode VpcSecurityGroupIdList
 
 ``` purescript
 newtype VpcSecurityGroupMembership
-  = VpcSecurityGroupMembership { "VpcSecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = VpcSecurityGroupMembership { "VpcSecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p/>
@@ -5037,7 +5037,7 @@ Constructs VpcSecurityGroupMembership from required parameters
 #### `newVpcSecurityGroupMembership'`
 
 ``` purescript
-newVpcSecurityGroupMembership' :: ({ "VpcSecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "VpcSecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> VpcSecurityGroupMembership
+newVpcSecurityGroupMembership' :: ({ "VpcSecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) } -> { "VpcSecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) }) -> VpcSecurityGroupMembership
 ```
 
 Constructs VpcSecurityGroupMembership's fields from required parameters
